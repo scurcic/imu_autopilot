@@ -1,0 +1,85 @@
+   1              		.file	"global_pos.c"
+   2              		.global	__addsf3
+   3              		.text
+   4              		.align	2
+   5              		.global	global_pos
+   7              	global_pos:
+   8              		@ Function supports interworking.
+   9              		@ args = 4, pretend = 0, frame = 12
+  10              		@ frame_needed = 0, uses_anonymous_args = 0
+  11 0000 F0402DE9 		stmfd	sp!, {r4, r5, r6, r7, lr}
+  12 0004 0CD04DE2 		sub	sp, sp, #12
+  13 0008 0E008DE8 		stmia	sp, {r1, r2, r3}
+  14 000c 090050E3 		cmp	r0, #9
+  15 0010 0030A0E1 		mov	r3, r0
+  16 0014 063043C2 		subgt	r3, r3, #6
+  17 0018 50E09FE5 		ldr	lr, .L5
+  18 001c 834083E0 		add	r4, r3, r3, asl #1
+  19 0020 0441A0E1 		mov	r4, r4, asl #2
+  20 0024 0E1094E7 		ldr	r1, [r4, lr]	@ float
+  21 0028 00009DE5 		ldr	r0, [sp, #0]	@ float
+  22 002c 0E4084E0 		add	r4, r4, lr
+  23 0030 FEFFFFEB 		bl	__addsf3
+  24 0034 20509DE5 		ldr	r5, [sp, #32]
+  25 0038 04609DE5 		ldr	r6, [sp, #4]	@ float
+  26 003c 000085E5 		str	r0, [r5, #0]	@ float
+  27 0040 041094E5 		ldr	r1, [r4, #4]	@ float
+  28 0044 0600A0E1 		mov	r0, r6
+  29 0048 FEFFFFEB 		bl	__addsf3
+  30 004c 08709DE5 		ldr	r7, [sp, #8]	@ float
+  31 0050 040085E5 		str	r0, [r5, #4]	@ float
+  32 0054 081094E5 		ldr	r1, [r4, #8]	@ float
+  33 0058 0700A0E1 		mov	r0, r7
+  34 005c FEFFFFEB 		bl	__addsf3
+  35 0060 080085E5 		str	r0, [r5, #8]	@ float
+  36 0064 0CD08DE2 		add	sp, sp, #12
+  37 0068 F040BDE8 		ldmfd	sp!, {r4, r5, r6, r7, lr}
+  38 006c 1EFF2FE1 		bx	lr
+  39              	.L6:
+  40              		.align	2
+  41              	.L5:
+  42 0070 00000000 		.word	MarkerPos.3172
+  44              		.section	.rodata
+  45              		.align	2
+  48              	MarkerPos.3172:
+  49 0000 00000000 		.word	0
+  50 0004 00000000 		.word	0
+  51 0008 00000000 		.word	0
+  52 000c 00000000 		.word	0
+  53 0010 F2D2CDBE 		.word	-1093807374
+  54 0014 6F12833A 		.word	981668463
+  55 0018 00000000 		.word	0
+  56 001c CDCC4CBF 		.word	-1085485875
+  57 0020 6F1203BB 		.word	-1157426577
+  58 0024 00000000 		.word	0
+  59 0028 9A9999BF 		.word	-1080452710
+  60 002c 6F12833A 		.word	981668463
+  61 0030 00000000 		.word	0
+  62 0034 00000000 		.word	0
+  63 0038 DD2486BE 		.word	-1098504995
+  64 003c 00000000 		.word	0
+  65 0040 BA49CCBE 		.word	-1093908038
+  66 0044 A69B84BE 		.word	-1098605658
+  67 0048 00000000 		.word	0
+  68 004c CDCC4CBF 		.word	-1085485875
+  69 0050 CBA185BE 		.word	-1098538549
+  70 0054 00000000 		.word	0
+  71 0058 D57899BF 		.word	-1080461099
+  72 005c 6F1283BE 		.word	-1098706321
+  73              		.comm	global_param_id,4,4
+  74              		.comm	state_fly_id,4,4
+  75              		.comm	global_data,2588,4
+  76              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
+DEFINED SYMBOLS
+                            *ABS*:00000000 global_pos.c
+C:\Users\Srdjan\AppData\Local\Temp/ccYPaaaa.s:7      .text:00000000 global_pos
+C:\Users\Srdjan\AppData\Local\Temp/ccYPaaaa.s:11     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccYPaaaa.s:42     .text:00000070 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccYPaaaa.s:48     .rodata:00000000 MarkerPos.3172
+C:\Users\Srdjan\AppData\Local\Temp/ccYPaaaa.s:49     .rodata:00000000 $d
+                            *COM*:00000004 global_param_id
+                            *COM*:00000004 state_fly_id
+                            *COM*:00000a1c global_data
+
+UNDEFINED SYMBOLS
+__addsf3

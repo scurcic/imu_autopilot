@@ -1,0 +1,179 @@
+   1              		.file	"control_fixed_wing_attitude.c"
+   2              		.text
+   3              		.align	2
+   4              		.global	control_fixed_wing_attitude_init
+   6              	control_fixed_wing_attitude_init:
+   7              		@ Function supports interworking.
+   8              		@ args = 0, pretend = 0, frame = 0
+   9              		@ frame_needed = 0, uses_anonymous_args = 0
+  10              		@ link register save eliminated.
+  11              		@ lr needed for prologue
+  12 0000 1EFF2FE1 		bx	lr
+  14              		.global	__fixunssfsi
+  15              		.global	__floatsisf
+  16              		.global	__divsf3
+  17              		.global	__mulsf3
+  18              		.global	__addsf3
+  19              		.align	2
+  20              		.global	control_fixed_wing_attitude
+  22              	control_fixed_wing_attitude:
+  23              		@ Function supports interworking.
+  24              		@ args = 0, pretend = 0, frame = 0
+  25              		@ frame_needed = 0, uses_anonymous_args = 0
+  26 0004 F0402DE9 		stmfd	sp!, {r4, r5, r6, r7, lr}
+  27 0008 A4619FE5 		ldr	r6, .L14
+  28 000c B00396E5 		ldr	r0, [r6, #944]	@ float
+  29 0010 FEFFFFEB 		bl	__fixunssfsi
+  30 0014 0040A0E1 		mov	r4, r0
+  31 0018 FEFFFFEB 		bl	ppm_get_channel
+  32 001c 7B3EA0E3 		mov	r3, #1968
+  33 0020 013083E2 		add	r3, r3, #1
+  34 0024 030050E1 		cmp	r0, r3
+  35 0028 0070A0E3 		mov	r7, #0
+  36 002c 0400A0E1 		mov	r0, r4
+  37 0030 490000DA 		ble	.L12
+  38              	.L6:
+  39 0034 7C519FE5 		ldr	r5, .L14+4
+  40 0038 B308E0E3 		mvn	r0, #11730944
+  41 003c 330C40E2 		sub	r0, r0, #13056
+  42 0040 001095E5 		ldr	r1, [r5, #0]	@ float
+  43 0044 CB0140E2 		sub	r0, r0, #-1073741774
+  44 0048 FEFFFFEB 		bl	__mulsf3
+  45 004c 5C1096E5 		ldr	r1, [r6, #92]	@ float
+  46 0050 0040A0E1 		mov	r4, r0
+  47 0054 60019FE5 		ldr	r0, .L14+8
+  48 0058 FEFFFFEB 		bl	__mulsf3
+  49 005c 0010A0E1 		mov	r1, r0
+  50 0060 0400A0E1 		mov	r0, r4
+  51 0064 FEFFFFEB 		bl	__addsf3
+  52 0068 0030A0E1 		mov	r3, r0
+  53 006c 003085E5 		str	r3, [r5, #0]	@ float
+  54 0070 0710A0E1 		mov	r1, r7
+  55 0074 FEFFFFEB 		bl	__addsf3
+  56 0078 0A16E0E3 		mvn	r1, #10485760
+  57 007c 991C41E2 		sub	r1, r1, #39168
+  58 0080 331141E2 		sub	r1, r1, #-1073741812
+  59 0084 FEFFFFEB 		bl	__divsf3
+  60 0088 4314A0E3 		mov	r1, #1124073472
+  61 008c FA1881E2 		add	r1, r1, #16384000
+  62 0090 FEFFFFEB 		bl	__mulsf3
+  63 0094 1113A0E3 		mov	r1, #1140850688
+  64 0098 BB1881E2 		add	r1, r1, #12255232
+  65 009c 021981E2 		add	r1, r1, #32768
+  66 00a0 FEFFFFEB 		bl	__addsf3
+  67 00a4 FEFFFFEB 		bl	__fixunssfsi
+  68 00a8 0010A0E3 		mov	r1, #0
+  69 00ac FEFFFFEB 		bl	pwm_set_channel
+  70 00b0 08519FE5 		ldr	r5, .L14+12
+  71 00b4 B308E0E3 		mvn	r0, #11730944
+  72 00b8 330C40E2 		sub	r0, r0, #13056
+  73 00bc 001095E5 		ldr	r1, [r5, #0]	@ float
+  74 00c0 CB0140E2 		sub	r0, r0, #-1073741774
+  75 00c4 FEFFFFEB 		bl	__mulsf3
+  76 00c8 601096E5 		ldr	r1, [r6, #96]	@ float
+  77 00cc 0040A0E1 		mov	r4, r0
+  78 00d0 E4009FE5 		ldr	r0, .L14+8
+  79 00d4 FEFFFFEB 		bl	__mulsf3
+  80 00d8 0010A0E1 		mov	r1, r0
+  81 00dc 0400A0E1 		mov	r0, r4
+  82 00e0 FEFFFFEB 		bl	__addsf3
+  83 00e4 000085E5 		str	r0, [r5, #0]	@ float
+  84 00e8 B40396E5 		ldr	r0, [r6, #948]	@ float
+  85 00ec FEFFFFEB 		bl	__fixunssfsi
+  86 00f0 0040A0E1 		mov	r4, r0
+  87 00f4 FEFFFFEB 		bl	ppm_get_channel
+  88 00f8 7B3EA0E3 		mov	r3, #1968
+  89 00fc 013083E2 		add	r3, r3, #1
+  90 0100 030050E1 		cmp	r0, r3
+  91 0104 0020A0E3 		mov	r2, #0
+  92 0108 0400A0E1 		mov	r0, r4
+  93 010c 1D0000DA 		ble	.L13
+  94              	.L9:
+  95 0110 0200A0E1 		mov	r0, r2
+  96 0114 001095E5 		ldr	r1, [r5, #0]	@ float
+  97 0118 FEFFFFEB 		bl	__addsf3
+  98 011c 0A16E0E3 		mvn	r1, #10485760
+  99 0120 991C41E2 		sub	r1, r1, #39168
+ 100 0124 331141E2 		sub	r1, r1, #-1073741812
+ 101 0128 FEFFFFEB 		bl	__divsf3
+ 102 012c 4314A0E3 		mov	r1, #1124073472
+ 103 0130 FA1881E2 		add	r1, r1, #16384000
+ 104 0134 FEFFFFEB 		bl	__mulsf3
+ 105 0138 1113A0E3 		mov	r1, #1140850688
+ 106 013c BB1881E2 		add	r1, r1, #12255232
+ 107 0140 021981E2 		add	r1, r1, #32768
+ 108 0144 FEFFFFEB 		bl	__addsf3
+ 109 0148 FEFFFFEB 		bl	__fixunssfsi
+ 110 014c 0110A0E3 		mov	r1, #1
+ 111 0150 FEFFFFEB 		bl	pwm_set_channel
+ 112 0154 F040BDE8 		ldmfd	sp!, {r4, r5, r6, r7, lr}
+ 113 0158 1EFF2FE1 		bx	lr
+ 114              	.L12:
+ 115 015c FEFFFFEB 		bl	ppm_get_channel
+ 116 0160 5D0E40E2 		sub	r0, r0, #1488
+ 117 0164 0C0040E2 		sub	r0, r0, #12
+ 118 0168 FEFFFFEB 		bl	__floatsisf
+ 119 016c 4314A0E3 		mov	r1, #1124073472
+ 120 0170 FA1881E2 		add	r1, r1, #16384000
+ 121 0174 FEFFFFEB 		bl	__divsf3
+ 122 0178 44109FE5 		ldr	r1, .L14+16
+ 123 017c FEFFFFEB 		bl	__mulsf3
+ 124 0180 0070A0E1 		mov	r7, r0
+ 125 0184 AAFFFFEA 		b	.L6
+ 126              	.L13:
+ 127 0188 FEFFFFEB 		bl	ppm_get_channel
+ 128 018c 5D0E40E2 		sub	r0, r0, #1488
+ 129 0190 0C0040E2 		sub	r0, r0, #12
+ 130 0194 FEFFFFEB 		bl	__floatsisf
+ 131 0198 4314A0E3 		mov	r1, #1124073472
+ 132 019c FA1881E2 		add	r1, r1, #16384000
+ 133 01a0 FEFFFFEB 		bl	__divsf3
+ 134 01a4 18109FE5 		ldr	r1, .L14+16
+ 135 01a8 FEFFFFEB 		bl	__mulsf3
+ 136 01ac 0020A0E1 		mov	r2, r0
+ 137 01b0 D6FFFFEA 		b	.L9
+ 138              	.L15:
+ 139              		.align	2
+ 140              	.L14:
+ 141 01b4 00000000 		.word	global_data
+ 142 01b8 04000000 		.word	lp_roll.2566
+ 143 01bc CDCC4CBE 		.word	-1102263091
+ 144 01c0 00000000 		.word	lp_pitch.2567
+ 145 01c4 9A99993E 		.word	1050253722
+ 147              		.bss
+ 148              		.align	2
+ 149              	lp_pitch.2567:
+ 150 0000 00000000 		.space	4
+ 151              		.align	2
+ 152              	lp_roll.2566:
+ 153 0004 00000000 		.space	4
+ 154              		.comm	fw_yaw_controller,32,4
+ 155              		.comm	fw_nick_controller,32,4
+ 156              		.comm	fw_roll_controller,32,4
+ 157              		.comm	global_param_id,4,4
+ 158              		.comm	state_fly_id,4,4
+ 159              		.comm	global_data,2588,4
+ 160              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
+DEFINED SYMBOLS
+                            *ABS*:00000000 control_fixed_wing_attitude.c
+C:\Users\Srdjan\AppData\Local\Temp/ccq8aaaa.s:6      .text:00000000 control_fixed_wing_attitude_init
+C:\Users\Srdjan\AppData\Local\Temp/ccq8aaaa.s:12     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccq8aaaa.s:22     .text:00000004 control_fixed_wing_attitude
+C:\Users\Srdjan\AppData\Local\Temp/ccq8aaaa.s:141    .text:000001b4 $d
+                            *COM*:00000a1c global_data
+C:\Users\Srdjan\AppData\Local\Temp/ccq8aaaa.s:152    .bss:00000004 lp_roll.2566
+C:\Users\Srdjan\AppData\Local\Temp/ccq8aaaa.s:149    .bss:00000000 lp_pitch.2567
+                            *COM*:00000020 fw_yaw_controller
+                            *COM*:00000020 fw_nick_controller
+                            *COM*:00000020 fw_roll_controller
+                            *COM*:00000004 global_param_id
+                            *COM*:00000004 state_fly_id
+
+UNDEFINED SYMBOLS
+__fixunssfsi
+__floatsisf
+__divsf3
+__mulsf3
+__addsf3
+ppm_get_channel
+pwm_set_channel

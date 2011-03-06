@@ -1,0 +1,176 @@
+   1              		.file	"comm.c"
+   2              		.text
+   3              		.align	2
+   4              		.global	comm_check_free_space
+   6              	comm_check_free_space:
+   7              		@ Function supports interworking.
+   8              		@ args = 0, pretend = 0, frame = 0
+   9              		@ frame_needed = 0, uses_anonymous_args = 0
+  10 0000 003050E2 		subs	r3, r0, #0
+  11 0004 FF1001E2 		and	r1, r1, #255
+  12 0008 04E02DE5 		str	lr, [sp, #-4]!
+  13 000c 0100A0E1 		mov	r0, r1
+  14 0010 0600000A 		beq	.L9
+  15 0014 010053E3 		cmp	r3, #1
+  16 0018 0100A0E1 		mov	r0, r1
+  17 001c 0030A0E3 		mov	r3, #0
+  18 0020 0500000A 		beq	.L10
+  19              	.L4:
+  20 0024 0300A0E1 		mov	r0, r3
+  21 0028 04E09DE4 		ldr	lr, [sp], #4
+  22 002c 1EFF2FE1 		bx	lr
+  23              	.L9:
+  24 0030 FEFFFFEB 		bl	uart0_check_free_space
+  25 0034 FF3000E2 		and	r3, r0, #255
+  26 0038 F9FFFFEA 		b	.L4
+  27              	.L10:
+  28 003c FEFFFFEB 		bl	uart1_check_free_space
+  29 0040 FF3000E2 		and	r3, r0, #255
+  30 0044 F6FFFFEA 		b	.L4
+  32              		.align	2
+  33              		.global	comm_send_ch
+  35              	comm_send_ch:
+  36              		@ Function supports interworking.
+  37              		@ args = 0, pretend = 0, frame = 0
+  38              		@ frame_needed = 0, uses_anonymous_args = 0
+  39 0048 000050E3 		cmp	r0, #0
+  40 004c 04E02DE5 		str	lr, [sp, #-4]!
+  41 0050 FF1001E2 		and	r1, r1, #255
+  42 0054 0600001A 		bne	.L12
+  43 0058 40309FE5 		ldr	r3, .L20
+  44 005c 5D21D3E5 		ldrb	r2, [r3, #349]	@ zero_extendqisi2
+  45 0060 000052E3 		cmp	r2, #0
+  46 0064 0100A0E1 		mov	r0, r1
+  47 0068 0A00000A 		beq	.L19
+  48              	.L18:
+  49 006c 04E09DE4 		ldr	lr, [sp], #4
+  50 0070 1EFF2FE1 		bx	lr
+  51              	.L12:
+  52 0074 010050E3 		cmp	r0, #1
+  53 0078 FBFFFF1A 		bne	.L18
+  54 007c 1C309FE5 		ldr	r3, .L20
+  55 0080 5E21D3E5 		ldrb	r2, [r3, #350]	@ zero_extendqisi2
+  56 0084 000052E3 		cmp	r2, #0
+  57 0088 0100A0E1 		mov	r0, r1
+  58 008c F6FFFF1A 		bne	.L18
+  59 0090 FEFFFFEB 		bl	uart1_transmit
+  60 0094 F4FFFFEA 		b	.L18
+  61              	.L19:
+  62 0098 FEFFFFEB 		bl	uart0_transmit
+  63 009c F2FFFFEA 		b	.L18
+  64              	.L21:
+  65              		.align	2
+  66              	.L20:
+  67 00a0 00000000 		.word	global_data
+  69              		.align	2
+  70              		.global	comm_get_ch
+  72              	comm_get_ch:
+  73              		@ Function supports interworking.
+  74              		@ args = 0, pretend = 0, frame = 0
+  75              		@ frame_needed = 0, uses_anonymous_args = 0
+  76 00a4 000050E3 		cmp	r0, #0
+  77 00a8 04E02DE5 		str	lr, [sp, #-4]!
+  78 00ac 0400000A 		beq	.L29
+  79 00b0 010050E3 		cmp	r0, #1
+  80 00b4 0000A0E3 		mov	r0, #0
+  81 00b8 0300000A 		beq	.L30
+  82              	.L25:
+  83 00bc 04E09DE4 		ldr	lr, [sp], #4
+  84 00c0 1EFF2FE1 		bx	lr
+  85              	.L29:
+  86 00c4 FEFFFFEB 		bl	uart0_get_char
+  87 00c8 FBFFFFEA 		b	.L25
+  88              	.L30:
+  89 00cc FEFFFFEB 		bl	uart1_get_char
+  90 00d0 F9FFFFEA 		b	.L25
+  92              		.align	2
+  93              		.global	comm_ch_available
+  95              	comm_ch_available:
+  96              		@ Function supports interworking.
+  97              		@ args = 0, pretend = 0, frame = 0
+  98              		@ frame_needed = 0, uses_anonymous_args = 0
+  99 00d4 000050E3 		cmp	r0, #0
+ 100 00d8 04E02DE5 		str	lr, [sp, #-4]!
+ 101 00dc 0400000A 		beq	.L38
+ 102 00e0 010050E3 		cmp	r0, #1
+ 103 00e4 0000A0E3 		mov	r0, #0
+ 104 00e8 0400000A 		beq	.L39
+ 105              	.L34:
+ 106 00ec 04E09DE4 		ldr	lr, [sp], #4
+ 107 00f0 1EFF2FE1 		bx	lr
+ 108              	.L38:
+ 109 00f4 FEFFFFEB 		bl	uart0_char_available
+ 110 00f8 FF0000E2 		and	r0, r0, #255
+ 111 00fc FAFFFFEA 		b	.L34
+ 112              	.L39:
+ 113 0100 FEFFFFEB 		bl	uart1_char_available
+ 114 0104 FF0000E2 		and	r0, r0, #255
+ 115 0108 F7FFFFEA 		b	.L34
+ 117              		.global	__fixsfsi
+ 118              		.align	2
+ 119              		.global	comm_init
+ 121              	comm_init:
+ 122              		@ Function supports interworking.
+ 123              		@ args = 0, pretend = 0, frame = 0
+ 124              		@ frame_needed = 0, uses_anonymous_args = 0
+ 125 010c 000050E3 		cmp	r0, #0
+ 126 0110 04E02DE5 		str	lr, [sp, #-4]!
+ 127 0114 0300000A 		beq	.L46
+ 128 0118 010050E3 		cmp	r0, #1
+ 129 011c 0800000A 		beq	.L47
+ 130              	.L45:
+ 131 0120 04E09DE4 		ldr	lr, [sp], #4
+ 132 0124 1EFF2FE1 		bx	lr
+ 133              	.L46:
+ 134 0128 30309FE5 		ldr	r3, .L48
+ 135 012c 540293E5 		ldr	r0, [r3, #596]	@ float
+ 136 0130 FEFFFFEB 		bl	__fixsfsi
+ 137 0134 0310A0E3 		mov	r1, #3
+ 138 0138 8120A0E3 		mov	r2, #129
+ 139 013c FEFFFFEB 		bl	uart0_init
+ 140 0140 F6FFFFEA 		b	.L45
+ 141              	.L47:
+ 142 0144 14309FE5 		ldr	r3, .L48
+ 143 0148 580293E5 		ldr	r0, [r3, #600]	@ float
+ 144 014c FEFFFFEB 		bl	__fixsfsi
+ 145 0150 0310A0E3 		mov	r1, #3
+ 146 0154 8120A0E3 		mov	r2, #129
+ 147 0158 FEFFFFEB 		bl	uart1_init
+ 148 015c EFFFFFEA 		b	.L45
+ 149              	.L49:
+ 150              		.align	2
+ 151              	.L48:
+ 152 0160 00000000 		.word	global_data
+ 154              		.comm	mavlink_system,8,4
+ 155              		.comm	global_param_id,4,4
+ 156              		.comm	state_fly_id,4,4
+ 157              		.comm	global_data,2588,4
+ 158              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
+DEFINED SYMBOLS
+                            *ABS*:00000000 comm.c
+C:\Users\Srdjan\AppData\Local\Temp/cc69aaaa.s:6      .text:00000000 comm_check_free_space
+C:\Users\Srdjan\AppData\Local\Temp/cc69aaaa.s:10     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc69aaaa.s:35     .text:00000048 comm_send_ch
+C:\Users\Srdjan\AppData\Local\Temp/cc69aaaa.s:67     .text:000000a0 $d
+                            *COM*:00000a1c global_data
+C:\Users\Srdjan\AppData\Local\Temp/cc69aaaa.s:72     .text:000000a4 comm_get_ch
+C:\Users\Srdjan\AppData\Local\Temp/cc69aaaa.s:76     .text:000000a4 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc69aaaa.s:95     .text:000000d4 comm_ch_available
+C:\Users\Srdjan\AppData\Local\Temp/cc69aaaa.s:121    .text:0000010c comm_init
+C:\Users\Srdjan\AppData\Local\Temp/cc69aaaa.s:152    .text:00000160 $d
+                            *COM*:00000008 mavlink_system
+                            *COM*:00000004 global_param_id
+                            *COM*:00000004 state_fly_id
+
+UNDEFINED SYMBOLS
+uart0_check_free_space
+uart1_check_free_space
+uart1_transmit
+uart0_transmit
+uart0_get_char
+uart1_get_char
+uart0_char_available
+uart1_char_available
+__fixsfsi
+uart0_init
+uart1_init

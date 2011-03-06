@@ -1,0 +1,419 @@
+   1              		.file	"sca3100.c"
+   2              		.text
+   3              		.align	2
+   5              	sca3100_select:
+   6              		@ Function supports interworking.
+   7              		@ args = 0, pretend = 0, frame = 0
+   8              		@ frame_needed = 0, uses_anonymous_args = 0
+   9              		@ link register save eliminated.
+  10 0000 0E22A0E3 		mov	r2, #-536870912
+  11 0004 0A2982E2 		add	r2, r2, #163840
+  12 0008 1C3092E5 		ldr	r3, [r2, #28]
+  13 000c 013783E3 		orr	r3, r3, #262144
+  14              		@ lr needed for prologue
+  15 0010 1C3082E5 		str	r3, [r2, #28]
+  16 0014 1EFF2FE1 		bx	lr
+  18              		.align	2
+  20              	sca3100_unselect:
+  21              		@ Function supports interworking.
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24              		@ link register save eliminated.
+  25 0018 0E22A0E3 		mov	r2, #-536870912
+  26 001c 0A2982E2 		add	r2, r2, #163840
+  27 0020 143092E5 		ldr	r3, [r2, #20]
+  28 0024 013783E3 		orr	r3, r3, #262144
+  29              		@ lr needed for prologue
+  30 0028 143082E5 		str	r3, [r2, #20]
+  31 002c 1EFF2FE1 		bx	lr
+  33              		.align	2
+  34              		.global	sca3100_get_value
+  36              	sca3100_get_value:
+  37              		@ Function supports interworking.
+  38              		@ args = 0, pretend = 0, frame = 0
+  39              		@ frame_needed = 0, uses_anonymous_args = 0
+  40              		@ link register save eliminated.
+  41 0030 04309FE5 		ldr	r3, .L7
+  42 0034 000193E7 		ldr	r0, [r3, r0, asl #2]
+  43              		@ lr needed for prologue
+  44 0038 1EFF2FE1 		bx	lr
+  45              	.L8:
+  46              		.align	2
+  47              	.L7:
+  48 003c 00000000 		.word	sca3100_values
+  50              		.align	2
+  52              	sca3100_on_spi_write:
+  53              		@ Function supports interworking.
+  54              		@ args = 0, pretend = 0, frame = 0
+  55              		@ frame_needed = 0, uses_anonymous_args = 0
+  56              		@ link register save eliminated.
+  57 0040 0E32A0E3 		mov	r3, #-536870912
+  58 0044 1A3983E2 		add	r3, r3, #425984
+  59 0048 B820D3E1 		ldrh	r2, [r3, #8]
+  60 004c B810D3E1 		ldrh	r1, [r3, #8]
+  61              		@ lr needed for prologue
+  62 0050 1EFF2FE1 		bx	lr
+  64              		.align	2
+  65              		.global	sca3100_read_int_status
+  67              	sca3100_read_int_status:
+  68              		@ Function supports interworking.
+  69              		@ args = 0, pretend = 0, frame = 32
+  70              		@ frame_needed = 0, uses_anonymous_args = 0
+  71 0054 04E02DE5 		str	lr, [sp, #-4]!
+  72 0058 0730A0E3 		mov	r3, #7
+  73 005c 20D04DE2 		sub	sp, sp, #32
+  74 0060 1130CDE5 		strb	r3, [sp, #17]
+  75 0064 3C309FE5 		ldr	r3, .L13
+  76 0068 14308DE5 		str	r3, [sp, #20]
+  77 006c 38309FE5 		ldr	r3, .L13+4
+  78 0070 0220A0E3 		mov	r2, #2
+  79 0074 1020CDE5 		strb	r2, [sp, #16]
+  80 0078 1C308DE5 		str	r3, [sp, #28]
+  81 007c 2C209FE5 		ldr	r2, .L13+8
+  82 0080 5830A0E3 		mov	r3, #88	@ movhi
+  83 0084 B030CDE1 		strh	r3, [sp, #0]	@ movhi
+  84 0088 0D00A0E1 		mov	r0, sp
+  85 008c 0030A0E3 		mov	r3, #0	@ movhi
+  86 0090 18208DE5 		str	r2, [sp, #24]
+  87 0094 B230CDE1 		strh	r3, [sp, #2]	@ movhi
+  88 0098 FEFFFFEB 		bl	spi_transmit
+  89 009c 20D08DE2 		add	sp, sp, #32
+  90 00a0 04E09DE4 		ldr	lr, [sp], #4
+  91 00a4 1EFF2FE1 		bx	lr
+  92              	.L14:
+  93              		.align	2
+  94              	.L13:
+  95 00a8 00000000 		.word	sca3100_select
+  96 00ac 00000000 		.word	sca3100_on_spi_read_reg
+  97 00b0 00000000 		.word	sca3100_unselect
+  99              		.align	2
+ 100              		.global	sca3100_reset_porst_bit
+ 102              	sca3100_reset_porst_bit:
+ 103              		@ Function supports interworking.
+ 104              		@ args = 0, pretend = 0, frame = 32
+ 105              		@ frame_needed = 0, uses_anonymous_args = 0
+ 106 00b4 04E02DE5 		str	lr, [sp, #-4]!
+ 107 00b8 0230A0E3 		mov	r3, #2
+ 108 00bc 20D04DE2 		sub	sp, sp, #32
+ 109 00c0 3C209FE5 		ldr	r2, .L17
+ 110 00c4 1030CDE5 		strb	r3, [sp, #16]
+ 111 00c8 38309FE5 		ldr	r3, .L17+4
+ 112 00cc 14208DE5 		str	r2, [sp, #20]
+ 113 00d0 34209FE5 		ldr	r2, .L17+8
+ 114 00d4 0710A0E3 		mov	r1, #7
+ 115 00d8 18308DE5 		str	r3, [sp, #24]
+ 116 00dc 0D00A0E1 		mov	r0, sp
+ 117 00e0 0030A0E3 		mov	r3, #0	@ movhi
+ 118 00e4 B010CDE1 		strh	r1, [sp, #0]	@ movhi
+ 119 00e8 1C208DE5 		str	r2, [sp, #28]
+ 120 00ec 1110CDE5 		strb	r1, [sp, #17]
+ 121 00f0 B230CDE1 		strh	r3, [sp, #2]	@ movhi
+ 122 00f4 FEFFFFEB 		bl	spi_transmit
+ 123 00f8 20D08DE2 		add	sp, sp, #32
+ 124 00fc 04E09DE4 		ldr	lr, [sp], #4
+ 125 0100 1EFF2FE1 		bx	lr
+ 126              	.L18:
+ 127              		.align	2
+ 128              	.L17:
+ 129 0104 00000000 		.word	sca3100_select
+ 130 0108 00000000 		.word	sca3100_unselect
+ 131 010c 00000000 		.word	sca3100_on_spi_write
+ 133              		.align	2
+ 134              		.global	sca3100_init
+ 136              	sca3100_init:
+ 137              		@ Function supports interworking.
+ 138              		@ args = 0, pretend = 0, frame = 0
+ 139              		@ frame_needed = 0, uses_anonymous_args = 0
+ 140 0110 0E22A0E3 		mov	r2, #-536870912
+ 141 0114 0A2982E2 		add	r2, r2, #163840
+ 142 0118 183092E5 		ldr	r3, [r2, #24]
+ 143 011c 013783E3 		orr	r3, r3, #262144
+ 144 0120 04E02DE5 		str	lr, [sp, #-4]!
+ 145 0124 183082E5 		str	r3, [r2, #24]
+ 146 0128 BAFFFFEB 		bl	sca3100_unselect
+ 147 012c 18209FE5 		ldr	r2, .L21
+ 148 0130 0030A0E3 		mov	r3, #0
+ 149 0134 083082E5 		str	r3, [r2, #8]
+ 150 0138 003082E5 		str	r3, [r2, #0]
+ 151 013c 043082E5 		str	r3, [r2, #4]
+ 152 0140 FEFFFFEB 		bl	sca3100_reset_porst_bit
+ 153 0144 04E09DE4 		ldr	lr, [sp], #4
+ 154 0148 FEFFFFEA 		b	sca3100_read_int_status
+ 155              	.L22:
+ 156              		.align	2
+ 157              	.L21:
+ 158 014c 00000000 		.word	sca3100_values
+ 160              		.align	2
+ 161              		.global	sca3100_read_res
+ 163              	sca3100_read_res:
+ 164              		@ Function supports interworking.
+ 165              		@ args = 0, pretend = 0, frame = 32
+ 166              		@ frame_needed = 0, uses_anonymous_args = 0
+ 167 0150 04E02DE5 		str	lr, [sp, #-4]!
+ 168 0154 58309FE5 		ldr	r3, .L25
+ 169 0158 20D04DE2 		sub	sp, sp, #32
+ 170 015c 14308DE5 		str	r3, [sp, #20]
+ 171 0160 50309FE5 		ldr	r3, .L25+4
+ 172 0164 50209FE5 		ldr	r2, .L25+8
+ 173 0168 0010A0E3 		mov	r1, #0
+ 174 016c 07C0A0E3 		mov	ip, #7
+ 175 0170 1C308DE5 		str	r3, [sp, #28]
+ 176 0174 0D00A0E1 		mov	r0, sp
+ 177 0178 1530A0E3 		mov	r3, #21	@ movhi
+ 178 017c BC10CDE1 		strh	r1, [sp, #12]	@ movhi
+ 179 0180 10C0CDE5 		strb	ip, [sp, #16]
+ 180 0184 18208DE5 		str	r2, [sp, #24]
+ 181 0188 11C0CDE5 		strb	ip, [sp, #17]
+ 182 018c B030CDE1 		strh	r3, [sp, #0]	@ movhi
+ 183 0190 B210CDE1 		strh	r1, [sp, #2]	@ movhi
+ 184 0194 B410CDE1 		strh	r1, [sp, #4]	@ movhi
+ 185 0198 B610CDE1 		strh	r1, [sp, #6]	@ movhi
+ 186 019c B810CDE1 		strh	r1, [sp, #8]	@ movhi
+ 187 01a0 BA10CDE1 		strh	r1, [sp, #10]	@ movhi
+ 188 01a4 FEFFFFEB 		bl	spi_transmit
+ 189 01a8 20D08DE2 		add	sp, sp, #32
+ 190 01ac 04E09DE4 		ldr	lr, [sp], #4
+ 191 01b0 1EFF2FE1 		bx	lr
+ 192              	.L26:
+ 193              		.align	2
+ 194              	.L25:
+ 195 01b4 00000000 		.word	sca3100_select
+ 196 01b8 00000000 		.word	sca3100_on_spi_int
+ 197 01bc 00000000 		.word	sca3100_unselect
+ 199              		.align	2
+ 201              	sca3100_on_spi_read_reg:
+ 202              		@ Function supports interworking.
+ 203              		@ args = 0, pretend = 0, frame = 32
+ 204              		@ frame_needed = 0, uses_anonymous_args = 0
+ 205 01c0 04E02DE5 		str	lr, [sp, #-4]!
+ 206 01c4 07C0A0E3 		mov	ip, #7
+ 207 01c8 20D04DE2 		sub	sp, sp, #32
+ 208 01cc 11C0CDE5 		strb	ip, [sp, #17]
+ 209 01d0 0E32A0E3 		mov	r3, #-536870912
+ 210 01d4 1A3983E2 		add	r3, r3, #425984
+ 211 01d8 B810D3E1 		ldrh	r1, [r3, #8]
+ 212 01dc B820D3E1 		ldrh	r2, [r3, #8]
+ 213 01e0 0228A0E1 		mov	r2, r2, asl #16
+ 214 01e4 2228A0E1 		mov	r2, r2, lsr #16
+ 215 01e8 500012E3 		tst	r2, #80
+ 216 01ec 0200001A 		bne	.L28
+ 217 01f0 200012E3 		tst	r2, #32
+ 218 01f4 0D00A0E1 		mov	r0, sp
+ 219 01f8 0400000A 		beq	.L33
+ 220              	.L28:
+ 221 01fc 1000A0E3 		mov	r0, #16
+ 222 0200 FEFFFFEB 		bl	led_off
+ 223 0204 20D08DE2 		add	sp, sp, #32
+ 224 0208 04E09DE4 		ldr	lr, [sp], #4
+ 225 020c 1EFF2FE1 		bx	lr
+ 226              	.L33:
+ 227 0210 0230A0E3 		mov	r3, #2
+ 228 0214 28209FE5 		ldr	r2, .L34
+ 229 0218 1030CDE5 		strb	r3, [sp, #16]
+ 230 021c 24309FE5 		ldr	r3, .L34+4
+ 231 0220 14208DE5 		str	r2, [sp, #20]
+ 232 0224 20209FE5 		ldr	r2, .L34+8
+ 233 0228 18308DE5 		str	r3, [sp, #24]
+ 234 022c 0430A0E3 		mov	r3, #4	@ movhi
+ 235 0230 B0C0CDE1 		strh	ip, [sp, #0]	@ movhi
+ 236 0234 1C208DE5 		str	r2, [sp, #28]
+ 237 0238 B230CDE1 		strh	r3, [sp, #2]	@ movhi
+ 238 023c FEFFFFEB 		bl	spi_transmit
+ 239 0240 EDFFFFEA 		b	.L28
+ 240              	.L35:
+ 241              		.align	2
+ 242              	.L34:
+ 243 0244 00000000 		.word	sca3100_select
+ 244 0248 00000000 		.word	sca3100_unselect
+ 245 024c 00000000 		.word	sca3100_on_spi_write
+ 247              		.align	2
+ 249              	sca3100_on_spi_int:
+ 250              		@ Function supports interworking.
+ 251              		@ args = 0, pretend = 0, frame = 32
+ 252              		@ frame_needed = 0, uses_anonymous_args = 0
+ 253 0250 0E32A0E3 		mov	r3, #-536870912
+ 254 0254 1A3983E2 		add	r3, r3, #425984
+ 255 0258 30402DE9 		stmfd	sp!, {r4, r5, lr}
+ 256 025c B820D3E1 		ldrh	r2, [r3, #8]
+ 257 0260 0228A0E1 		mov	r2, r2, asl #16
+ 258 0264 2218A0E1 		mov	r1, r2, lsr #16
+ 259 0268 7E3001E2 		and	r3, r1, #126
+ 260 026c 20D04DE2 		sub	sp, sp, #32
+ 261 0270 0720A0E3 		mov	r2, #7
+ 262 0274 020053E3 		cmp	r3, #2
+ 263 0278 1120CDE5 		strb	r2, [sp, #17]
+ 264 027c FF4001E2 		and	r4, r1, #255
+ 265 0280 3000000A 		beq	.L37
+ 266 0284 100011E3 		tst	r1, #16
+ 267 0288 A432A001 		moveq	r3, r4, lsr #5
+ 268 028c 01300302 		andeq	r3, r3, #1
+ 269 0290 07204212 		subne	r2, r2, #7
+ 270 0294 01202302 		eoreq	r2, r3, #1
+ 271 0298 080014E3 		tst	r4, #8
+ 272 029c 2100001A 		bne	.L64
+ 273 02a0 063004E2 		and	r3, r4, #6
+ 274 02a4 020053E3 		cmp	r3, #2
+ 275 02a8 2400000A 		beq	.L65
+ 276              	.L44:
+ 277 02ac 0E12A0E3 		mov	r1, #-536870912
+ 278 02b0 1A1981E2 		add	r1, r1, #425984
+ 279 02b4 0020A0E3 		mov	r2, #0
+ 280              	.L56:
+ 281 02b8 012082E2 		add	r2, r2, #1
+ 282 02bc 060052E3 		cmp	r2, #6
+ 283 02c0 B830D1E1 		ldrh	r3, [r1, #8]
+ 284 02c4 FBFFFF1A 		bne	.L56
+ 285              	.L55:
+ 286 02c8 7C0014E3 		tst	r4, #124
+ 287 02cc 1200000A 		beq	.L62
+ 288 02d0 205014E2 		ands	r5, r4, #32
+ 289 02d4 5200001A 		bne	.L66
+ 290 02d8 180014E3 		tst	r4, #24
+ 291 02dc 0E00000A 		beq	.L62
+ 292 02e0 1000A0E3 		mov	r0, #16
+ 293 02e4 FEFFFFEB 		bl	led_on
+ 294 02e8 0230A0E3 		mov	r3, #2
+ 295 02ec 74219FE5 		ldr	r2, .L67
+ 296 02f0 1030CDE5 		strb	r3, [sp, #16]
+ 297 02f4 70319FE5 		ldr	r3, .L67+4
+ 298 02f8 14208DE5 		str	r2, [sp, #20]
+ 299 02fc 6C219FE5 		ldr	r2, .L67+8
+ 300 0300 18308DE5 		str	r3, [sp, #24]
+ 301 0304 0D00A0E1 		mov	r0, sp
+ 302 0308 5830A0E3 		mov	r3, #88	@ movhi
+ 303 030c B250CDE1 		strh	r5, [sp, #2]	@ movhi
+ 304 0310 1C208DE5 		str	r2, [sp, #28]
+ 305 0314 B030CDE1 		strh	r3, [sp, #0]	@ movhi
+ 306 0318 FEFFFFEB 		bl	spi_transmit
+ 307              	.L62:
+ 308 031c 20D08DE2 		add	sp, sp, #32
+ 309 0320 3040BDE8 		ldmfd	sp!, {r4, r5, lr}
+ 310 0324 1EFF2FE1 		bx	lr
+ 311              	.L64:
+ 312 0328 1000A0E3 		mov	r0, #16
+ 313 032c FEFFFFEB 		bl	led_on
+ 314 0330 063004E2 		and	r3, r4, #6
+ 315 0334 020053E3 		cmp	r3, #2
+ 316 0338 0020A0E3 		mov	r2, #0
+ 317 033c DAFFFF1A 		bne	.L44
+ 318              	.L65:
+ 319 0340 000052E3 		cmp	r2, #0
+ 320 0344 D8FFFF0A 		beq	.L44
+ 321              	.L37:
+ 322 0348 0E32A0E3 		mov	r3, #-536870912
+ 323 034c 1A3983E2 		add	r3, r3, #425984
+ 324 0350 B820D3E1 		ldrh	r2, [r3, #8]
+ 325 0354 B810D3E1 		ldrh	r1, [r3, #8]
+ 326 0358 0224A0E1 		mov	r2, r2, asl #8
+ 327 035c 011CA0E1 		mov	r1, r1, asl #24
+ 328 0360 FF2C02E2 		and	r2, r2, #65280
+ 329 0364 212C82E1 		orr	r2, r2, r1, lsr #24
+ 330 0368 2221A0E1 		mov	r2, r2, lsr #2
+ 331 036c 020A12E3 		tst	r2, #8192
+ 332 0370 0E3AC213 		bicne	r3, r2, #57344
+ 333 0374 0200A001 		moveq	r0, r2
+ 334 0378 023A4312 		subne	r3, r3, #8192
+ 335 037c 0E22A0E3 		mov	r2, #-536870912
+ 336 0380 0338A011 		movne	r3, r3, asl #16
+ 337 0384 1A2982E2 		add	r2, r2, #425984
+ 338 0388 2308A011 		movne	r0, r3, lsr #16
+ 339 038c B830D2E1 		ldrh	r3, [r2, #8]
+ 340 0390 B810D2E1 		ldrh	r1, [r2, #8]
+ 341 0394 0334A0E1 		mov	r3, r3, asl #8
+ 342 0398 011CA0E1 		mov	r1, r1, asl #24
+ 343 039c FF3C03E2 		and	r3, r3, #65280
+ 344 03a0 213C83E1 		orr	r3, r3, r1, lsr #24
+ 345 03a4 2331A0E1 		mov	r3, r3, lsr #2
+ 346 03a8 020A13E3 		tst	r3, #8192
+ 347 03ac 0028A0E1 		mov	r2, r0, asl #16
+ 348 03b0 BCC09FE5 		ldr	ip, .L67+12
+ 349 03b4 0E3AC313 		bicne	r3, r3, #57344
+ 350 03b8 4228A0E1 		mov	r2, r2, asr #16
+ 351 03bc 023A4312 		subne	r3, r3, #8192
+ 352 03c0 00208CE5 		str	r2, [ip, #0]
+ 353 03c4 0E22A0E3 		mov	r2, #-536870912
+ 354 03c8 0338A011 		movne	r3, r3, asl #16
+ 355 03cc 1A2982E2 		add	r2, r2, #425984
+ 356 03d0 2308A011 		movne	r0, r3, lsr #16
+ 357 03d4 0300A001 		moveq	r0, r3
+ 358 03d8 B830D2E1 		ldrh	r3, [r2, #8]
+ 359 03dc B810D2E1 		ldrh	r1, [r2, #8]
+ 360 03e0 0334A0E1 		mov	r3, r3, asl #8
+ 361 03e4 FF3C03E2 		and	r3, r3, #65280
+ 362 03e8 011CA0E1 		mov	r1, r1, asl #24
+ 363 03ec 213C83E1 		orr	r3, r3, r1, lsr #24
+ 364 03f0 2331A0E1 		mov	r3, r3, lsr #2
+ 365 03f4 020A13E3 		tst	r3, #8192
+ 366 03f8 0E3AC313 		bicne	r3, r3, #57344
+ 367 03fc 023A4312 		subne	r3, r3, #8192
+ 368 0400 0338A011 		movne	r3, r3, asl #16
+ 369 0404 2338A011 		movne	r3, r3, lsr #16
+ 370 0408 0028A0E1 		mov	r2, r0, asl #16
+ 371 040c 0338A0E1 		mov	r3, r3, asl #16
+ 372 0410 4228A0E1 		mov	r2, r2, asr #16
+ 373 0414 4338A0E1 		mov	r3, r3, asr #16
+ 374 0418 08208CE5 		str	r2, [ip, #8]
+ 375 041c 04308CE5 		str	r3, [ip, #4]
+ 376 0420 A8FFFFEA 		b	.L55
+ 377              	.L66:
+ 378 0424 0230A0E3 		mov	r3, #2
+ 379 0428 1030CDE5 		strb	r3, [sp, #16]
+ 380 042c 34209FE5 		ldr	r2, .L67
+ 381 0430 34309FE5 		ldr	r3, .L67+4
+ 382 0434 14208DE5 		str	r2, [sp, #20]
+ 383 0438 18308DE5 		str	r3, [sp, #24]
+ 384 043c 34209FE5 		ldr	r2, .L67+16
+ 385 0440 0730A0E3 		mov	r3, #7	@ movhi
+ 386 0444 0D00A0E1 		mov	r0, sp
+ 387 0448 B030CDE1 		strh	r3, [sp, #0]	@ movhi
+ 388 044c 0030A0E3 		mov	r3, #0	@ movhi
+ 389 0450 1C208DE5 		str	r2, [sp, #28]
+ 390 0454 B230CDE1 		strh	r3, [sp, #2]	@ movhi
+ 391 0458 FEFFFFEB 		bl	spi_transmit
+ 392 045c 1000A0E3 		mov	r0, #16
+ 393 0460 FEFFFFEB 		bl	led_on
+ 394 0464 ACFFFFEA 		b	.L62
+ 395              	.L68:
+ 396              		.align	2
+ 397              	.L67:
+ 398 0468 00000000 		.word	sca3100_select
+ 399 046c 00000000 		.word	sca3100_unselect
+ 400 0470 00000000 		.word	sca3100_on_spi_read_reg
+ 401 0474 00000000 		.word	sca3100_values
+ 402 0478 00000000 		.word	sca3100_on_spi_write
+ 404              		.comm	mavlink_system,8,4
+ 405              		.comm	sca3100_values,12,4
+ 406              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
+DEFINED SYMBOLS
+                            *ABS*:00000000 sca3100.c
+C:\Users\Srdjan\AppData\Local\Temp/ccG0aaaa.s:5      .text:00000000 sca3100_select
+C:\Users\Srdjan\AppData\Local\Temp/ccG0aaaa.s:10     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccG0aaaa.s:20     .text:00000018 sca3100_unselect
+C:\Users\Srdjan\AppData\Local\Temp/ccG0aaaa.s:36     .text:00000030 sca3100_get_value
+C:\Users\Srdjan\AppData\Local\Temp/ccG0aaaa.s:48     .text:0000003c $d
+                            *COM*:0000000c sca3100_values
+C:\Users\Srdjan\AppData\Local\Temp/ccG0aaaa.s:52     .text:00000040 sca3100_on_spi_write
+C:\Users\Srdjan\AppData\Local\Temp/ccG0aaaa.s:57     .text:00000040 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccG0aaaa.s:67     .text:00000054 sca3100_read_int_status
+C:\Users\Srdjan\AppData\Local\Temp/ccG0aaaa.s:95     .text:000000a8 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccG0aaaa.s:201    .text:000001c0 sca3100_on_spi_read_reg
+C:\Users\Srdjan\AppData\Local\Temp/ccG0aaaa.s:102    .text:000000b4 sca3100_reset_porst_bit
+C:\Users\Srdjan\AppData\Local\Temp/ccG0aaaa.s:106    .text:000000b4 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccG0aaaa.s:129    .text:00000104 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccG0aaaa.s:136    .text:00000110 sca3100_init
+C:\Users\Srdjan\AppData\Local\Temp/ccG0aaaa.s:140    .text:00000110 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccG0aaaa.s:158    .text:0000014c $d
+C:\Users\Srdjan\AppData\Local\Temp/ccG0aaaa.s:163    .text:00000150 sca3100_read_res
+C:\Users\Srdjan\AppData\Local\Temp/ccG0aaaa.s:167    .text:00000150 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccG0aaaa.s:195    .text:000001b4 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccG0aaaa.s:249    .text:00000250 sca3100_on_spi_int
+C:\Users\Srdjan\AppData\Local\Temp/ccG0aaaa.s:205    .text:000001c0 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccG0aaaa.s:243    .text:00000244 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccG0aaaa.s:253    .text:00000250 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccG0aaaa.s:398    .text:00000468 $d
+                            *COM*:00000008 mavlink_system
+
+UNDEFINED SYMBOLS
+spi_transmit
+led_off
+led_on

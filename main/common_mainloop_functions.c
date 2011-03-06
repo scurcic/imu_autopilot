@@ -333,6 +333,7 @@ void handle_controller_timeouts(uint64_t loop_start_time)
 			(global_data.state.vision_ok > 0) ? 3 : global_data.state.position_fix, // Send 3D fix if vision is available
 					(global_data.state.vision_ok > 0) ? 3 : 0, // Send 3D fix for vision always
 							global_data.state.gps_ok,
+							255,
 							global_data.state.attitude_control_enabled,
 							global_data.state.position_xy_control_enabled,
 							global_data.state.position_z_control_enabled,
@@ -342,6 +343,7 @@ void handle_controller_timeouts(uint64_t loop_start_time)
 			(global_data.state.vision_ok > 0) ? 3 : global_data.state.position_fix, // Send 3D fix if vision is available
 					(global_data.state.vision_ok > 0) ? 3 : 0, // Send 3D fix for vision always
 							global_data.state.gps_ok,
+							255,
 							global_data.state.attitude_control_enabled,
 							global_data.state.position_xy_control_enabled,
 							global_data.state.position_z_control_enabled,
@@ -668,10 +670,20 @@ void camera_shutter_handling(uint64_t loop_start_time)
 		// Emit timestamp of this image
 		mavlink_msg_image_triggered_send(MAVLINK_COMM_0, usec,
 				shutter_get_seq(), global_data.attitude.x,
-				global_data.attitude.y);
+				global_data.attitude.y,
+				global_data.attitude.z,
+				0,
+				0,
+				0,
+				0);
 		mavlink_msg_image_triggered_send(MAVLINK_COMM_1, usec,
 				shutter_get_seq(), global_data.attitude.x,
-				global_data.attitude.y);
+				global_data.attitude.y,
+				global_data.attitude.z,
+				0,
+				0,
+				0,
+				0);
 	}
 }
 

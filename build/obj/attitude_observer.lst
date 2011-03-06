@@ -1,0 +1,487 @@
+   1              		.file	"attitude_observer.c"
+   2              		.text
+   3              		.align	2
+   4              		.global	attitude_observer_init
+   6              	attitude_observer_init:
+   7              		@ Function supports interworking.
+   8              		@ args = 12, pretend = 4, frame = 12
+   9              		@ frame_needed = 0, uses_anonymous_args = 0
+  10 0000 04D04DE2 		sub	sp, sp, #4
+  11 0004 04E02DE5 		str	lr, [sp, #-4]!
+  12 0008 0CD04DE2 		sub	sp, sp, #12
+  13 000c 07008DE8 		stmia	sp, {r0, r1, r2}
+  14 0010 0CE08DE2 		add	lr, sp, #12
+  15 0014 0430AEE5 		str	r3, [lr, #4]!
+  16 0018 20309FE5 		ldr	r3, .L3
+  17 001c 07009DE8 		ldmia	sp, {r0, r1, r2}
+  18 0020 1CC09FE5 		ldr	ip, .L3+4
+  19 0024 070083E8 		stmia	r3, {r0, r1, r2}
+  20 0028 07009EE8 		ldmia	lr, {r0, r1, r2}
+  21 002c 07008CE8 		stmia	ip, {r0, r1, r2}
+  22 0030 0CD08DE2 		add	sp, sp, #12
+  23 0034 04E09DE4 		ldr	lr, [sp], #4
+  24 0038 04D08DE2 		add	sp, sp, #4
+  25 003c 1EFF2FE1 		bx	lr
+  26              	.L4:
+  27              		.align	2
+  28              	.L3:
+  29 0040 00000000 		.word	state_accel
+  30 0044 0C000000 		.word	state_magnet
+  32              		.global	__mulsf3
+  33              		.global	__addsf3
+  34              		.global	__subsf3
+  35              		.align	2
+  36              		.global	attitude_observer_predict
+  38              	attitude_observer_predict:
+  39              		@ Function supports interworking.
+  40              		@ args = 0, pretend = 0, frame = 16
+  41              		@ frame_needed = 0, uses_anonymous_args = 0
+  42 0048 F04F2DE9 		stmfd	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+  43 004c 10D04DE2 		sub	sp, sp, #16
+  44 0050 04308DE2 		add	r3, sp, #4
+  45 0054 070083E8 		stmia	r3, {r0, r1, r2}
+  46 0058 A8419FE5 		ldr	r4, .L7
+  47 005c 04109DE5 		ldr	r1, [sp, #4]	@ float
+  48 0060 0400A0E1 		mov	r0, r4
+  49 0064 FEFFFFEB 		bl	__mulsf3
+  50 0068 08109DE5 		ldr	r1, [sp, #8]	@ float
+  51 006c 00B0A0E1 		mov	fp, r0
+  52 0070 0400A0E1 		mov	r0, r4
+  53 0074 FEFFFFEB 		bl	__mulsf3
+  54 0078 0C109DE5 		ldr	r1, [sp, #12]	@ float
+  55 007c 00008DE5 		str	r0, [sp, #0]	@ float
+  56 0080 0400A0E1 		mov	r0, r4
+  57 0084 FEFFFFEB 		bl	__mulsf3
+  58 0088 7C619FE5 		ldr	r6, .L7+4
+  59 008c 048096E5 		ldr	r8, [r6, #4]	@ float
+  60 0090 0810A0E1 		mov	r1, r8
+  61 0094 00A0A0E1 		mov	sl, r0
+  62 0098 FEFFFFEB 		bl	__mulsf3
+  63 009c 005096E5 		ldr	r5, [r6, #0]	@ float
+  64 00a0 0010A0E1 		mov	r1, r0
+  65 00a4 0500A0E1 		mov	r0, r5
+  66 00a8 FEFFFFEB 		bl	__addsf3
+  67 00ac 087096E5 		ldr	r7, [r6, #8]	@ float
+  68 00b0 0040A0E1 		mov	r4, r0
+  69 00b4 0710A0E1 		mov	r1, r7
+  70 00b8 00009DE5 		ldr	r0, [sp, #0]	@ float
+  71 00bc FEFFFFEB 		bl	__mulsf3
+  72 00c0 0010A0E1 		mov	r1, r0
+  73 00c4 0400A0E1 		mov	r0, r4
+  74 00c8 FEFFFFEB 		bl	__subsf3
+  75 00cc 02918AE2 		add	r9, sl, #-2147483648
+  76 00d0 000086E5 		str	r0, [r6, #0]	@ float
+  77 00d4 0910A0E1 		mov	r1, r9
+  78 00d8 0500A0E1 		mov	r0, r5
+  79 00dc FEFFFFEB 		bl	__mulsf3
+  80 00e0 0010A0E1 		mov	r1, r0
+  81 00e4 0800A0E1 		mov	r0, r8
+  82 00e8 FEFFFFEB 		bl	__addsf3
+  83 00ec 0710A0E1 		mov	r1, r7
+  84 00f0 0040A0E1 		mov	r4, r0
+  85 00f4 0B00A0E1 		mov	r0, fp
+  86 00f8 FEFFFFEB 		bl	__mulsf3
+  87 00fc 0010A0E1 		mov	r1, r0
+  88 0100 0400A0E1 		mov	r0, r4
+  89 0104 FEFFFFEB 		bl	__addsf3
+  90 0108 0510A0E1 		mov	r1, r5
+  91 010c 040086E5 		str	r0, [r6, #4]	@ float
+  92 0110 00009DE5 		ldr	r0, [sp, #0]	@ float
+  93 0114 FEFFFFEB 		bl	__mulsf3
+  94 0118 0810A0E1 		mov	r1, r8
+  95 011c 0040A0E1 		mov	r4, r0
+  96 0120 0B00A0E1 		mov	r0, fp
+  97 0124 FEFFFFEB 		bl	__mulsf3
+  98 0128 0010A0E1 		mov	r1, r0
+  99 012c 0400A0E1 		mov	r0, r4
+ 100 0130 FEFFFFEB 		bl	__subsf3
+ 101 0134 0010A0E1 		mov	r1, r0
+ 102 0138 0700A0E1 		mov	r0, r7
+ 103 013c FEFFFFEB 		bl	__addsf3
+ 104 0140 C8509FE5 		ldr	r5, .L7+8
+ 105 0144 048095E5 		ldr	r8, [r5, #4]	@ float
+ 106 0148 080086E5 		str	r0, [r6, #8]	@ float
+ 107 014c 0810A0E1 		mov	r1, r8
+ 108 0150 0A00A0E1 		mov	r0, sl
+ 109 0154 FEFFFFEB 		bl	__mulsf3
+ 110 0158 006095E5 		ldr	r6, [r5, #0]	@ float
+ 111 015c 0010A0E1 		mov	r1, r0
+ 112 0160 0600A0E1 		mov	r0, r6
+ 113 0164 FEFFFFEB 		bl	__addsf3
+ 114 0168 087095E5 		ldr	r7, [r5, #8]	@ float
+ 115 016c 0040A0E1 		mov	r4, r0
+ 116 0170 0710A0E1 		mov	r1, r7
+ 117 0174 00009DE5 		ldr	r0, [sp, #0]	@ float
+ 118 0178 FEFFFFEB 		bl	__mulsf3
+ 119 017c 0010A0E1 		mov	r1, r0
+ 120 0180 0400A0E1 		mov	r0, r4
+ 121 0184 FEFFFFEB 		bl	__subsf3
+ 122 0188 0610A0E1 		mov	r1, r6
+ 123 018c 000085E5 		str	r0, [r5, #0]	@ float
+ 124 0190 0900A0E1 		mov	r0, r9
+ 125 0194 FEFFFFEB 		bl	__mulsf3
+ 126 0198 0010A0E1 		mov	r1, r0
+ 127 019c 0800A0E1 		mov	r0, r8
+ 128 01a0 FEFFFFEB 		bl	__addsf3
+ 129 01a4 0710A0E1 		mov	r1, r7
+ 130 01a8 0040A0E1 		mov	r4, r0
+ 131 01ac 0B00A0E1 		mov	r0, fp
+ 132 01b0 FEFFFFEB 		bl	__mulsf3
+ 133 01b4 0010A0E1 		mov	r1, r0
+ 134 01b8 0400A0E1 		mov	r0, r4
+ 135 01bc FEFFFFEB 		bl	__addsf3
+ 136 01c0 0610A0E1 		mov	r1, r6
+ 137 01c4 040085E5 		str	r0, [r5, #4]	@ float
+ 138 01c8 00009DE5 		ldr	r0, [sp, #0]	@ float
+ 139 01cc FEFFFFEB 		bl	__mulsf3
+ 140 01d0 0810A0E1 		mov	r1, r8
+ 141 01d4 0040A0E1 		mov	r4, r0
+ 142 01d8 0B00A0E1 		mov	r0, fp
+ 143 01dc FEFFFFEB 		bl	__mulsf3
+ 144 01e0 0010A0E1 		mov	r1, r0
+ 145 01e4 0400A0E1 		mov	r0, r4
+ 146 01e8 FEFFFFEB 		bl	__subsf3
+ 147 01ec 0010A0E1 		mov	r1, r0
+ 148 01f0 0700A0E1 		mov	r0, r7
+ 149 01f4 FEFFFFEB 		bl	__addsf3
+ 150 01f8 080085E5 		str	r0, [r5, #8]	@ float
+ 151 01fc 10D08DE2 		add	sp, sp, #16
+ 152 0200 F04FBDE8 		ldmfd	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+ 153 0204 1EFF2FE1 		bx	lr
+ 154              	.L8:
+ 155              		.align	2
+ 156              	.L7:
+ 157 0208 0AD7A33B 		.word	1000593162
+ 158 020c 00000000 		.word	state_accel
+ 159 0210 0C000000 		.word	state_magnet
+ 161              		.global	__floatsisf
+ 162              		.align	2
+ 163              		.global	attitude_observer_correct_accel
+ 165              	attitude_observer_correct_accel:
+ 166              		@ Function supports interworking.
+ 167              		@ args = 0, pretend = 0, frame = 0
+ 168              		@ frame_needed = 0, uses_anonymous_args = 0
+ 169 0214 D8309FE5 		ldr	r3, .L11
+ 170 0218 F0472DE9 		stmfd	sp!, {r4, r5, r6, r7, r8, r9, sl, lr}
+ 171 021c 109393E5 		ldr	r9, [r3, #784]	@ float
+ 172 0220 0040A0E1 		mov	r4, r0
+ 173 0224 0150A0E1 		mov	r5, r1
+ 174 0228 FE05A0E3 		mov	r0, #1065353216
+ 175 022c 0910A0E1 		mov	r1, r9
+ 176 0230 FEFFFFEB 		bl	__subsf3
+ 177 0234 BC709FE5 		ldr	r7, .L11+4
+ 178 0238 001097E5 		ldr	r1, [r7, #0]	@ float
+ 179 023c 0080A0E1 		mov	r8, r0
+ 180 0240 FEFFFFEB 		bl	__mulsf3
+ 181 0244 00A0A0E1 		mov	sl, r0
+ 182 0248 0408A0E1 		mov	r0, r4, asl #16
+ 183 024c 4008A0E1 		mov	r0, r0, asr #16
+ 184 0250 FEFFFFEB 		bl	__floatsisf
+ 185 0254 0010A0E1 		mov	r1, r0
+ 186 0258 0900A0E1 		mov	r0, r9
+ 187 025c FEFFFFEB 		bl	__mulsf3
+ 188 0260 0010A0E1 		mov	r1, r0
+ 189 0264 0A00A0E1 		mov	r0, sl
+ 190 0268 FEFFFFEB 		bl	__addsf3
+ 191 026c 041097E5 		ldr	r1, [r7, #4]	@ float
+ 192 0270 000087E5 		str	r0, [r7, #0]	@ float
+ 193 0274 0800A0E1 		mov	r0, r8
+ 194 0278 FEFFFFEB 		bl	__mulsf3
+ 195 027c 2448A0E1 		mov	r4, r4, lsr #16
+ 196 0280 0448A0E1 		mov	r4, r4, asl #16
+ 197 0284 00A0A0E1 		mov	sl, r0
+ 198 0288 4408A0E1 		mov	r0, r4, asr #16
+ 199 028c FEFFFFEB 		bl	__floatsisf
+ 200 0290 0010A0E1 		mov	r1, r0
+ 201 0294 0900A0E1 		mov	r0, r9
+ 202 0298 FEFFFFEB 		bl	__mulsf3
+ 203 029c 0010A0E1 		mov	r1, r0
+ 204 02a0 0A00A0E1 		mov	r0, sl
+ 205 02a4 FEFFFFEB 		bl	__addsf3
+ 206 02a8 081097E5 		ldr	r1, [r7, #8]	@ float
+ 207 02ac 040087E5 		str	r0, [r7, #4]	@ float
+ 208 02b0 0800A0E1 		mov	r0, r8
+ 209 02b4 FEFFFFEB 		bl	__mulsf3
+ 210 02b8 0568A0E1 		mov	r6, r5, asl #16
+ 211 02bc 2668A0E1 		mov	r6, r6, lsr #16
+ 212 02c0 0668A0E1 		mov	r6, r6, asl #16
+ 213 02c4 0040A0E1 		mov	r4, r0
+ 214 02c8 4608A0E1 		mov	r0, r6, asr #16
+ 215 02cc FEFFFFEB 		bl	__floatsisf
+ 216 02d0 0010A0E1 		mov	r1, r0
+ 217 02d4 0900A0E1 		mov	r0, r9
+ 218 02d8 FEFFFFEB 		bl	__mulsf3
+ 219 02dc 0010A0E1 		mov	r1, r0
+ 220 02e0 0400A0E1 		mov	r0, r4
+ 221 02e4 FEFFFFEB 		bl	__addsf3
+ 222 02e8 080087E5 		str	r0, [r7, #8]	@ float
+ 223 02ec F047BDE8 		ldmfd	sp!, {r4, r5, r6, r7, r8, r9, sl, lr}
+ 224 02f0 1EFF2FE1 		bx	lr
+ 225              	.L12:
+ 226              		.align	2
+ 227              	.L11:
+ 228 02f4 00000000 		.word	global_data
+ 229 02f8 00000000 		.word	state_accel
+ 231              		.align	2
+ 232              		.global	attitude_observer_correct_magnet
+ 234              	attitude_observer_correct_magnet:
+ 235              		@ Function supports interworking.
+ 236              		@ args = 0, pretend = 0, frame = 0
+ 237              		@ frame_needed = 0, uses_anonymous_args = 0
+ 238 02fc F0472DE9 		stmfd	sp!, {r4, r5, r6, r7, r8, r9, sl, lr}
+ 239 0300 BC709FE5 		ldr	r7, .L15
+ 240 0304 BC909FE5 		ldr	r9, .L15+4
+ 241 0308 0040A0E1 		mov	r4, r0
+ 242 030c 0168A0E1 		mov	r6, r1, asl #16
+ 243 0310 0150A0E1 		mov	r5, r1
+ 244 0314 0900A0E1 		mov	r0, r9
+ 245 0318 001097E5 		ldr	r1, [r7, #0]	@ float
+ 246 031c FEFFFFEB 		bl	__mulsf3
+ 247 0320 A4A09FE5 		ldr	sl, .L15+8
+ 248 0324 0080A0E1 		mov	r8, r0
+ 249 0328 0408A0E1 		mov	r0, r4, asl #16
+ 250 032c 4008A0E1 		mov	r0, r0, asr #16
+ 251 0330 FEFFFFEB 		bl	__floatsisf
+ 252 0334 0A10A0E1 		mov	r1, sl
+ 253 0338 FEFFFFEB 		bl	__mulsf3
+ 254 033c 0010A0E1 		mov	r1, r0
+ 255 0340 0800A0E1 		mov	r0, r8
+ 256 0344 FEFFFFEB 		bl	__addsf3
+ 257 0348 041097E5 		ldr	r1, [r7, #4]	@ float
+ 258 034c 000087E5 		str	r0, [r7, #0]	@ float
+ 259 0350 0900A0E1 		mov	r0, r9
+ 260 0354 FEFFFFEB 		bl	__mulsf3
+ 261 0358 2448A0E1 		mov	r4, r4, lsr #16
+ 262 035c 0448A0E1 		mov	r4, r4, asl #16
+ 263 0360 0080A0E1 		mov	r8, r0
+ 264 0364 4408A0E1 		mov	r0, r4, asr #16
+ 265 0368 FEFFFFEB 		bl	__floatsisf
+ 266 036c 0A10A0E1 		mov	r1, sl
+ 267 0370 FEFFFFEB 		bl	__mulsf3
+ 268 0374 0010A0E1 		mov	r1, r0
+ 269 0378 0800A0E1 		mov	r0, r8
+ 270 037c FEFFFFEB 		bl	__addsf3
+ 271 0380 081097E5 		ldr	r1, [r7, #8]	@ float
+ 272 0384 040087E5 		str	r0, [r7, #4]	@ float
+ 273 0388 0900A0E1 		mov	r0, r9
+ 274 038c FEFFFFEB 		bl	__mulsf3
+ 275 0390 2668A0E1 		mov	r6, r6, lsr #16
+ 276 0394 0668A0E1 		mov	r6, r6, asl #16
+ 277 0398 0040A0E1 		mov	r4, r0
+ 278 039c 4608A0E1 		mov	r0, r6, asr #16
+ 279 03a0 FEFFFFEB 		bl	__floatsisf
+ 280 03a4 0A10A0E1 		mov	r1, sl
+ 281 03a8 FEFFFFEB 		bl	__mulsf3
+ 282 03ac 0010A0E1 		mov	r1, r0
+ 283 03b0 0400A0E1 		mov	r0, r4
+ 284 03b4 FEFFFFEB 		bl	__addsf3
+ 285 03b8 080087E5 		str	r0, [r7, #8]	@ float
+ 286 03bc F047BDE8 		ldmfd	sp!, {r4, r5, r6, r7, r8, r9, sl, lr}
+ 287 03c0 1EFF2FE1 		bx	lr
+ 288              	.L16:
+ 289              		.align	2
+ 290              	.L15:
+ 291 03c4 0C000000 		.word	state_magnet
+ 292 03c8 6666663F 		.word	1063675494
+ 293 03cc CDCCCC3D 		.word	1036831949
+ 295              		.global	__extendsfdf2
+ 296              		.global	__truncdfsf2
+ 297              		.global	__divsf3
+ 298              		.global	__muldf3
+ 299              		.global	__adddf3
+ 300              		.global	__subdf3
+ 301              		.align	2
+ 302              		.global	attitude_observer_get_angles
+ 304              	attitude_observer_get_angles:
+ 305              		@ Function supports interworking.
+ 306              		@ args = 0, pretend = 0, frame = 32
+ 307              		@ frame_needed = 0, uses_anonymous_args = 0
+ 308 03d0 F04F2DE9 		stmfd	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+ 309 03d4 F8619FE5 		ldr	r6, .L19
+ 310 03d8 043096E5 		ldr	r3, [r6, #4]
+ 311 03dc 022183E2 		add	r2, r3, #-2147483648
+ 312 03e0 20D04DE2 		sub	sp, sp, #32
+ 313 03e4 00B0A0E1 		mov	fp, r0
+ 314 03e8 0200A0E1 		mov	r0, r2
+ 315 03ec FEFFFFEB 		bl	__extendsfdf2
+ 316 03f0 083096E5 		ldr	r3, [r6, #8]
+ 317 03f4 0040A0E1 		mov	r4, r0
+ 318 03f8 020183E2 		add	r0, r3, #-2147483648
+ 319 03fc 0150A0E1 		mov	r5, r1
+ 320 0400 FEFFFFEB 		bl	__extendsfdf2
+ 321 0404 0020A0E1 		mov	r2, r0
+ 322 0408 0130A0E1 		mov	r3, r1
+ 323 040c 0400A0E1 		mov	r0, r4
+ 324 0410 0510A0E1 		mov	r1, r5
+ 325 0414 FEFFFFEB 		bl	atan2
+ 326 0418 FEFFFFEB 		bl	__truncdfsf2
+ 327 041c 00008BE5 		str	r0, [fp, #0]	@ float
+ 328 0420 1113A0E3 		mov	r1, #1140850688
+ 329 0424 000096E5 		ldr	r0, [r6, #0]	@ float
+ 330 0428 611881E2 		add	r1, r1, #6356992
+ 331 042c FEFFFFEB 		bl	__divsf3
+ 332 0430 FEFFFFEB 		bl	__extendsfdf2
+ 333 0434 FEFFFFEB 		bl	asin
+ 334 0438 FEFFFFEB 		bl	__truncdfsf2
+ 335 043c 04008BE5 		str	r0, [fp, #4]	@ float
+ 336 0440 FEFFFFEB 		bl	__extendsfdf2
+ 337 0444 0070A0E1 		mov	r7, r0
+ 338 0448 00009BE5 		ldr	r0, [fp, #0]	@ float
+ 339 044c 0180A0E1 		mov	r8, r1
+ 340 0450 FEFFFFEB 		bl	__extendsfdf2
+ 341 0454 0040A0E1 		mov	r4, r0
+ 342 0458 0150A0E1 		mov	r5, r1
+ 343 045c FEFFFFEB 		bl	sin
+ 344 0460 03008DE8 		stmia	sp, {r0-r1}
+ 345 0464 0700A0E1 		mov	r0, r7
+ 346 0468 0810A0E1 		mov	r1, r8
+ 347 046c FEFFFFEB 		bl	sin
+ 348 0470 60619FE5 		ldr	r6, .L19+4
+ 349 0474 0090A0E1 		mov	r9, r0
+ 350 0478 040096E5 		ldr	r0, [r6, #4]	@ float
+ 351 047c 01A0A0E1 		mov	sl, r1
+ 352 0480 FEFFFFEB 		bl	__extendsfdf2
+ 353 0484 08008DE5 		str	r0, [sp, #8]
+ 354 0488 0C108DE5 		str	r1, [sp, #12]
+ 355 048c 0400A0E1 		mov	r0, r4
+ 356 0490 0510A0E1 		mov	r1, r5
+ 357 0494 FEFFFFEB 		bl	cos
+ 358 0498 10008DE5 		str	r0, [sp, #16]
+ 359 049c 14108DE5 		str	r1, [sp, #20]
+ 360 04a0 080096E5 		ldr	r0, [r6, #8]	@ float
+ 361 04a4 FEFFFFEB 		bl	__extendsfdf2
+ 362 04a8 18008DE5 		str	r0, [sp, #24]
+ 363 04ac 1C108DE5 		str	r1, [sp, #28]
+ 364 04b0 0700A0E1 		mov	r0, r7
+ 365 04b4 0810A0E1 		mov	r1, r8
+ 366 04b8 FEFFFFEB 		bl	cos
+ 367 04bc 0040A0E1 		mov	r4, r0
+ 368 04c0 000096E5 		ldr	r0, [r6, #0]	@ float
+ 369 04c4 0150A0E1 		mov	r5, r1
+ 370 04c8 FEFFFFEB 		bl	__extendsfdf2
+ 371 04cc 0020A0E1 		mov	r2, r0
+ 372 04d0 0130A0E1 		mov	r3, r1
+ 373 04d4 0400A0E1 		mov	r0, r4
+ 374 04d8 0510A0E1 		mov	r1, r5
+ 375 04dc FEFFFFEB 		bl	__muldf3
+ 376 04e0 0920A0E1 		mov	r2, r9
+ 377 04e4 0040A0E1 		mov	r4, r0
+ 378 04e8 0150A0E1 		mov	r5, r1
+ 379 04ec 0A30A0E1 		mov	r3, sl
+ 380 04f0 03009DE8 		ldmia	sp, {r0-r1}
+ 381 04f4 FEFFFFEB 		bl	__muldf3
+ 382 04f8 08208DE2 		add	r2, sp, #8
+ 383 04fc 0C0092E8 		ldmia	r2, {r2-r3}
+ 384 0500 FEFFFFEB 		bl	__muldf3
+ 385 0504 0020A0E1 		mov	r2, r0
+ 386 0508 0130A0E1 		mov	r3, r1
+ 387 050c 0400A0E1 		mov	r0, r4
+ 388 0510 0510A0E1 		mov	r1, r5
+ 389 0514 FEFFFFEB 		bl	__adddf3
+ 390 0518 10208DE2 		add	r2, sp, #16
+ 391 051c 0C0092E8 		ldmia	r2, {r2-r3}
+ 392 0520 0040A0E1 		mov	r4, r0
+ 393 0524 0150A0E1 		mov	r5, r1
+ 394 0528 0900A0E1 		mov	r0, r9
+ 395 052c 0A10A0E1 		mov	r1, sl
+ 396 0530 FEFFFFEB 		bl	__muldf3
+ 397 0534 18208DE2 		add	r2, sp, #24
+ 398 0538 0C0092E8 		ldmia	r2, {r2-r3}
+ 399 053c FEFFFFEB 		bl	__muldf3
+ 400 0540 0020A0E1 		mov	r2, r0
+ 401 0544 0130A0E1 		mov	r3, r1
+ 402 0548 0400A0E1 		mov	r0, r4
+ 403 054c 0510A0E1 		mov	r1, r5
+ 404 0550 FEFFFFEB 		bl	__adddf3
+ 405 0554 FEFFFFEB 		bl	__truncdfsf2
+ 406 0558 FEFFFFEB 		bl	__extendsfdf2
+ 407 055c 10208DE2 		add	r2, sp, #16
+ 408 0560 0C0092E8 		ldmia	r2, {r2-r3}
+ 409 0564 0060A0E1 		mov	r6, r0
+ 410 0568 0170A0E1 		mov	r7, r1
+ 411 056c 08008DE2 		add	r0, sp, #8
+ 412 0570 030090E8 		ldmia	r0, {r0-r1}
+ 413 0574 FEFFFFEB 		bl	__muldf3
+ 414 0578 18208DE2 		add	r2, sp, #24
+ 415 057c 0C0092E8 		ldmia	r2, {r2-r3}
+ 416 0580 0040A0E1 		mov	r4, r0
+ 417 0584 0150A0E1 		mov	r5, r1
+ 418 0588 03009DE8 		ldmia	sp, {r0-r1}
+ 419 058c FEFFFFEB 		bl	__muldf3
+ 420 0590 0020A0E1 		mov	r2, r0
+ 421 0594 0130A0E1 		mov	r3, r1
+ 422 0598 0400A0E1 		mov	r0, r4
+ 423 059c 0510A0E1 		mov	r1, r5
+ 424 05a0 FEFFFFEB 		bl	__subdf3
+ 425 05a4 FEFFFFEB 		bl	__truncdfsf2
+ 426 05a8 FEFFFFEB 		bl	__extendsfdf2
+ 427 05ac 0020A0E1 		mov	r2, r0
+ 428 05b0 0130A0E1 		mov	r3, r1
+ 429 05b4 0600A0E1 		mov	r0, r6
+ 430 05b8 0710A0E1 		mov	r1, r7
+ 431 05bc FEFFFFEB 		bl	atan2
+ 432 05c0 FEFFFFEB 		bl	__truncdfsf2
+ 433 05c4 08008BE5 		str	r0, [fp, #8]	@ float
+ 434 05c8 20D08DE2 		add	sp, sp, #32
+ 435 05cc F04FBDE8 		ldmfd	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+ 436 05d0 1EFF2FE1 		bx	lr
+ 437              	.L20:
+ 438              		.align	2
+ 439              	.L19:
+ 440 05d4 00000000 		.word	state_accel
+ 441 05d8 0C000000 		.word	state_magnet
+ 443              		.bss
+ 444              		.align	2
+ 445              	state_accel:
+ 446 0000 00000000 		.space	12
+ 446      00000000 
+ 446      00000000 
+ 447              		.align	2
+ 448              	state_magnet:
+ 449 000c 00000000 		.space	12
+ 449      00000000 
+ 449      00000000 
+ 450              		.comm	global_param_id,4,4
+ 451              		.comm	state_fly_id,4,4
+ 452              		.comm	global_data,2588,4
+ 453              		.comm	mavlink_system,8,4
+ 454              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
+DEFINED SYMBOLS
+                            *ABS*:00000000 attitude_observer.c
+C:\Users\Srdjan\AppData\Local\Temp/ccA1aaaa.s:6      .text:00000000 attitude_observer_init
+C:\Users\Srdjan\AppData\Local\Temp/ccA1aaaa.s:10     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccA1aaaa.s:29     .text:00000040 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccA1aaaa.s:445    .bss:00000000 state_accel
+C:\Users\Srdjan\AppData\Local\Temp/ccA1aaaa.s:448    .bss:0000000c state_magnet
+C:\Users\Srdjan\AppData\Local\Temp/ccA1aaaa.s:38     .text:00000048 attitude_observer_predict
+C:\Users\Srdjan\AppData\Local\Temp/ccA1aaaa.s:42     .text:00000048 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccA1aaaa.s:157    .text:00000208 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccA1aaaa.s:165    .text:00000214 attitude_observer_correct_accel
+C:\Users\Srdjan\AppData\Local\Temp/ccA1aaaa.s:169    .text:00000214 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccA1aaaa.s:228    .text:000002f4 $d
+                            *COM*:00000a1c global_data
+C:\Users\Srdjan\AppData\Local\Temp/ccA1aaaa.s:234    .text:000002fc attitude_observer_correct_magnet
+C:\Users\Srdjan\AppData\Local\Temp/ccA1aaaa.s:238    .text:000002fc $a
+C:\Users\Srdjan\AppData\Local\Temp/ccA1aaaa.s:291    .text:000003c4 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccA1aaaa.s:304    .text:000003d0 attitude_observer_get_angles
+C:\Users\Srdjan\AppData\Local\Temp/ccA1aaaa.s:308    .text:000003d0 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccA1aaaa.s:440    .text:000005d4 $d
+                            *COM*:00000004 global_param_id
+                            *COM*:00000004 state_fly_id
+                            *COM*:00000008 mavlink_system
+
+UNDEFINED SYMBOLS
+__mulsf3
+__addsf3
+__subsf3
+__floatsisf
+__extendsfdf2
+__truncdfsf2
+__divsf3
+__muldf3
+__adddf3
+__subdf3
+atan2
+asin
+sin
+cos

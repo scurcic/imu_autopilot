@@ -1,0 +1,421 @@
+   1              		.file	"sys_time.c"
+   2              		.text
+   3              		.align	2
+   4              		.global	timer0_init
+   6              	timer0_init:
+   7              		@ Function supports interworking.
+   8              		@ args = 0, pretend = 0, frame = 0
+   9              		@ frame_needed = 0, uses_anonymous_args = 0
+  10              		@ link register save eliminated.
+  11 0000 0E32A0E3 		mov	r3, #-536870912
+  12 0004 013983E2 		add	r3, r3, #16384
+  13 0008 0220A0E3 		mov	r2, #2
+  14 000c 042083E5 		str	r2, [r3, #4]
+  15 0010 0010A0E3 		mov	r1, #0
+  16 0014 012042E2 		sub	r2, r2, #1
+  17 0018 0C1083E5 		str	r1, [r3, #12]
+  18 001c 141083E5 		str	r1, [r3, #20]
+  19 0020 281083E5 		str	r1, [r3, #40]
+  20 0024 3C1083E5 		str	r1, [r3, #60]
+  21 0028 042083E5 		str	r2, [r3, #4]
+  22 002c 0F1CE0E3 		mvn	r1, #3840
+  23 0030 F33011E5 		ldr	r3, [r1, #-243]
+  24 0034 0F2082E2 		add	r2, r2, #15
+  25 0038 1030C3E3 		bic	r3, r3, #16
+  26 003c F33001E5 		str	r3, [r1, #-243]
+  27 0040 EF2001E5 		str	r2, [r1, #-239]
+  28 0044 0C209FE5 		ldr	r2, .L3
+  29 0048 2430A0E3 		mov	r3, #36
+  30 004c 0D3181E5 		str	r3, [r1, #269]
+  31              		@ lr needed for prologue
+  32 0050 0D2081E5 		str	r2, [r1, #13]
+  33 0054 1EFF2FE1 		bx	lr
+  34              	.L4:
+  35              		.align	2
+  36              	.L3:
+  37 0058 00000000 		.word	TIMER0_ISR
+  39              		.align	2
+  40              		.global	sys_time_init
+  42              	sys_time_init:
+  43              		@ Function supports interworking.
+  44              		@ args = 0, pretend = 0, frame = 0
+  45              		@ frame_needed = 0, uses_anonymous_args = 0
+  46              		@ link register save eliminated.
+  47              		@ lr needed for prologue
+  48 005c FEFFFFEA 		b	timer0_init
+  50              		.align	2
+  51              		.global	sys_time_periodic_init
+  53              	sys_time_periodic_init:
+  54              		@ Function supports interworking.
+  55              		@ args = 0, pretend = 0, frame = 0
+  56              		@ frame_needed = 0, uses_anonymous_args = 0
+  57              		@ link register save eliminated.
+  58 0060 0E12A0E3 		mov	r1, #-536870912
+  59 0064 011981E2 		add	r1, r1, #16384
+  60 0068 20309FE5 		ldr	r3, .L9
+  61 006c 142091E5 		ldr	r2, [r1, #20]
+  62 0070 0000A0E3 		mov	r0, #0
+  63 0074 0000C3E5 		strb	r0, [r3, #0]
+  64 0078 E538A0E3 		mov	r3, #15007744
+  65 007c 402082E3 		orr	r2, r2, #64
+  66 0080 793D43E2 		sub	r3, r3, #7744
+  67 0084 142081E5 		str	r2, [r1, #20]
+  68              		@ lr needed for prologue
+  69 0088 203081E5 		str	r3, [r1, #32]
+  70 008c 1EFF2FE1 		bx	lr
+  71              	.L10:
+  72              		.align	2
+  73              	.L9:
+  74 0090 00000000 		.word	periodic_state
+  76              		.align	2
+  77              		.global	SYS_TIME_PERIODIC_ISR
+  79              	SYS_TIME_PERIODIC_ISR:
+  80              		@ Function supports interworking.
+  81              		@ args = 0, pretend = 0, frame = 0
+  82              		@ frame_needed = 0, uses_anonymous_args = 0
+  83              		@ link register save eliminated.
+  84 0094 0E12A0E3 		mov	r1, #-536870912
+  85 0098 011981E2 		add	r1, r1, #16384
+  86 009c 202091E5 		ldr	r2, [r1, #32]
+  87 00a0 493AA0E3 		mov	r3, #299008
+  88 00a4 3E3E83E2 		add	r3, r3, #992
+  89 00a8 032082E0 		add	r2, r2, r3
+  90 00ac 0C309FE5 		ldr	r3, .L13
+  91 00b0 0100A0E3 		mov	r0, #1
+  92 00b4 0000C3E5 		strb	r0, [r3, #0]
+  93              		@ lr needed for prologue
+  94 00b8 202081E5 		str	r2, [r1, #32]
+  95 00bc 1EFF2FE1 		bx	lr
+  96              	.L14:
+  97              		.align	2
+  98              	.L13:
+  99 00c0 00000000 		.word	periodic_state
+ 101              		.align	2
+ 102              		.global	sys_time_periodic
+ 104              	sys_time_periodic:
+ 105              		@ Function supports interworking.
+ 106              		@ args = 0, pretend = 0, frame = 0
+ 107              		@ frame_needed = 0, uses_anonymous_args = 0
+ 108              		@ link register save eliminated.
+ 109 00c4 18109FE5 		ldr	r1, .L20
+ 110 00c8 0020D1E5 		ldrb	r2, [r1, #0]	@ zero_extendqisi2
+ 111 00cc 010052E3 		cmp	r2, #1
+ 112 00d0 0000A0E3 		mov	r0, #0
+ 113 00d4 0030A003 		moveq	r3, #0
+ 114 00d8 0200A001 		moveq	r0, r2
+ 115              		@ lr needed for prologue
+ 116 00dc 0030C105 		streqb	r3, [r1, #0]
+ 117 00e0 1EFF2FE1 		bx	lr
+ 118              	.L21:
+ 119              		.align	2
+ 120              	.L20:
+ 121 00e4 00000000 		.word	periodic_state
+ 123              		.align	2
+ 124              		.global	SYS_TIME_CLOCK_ISR
+ 126              	SYS_TIME_CLOCK_ISR:
+ 127              		@ Function supports interworking.
+ 128              		@ args = 0, pretend = 0, frame = 0
+ 129              		@ frame_needed = 0, uses_anonymous_args = 0
+ 130              		@ link register save eliminated.
+ 131 00e8 0C209FE5 		ldr	r2, .L24
+ 132 00ec 003092E5 		ldr	r3, [r2, #0]
+ 133 00f0 013083E2 		add	r3, r3, #1
+ 134              		@ lr needed for prologue
+ 135 00f4 003082E5 		str	r3, [r2, #0]
+ 136 00f8 1EFF2FE1 		bx	lr
+ 137              	.L25:
+ 138              		.align	2
+ 139              	.L24:
+ 140 00fc 00000000 		.word	number_of_timer_overflow
+ 142              		.align	2
+ 143              		.global	sys_time_clock_init
+ 145              	sys_time_clock_init:
+ 146              		@ Function supports interworking.
+ 147              		@ args = 0, pretend = 0, frame = 0
+ 148              		@ frame_needed = 0, uses_anonymous_args = 0
+ 149              		@ link register save eliminated.
+ 150 0100 0E12A0E3 		mov	r1, #-536870912
+ 151 0104 011981E2 		add	r1, r1, #16384
+ 152 0108 142091E5 		ldr	r2, [r1, #20]
+ 153 010c 24309FE5 		ldr	r3, .L28
+ 154 0110 0000A0E3 		mov	r0, #0
+ 155 0114 000083E5 		str	r0, [r3, #0]
+ 156 0118 022C82E3 		orr	r2, r2, #512
+ 157 011c 18309FE5 		ldr	r3, .L28+4
+ 158 0120 142081E5 		str	r2, [r1, #20]
+ 159 0124 240081E5 		str	r0, [r1, #36]
+ 160 0128 0020A0E3 		mov	r2, #0
+ 161 012c 0010A0E3 		mov	r1, #0
+ 162              		@ lr needed for prologue
+ 163 0130 060083E8 		stmia	r3, {r1-r2}
+ 164 0134 1EFF2FE1 		bx	lr
+ 165              	.L29:
+ 166              		.align	2
+ 167              	.L28:
+ 168 0138 00000000 		.word	number_of_timer_overflow
+ 169 013c 00000000 		.word	m_clock_offset
+ 171              		.global	__floatsidf
+ 172              		.global	__adddf3
+ 173              		.global	__muldf3
+ 174              		.global	__subdf3
+ 175              		.global	__divdf3
+ 176              		.global	__fixunsdfsi
+ 177              		.align	2
+ 178              		.global	sys_time_clock_get_time_usec
+ 180              	sys_time_clock_get_time_usec:
+ 181              		@ Function supports interworking.
+ 182              		@ args = 0, pretend = 0, frame = 0
+ 183              		@ frame_needed = 0, uses_anonymous_args = 0
+ 184 0140 0E32A0E3 		mov	r3, #-536870912
+ 185 0144 AC209FE5 		ldr	r2, .L35
+ 186 0148 013983E2 		add	r3, r3, #16384
+ 187 014c F0432DE9 		stmfd	sp!, {r4, r5, r6, r7, r8, r9, lr}
+ 188 0150 085093E5 		ldr	r5, [r3, #8]
+ 189 0154 113CA0E3 		mov	r3, #4352
+ 190 0158 001092E5 		ldr	r1, [r2, #0]
+ 191 015c 113083E2 		add	r3, r3, #17
+ 192 0160 033883E1 		orr	r3, r3, r3, asl #16
+ 193 0164 0500A0E1 		mov	r0, r5
+ 194 0168 918389E0 		umull	r8, r9, r1, r3
+ 195 016c FEFFFFEB 		bl	__floatsidf
+ 196 0170 4124A0E3 		mov	r2, #1090519040
+ 197 0174 000055E3 		cmp	r5, #0
+ 198 0178 0040A0E3 		mov	r4, #0
+ 199 017c 0060A0E1 		mov	r6, r0
+ 200 0180 0170A0E1 		mov	r7, r1
+ 201 0184 0F2682E2 		add	r2, r2, #15728640
+ 202 0188 0030A0E3 		mov	r3, #0
+ 203 018c 150000BA 		blt	.L34
+ 204              	.L31:
+ 205 0190 4124A0E3 		mov	r2, #1090519040
+ 206 0194 BA2982E2 		add	r2, r2, #3047424
+ 207 0198 0600A0E1 		mov	r0, r6
+ 208 019c 0710A0E1 		mov	r1, r7
+ 209 01a0 122D82E2 		add	r2, r2, #1152
+ 210 01a4 0030A0E3 		mov	r3, #0
+ 211 01a8 FEFFFFEB 		bl	__muldf3
+ 212 01ac FF25A0E3 		mov	r2, #1069547520
+ 213 01b0 022682E2 		add	r2, r2, #2097152
+ 214 01b4 0030A0E3 		mov	r3, #0
+ 215 01b8 FEFFFFEB 		bl	__subdf3
+ 216 01bc E121A0E3 		mov	r2, #1073741880
+ 217 01c0 5B2782E2 		add	r2, r2, #23855104
+ 218 01c4 272B82E2 		add	r2, r2, #39936
+ 219 01c8 0030A0E3 		mov	r3, #0
+ 220 01cc FEFFFFEB 		bl	__divdf3
+ 221 01d0 FEFFFFEB 		bl	__fixunsdfsi
+ 222 01d4 0010A0E3 		mov	r1, #0
+ 223 01d8 080090E0 		adds	r0, r0, r8
+ 224 01dc 0910A1E0 		adc	r1, r1, r9
+ 225 01e0 F043BDE8 		ldmfd	sp!, {r4, r5, r6, r7, r8, r9, lr}
+ 226 01e4 1EFF2FE1 		bx	lr
+ 227              	.L34:
+ 228 01e8 FEFFFFEB 		bl	__adddf3
+ 229 01ec 0060A0E1 		mov	r6, r0
+ 230 01f0 0170A0E1 		mov	r7, r1
+ 231 01f4 E5FFFFEA 		b	.L31
+ 232              	.L36:
+ 233              		.align	2
+ 234              	.L35:
+ 235 01f8 00000000 		.word	number_of_timer_overflow
+ 237              		.align	2
+ 238              		.global	sys_time_clock_set_unix_offset
+ 240              	sys_time_clock_set_unix_offset:
+ 241              		@ Function supports interworking.
+ 242              		@ args = 0, pretend = 0, frame = 0
+ 243              		@ frame_needed = 0, uses_anonymous_args = 0
+ 244              		@ link register save eliminated.
+ 245 01fc 04309FE5 		ldr	r3, .L39
+ 246              		@ lr needed for prologue
+ 247 0200 030083E8 		stmia	r3, {r0-r1}
+ 248 0204 1EFF2FE1 		bx	lr
+ 249              	.L40:
+ 250              		.align	2
+ 251              	.L39:
+ 252 0208 00000000 		.word	m_clock_offset
+ 254              		.align	2
+ 255              		.global	sys_time_clock_get_unix_offset
+ 257              	sys_time_clock_get_unix_offset:
+ 258              		@ Function supports interworking.
+ 259              		@ args = 0, pretend = 0, frame = 0
+ 260              		@ frame_needed = 0, uses_anonymous_args = 0
+ 261              		@ link register save eliminated.
+ 262 020c 04309FE5 		ldr	r3, .L43
+ 263 0210 030093E8 		ldmia	r3, {r0-r1}
+ 264              		@ lr needed for prologue
+ 265 0214 1EFF2FE1 		bx	lr
+ 266              	.L44:
+ 267              		.align	2
+ 268              	.L43:
+ 269 0218 00000000 		.word	m_clock_offset
+ 271              		.align	2
+ 272              		.global	sys_time_clock_get_unix_time
+ 274              	sys_time_clock_get_unix_time:
+ 275              		@ Function supports interworking.
+ 276              		@ args = 0, pretend = 0, frame = 0
+ 277              		@ frame_needed = 0, uses_anonymous_args = 0
+ 278 021c 10402DE9 		stmfd	sp!, {r4, lr}
+ 279 0220 FEFFFFEB 		bl	sys_time_clock_get_time_usec
+ 280 0224 10209FE5 		ldr	r2, .L47
+ 281 0228 180092E8 		ldmia	r2, {r3-r4}
+ 282 022c 030090E0 		adds	r0, r0, r3
+ 283 0230 0410A1E0 		adc	r1, r1, r4
+ 284 0234 1040BDE8 		ldmfd	sp!, {r4, lr}
+ 285 0238 1EFF2FE1 		bx	lr
+ 286              	.L48:
+ 287              		.align	2
+ 288              	.L47:
+ 289 023c 00000000 		.word	m_clock_offset
+ 291              		.align	2
+ 292              		.global	sys_time_clock_to_local_time
+ 294              	sys_time_clock_to_local_time:
+ 295              		@ Function supports interworking.
+ 296              		@ args = 0, pretend = 0, frame = 0
+ 297              		@ frame_needed = 0, uses_anonymous_args = 0
+ 298              		@ link register save eliminated.
+ 299 0240 04402DE5 		str	r4, [sp, #-4]!
+ 300 0244 10209FE5 		ldr	r2, .L51
+ 301 0248 180092E8 		ldmia	r2, {r3-r4}
+ 302 024c 030050E0 		subs	r0, r0, r3
+ 303 0250 0410C1E0 		sbc	r1, r1, r4
+ 304              		@ lr needed for prologue
+ 305 0254 1000BDE8 		ldmfd	sp!, {r4}
+ 306 0258 1EFF2FE1 		bx	lr
+ 307              	.L52:
+ 308              		.align	2
+ 309              	.L51:
+ 310 025c 00000000 		.word	m_clock_offset
+ 312              		.align	2
+ 313              		.global	TIMER0_ISR
+ 315              	TIMER0_ISR:
+ 316              		@ Function supports interworking.
+ 317              		@ Naked Function: prologue and epilogue provided by programmer.
+ 318              		@ args = 0, pretend = 0, frame = 0
+ 319              		@ frame_needed = 0, uses_anonymous_args = 0
+ 320 0260 04E04EE2 		 sub   lr, lr,#4
+ 321 0264 FF5F2DE9 	 stmfd sp!,{r0-r12,lr}
+ 322 0268 00104FE1 	 mrs   r1, spsr
+ 323 026c 02002DE9 	 stmfd sp!,{r1}
+ 324 0270 0E42A0E3 		mov	r4, #-536870912
+ 325 0274 014984E2 		add	r4, r4, #16384
+ 326              	.L72:
+ 327 0278 002094E5 		ldr	r2, [r4, #0]
+ 328 027c 000052E3 		cmp	r2, #0
+ 329 0280 1400000A 		beq	.L73
+ 330              	.L55:
+ 331 0284 003094E5 		ldr	r3, [r4, #0]
+ 332 0288 400013E3 		tst	r3, #64
+ 333 028c 2200001A 		bne	.L74
+ 334              	.L56:
+ 335 0290 003094E5 		ldr	r3, [r4, #0]
+ 336 0294 020013E3 		tst	r3, #2
+ 337 0298 1B00001A 		bne	.L75
+ 338              	.L58:
+ 339 029c 003094E5 		ldr	r3, [r4, #0]
+ 340 02a0 040013E3 		tst	r3, #4
+ 341 02a4 1400001A 		bne	.L76
+ 342              	.L60:
+ 343 02a8 003094E5 		ldr	r3, [r4, #0]
+ 344 02ac 080013E3 		tst	r3, #8
+ 345 02b0 0D00001A 		bne	.L77
+ 346              	.L62:
+ 347 02b4 003094E5 		ldr	r3, [r4, #0]
+ 348 02b8 010013E3 		tst	r3, #1
+ 349 02bc EDFFFF0A 		beq	.L72
+ 350 02c0 FEFFFFEB 		bl	bmp085_start_measurement_read
+ 351 02c4 0130A0E3 		mov	r3, #1
+ 352 02c8 003084E5 		str	r3, [r4, #0]
+ 353 02cc 002094E5 		ldr	r2, [r4, #0]
+ 354 02d0 000052E3 		cmp	r2, #0
+ 355 02d4 EAFFFF1A 		bne	.L55
+ 356              	.L73:
+ 357 02d8 0F3CE0E3 		mvn	r3, #3840
+ 358 02dc CF2003E5 		str	r2, [r3, #-207]
+ 359 02e0 0200BDE8 		 ldmfd sp!,{r1}
+ 360 02e4 01F061E1 	 msr   spsr_c,r1
+ 361 02e8 FF9FFDE8 	 ldmfd sp!,{r0-r12,pc}^
+ 362              	.L77:
+ 363 02ec FEFFFFEB 		bl	SYS_TIME_CLOCK_ISR
+ 364 02f0 0830A0E3 		mov	r3, #8
+ 365 02f4 003084E5 		str	r3, [r4, #0]
+ 366 02f8 EDFFFFEA 		b	.L62
+ 367              	.L76:
+ 368 02fc FEFFFFEB 		bl	SYS_TIME_PERIODIC_ISR
+ 369 0300 0430A0E3 		mov	r3, #4
+ 370 0304 003084E5 		str	r3, [r4, #0]
+ 371 0308 E6FFFFEA 		b	.L60
+ 372              	.L75:
+ 373 030c FEFFFFEB 		bl	PWM_ISR
+ 374 0310 0230A0E3 		mov	r3, #2
+ 375 0314 003084E5 		str	r3, [r4, #0]
+ 376 0318 DFFFFFEA 		b	.L58
+ 377              	.L74:
+ 378 031c FEFFFFEB 		bl	PPM_ISR
+ 379 0320 4030A0E3 		mov	r3, #64
+ 380 0324 003084E5 		str	r3, [r4, #0]
+ 381 0328 D8FFFFEA 		b	.L56
+ 383              		.global	number_of_timer_overflow
+ 384              		.bss
+ 385              		.align	2
+ 388              	number_of_timer_overflow:
+ 389 0000 00000000 		.space	4
+ 390              		.global	m_clock_offset
+ 391              		.align	2
+ 394              	m_clock_offset:
+ 395 0004 00000000 		.space	8
+ 395      00000000 
+ 396              		.comm	periodic_state,1,1
+ 397              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
+DEFINED SYMBOLS
+                            *ABS*:00000000 sys_time.c
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:6      .text:00000000 timer0_init
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:11     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:37     .text:00000058 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:315    .text:00000260 TIMER0_ISR
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:42     .text:0000005c sys_time_init
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:48     .text:0000005c $a
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:53     .text:00000060 sys_time_periodic_init
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:74     .text:00000090 $d
+                            *COM*:00000001 periodic_state
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:79     .text:00000094 SYS_TIME_PERIODIC_ISR
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:84     .text:00000094 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:99     .text:000000c0 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:104    .text:000000c4 sys_time_periodic
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:109    .text:000000c4 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:121    .text:000000e4 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:126    .text:000000e8 SYS_TIME_CLOCK_ISR
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:131    .text:000000e8 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:140    .text:000000fc $d
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:388    .bss:00000000 number_of_timer_overflow
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:145    .text:00000100 sys_time_clock_init
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:150    .text:00000100 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:168    .text:00000138 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:394    .bss:00000004 m_clock_offset
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:180    .text:00000140 sys_time_clock_get_time_usec
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:184    .text:00000140 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:235    .text:000001f8 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:240    .text:000001fc sys_time_clock_set_unix_offset
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:245    .text:000001fc $a
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:252    .text:00000208 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:257    .text:0000020c sys_time_clock_get_unix_offset
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:262    .text:0000020c $a
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:269    .text:00000218 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:274    .text:0000021c sys_time_clock_get_unix_time
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:278    .text:0000021c $a
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:289    .text:0000023c $d
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:294    .text:00000240 sys_time_clock_to_local_time
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:299    .text:00000240 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:310    .text:0000025c $d
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:320    .text:00000260 $a
+                             .bss:00000000 $d
+
+UNDEFINED SYMBOLS
+__floatsidf
+__adddf3
+__muldf3
+__subdf3
+__divdf3
+__fixunsdfsi
+bmp085_start_measurement_read
+PWM_ISR
+PPM_ISR

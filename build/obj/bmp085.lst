@@ -1,0 +1,555 @@
+   1              		.file	"bmp085.c"
+   2              		.text
+   3              		.align	2
+   4              		.global	bmp085_store_cal_param_on_init
+   6              	bmp085_store_cal_param_on_init:
+   7              		@ Function supports interworking.
+   8              		@ args = 0, pretend = 0, frame = 0
+   9              		@ frame_needed = 0, uses_anonymous_args = 0
+  10              		@ link register save eliminated.
+  11 0000 0020D0E5 		ldrb	r2, [r0, #0]	@ zero_extendqisi2
+  12 0004 0130D0E5 		ldrb	r3, [r0, #1]	@ zero_extendqisi2
+  13 0008 A8109FE5 		ldr	r1, .L3
+  14 000c 023483E1 		orr	r3, r3, r2, asl #8
+  15 0010 B030C1E1 		strh	r3, [r1, #0]	@ movhi
+  16 0014 0220D0E5 		ldrb	r2, [r0, #2]	@ zero_extendqisi2
+  17 0018 0330D0E5 		ldrb	r3, [r0, #3]	@ zero_extendqisi2
+  18 001c 023483E1 		orr	r3, r3, r2, asl #8
+  19 0020 B230C1E1 		strh	r3, [r1, #2]	@ movhi
+  20 0024 0420D0E5 		ldrb	r2, [r0, #4]	@ zero_extendqisi2
+  21 0028 0530D0E5 		ldrb	r3, [r0, #5]	@ zero_extendqisi2
+  22 002c 023483E1 		orr	r3, r3, r2, asl #8
+  23 0030 B430C1E1 		strh	r3, [r1, #4]	@ movhi
+  24 0034 0620D0E5 		ldrb	r2, [r0, #6]	@ zero_extendqisi2
+  25 0038 0730D0E5 		ldrb	r3, [r0, #7]	@ zero_extendqisi2
+  26 003c 023483E1 		orr	r3, r3, r2, asl #8
+  27 0040 B630C1E1 		strh	r3, [r1, #6]	@ movhi
+  28 0044 0820D0E5 		ldrb	r2, [r0, #8]	@ zero_extendqisi2
+  29 0048 0930D0E5 		ldrb	r3, [r0, #9]	@ zero_extendqisi2
+  30 004c 023483E1 		orr	r3, r3, r2, asl #8
+  31 0050 B830C1E1 		strh	r3, [r1, #8]	@ movhi
+  32 0054 0A20D0E5 		ldrb	r2, [r0, #10]	@ zero_extendqisi2
+  33 0058 0B30D0E5 		ldrb	r3, [r0, #11]	@ zero_extendqisi2
+  34 005c 023483E1 		orr	r3, r3, r2, asl #8
+  35 0060 BA30C1E1 		strh	r3, [r1, #10]	@ movhi
+  36 0064 0C20D0E5 		ldrb	r2, [r0, #12]	@ zero_extendqisi2
+  37 0068 0D30D0E5 		ldrb	r3, [r0, #13]	@ zero_extendqisi2
+  38 006c 023483E1 		orr	r3, r3, r2, asl #8
+  39 0070 BC30C1E1 		strh	r3, [r1, #12]	@ movhi
+  40 0074 0E20D0E5 		ldrb	r2, [r0, #14]	@ zero_extendqisi2
+  41 0078 0F30D0E5 		ldrb	r3, [r0, #15]	@ zero_extendqisi2
+  42 007c 023483E1 		orr	r3, r3, r2, asl #8
+  43 0080 BE30C1E1 		strh	r3, [r1, #14]	@ movhi
+  44 0084 1020D0E5 		ldrb	r2, [r0, #16]	@ zero_extendqisi2
+  45 0088 1130D0E5 		ldrb	r3, [r0, #17]	@ zero_extendqisi2
+  46 008c 023483E1 		orr	r3, r3, r2, asl #8
+  47 0090 B031C1E1 		strh	r3, [r1, #16]	@ movhi
+  48 0094 1220D0E5 		ldrb	r2, [r0, #18]	@ zero_extendqisi2
+  49 0098 1330D0E5 		ldrb	r3, [r0, #19]	@ zero_extendqisi2
+  50 009c 023483E1 		orr	r3, r3, r2, asl #8
+  51 00a0 B231C1E1 		strh	r3, [r1, #18]	@ movhi
+  52 00a4 1520D0E5 		ldrb	r2, [r0, #21]	@ zero_extendqisi2
+  53 00a8 1430D0E5 		ldrb	r3, [r0, #20]	@ zero_extendqisi2
+  54 00ac 032482E1 		orr	r2, r2, r3, asl #8
+  55              		@ lr needed for prologue
+  56 00b0 B421C1E1 		strh	r2, [r1, #20]	@ movhi
+  57 00b4 1EFF2FE1 		bx	lr
+  58              	.L4:
+  59              		.align	2
+  60              	.L3:
+  61 00b8 00000000 		.word	bmp085
+  63              		.align	2
+  64              		.global	bmp085_save_measurement
+  66              	bmp085_save_measurement:
+  67              		@ Function supports interworking.
+  68              		@ args = 0, pretend = 0, frame = 0
+  69              		@ frame_needed = 0, uses_anonymous_args = 0
+  70              		@ link register save eliminated.
+  71 00bc 54109FE5 		ldr	r1, .L12
+  72 00c0 3130D1E5 		ldrb	r3, [r1, #49]	@ zero_extendqisi2
+  73 00c4 010053E3 		cmp	r3, #1
+  74              		@ lr needed for prologue
+  75 00c8 0400000A 		beq	.L7
+  76 00cc 020053E3 		cmp	r3, #2
+  77 00d0 0900000A 		beq	.L11
+  78 00d4 0030A0E3 		mov	r3, #0
+  79 00d8 3030C1E5 		strb	r3, [r1, #48]
+  80 00dc 1EFF2FE1 		bx	lr
+  81              	.L7:
+  82 00e0 0130D0E5 		ldrb	r3, [r0, #1]	@ zero_extendqisi2
+  83 00e4 0020D0E5 		ldrb	r2, [r0, #0]	@ zero_extendqisi2
+  84 00e8 023483E1 		orr	r3, r3, r2, asl #8
+  85 00ec 2C3081E5 		str	r3, [r1, #44]
+  86 00f0 0030A0E3 		mov	r3, #0
+  87 00f4 3030C1E5 		strb	r3, [r1, #48]
+  88 00f8 1EFF2FE1 		bx	lr
+  89              	.L11:
+  90 00fc 0130D0E5 		ldrb	r3, [r0, #1]	@ zero_extendqisi2
+  91 0100 0020D0E5 		ldrb	r2, [r0, #0]	@ zero_extendqisi2
+  92 0104 023483E1 		orr	r3, r3, r2, asl #8
+  93 0108 283081E5 		str	r3, [r1, #40]
+  94 010c 0030A0E3 		mov	r3, #0
+  95 0110 3030C1E5 		strb	r3, [r1, #48]
+  96 0114 1EFF2FE1 		bx	lr
+  97              	.L13:
+  98              		.align	2
+  99              	.L12:
+ 100 0118 00000000 		.word	bmp085
+ 102              		.global	__divsi3
+ 103              		.align	2
+ 104              		.global	bmp085_get_temperature
+ 106              	bmp085_get_temperature:
+ 107              		@ Function supports interworking.
+ 108              		@ args = 0, pretend = 0, frame = 0
+ 109              		@ frame_needed = 0, uses_anonymous_args = 0
+ 110 011c 30402DE9 		stmfd	sp!, {r4, r5, lr}
+ 111 0120 44509FE5 		ldr	r5, .L16
+ 112 0124 BA10D5E1 		ldrh	r1, [r5, #10]
+ 113 0128 2C3095E5 		ldr	r3, [r5, #44]
+ 114 012c B820D5E1 		ldrh	r2, [r5, #8]
+ 115 0130 033061E0 		rsb	r3, r1, r3
+ 116 0134 920304E0 		mul	r4, r2, r3
+ 117 0138 F201D5E1 		ldrsh	r0, [r5, #18]
+ 118 013c F411D5E1 		ldrsh	r1, [r5, #20]
+ 119 0140 C447A0E1 		mov	r4, r4, asr #15
+ 120 0144 011084E0 		add	r1, r4, r1
+ 121 0148 8005A0E1 		mov	r0, r0, asl #11
+ 122 014c FEFFFFEB 		bl	__divsi3
+ 123 0150 004084E0 		add	r4, r4, r0
+ 124 0154 080084E2 		add	r0, r4, #8
+ 125 0158 0006A0E1 		mov	r0, r0, asl #12
+ 126 015c 4008A0E1 		mov	r0, r0, asr #16
+ 127 0160 204085E5 		str	r4, [r5, #32]
+ 128 0164 3040BDE8 		ldmfd	sp!, {r4, r5, lr}
+ 129 0168 1EFF2FE1 		bx	lr
+ 130              	.L17:
+ 131              		.align	2
+ 132              	.L16:
+ 133 016c 00000000 		.word	bmp085
+ 135              		.global	__udivsi3
+ 136              		.align	2
+ 137              		.global	bmp085_get_pressure
+ 139              	bmp085_get_pressure:
+ 140              		@ Function supports interworking.
+ 141              		@ args = 0, pretend = 0, frame = 0
+ 142              		@ frame_needed = 0, uses_anonymous_args = 0
+ 143 0170 F0C09FE5 		ldr	ip, .L23
+ 144 0174 30402DE9 		stmfd	sp!, {r4, r5, lr}
+ 145 0178 20409CE5 		ldr	r4, [ip, #32]
+ 146 017c FA4E44E2 		sub	r4, r4, #4000
+ 147 0180 940405E0 		mul	r5, r4, r4
+ 148 0184 F230DCE1 		ldrsh	r3, [ip, #2]
+ 149 0188 FE20DCE1 		ldrsh	r2, [ip, #14]
+ 150 018c 930401E0 		mul	r1, r3, r4
+ 151 0190 4556A0E1 		mov	r5, r5, asr #12
+ 152 0194 92050EE0 		mul	lr, r2, r5
+ 153 0198 F000DCE1 		ldrsh	r0, [ip, #0]
+ 154 019c 0001A0E1 		mov	r0, r0, asl #2
+ 155 01a0 2430DCE5 		ldrb	r3, [ip, #36]	@ zero_extendqisi2
+ 156 01a4 C10580E0 		add	r0, r0, r1, asr #11
+ 157 01a8 CE0580E0 		add	r0, r0, lr, asr #11
+ 158 01ac 1003A0E1 		mov	r0, r0, asl r3
+ 159 01b0 C3ECA0E3 		mov	lr, #49920
+ 160 01b4 50E08EE2 		add	lr, lr, #80
+ 161 01b8 5EE3A0E1 		mov	lr, lr, asr r3
+ 162 01bc F420DCE1 		ldrsh	r2, [ip, #4]
+ 163 01c0 FC10DCE1 		ldrsh	r1, [ip, #12]
+ 164 01c4 920403E0 		mul	r3, r2, r4
+ 165 01c8 910504E0 		mul	r4, r1, r5
+ 166 01cc C336A0E1 		mov	r3, r3, asr #13
+ 167 01d0 023083E2 		add	r3, r3, #2
+ 168 01d4 443883E0 		add	r3, r3, r4, asr #16
+ 169 01d8 28209CE5 		ldr	r2, [ip, #40]
+ 170 01dc 020080E2 		add	r0, r0, #2
+ 171 01e0 B610DCE1 		ldrh	r1, [ip, #6]
+ 172 01e4 4331A0E1 		mov	r3, r3, asr #2
+ 173 01e8 402142E0 		sub	r2, r2, r0, asr #2
+ 174 01ec 023983E2 		add	r3, r3, #32768
+ 175 01f0 920E1EE0 		muls	lr, r2, lr
+ 176 01f4 930102E0 		mul	r2, r3, r1
+ 177 01f8 A227A0E1 		mov	r2, r2, lsr #15
+ 178 01fc 8E00A0E1 		mov	r0, lr, asl #1
+ 179 0200 0210A0E1 		mov	r1, r2
+ 180 0204 1200004A 		bmi	.L19
+ 181 0208 FEFFFFEB 		bl	__udivsi3
+ 182 020c 00C0A0E1 		mov	ip, r0
+ 183              	.L21:
+ 184 0210 4C24A0E1 		mov	r2, ip, asr #8
+ 185 0214 823162E0 		rsb	r3, r2, r2, asl #3
+ 186 0218 833163E0 		rsb	r3, r3, r3, asl #3
+ 187 021c 833263E0 		rsb	r3, r3, r3, asl #5
+ 188 0220 8330A0E1 		mov	r3, r3, asl #1
+ 189 0224 930201E0 		mul	r1, r3, r2
+ 190 0228 8C028CE0 		add	r0, ip, ip, asl #5
+ 191 022c 80016CE0 		rsb	r0, ip, r0, asl #3
+ 192 0230 00016CE0 		rsb	r0, ip, r0, asl #2
+ 193 0234 800140E0 		sub	r0, r0, r0, asl #3
+ 194 0238 4008A0E1 		mov	r0, r0, asr #16
+ 195 023c 3B0D80E2 		add	r0, r0, #3776
+ 196 0240 0F0080E2 		add	r0, r0, #15
+ 197 0244 410880E0 		add	r0, r0, r1, asr #16
+ 198 0248 40028CE0 		add	r0, ip, r0, asr #4
+ 199 024c 3040BDE8 		ldmfd	sp!, {r4, r5, lr}
+ 200 0250 1EFF2FE1 		bx	lr
+ 201              	.L19:
+ 202 0254 0E00A0E1 		mov	r0, lr
+ 203 0258 0210A0E1 		mov	r1, r2
+ 204 025c FEFFFFEB 		bl	__udivsi3
+ 205 0260 80C0A0E1 		mov	ip, r0, asl #1
+ 206 0264 E9FFFFEA 		b	.L21
+ 207              	.L24:
+ 208              		.align	2
+ 209              	.L23:
+ 210 0268 00000000 		.word	bmp085
+ 212              		.align	2
+ 213              		.global	bmp085_start_measurement_read
+ 215              	bmp085_start_measurement_read:
+ 216              		@ Function supports interworking.
+ 217              		@ args = 0, pretend = 0, frame = 96
+ 218              		@ frame_needed = 0, uses_anonymous_args = 0
+ 219 026c 10402DE9 		stmfd	sp!, {r4, lr}
+ 220 0270 68309FE5 		ldr	r3, .L27
+ 221 0274 60D04DE2 		sub	sp, sp, #96
+ 222 0278 1C40D3E5 		ldrb	r4, [r3, #28]	@ zero_extendqisi2
+ 223 027c 1BE0D3E5 		ldrb	lr, [r3, #27]	@ zero_extendqisi2
+ 224 0280 0930E0E3 		mvn	r3, #9
+ 225 0284 0030CDE5 		strb	r3, [sp, #0]
+ 226 0288 0C3083E2 		add	r3, r3, #12
+ 227 028c 5030CDE5 		strb	r3, [sp, #80]
+ 228 0290 4C309FE5 		ldr	r3, .L27+4
+ 229 0294 0120A0E3 		mov	r2, #1
+ 230 0298 00C0A0E3 		mov	ip, #0
+ 231 029c 0D00A0E1 		mov	r0, sp
+ 232 02a0 30108DE2 		add	r1, sp, #48
+ 233 02a4 28C08DE5 		str	ip, [sp, #40]
+ 234 02a8 52E0CDE5 		strb	lr, [sp, #82]
+ 235 02ac 5340CDE5 		strb	r4, [sp, #83]
+ 236 02b0 5420CDE5 		strb	r2, [sp, #84]
+ 237 02b4 58308DE5 		str	r3, [sp, #88]
+ 238 02b8 2020CDE5 		strb	r2, [sp, #32]
+ 239 02bc 21C0CDE5 		strb	ip, [sp, #33]
+ 240 02c0 22E0CDE5 		strb	lr, [sp, #34]
+ 241 02c4 2340CDE5 		strb	r4, [sp, #35]
+ 242 02c8 2420CDE5 		strb	r2, [sp, #36]
+ 243 02cc 5120CDE5 		strb	r2, [sp, #81]
+ 244 02d0 FEFFFFEB 		bl	i2c_write_read
+ 245 02d4 60D08DE2 		add	sp, sp, #96
+ 246 02d8 1040BDE8 		ldmfd	sp!, {r4, lr}
+ 247 02dc 1EFF2FE1 		bx	lr
+ 248              	.L28:
+ 249              		.align	2
+ 250              	.L27:
+ 251 02e0 00000000 		.word	bmp085
+ 252 02e4 00000000 		.word	bmp085_save_measurement
+ 254              		.align	2
+ 255              		.global	bmp085_get_cal_param
+ 257              	bmp085_get_cal_param:
+ 258              		@ Function supports interworking.
+ 259              		@ args = 0, pretend = 0, frame = 96
+ 260              		@ frame_needed = 0, uses_anonymous_args = 0
+ 261 02e8 10402DE9 		stmfd	sp!, {r4, lr}
+ 262 02ec 68309FE5 		ldr	r3, .L31
+ 263 02f0 60D04DE2 		sub	sp, sp, #96
+ 264 02f4 1C40D3E5 		ldrb	r4, [r3, #28]	@ zero_extendqisi2
+ 265 02f8 1BE0D3E5 		ldrb	lr, [r3, #27]	@ zero_extendqisi2
+ 266 02fc 5530E0E3 		mvn	r3, #85
+ 267 0300 0030CDE5 		strb	r3, [sp, #0]
+ 268 0304 6C3083E2 		add	r3, r3, #108
+ 269 0308 5030CDE5 		strb	r3, [sp, #80]
+ 270 030c 4C309FE5 		ldr	r3, .L31+4
+ 271 0310 0120A0E3 		mov	r2, #1
+ 272 0314 00C0A0E3 		mov	ip, #0
+ 273 0318 0D00A0E1 		mov	r0, sp
+ 274 031c 30108DE2 		add	r1, sp, #48
+ 275 0320 28C08DE5 		str	ip, [sp, #40]
+ 276 0324 52E0CDE5 		strb	lr, [sp, #82]
+ 277 0328 5340CDE5 		strb	r4, [sp, #83]
+ 278 032c 5420CDE5 		strb	r2, [sp, #84]
+ 279 0330 58308DE5 		str	r3, [sp, #88]
+ 280 0334 2020CDE5 		strb	r2, [sp, #32]
+ 281 0338 21C0CDE5 		strb	ip, [sp, #33]
+ 282 033c 22E0CDE5 		strb	lr, [sp, #34]
+ 283 0340 2340CDE5 		strb	r4, [sp, #35]
+ 284 0344 2420CDE5 		strb	r2, [sp, #36]
+ 285 0348 5120CDE5 		strb	r2, [sp, #81]
+ 286 034c FEFFFFEB 		bl	i2c_write_read
+ 287 0350 60D08DE2 		add	sp, sp, #96
+ 288 0354 1040BDE8 		ldmfd	sp!, {r4, lr}
+ 289 0358 1EFF2FE1 		bx	lr
+ 290              	.L32:
+ 291              		.align	2
+ 292              	.L31:
+ 293 035c 00000000 		.word	bmp085
+ 294 0360 00000000 		.word	bmp085_store_cal_param_on_init
+ 296              		.align	2
+ 297              		.global	bmp085_read_version_on_init
+ 299              	bmp085_read_version_on_init:
+ 300              		@ Function supports interworking.
+ 301              		@ args = 0, pretend = 0, frame = 0
+ 302              		@ frame_needed = 0, uses_anonymous_args = 0
+ 303              		@ link register save eliminated.
+ 304 0364 0020D0E5 		ldrb	r2, [r0, #0]	@ zero_extendqisi2
+ 305 0368 14109FE5 		ldr	r1, .L35
+ 306 036c 0F2002E2 		and	r2, r2, #15
+ 307 0370 1920C1E5 		strb	r2, [r1, #25]
+ 308 0374 0030D0E5 		ldrb	r3, [r0, #0]	@ zero_extendqisi2
+ 309 0378 2332A0E1 		mov	r3, r3, lsr #4
+ 310              		@ lr needed for prologue
+ 311 037c 1A30C1E5 		strb	r3, [r1, #26]
+ 312 0380 FEFFFFEA 		b	bmp085_get_cal_param
+ 313              	.L36:
+ 314              		.align	2
+ 315              	.L35:
+ 316 0384 00000000 		.word	bmp085
+ 318              		.align	2
+ 319              		.global	bmp085_read_chip_id_on_init
+ 321              	bmp085_read_chip_id_on_init:
+ 322              		@ Function supports interworking.
+ 323              		@ args = 0, pretend = 0, frame = 96
+ 324              		@ frame_needed = 0, uses_anonymous_args = 0
+ 325 0388 30402DE9 		stmfd	sp!, {r4, r5, lr}
+ 326 038c 0030D0E5 		ldrb	r3, [r0, #0]	@ zero_extendqisi2
+ 327 0390 78E09FE5 		ldr	lr, .L42
+ 328 0394 60D04DE2 		sub	sp, sp, #96
+ 329 0398 550053E3 		cmp	r3, #85
+ 330 039c 0140A0E3 		mov	r4, #1
+ 331 03a0 0050A0E3 		mov	r5, #0
+ 332 03a4 30108DE2 		add	r1, sp, #48
+ 333 03a8 0D00A0E1 		mov	r0, sp
+ 334 03ac 1830CEE5 		strb	r3, [lr, #24]
+ 335 03b0 0200000A 		beq	.L41
+ 336              	.L40:
+ 337 03b4 60D08DE2 		add	sp, sp, #96
+ 338 03b8 3040BDE8 		ldmfd	sp!, {r4, r5, lr}
+ 339 03bc 1EFF2FE1 		bx	lr
+ 340              	.L41:
+ 341 03c0 1D30CEE5 		strb	r3, [lr, #29]
+ 342 03c4 843043E2 		sub	r3, r3, #132
+ 343 03c8 1CC0DEE5 		ldrb	ip, [lr, #28]	@ zero_extendqisi2
+ 344 03cc 1B20DEE5 		ldrb	r2, [lr, #27]	@ zero_extendqisi2
+ 345 03d0 0030CDE5 		strb	r3, [sp, #0]
+ 346 03d4 38309FE5 		ldr	r3, .L42+4
+ 347 03d8 28508DE5 		str	r5, [sp, #40]
+ 348 03dc 5440CDE5 		strb	r4, [sp, #84]
+ 349 03e0 58308DE5 		str	r3, [sp, #88]
+ 350 03e4 5220CDE5 		strb	r2, [sp, #82]
+ 351 03e8 53C0CDE5 		strb	ip, [sp, #83]
+ 352 03ec 2040CDE5 		strb	r4, [sp, #32]
+ 353 03f0 2150CDE5 		strb	r5, [sp, #33]
+ 354 03f4 2220CDE5 		strb	r2, [sp, #34]
+ 355 03f8 23C0CDE5 		strb	ip, [sp, #35]
+ 356 03fc 2440CDE5 		strb	r4, [sp, #36]
+ 357 0400 5040CDE5 		strb	r4, [sp, #80]
+ 358 0404 5140CDE5 		strb	r4, [sp, #81]
+ 359 0408 FEFFFFEB 		bl	i2c_write_read
+ 360 040c E8FFFFEA 		b	.L40
+ 361              	.L43:
+ 362              		.align	2
+ 363              	.L42:
+ 364 0410 00000000 		.word	bmp085
+ 365 0414 00000000 		.word	bmp085_read_version_on_init
+ 367              		.align	2
+ 368              		.global	bmp085_init
+ 370              	bmp085_init:
+ 371              		@ Function supports interworking.
+ 372              		@ args = 0, pretend = 0, frame = 96
+ 373              		@ frame_needed = 0, uses_anonymous_args = 0
+ 374 0418 10402DE9 		stmfd	sp!, {r4, lr}
+ 375 041c 2F30E0E3 		mvn	r3, #47
+ 376 0420 60D04DE2 		sub	sp, sp, #96
+ 377 0424 70C09FE5 		ldr	ip, .L46
+ 378 0428 0030CDE5 		strb	r3, [sp, #0]
+ 379 042c 6C309FE5 		ldr	r3, .L46+4
+ 380 0430 0120A0E3 		mov	r2, #1
+ 381 0434 00E0A0E3 		mov	lr, #0
+ 382 0438 1140E0E3 		mvn	r4, #17
+ 383 043c 0D00A0E1 		mov	r0, sp
+ 384 0440 30108DE2 		add	r1, sp, #48
+ 385 0444 31E0CCE5 		strb	lr, [ip, #49]
+ 386 0448 28E08DE5 		str	lr, [sp, #40]
+ 387 044c 5240CDE5 		strb	r4, [sp, #82]
+ 388 0450 5420CDE5 		strb	r2, [sp, #84]
+ 389 0454 58308DE5 		str	r3, [sp, #88]
+ 390 0458 1DE0CCE5 		strb	lr, [ip, #29]
+ 391 045c 1B40CCE5 		strb	r4, [ip, #27]
+ 392 0460 1C20CCE5 		strb	r2, [ip, #28]
+ 393 0464 24E0CCE5 		strb	lr, [ip, #36]
+ 394 0468 30E0CCE5 		strb	lr, [ip, #48]
+ 395 046c 2020CDE5 		strb	r2, [sp, #32]
+ 396 0470 21E0CDE5 		strb	lr, [sp, #33]
+ 397 0474 2240CDE5 		strb	r4, [sp, #34]
+ 398 0478 2320CDE5 		strb	r2, [sp, #35]
+ 399 047c 2420CDE5 		strb	r2, [sp, #36]
+ 400 0480 5020CDE5 		strb	r2, [sp, #80]
+ 401 0484 5120CDE5 		strb	r2, [sp, #81]
+ 402 0488 5320CDE5 		strb	r2, [sp, #83]
+ 403 048c FEFFFFEB 		bl	i2c_write_read
+ 404 0490 60D08DE2 		add	sp, sp, #96
+ 405 0494 1040BDE8 		ldmfd	sp!, {r4, lr}
+ 406 0498 1EFF2FE1 		bx	lr
+ 407              	.L47:
+ 408              		.align	2
+ 409              	.L46:
+ 410 049c 00000000 		.word	bmp085
+ 411 04a0 00000000 		.word	bmp085_read_chip_id_on_init
+ 413              		.align	2
+ 414              		.global	bmp085_start_pressure_measurement
+ 416              	bmp085_start_pressure_measurement:
+ 417              		@ Function supports interworking.
+ 418              		@ args = 0, pretend = 0, frame = 48
+ 419              		@ frame_needed = 0, uses_anonymous_args = 0
+ 420 04a4 30402DE9 		stmfd	sp!, {r4, r5, lr}
+ 421 04a8 CC409FE5 		ldr	r4, .L57
+ 422 04ac 3020D4E5 		ldrb	r2, [r4, #48]	@ zero_extendqisi2
+ 423 04b0 2430D4E5 		ldrb	r3, [r4, #36]	@ zero_extendqisi2
+ 424 04b4 30D04DE2 		sub	sp, sp, #48
+ 425 04b8 0333A0E1 		mov	r3, r3, asl #6
+ 426 04bc 000052E3 		cmp	r2, #0
+ 427 04c0 0250A0E3 		mov	r5, #2
+ 428 04c4 0D00A0E1 		mov	r0, sp
+ 429 04c8 0C1043E2 		sub	r1, r3, #12
+ 430 04cc 1BE0D4E5 		ldrb	lr, [r4, #27]	@ zero_extendqisi2
+ 431 04d0 1CC0D4E5 		ldrb	ip, [r4, #28]	@ zero_extendqisi2
+ 432 04d4 0200000A 		beq	.L55
+ 433              	.L54:
+ 434 04d8 30D08DE2 		add	sp, sp, #48
+ 435 04dc 3040BDE8 		ldmfd	sp!, {r4, r5, lr}
+ 436 04e0 1EFF2FE1 		bx	lr
+ 437              	.L55:
+ 438 04e4 0130A0E3 		mov	r3, #1
+ 439 04e8 3030C4E5 		strb	r3, [r4, #48]
+ 440 04ec 333083E2 		add	r3, r3, #51
+ 441 04f0 0130CDE5 		strb	r3, [sp, #1]
+ 442 04f4 28208DE5 		str	r2, [sp, #40]
+ 443 04f8 2120CDE5 		strb	r2, [sp, #33]
+ 444 04fc 2420CDE5 		strb	r2, [sp, #36]
+ 445 0500 0010CDE5 		strb	r1, [sp, #0]
+ 446 0504 2050CDE5 		strb	r5, [sp, #32]
+ 447 0508 22E0CDE5 		strb	lr, [sp, #34]
+ 448 050c 23C0CDE5 		strb	ip, [sp, #35]
+ 449 0510 3150C4E5 		strb	r5, [r4, #49]
+ 450 0514 FEFFFFEB 		bl	i2c_op
+ 451 0518 0E22A0E3 		mov	r2, #-536870912
+ 452 051c 012982E2 		add	r2, r2, #16384
+ 453 0520 143092E5 		ldr	r3, [r2, #20]
+ 454 0524 013083E3 		orr	r3, r3, #1
+ 455 0528 143082E5 		str	r3, [r2, #20]
+ 456 052c 2430D4E5 		ldrb	r3, [r4, #36]	@ zero_extendqisi2
+ 457 0530 010053E3 		cmp	r3, #1
+ 458 0534 0B00000A 		beq	.L52
+ 459 0538 0400002A 		bcs	.L56
+ 460 053c 083092E5 		ldr	r3, [r2, #8]
+ 461 0540 573B83E2 		add	r3, r3, #89088
+ 462 0544 393E83E2 		add	r3, r3, #912
+ 463 0548 183082E5 		str	r3, [r2, #24]
+ 464 054c E1FFFFEA 		b	.L54
+ 465              	.L56:
+ 466 0550 050053E1 		cmp	r3, r5
+ 467 0554 08309205 		ldreq	r3, [r2, #8]
+ 468 0558 DB3B8302 		addeq	r3, r3, #224256
+ 469 055c BA3F8302 		addeq	r3, r3, #744
+ 470 0560 18308205 		streq	r3, [r2, #24]
+ 471 0564 DBFFFFEA 		b	.L54
+ 472              	.L52:
+ 473 0568 083092E5 		ldr	r3, [r2, #8]
+ 474 056c 833B83E2 		add	r3, r3, #134144
+ 475 0570 D63F83E2 		add	r3, r3, #856
+ 476 0574 183082E5 		str	r3, [r2, #24]
+ 477 0578 D6FFFFEA 		b	.L54
+ 478              	.L58:
+ 479              		.align	2
+ 480              	.L57:
+ 481 057c 00000000 		.word	bmp085
+ 483              		.align	2
+ 484              		.global	bmp085_start_temp_measurement
+ 486              	bmp085_start_temp_measurement:
+ 487              		@ Function supports interworking.
+ 488              		@ args = 0, pretend = 0, frame = 48
+ 489              		@ frame_needed = 0, uses_anonymous_args = 0
+ 490 0580 30402DE9 		stmfd	sp!, {r4, r5, lr}
+ 491 0584 84C09FE5 		ldr	ip, .L63
+ 492 0588 3010DCE5 		ldrb	r1, [ip, #48]	@ zero_extendqisi2
+ 493 058c 30D04DE2 		sub	sp, sp, #48
+ 494 0590 000051E3 		cmp	r1, #0
+ 495 0594 0150A0E3 		mov	r5, #1
+ 496 0598 0D00A0E1 		mov	r0, sp
+ 497 059c 1B40DCE5 		ldrb	r4, [ip, #27]	@ zero_extendqisi2
+ 498 05a0 1CE0DCE5 		ldrb	lr, [ip, #28]	@ zero_extendqisi2
+ 499 05a4 1600001A 		bne	.L62
+ 500 05a8 0B30E0E3 		mvn	r3, #11
+ 501 05ac 2E20A0E3 		mov	r2, #46
+ 502 05b0 0030CDE5 		strb	r3, [sp, #0]
+ 503 05b4 0E3083E2 		add	r3, r3, #14
+ 504 05b8 0120CDE5 		strb	r2, [sp, #1]
+ 505 05bc 2030CDE5 		strb	r3, [sp, #32]
+ 506 05c0 28108DE5 		str	r1, [sp, #40]
+ 507 05c4 2110CDE5 		strb	r1, [sp, #33]
+ 508 05c8 2410CDE5 		strb	r1, [sp, #36]
+ 509 05cc 3150CCE5 		strb	r5, [ip, #49]
+ 510 05d0 2240CDE5 		strb	r4, [sp, #34]
+ 511 05d4 23E0CDE5 		strb	lr, [sp, #35]
+ 512 05d8 3050CCE5 		strb	r5, [ip, #48]
+ 513 05dc FEFFFFEB 		bl	i2c_op
+ 514 05e0 0E12A0E3 		mov	r1, #-536870912
+ 515 05e4 011981E2 		add	r1, r1, #16384
+ 516 05e8 143091E5 		ldr	r3, [r1, #20]
+ 517 05ec 053083E1 		orr	r3, r3, r5
+ 518 05f0 143081E5 		str	r3, [r1, #20]
+ 519 05f4 082091E5 		ldr	r2, [r1, #8]
+ 520 05f8 572B82E2 		add	r2, r2, #89088
+ 521 05fc 392E82E2 		add	r2, r2, #912
+ 522 0600 182081E5 		str	r2, [r1, #24]
+ 523              	.L62:
+ 524 0604 30D08DE2 		add	sp, sp, #48
+ 525 0608 3040BDE8 		ldmfd	sp!, {r4, r5, lr}
+ 526 060c 1EFF2FE1 		bx	lr
+ 527              	.L64:
+ 528              		.align	2
+ 529              	.L63:
+ 530 0610 00000000 		.word	bmp085
+ 532              		.comm	mavlink_system,8,4
+ 533              		.comm	bmp085,52,4
+ 534              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
+DEFINED SYMBOLS
+                            *ABS*:00000000 bmp085.c
+C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:6      .text:00000000 bmp085_store_cal_param_on_init
+C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:11     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:61     .text:000000b8 $d
+                            *COM*:00000034 bmp085
+C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:66     .text:000000bc bmp085_save_measurement
+C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:71     .text:000000bc $a
+C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:100    .text:00000118 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:106    .text:0000011c bmp085_get_temperature
+C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:110    .text:0000011c $a
+C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:133    .text:0000016c $d
+C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:139    .text:00000170 bmp085_get_pressure
+C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:143    .text:00000170 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:210    .text:00000268 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:215    .text:0000026c bmp085_start_measurement_read
+C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:219    .text:0000026c $a
+C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:251    .text:000002e0 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:257    .text:000002e8 bmp085_get_cal_param
+C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:261    .text:000002e8 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:293    .text:0000035c $d
+C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:299    .text:00000364 bmp085_read_version_on_init
+C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:304    .text:00000364 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:316    .text:00000384 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:321    .text:00000388 bmp085_read_chip_id_on_init
+C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:325    .text:00000388 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:364    .text:00000410 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:370    .text:00000418 bmp085_init
+C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:374    .text:00000418 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:410    .text:0000049c $d
+C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:416    .text:000004a4 bmp085_start_pressure_measurement
+C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:420    .text:000004a4 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:481    .text:0000057c $d
+C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:486    .text:00000580 bmp085_start_temp_measurement
+C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:490    .text:00000580 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:530    .text:00000610 $d
+                            *COM*:00000008 mavlink_system
+
+UNDEFINED SYMBOLS
+__divsi3
+__udivsi3
+i2c_write_read
+i2c_op

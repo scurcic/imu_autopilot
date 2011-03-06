@@ -1,0 +1,348 @@
+   1              		.file	"calibration.c"
+   2              		.text
+   3              		.align	2
+   4              		.global	start_mag_calibration
+   6              	start_mag_calibration:
+   7              		@ Function supports interworking.
+   8              		@ args = 0, pretend = 0, frame = 0
+   9              		@ frame_needed = 0, uses_anonymous_args = 0
+  10              		@ link register save eliminated.
+  11              		@ lr needed for prologue
+  12 0000 1EFF2FE1 		bx	lr
+  14              		.section	.rodata.str1.4,"aMS",%progbits,1
+  15              		.align	2
+  16              	.LC0:
+  17 0000 43616C69 		.ascii	"Calibration finished. UART buffers cleared.\000"
+  17      62726174 
+  17      696F6E20 
+  17      66696E69 
+  17      73686564 
+  18              		.text
+  19              		.align	2
+  20              		.global	calibration_exit
+  22              	calibration_exit:
+  23              		@ Function supports interworking.
+  24              		@ args = 0, pretend = 0, frame = 0
+  25              		@ frame_needed = 0, uses_anonymous_args = 0
+  26 0004 10402DE9 		stmfd	sp!, {r4, lr}
+  27 0008 6C309FE5 		ldr	r3, .L17
+  28 000c 0000D3E5 		ldrb	r0, [r3, #0]	@ zero_extendqisi2
+  29 0010 FEFFFFEB 		bl	sys_set_mode
+  30 0014 64309FE5 		ldr	r3, .L17+4
+  31 0018 0000D3E5 		ldrb	r0, [r3, #0]	@ zero_extendqisi2
+  32 001c FEFFFFEB 		bl	sys_set_state
+  33 0020 0040A0E3 		mov	r4, #0
+  34              	.L4:
+  35 0024 014084E2 		add	r4, r4, #1
+  36 0028 FEFFFFEB 		bl	debug_message_send_one
+  37 002c 100054E3 		cmp	r4, #16
+  38 0030 FBFFFF1A 		bne	.L4
+  39 0034 FEFFFFEB 		bl	uart0_char_available
+  40 0038 000050E3 		cmp	r0, #0
+  41 003c 0700000A 		beq	.L13
+  42              	.L6:
+  43 0040 FEFFFFEB 		bl	uart0_get_char
+  44 0044 FEFFFFEB 		bl	uart0_char_available
+  45 0048 000050E3 		cmp	r0, #0
+  46 004c FBFFFF1A 		bne	.L6
+  47 0050 FEFFFFEB 		bl	uart1_char_available
+  48 0054 000050E3 		cmp	r0, #0
+  49 0058 0300000A 		beq	.L16
+  50              	.L8:
+  51 005c FEFFFFEB 		bl	uart1_get_char
+  52              	.L13:
+  53 0060 FEFFFFEB 		bl	uart1_char_available
+  54 0064 000050E3 		cmp	r0, #0
+  55 0068 FBFFFF1A 		bne	.L8
+  56              	.L16:
+  57 006c 10009FE5 		ldr	r0, .L17+8
+  58 0070 FEFFFFEB 		bl	debug_message_buffer
+  59 0074 1040BDE8 		ldmfd	sp!, {r4, lr}
+  60 0078 1EFF2FE1 		bx	lr
+  61              	.L18:
+  62              		.align	2
+  63              	.L17:
+  64 007c 00000000 		.word	calibration_prev_state
+  65 0080 01000000 		.word	calibration_prev_mode
+  66 0084 00000000 		.word	.LC0
+  68              		.section	.rodata.str1.4
+  69              		.align	2
+  70              	.LC1:
+  71 002c 53746172 		.ascii	"Starting calibration.\000"
+  71      74696E67 
+  71      2063616C 
+  71      69627261 
+  71      74696F6E 
+  72 0042 0000     		.align	2
+  73              	.LC2:
+  74 0044 43616E27 		.ascii	"Can't calibrate during flight!!!\000"
+  74      74206361 
+  74      6C696272 
+  74      61746520 
+  74      64757269 
+  75 0065 000000   		.text
+  76              		.align	2
+  77              		.global	calibration_enter
+  79              	calibration_enter:
+  80              		@ Function supports interworking.
+  81              		@ args = 0, pretend = 0, frame = 0
+  82              		@ frame_needed = 0, uses_anonymous_args = 0
+  83 0088 04E02DE5 		str	lr, [sp, #-4]!
+  84 008c FEFFFFEB 		bl	sys_state_is_flying
+  85 0090 000050E3 		cmp	r0, #0
+  86 0094 48009FE5 		ldr	r0, .L24
+  87 0098 0E00001A 		bne	.L20
+  88 009c FEFFFFEB 		bl	sys_get_state
+  89 00a0 40309FE5 		ldr	r3, .L24+4
+  90 00a4 0000C3E5 		strb	r0, [r3, #0]
+  91 00a8 FEFFFFEB 		bl	sys_get_mode
+  92 00ac 38309FE5 		ldr	r3, .L24+8
+  93 00b0 0000C3E5 		strb	r0, [r3, #0]
+  94 00b4 0100A0E3 		mov	r0, #1
+  95 00b8 FEFFFFEB 		bl	sys_set_mode
+  96 00bc 0200A0E3 		mov	r0, #2
+  97 00c0 FEFFFFEB 		bl	sys_set_state
+  98 00c4 24009FE5 		ldr	r0, .L24+12
+  99 00c8 FEFFFFEB 		bl	debug_message_buffer
+ 100 00cc 0100A0E3 		mov	r0, #1
+ 101              	.L22:
+ 102 00d0 04E09DE4 		ldr	lr, [sp], #4
+ 103 00d4 1EFF2FE1 		bx	lr
+ 104              	.L20:
+ 105 00d8 FEFFFFEB 		bl	debug_message_buffer
+ 106 00dc 0000A0E3 		mov	r0, #0
+ 107 00e0 FAFFFFEA 		b	.L22
+ 108              	.L25:
+ 109              		.align	2
+ 110              	.L24:
+ 111 00e4 44000000 		.word	.LC2
+ 112 00e8 00000000 		.word	calibration_prev_state
+ 113 00ec 01000000 		.word	calibration_prev_mode
+ 114 00f0 2C000000 		.word	.LC1
+ 116              		.global	__floatsisf
+ 117              		.global	__addsf3
+ 118              		.align	2
+ 119              		.global	start_gyro_calibration
+ 121              	start_gyro_calibration:
+ 122              		@ Function supports interworking.
+ 123              		@ args = 0, pretend = 0, frame = 0
+ 124              		@ frame_needed = 0, uses_anonymous_args = 0
+ 125 00f4 F0412DE9 		stmfd	sp!, {r4, r5, r6, r7, r8, lr}
+ 126 00f8 FEFFFFEB 		bl	calibration_enter
+ 127 00fc 000050E3 		cmp	r0, #0
+ 128 0100 3900000A 		beq	.L43
+ 129 0104 0070A0E3 		mov	r7, #0
+ 130 0108 0780A0E1 		mov	r8, r7
+ 131 010c 0760A0E1 		mov	r6, r7
+ 132 0110 0750A0E1 		mov	r5, r7
+ 133              	.L29:
+ 134 0114 0000A0E3 		mov	r0, #0
+ 135 0118 0110A0E3 		mov	r1, #1
+ 136 011c FEFFFFEB 		bl	ads8341_read
+ 137              	.L30:
+ 138 0120 FEFFFFEB 		bl	spi_running
+ 139 0124 004050E2 		subs	r4, r0, #0
+ 140 0128 FCFFFF1A 		bne	.L30
+ 141 012c 0110A0E3 		mov	r1, #1
+ 142 0130 FEFFFFEB 		bl	ads8341_get_value
+ 143 0134 0410A0E1 		mov	r1, r4
+ 144 0138 006086E0 		add	r6, r6, r0
+ 145 013c 0400A0E1 		mov	r0, r4
+ 146 0140 FEFFFFEB 		bl	ads8341_read
+ 147              	.L32:
+ 148 0144 FEFFFFEB 		bl	spi_running
+ 149 0148 004050E2 		subs	r4, r0, #0
+ 150 014c FCFFFF1A 		bne	.L32
+ 151 0150 0410A0E1 		mov	r1, r4
+ 152 0154 FEFFFFEB 		bl	ads8341_get_value
+ 153 0158 0210A0E3 		mov	r1, #2
+ 154 015c 007087E0 		add	r7, r7, r0
+ 155 0160 0400A0E1 		mov	r0, r4
+ 156 0164 FEFFFFEB 		bl	ads8341_read
+ 157              	.L34:
+ 158 0168 FEFFFFEB 		bl	spi_running
+ 159 016c 000050E3 		cmp	r0, #0
+ 160 0170 FCFFFF1A 		bne	.L34
+ 161 0174 0210A0E3 		mov	r1, #2
+ 162 0178 FEFFFFEB 		bl	ads8341_get_value
+ 163 017c 273CA0E3 		mov	r3, #9984
+ 164 0180 015085E2 		add	r5, r5, #1
+ 165 0184 103083E2 		add	r3, r3, #16
+ 166 0188 030055E1 		cmp	r5, r3
+ 167 018c 008088E0 		add	r8, r8, r0
+ 168 0190 DFFFFF1A 		bne	.L29
+ 169 0194 58309FE5 		ldr	r3, .L52
+ 170 0198 931680E0 		umull	r1, r0, r3, r6
+ 171 019c A006A0E1 		mov	r0, r0, lsr #13
+ 172 01a0 FEFFFFEB 		bl	__floatsisf
+ 173 01a4 48309FE5 		ldr	r3, .L52
+ 174 01a8 0020A0E1 		mov	r2, r0
+ 175 01ac 931780E0 		umull	r1, r0, r3, r7
+ 176 01b0 40309FE5 		ldr	r3, .L52+4
+ 177 01b4 A006A0E1 		mov	r0, r0, lsr #13
+ 178 01b8 182383E5 		str	r2, [r3, #792]	@ float
+ 179 01bc FEFFFFEB 		bl	__floatsisf
+ 180 01c0 2C309FE5 		ldr	r3, .L52
+ 181 01c4 0020A0E1 		mov	r2, r0
+ 182 01c8 931880E0 		umull	r1, r0, r3, r8
+ 183 01cc 24309FE5 		ldr	r3, .L52+4
+ 184 01d0 A006A0E1 		mov	r0, r0, lsr #13
+ 185 01d4 1C2383E5 		str	r2, [r3, #796]	@ float
+ 186 01d8 FEFFFFEB 		bl	__floatsisf
+ 187 01dc 14309FE5 		ldr	r3, .L52+4
+ 188 01e0 200383E5 		str	r0, [r3, #800]	@ float
+ 189 01e4 F041BDE8 		ldmfd	sp!, {r4, r5, r6, r7, r8, lr}
+ 190 01e8 FEFFFFEA 		b	calibration_exit
+ 191              	.L43:
+ 192 01ec F041BDE8 		ldmfd	sp!, {r4, r5, r6, r7, r8, lr}
+ 193 01f0 1EFF2FE1 		bx	lr
+ 194              	.L53:
+ 195              		.align	2
+ 196              	.L52:
+ 197 01f4 5917B7D1 		.word	-776530087
+ 198 01f8 00000000 		.word	global_data
+ 200              		.align	2
+ 201              		.global	start_pressure_calibration
+ 203              	start_pressure_calibration:
+ 204              		@ Function supports interworking.
+ 205              		@ args = 0, pretend = 0, frame = 0
+ 206              		@ frame_needed = 0, uses_anonymous_args = 0
+ 207 01fc 04E02DE5 		str	lr, [sp, #-4]!
+ 208 0200 FEFFFFEB 		bl	calibration_enter
+ 209 0204 000050E3 		cmp	r0, #0
+ 210 0208 0100001A 		bne	.L58
+ 211 020c 04E09DE4 		ldr	lr, [sp], #4
+ 212 0210 1EFF2FE1 		bx	lr
+ 213              	.L58:
+ 214 0214 04E09DE4 		ldr	lr, [sp], #4
+ 215 0218 FEFFFFEA 		b	calibration_exit
+ 217              		.global	__fixunssfsi
+ 218              		.align	2
+ 219              		.global	start_rc_calibration
+ 221              	start_rc_calibration:
+ 222              		@ Function supports interworking.
+ 223              		@ args = 0, pretend = 0, frame = 4
+ 224              		@ frame_needed = 1, uses_anonymous_args = 0
+ 225 021c 0DC0A0E1 		mov	ip, sp
+ 226 0220 F0DF2DE9 		stmfd	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, ip, lr, pc}
+ 227 0224 04B04CE2 		sub	fp, ip, #4
+ 228 0228 04D04DE2 		sub	sp, sp, #4
+ 229 022c FEFFFFEB 		bl	calibration_enter
+ 230 0230 000050E3 		cmp	r0, #0
+ 231 0234 0200001A 		bne	.L79
+ 232              	.L68:
+ 233 0238 28D04BE2 		sub	sp, fp, #40
+ 234 023c F06F9DE8 		ldmfd	sp, {r4, r5, r6, r7, r8, r9, sl, fp, sp, lr}
+ 235 0240 1EFF2FE1 		bx	lr
+ 236              	.L79:
+ 237 0244 2CD00BE5 		str	sp, [fp, #-44]
+ 238 0248 28D04DE2 		sub	sp, sp, #40
+ 239 024c 2D11A0E1 		mov	r1, sp, lsr #2
+ 240 0250 28D04DE2 		sub	sp, sp, #40
+ 241 0254 2D21A0E1 		mov	r2, sp, lsr #2
+ 242 0258 28D04DE2 		sub	sp, sp, #40
+ 243 025c 2D31A0E1 		mov	r3, sp, lsr #2
+ 244 0260 0050A0E3 		mov	r5, #0
+ 245 0264 0181A0E1 		mov	r8, r1, asl #2
+ 246 0268 0261A0E1 		mov	r6, r2, asl #2
+ 247 026c 0371A0E1 		mov	r7, r3, asl #2
+ 248 0270 0540A0E1 		mov	r4, r5
+ 249 0274 7D9EA0E3 		mov	r9, #2000
+ 250 0278 FAAFA0E3 		mov	sl, #1000
+ 251              	.L62:
+ 252 027c 015085E2 		add	r5, r5, #1
+ 253 0280 0500A0E1 		mov	r0, r5
+ 254 0284 FEFFFFEB 		bl	ppm_get_channel
+ 255 0288 090055E3 		cmp	r5, #9
+ 256 028c 080084E7 		str	r0, [r4, r8]
+ 257 0290 069084E7 		str	r9, [r4, r6]
+ 258 0294 07A084E7 		str	sl, [r4, r7]
+ 259 0298 044084E2 		add	r4, r4, #4
+ 260 029c F6FFFF1A 		bne	.L62
+ 261 02a0 6C709FE5 		ldr	r7, .L80
+ 262              	.L78:
+ 263 02a4 0050A0E3 		mov	r5, #0
+ 264 02a8 0540A0E1 		mov	r4, r5
+ 265              	.L64:
+ 266 02ac 014084E2 		add	r4, r4, #1
+ 267 02b0 0400A0E1 		mov	r0, r4
+ 268 02b4 FEFFFFEB 		bl	ppm_get_channel
+ 269 02b8 063095E7 		ldr	r3, [r5, r6]
+ 270 02bc 030050E1 		cmp	r0, r3
+ 271 02c0 06008597 		strls	r0, [r5, r6]
+ 272 02c4 06308587 		strhi	r3, [r5, r6]
+ 273 02c8 090054E3 		cmp	r4, #9
+ 274 02cc 045085E2 		add	r5, r5, #4
+ 275 02d0 F5FFFF1A 		bne	.L64
+ 276 02d4 A80397E5 		ldr	r0, [r7, #936]	@ float
+ 277 02d8 FEFFFFEB 		bl	__fixunssfsi
+ 278 02dc FEFFFFEB 		bl	ppm_get_channel
+ 279 02e0 4B0E50E3 		cmp	r0, #1200
+ 280 02e4 EEFFFFAA 		bge	.L78
+ 281 02e8 24309FE5 		ldr	r3, .L80
+ 282 02ec AC0393E5 		ldr	r0, [r3, #940]	@ float
+ 283 02f0 FEFFFFEB 		bl	__fixunssfsi
+ 284 02f4 FEFFFFEB 		bl	ppm_get_channel
+ 285 02f8 073CA0E3 		mov	r3, #1792
+ 286 02fc 083083E2 		add	r3, r3, #8
+ 287 0300 030050E1 		cmp	r0, r3
+ 288 0304 E6FFFFDA 		ble	.L78
+ 289 0308 FEFFFFEB 		bl	calibration_exit
+ 290 030c 2CD01BE5 		ldr	sp, [fp, #-44]
+ 291 0310 C8FFFFEA 		b	.L68
+ 292              	.L81:
+ 293              		.align	2
+ 294              	.L80:
+ 295 0314 00000000 		.word	global_data
+ 297              		.bss
+ 298              	calibration_prev_state:
+ 299 0000 00       		.space	1
+ 300              	calibration_prev_mode:
+ 301 0001 00       		.space	1
+ 302              		.comm	mavlink_system,8,4
+ 303              		.comm	global_param_id,4,4
+ 304              		.comm	state_fly_id,4,4
+ 305              		.comm	global_data,2588,4
+ 306              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
+DEFINED SYMBOLS
+                            *ABS*:00000000 calibration.c
+C:\Users\Srdjan\AppData\Local\Temp/ccOOaaaa.s:6      .text:00000000 start_mag_calibration
+C:\Users\Srdjan\AppData\Local\Temp/ccOOaaaa.s:12     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccOOaaaa.s:22     .text:00000004 calibration_exit
+C:\Users\Srdjan\AppData\Local\Temp/ccOOaaaa.s:64     .text:0000007c $d
+C:\Users\Srdjan\AppData\Local\Temp/ccOOaaaa.s:298    .bss:00000000 calibration_prev_state
+C:\Users\Srdjan\AppData\Local\Temp/ccOOaaaa.s:300    .bss:00000001 calibration_prev_mode
+C:\Users\Srdjan\AppData\Local\Temp/ccOOaaaa.s:79     .text:00000088 calibration_enter
+C:\Users\Srdjan\AppData\Local\Temp/ccOOaaaa.s:83     .text:00000088 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccOOaaaa.s:111    .text:000000e4 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccOOaaaa.s:121    .text:000000f4 start_gyro_calibration
+C:\Users\Srdjan\AppData\Local\Temp/ccOOaaaa.s:125    .text:000000f4 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccOOaaaa.s:197    .text:000001f4 $d
+                            *COM*:00000a1c global_data
+C:\Users\Srdjan\AppData\Local\Temp/ccOOaaaa.s:203    .text:000001fc start_pressure_calibration
+C:\Users\Srdjan\AppData\Local\Temp/ccOOaaaa.s:207    .text:000001fc $a
+C:\Users\Srdjan\AppData\Local\Temp/ccOOaaaa.s:221    .text:0000021c start_rc_calibration
+C:\Users\Srdjan\AppData\Local\Temp/ccOOaaaa.s:295    .text:00000314 $d
+                            *COM*:00000008 mavlink_system
+                            *COM*:00000004 global_param_id
+                            *COM*:00000004 state_fly_id
+
+UNDEFINED SYMBOLS
+sys_set_mode
+sys_set_state
+debug_message_send_one
+uart0_char_available
+uart0_get_char
+uart1_char_available
+uart1_get_char
+debug_message_buffer
+sys_state_is_flying
+sys_get_state
+sys_get_mode
+__floatsisf
+__addsf3
+ads8341_read
+spi_running
+ads8341_get_value
+__fixunssfsi
+ppm_get_channel

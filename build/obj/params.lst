@@ -1,0 +1,455 @@
+   1              		.file	"params.c"
+   2              		.text
+   3              		.align	2
+   4              		.global	param_size_check
+   6              	param_size_check:
+   7              		@ Function supports interworking.
+   8              		@ args = 0, pretend = 0, frame = 0
+   9              		@ frame_needed = 0, uses_anonymous_args = 0
+  10              		@ link register save eliminated.
+  11 0000 04309FE5 		ldr	r3, .L3
+  12 0004 0000D3E5 		ldrb	r0, [r3, #0]	@ zero_extendqisi2
+  13              		@ lr needed for prologue
+  14 0008 1EFF2FE1 		bx	lr
+  15              	.L4:
+  16              		.align	2
+  17              	.L3:
+  18 000c 00000000 		.word	param_sizecheck
+  20              		.section	.rodata.str1.4,"aMS",%progbits,1
+  21              		.align	2
+  22              	.LC0:
+  23 0000 65657072 		.ascii	"eeprom param: starting read all\000"
+  23      6F6D2070 
+  23      6172616D 
+  23      3A207374 
+  23      61727469 
+  24              		.text
+  25              		.align	2
+  26              		.global	param_read_all
+  28              	param_read_all:
+  29              		@ Function supports interworking.
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0010 04E02DE5 		str	lr, [sp, #-4]!
+  33 0014 20009FE5 		ldr	r0, .L7
+  34 0018 FEFFFFEB 		bl	debug_message_buffer
+  35 001c 1C309FE5 		ldr	r3, .L7+4
+  36 0020 6120A0E3 		mov	r2, #97
+  37 0024 002083E5 		str	r2, [r3, #0]
+  38 0028 14309FE5 		ldr	r3, .L7+8
+  39 002c 1410A0E3 		mov	r1, #20
+  40 0030 0010C3E5 		strb	r1, [r3, #0]
+  41 0034 04E09DE4 		ldr	lr, [sp], #4
+  42 0038 1EFF2FE1 		bx	lr
+  43              	.L8:
+  44              		.align	2
+  45              	.L7:
+  46 003c 00000000 		.word	.LC0
+  47 0040 00000000 		.word	param_handler_counter
+  48 0044 04000000 		.word	param_handler_step
+  50              		.section	.rodata.str1.4
+  51              		.align	2
+  52              	.LC1:
+  53 0020 65657072 		.ascii	"eeprom param: starting write all\000"
+  53      6F6D2070 
+  53      6172616D 
+  53      3A207374 
+  53      61727469 
+  54              		.text
+  55              		.align	2
+  56              		.global	param_write_all
+  58              	param_write_all:
+  59              		@ Function supports interworking.
+  60              		@ args = 0, pretend = 0, frame = 0
+  61              		@ frame_needed = 0, uses_anonymous_args = 0
+  62 0048 04E02DE5 		str	lr, [sp, #-4]!
+  63 004c 20009FE5 		ldr	r0, .L11
+  64 0050 FEFFFFEB 		bl	debug_message_buffer
+  65 0054 1C309FE5 		ldr	r3, .L11+4
+  66 0058 0020A0E3 		mov	r2, #0
+  67 005c 002083E5 		str	r2, [r3, #0]
+  68 0060 14309FE5 		ldr	r3, .L11+8
+  69 0064 0A10A0E3 		mov	r1, #10
+  70 0068 0010C3E5 		strb	r1, [r3, #0]
+  71 006c 04E09DE4 		ldr	lr, [sp], #4
+  72 0070 1EFF2FE1 		bx	lr
+  73              	.L12:
+  74              		.align	2
+  75              	.L11:
+  76 0074 20000000 		.word	.LC1
+  77 0078 00000000 		.word	param_handler_counter
+  78 007c 04000000 		.word	param_handler_step
+  80              		.section	.rodata.str1.4
+  81 0041 000000   		.align	2
+  82              	.LC2:
+  83 0044 65657072 		.ascii	"eeprom param: param IMU_RESET not overridden\000"
+  83      6F6D2070 
+  83      6172616D 
+  83      3A207061 
+  83      72616D20 
+  84 0071 000000   		.align	2
+  85              	.LC3:
+  86 0074 65657072 		.ascii	"eeprom param: security check OK\000"
+  86      6F6D2070 
+  86      6172616D 
+  86      3A207365 
+  86      63757269 
+  87              		.align	2
+  88              	.LC4:
+  89 0094 65657072 		.ascii	"eeprom param: security check FALSE read abborted\000"
+  89      6F6D2070 
+  89      6172616D 
+  89      3A207365 
+  89      63757269 
+  90 00c5 000000   		.align	2
+  91              	.LC5:
+  92 00c8 594F5520 		.ascii	"YOU SHOULD LOAD PARAMS from your file, set, and wri"
+  92      53484F55 
+  92      4C44204C 
+  92      4F414420 
+  92      50415241 
+  93 00fb 74652074 		.ascii	"te them.\000"
+  93      68656D2E 
+  93      00
+  94              		.text
+  95              		.align	2
+  96              		.global	param_read_update
+  98              	param_read_update:
+  99              		@ Function supports interworking.
+ 100              		@ args = 0, pretend = 0, frame = 4
+ 101              		@ frame_needed = 0, uses_anonymous_args = 0
+ 102 0080 10402DE9 		stmfd	sp!, {r4, lr}
+ 103 0084 04D04DE2 		sub	sp, sp, #4
+ 104 0088 0040A0E1 		mov	r4, r0
+ 105 008c 0D00A0E1 		mov	r0, sp
+ 106 0090 FEFFFFEB 		bl	eeprom_read_data
+ 107 0094 040054E3 		cmp	r4, #4
+ 108 0098 88009FE5 		ldr	r0, .L25
+ 109 009c 0A00000A 		beq	.L15
+ 110 00a0 610054E3 		cmp	r4, #97
+ 111 00a4 80309FE5 		ldr	r3, .L25+4
+ 112 00a8 00109D15 		ldrne	r1, [sp, #0]	@ float
+ 113 00ac 043183E0 		add	r3, r3, r4, asl #2
+ 114 00b0 40128315 		strne	r1, [r3, #576]	@ float
+ 115 00b4 0700000A 		beq	.L23
+ 116              	.L17:
+ 117 00b8 70309FE5 		ldr	r3, .L25+8
+ 118 00bc 081083E5 		str	r1, [r3, #8]	@ float
+ 119 00c0 04D08DE2 		add	sp, sp, #4
+ 120 00c4 1040BDE8 		ldmfd	sp!, {r4, lr}
+ 121 00c8 1EFF2FE1 		bx	lr
+ 122              	.L15:
+ 123 00cc FEFFFFEB 		bl	debug_message_buffer
+ 124 00d0 00109DE5 		ldr	r1, [sp, #0]	@ float
+ 125 00d4 F7FFFFEA 		b	.L17
+ 126              	.L23:
+ 127 00d8 00209DE5 		ldr	r2, [sp, #0]
+ 128 00dc 50309FE5 		ldr	r3, .L25+12
+ 129 00e0 030052E1 		cmp	r2, r3
+ 130 00e4 4C009FE5 		ldr	r0, .L25+16
+ 131 00e8 0700000A 		beq	.L24
+ 132 00ec FEFFFFEB 		bl	debug_message_buffer
+ 133 00f0 44009FE5 		ldr	r0, .L25+20
+ 134 00f4 FEFFFFEB 		bl	debug_message_buffer
+ 135 00f8 40309FE5 		ldr	r3, .L25+24
+ 136 00fc 00109DE5 		ldr	r1, [sp, #0]	@ float
+ 137 0100 0020A0E3 		mov	r2, #0
+ 138 0104 0020C3E5 		strb	r2, [r3, #0]
+ 139 0108 EAFFFFEA 		b	.L17
+ 140              	.L24:
+ 141 010c 30009FE5 		ldr	r0, .L25+28
+ 142 0110 FEFFFFEB 		bl	debug_message_buffer
+ 143 0114 24309FE5 		ldr	r3, .L25+24
+ 144 0118 00109DE5 		ldr	r1, [sp, #0]	@ float
+ 145 011c 0120A0E3 		mov	r2, #1
+ 146 0120 0020C3E5 		strb	r2, [r3, #0]
+ 147 0124 E3FFFFEA 		b	.L17
+ 148              	.L26:
+ 149              		.align	2
+ 150              	.L25:
+ 151 0128 44000000 		.word	.LC2
+ 152 012c 00000000 		.word	global_data
+ 153 0130 00000000 		.word	debug
+ 154 0134 1597F642 		.word	1123456789
+ 155 0138 94000000 		.word	.LC4
+ 156 013c C8000000 		.word	.LC5
+ 157 0140 00000000 		.word	param_sizecheck
+ 158 0144 74000000 		.word	.LC3
+ 160              		.align	2
+ 161              		.global	param_start_read
+ 163              	param_start_read:
+ 164              		@ Function supports interworking.
+ 165              		@ args = 0, pretend = 0, frame = 0
+ 166              		@ frame_needed = 0, uses_anonymous_args = 0
+ 167 0148 0009A0E1 		mov	r0, r0, asl #18
+ 168 014c 04E02DE5 		str	lr, [sp, #-4]!
+ 169 0150 2008A0E1 		mov	r0, r0, lsr #16
+ 170 0154 0410A0E3 		mov	r1, #4
+ 171 0158 FEFFFFEB 		bl	eeprom_start_read
+ 172 015c 04E09DE4 		ldr	lr, [sp], #4
+ 173 0160 1EFF2FE1 		bx	lr
+ 175              		.section	.rodata.str1.4
+ 176              		.align	2
+ 177              	.LC6:
+ 178 0104 65657072 		.ascii	"eeprom param: param IMU_RESET set to 0\000"
+ 178      6F6D2070 
+ 178      6172616D 
+ 178      3A207061 
+ 178      72616D20 
+ 179 012b 00       		.align	2
+ 180              	.LC7:
+ 181 012c 65657072 		.ascii	"eeprom param: security check written\000"
+ 181      6F6D2070 
+ 181      6172616D 
+ 181      3A207365 
+ 181      63757269 
+ 182              		.text
+ 183              		.align	2
+ 184              		.global	param_write
+ 186              	param_write:
+ 187              		@ Function supports interworking.
+ 188              		@ args = 0, pretend = 0, frame = 4
+ 189              		@ frame_needed = 0, uses_anonymous_args = 0
+ 190 0164 10402DE9 		stmfd	sp!, {r4, lr}
+ 191 0168 0040A0E1 		mov	r4, r0
+ 192 016c 040054E3 		cmp	r4, #4
+ 193 0170 04D04DE2 		sub	sp, sp, #4
+ 194 0174 68009FE5 		ldr	r0, .L37
+ 195 0178 1000000A 		beq	.L31
+ 196 017c 64309FE5 		ldr	r3, .L37+4
+ 197 0180 610054E3 		cmp	r4, #97
+ 198 0184 043183E0 		add	r3, r3, r4, asl #2
+ 199 0188 40329315 		ldrne	r3, [r3, #576]	@ float
+ 200 018c 00308D15 		strne	r3, [sp, #0]	@ float
+ 201 0190 0E00000A 		beq	.L36
+ 202              	.L33:
+ 203 0194 0409A0E1 		mov	r0, r4, asl #18
+ 204 0198 0D20A0E1 		mov	r2, sp
+ 205 019c 0410A0E3 		mov	r1, #4
+ 206 01a0 2008A0E1 		mov	r0, r0, lsr #16
+ 207 01a4 FEFFFFEB 		bl	eeprom_write
+ 208 01a8 00209DE5 		ldr	r2, [sp, #0]	@ float
+ 209 01ac 38309FE5 		ldr	r3, .L37+8
+ 210 01b0 042083E5 		str	r2, [r3, #4]	@ float
+ 211 01b4 04D08DE2 		add	sp, sp, #4
+ 212 01b8 1040BDE8 		ldmfd	sp!, {r4, lr}
+ 213 01bc 1EFF2FE1 		bx	lr
+ 214              	.L31:
+ 215 01c0 0030A0E3 		mov	r3, #0
+ 216 01c4 00308DE5 		str	r3, [sp, #0]	@ float
+ 217 01c8 FEFFFFEB 		bl	debug_message_buffer
+ 218 01cc F0FFFFEA 		b	.L33
+ 219              	.L36:
+ 220 01d0 18309FE5 		ldr	r3, .L37+12
+ 221 01d4 18009FE5 		ldr	r0, .L37+16
+ 222 01d8 00308DE5 		str	r3, [sp, #0]
+ 223 01dc FEFFFFEB 		bl	debug_message_buffer
+ 224 01e0 EBFFFFEA 		b	.L33
+ 225              	.L38:
+ 226              		.align	2
+ 227              	.L37:
+ 228 01e4 04010000 		.word	.LC6
+ 229 01e8 00000000 		.word	global_data
+ 230 01ec 00000000 		.word	debug
+ 231 01f0 1597F642 		.word	1123456789
+ 232 01f4 2C010000 		.word	.LC7
+ 234              		.section	.rodata.str1.4
+ 235 0151 000000   		.align	2
+ 236              	.LC8:
+ 237 0154 65657072 		.ascii	"eeprom param: write all finished\000"
+ 237      6F6D2070 
+ 237      6172616D 
+ 237      3A207772 
+ 237      69746520 
+ 238 0175 000000   		.align	2
+ 239              	.LC9:
+ 240 0178 65657072 		.ascii	"eeprom param: read aborted (!param_sizecheck)\000"
+ 240      6F6D2070 
+ 240      6172616D 
+ 240      3A207265 
+ 240      61642061 
+ 241 01a6 0000     		.align	2
+ 242              	.LC10:
+ 243 01a8 65657072 		.ascii	"eeprom param: read all finished\000"
+ 243      6F6D2070 
+ 243      6172616D 
+ 243      3A207265 
+ 243      61642061 
+ 244              		.global	__floatsisf
+ 245              		.text
+ 246              		.align	2
+ 247              		.global	param_handler
+ 249              	param_handler:
+ 250              		@ Function supports interworking.
+ 251              		@ args = 0, pretend = 0, frame = 0
+ 252              		@ frame_needed = 0, uses_anonymous_args = 0
+ 253 01f8 30402DE9 		stmfd	sp!, {r4, r5, lr}
+ 254 01fc 74419FE5 		ldr	r4, .L55
+ 255 0200 0030D4E5 		ldrb	r3, [r4, #0]	@ zero_extendqisi2
+ 256 0204 1F0053E3 		cmp	r3, #31
+ 257 0208 03F19F97 		ldrls	pc, [pc, r3, asl #2]
+ 258 020c 490000EA 		b	.L40
+ 259              		.p2align 2
+ 260              	.L45:
+ 261 0210 5C030000 		.word	.L53
+ 262 0214 38030000 		.word	.L40
+ 263 0218 38030000 		.word	.L40
+ 264 021c 38030000 		.word	.L40
+ 265 0220 38030000 		.word	.L40
+ 266 0224 38030000 		.word	.L40
+ 267 0228 38030000 		.word	.L40
+ 268 022c 38030000 		.word	.L40
+ 269 0230 38030000 		.word	.L40
+ 270 0234 38030000 		.word	.L40
+ 271 0238 90020000 		.word	.L42
+ 272 023c 5C030000 		.word	.L53
+ 273 0240 38030000 		.word	.L40
+ 274 0244 38030000 		.word	.L40
+ 275 0248 38030000 		.word	.L40
+ 276 024c 38030000 		.word	.L40
+ 277 0250 38030000 		.word	.L40
+ 278 0254 38030000 		.word	.L40
+ 279 0258 38030000 		.word	.L40
+ 280 025c 38030000 		.word	.L40
+ 281 0260 BC020000 		.word	.L43
+ 282 0264 F0020000 		.word	.L44
+ 283 0268 38030000 		.word	.L40
+ 284 026c 5C030000 		.word	.L53
+ 285 0270 38030000 		.word	.L40
+ 286 0274 38030000 		.word	.L40
+ 287 0278 38030000 		.word	.L40
+ 288 027c 38030000 		.word	.L40
+ 289 0280 38030000 		.word	.L40
+ 290 0284 38030000 		.word	.L40
+ 291 0288 5C030000 		.word	.L53
+ 292 028c 5C030000 		.word	.L53
+ 293              	.L42:
+ 294 0290 E4509FE5 		ldr	r5, .L55+4
+ 295 0294 003095E5 		ldr	r3, [r5, #0]
+ 296 0298 610053E3 		cmp	r3, #97
+ 297 029c 300000DA 		ble	.L54
+ 298 02a0 0B30A0E3 		mov	r3, #11
+ 299 02a4 0020A0E3 		mov	r2, #0
+ 300 02a8 D0009FE5 		ldr	r0, .L55+8
+ 301 02ac 0030C4E5 		strb	r3, [r4, #0]
+ 302 02b0 002085E5 		str	r2, [r5, #0]
+ 303 02b4 FEFFFFEB 		bl	debug_message_buffer
+ 304 02b8 210000EA 		b	.L41
+ 305              	.L43:
+ 306 02bc B8509FE5 		ldr	r5, .L55+4
+ 307 02c0 000095E5 		ldr	r0, [r5, #0]
+ 308 02c4 FEFFFFEB 		bl	param_start_read
+ 309 02c8 B4309FE5 		ldr	r3, .L55+12
+ 310 02cc 0030D3E5 		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 311 02d0 000053E3 		cmp	r3, #0
+ 312 02d4 1530A013 		movne	r3, #21
+ 313 02d8 0030C415 		strneb	r3, [r4, #0]
+ 314 02dc 1800001A 		bne	.L41
+ 315 02e0 A0009FE5 		ldr	r0, .L55+16
+ 316 02e4 0030C4E5 		strb	r3, [r4, #0]
+ 317 02e8 FEFFFFEB 		bl	debug_message_buffer
+ 318 02ec 140000EA 		b	.L41
+ 319              	.L44:
+ 320 02f0 84509FE5 		ldr	r5, .L55+4
+ 321 02f4 003095E5 		ldr	r3, [r5, #0]
+ 322 02f8 0300A0E1 		mov	r0, r3
+ 323 02fc 013043E2 		sub	r3, r3, #1
+ 324 0300 003085E5 		str	r3, [r5, #0]
+ 325 0304 FEFFFFEB 		bl	param_read_update
+ 326 0308 003095E5 		ldr	r3, [r5, #0]
+ 327 030c 000053E3 		cmp	r3, #0
+ 328 0310 1430A0A3 		movge	r3, #20
+ 329 0314 0030C4A5 		strgeb	r3, [r4, #0]
+ 330 0318 090000AA 		bge	.L41
+ 331 031c 0030A0E3 		mov	r3, #0
+ 332 0320 64009FE5 		ldr	r0, .L55+20
+ 333 0324 003085E5 		str	r3, [r5, #0]
+ 334 0328 FEFFFFEB 		bl	debug_message_buffer
+ 335 032c 1730A0E3 		mov	r3, #23
+ 336 0330 0030C4E5 		strb	r3, [r4, #0]
+ 337 0334 020000EA 		b	.L41
+ 338              	.L40:
+ 339 0338 0030A0E3 		mov	r3, #0
+ 340 033c 38509FE5 		ldr	r5, .L55+4
+ 341 0340 0030C4E5 		strb	r3, [r4, #0]
+ 342              	.L41:
+ 343 0344 000095E5 		ldr	r0, [r5, #0]
+ 344 0348 FEFFFFEB 		bl	__floatsisf
+ 345 034c 3C309FE5 		ldr	r3, .L55+24
+ 346 0350 000083E5 		str	r0, [r3, #0]	@ float
+ 347 0354 3040BDE8 		ldmfd	sp!, {r4, r5, lr}
+ 348 0358 1EFF2FE1 		bx	lr
+ 349              	.L53:
+ 350 035c 18509FE5 		ldr	r5, .L55+4
+ 351 0360 F7FFFFEA 		b	.L41
+ 352              	.L54:
+ 353 0364 0300A0E1 		mov	r0, r3
+ 354 0368 013083E2 		add	r3, r3, #1
+ 355 036c 003085E5 		str	r3, [r5, #0]
+ 356 0370 FEFFFFEB 		bl	param_write
+ 357 0374 F2FFFFEA 		b	.L41
+ 358              	.L56:
+ 359              		.align	2
+ 360              	.L55:
+ 361 0378 04000000 		.word	param_handler_step
+ 362 037c 00000000 		.word	param_handler_counter
+ 363 0380 54010000 		.word	.LC8
+ 364 0384 00000000 		.word	param_sizecheck
+ 365 0388 78010000 		.word	.LC9
+ 366 038c A8010000 		.word	.LC10
+ 367 0390 00000000 		.word	debug
+ 369              		.global	param_sizecheck
+ 370              		.data
+ 373              	param_sizecheck:
+ 374 0000 FF       		.byte	-1
+ 375              		.bss
+ 376              		.align	2
+ 377              	param_handler_counter:
+ 378 0000 00000000 		.space	4
+ 379              	param_handler_step:
+ 380 0004 00       		.space	1
+ 381              		.comm	mavlink_system,8,4
+ 382              		.comm	global_param_id,4,4
+ 383              		.comm	state_fly_id,4,4
+ 384              		.comm	global_data,2588,4
+ 385              		.comm	debug,12,4
+ 386 0005 000000   		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
+DEFINED SYMBOLS
+                            *ABS*:00000000 params.c
+C:\Users\Srdjan\AppData\Local\Temp/ccEtaaaa.s:6      .text:00000000 param_size_check
+C:\Users\Srdjan\AppData\Local\Temp/ccEtaaaa.s:11     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccEtaaaa.s:18     .text:0000000c $d
+C:\Users\Srdjan\AppData\Local\Temp/ccEtaaaa.s:373    .data:00000000 param_sizecheck
+C:\Users\Srdjan\AppData\Local\Temp/ccEtaaaa.s:28     .text:00000010 param_read_all
+C:\Users\Srdjan\AppData\Local\Temp/ccEtaaaa.s:32     .text:00000010 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccEtaaaa.s:46     .text:0000003c $d
+C:\Users\Srdjan\AppData\Local\Temp/ccEtaaaa.s:377    .bss:00000000 param_handler_counter
+C:\Users\Srdjan\AppData\Local\Temp/ccEtaaaa.s:379    .bss:00000004 param_handler_step
+C:\Users\Srdjan\AppData\Local\Temp/ccEtaaaa.s:58     .text:00000048 param_write_all
+C:\Users\Srdjan\AppData\Local\Temp/ccEtaaaa.s:62     .text:00000048 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccEtaaaa.s:76     .text:00000074 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccEtaaaa.s:98     .text:00000080 param_read_update
+C:\Users\Srdjan\AppData\Local\Temp/ccEtaaaa.s:102    .text:00000080 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccEtaaaa.s:151    .text:00000128 $d
+                            *COM*:00000a1c global_data
+                            *COM*:0000000c debug
+C:\Users\Srdjan\AppData\Local\Temp/ccEtaaaa.s:163    .text:00000148 param_start_read
+C:\Users\Srdjan\AppData\Local\Temp/ccEtaaaa.s:167    .text:00000148 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccEtaaaa.s:186    .text:00000164 param_write
+C:\Users\Srdjan\AppData\Local\Temp/ccEtaaaa.s:228    .text:000001e4 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccEtaaaa.s:249    .text:000001f8 param_handler
+C:\Users\Srdjan\AppData\Local\Temp/ccEtaaaa.s:253    .text:000001f8 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccEtaaaa.s:261    .text:00000210 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccEtaaaa.s:294    .text:00000290 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccEtaaaa.s:361    .text:00000378 $d
+                             .bss:00000000 $d
+                            *COM*:00000008 mavlink_system
+                            *COM*:00000004 global_param_id
+                            *COM*:00000004 state_fly_id
+
+UNDEFINED SYMBOLS
+debug_message_buffer
+eeprom_read_data
+eeprom_start_read
+eeprom_write
+__floatsisf

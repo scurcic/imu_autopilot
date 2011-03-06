@@ -1,0 +1,272 @@
+   1              		.file	"control_quadrotor_position.c"
+   2              		.global	__subsf3
+   3              		.global	__gtsf2
+   4              		.global	__ltsf2
+   5              		.global	__extendsfdf2
+   6              		.global	__muldf3
+   7              		.global	__truncdfsf2
+   8              		.global	__eqsf2
+   9              		.section	.rodata.str1.4,"aMS",%progbits,1
+  10              		.align	2
+  11              	.LC0:
+  12 0000 6174745F 		.ascii	"att_sp_pos\000"
+  12      73705F70 
+  12      6F7300
+  13 000b 00       		.text
+  14              		.align	2
+  15              		.global	control_quadrotor_position
+  17              	control_quadrotor_position:
+  18              		@ Function supports interworking.
+  19              		@ args = 0, pretend = 0, frame = 0
+  20              		@ frame_needed = 0, uses_anonymous_args = 0
+  21 0000 F04F2DE9 		stmfd	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+  22 0004 10729FE5 		ldr	r7, .L29+8
+  23 0008 04D04DE2 		sub	sp, sp, #4
+  24 000c 001397E5 		ldr	r1, [r7, #768]	@ float
+  25 0010 680097E5 		ldr	r0, [r7, #104]	@ float
+  26 0014 FEFFFFEB 		bl	__subsf3
+  27 0018 805097E5 		ldr	r5, [r7, #128]	@ float
+  28 001c 744097E5 		ldr	r4, [r7, #116]	@ float
+  29 0020 F8B19FE5 		ldr	fp, .L29+12
+  30 0024 F8619FE5 		ldr	r6, .L29+16
+  31 0028 0030A0E1 		mov	r3, r0
+  32 002c 0420A0E1 		mov	r2, r4
+  33 0030 0510A0E1 		mov	r1, r5
+  34 0034 0B00A0E1 		mov	r0, fp
+  35 0038 00608DE5 		str	r6, [sp, #0]	@ float
+  36 003c FEFFFFEB 		bl	pid_calculate
+  37 0040 041397E5 		ldr	r1, [r7, #772]	@ float
+  38 0044 00A0A0E1 		mov	sl, r0
+  39 0048 6C0097E5 		ldr	r0, [r7, #108]	@ float
+  40 004c B4A087E5 		str	sl, [r7, #180]	@ float
+  41 0050 FEFFFFEB 		bl	__subsf3
+  42 0054 844097E5 		ldr	r4, [r7, #132]	@ float
+  43 0058 785097E5 		ldr	r5, [r7, #120]	@ float
+  44 005c C4919FE5 		ldr	r9, .L29+20
+  45 0060 0030A0E1 		mov	r3, r0
+  46 0064 0410A0E1 		mov	r1, r4
+  47 0068 0520A0E1 		mov	r2, r5
+  48 006c 0900A0E1 		mov	r0, r9
+  49 0070 00608DE5 		str	r6, [sp, #0]	@ float
+  50 0074 FEFFFFEB 		bl	pid_calculate
+  51 0078 AC519FE5 		ldr	r5, .L29+24
+  52 007c 7C2097E5 		ldr	r2, [r7, #124]	@ float
+  53 0080 0080A0E1 		mov	r8, r0
+  54 0084 881097E5 		ldr	r1, [r7, #136]	@ float
+  55 0088 703097E5 		ldr	r3, [r7, #112]	@ float
+  56 008c 0500A0E1 		mov	r0, r5
+  57 0090 00608DE5 		str	r6, [sp, #0]	@ float
+  58 0094 B88087E5 		str	r8, [r7, #184]	@ float
+  59 0098 FEFFFFEB 		bl	pid_calculate
+  60 009c A84297E5 		ldr	r4, [r7, #680]	@ float
+  61 00a0 023180E2 		add	r3, r0, #-2147483648
+  62 00a4 0300A0E1 		mov	r0, r3
+  63 00a8 0410A0E1 		mov	r1, r4
+  64 00ac BC3087E5 		str	r3, [r7, #188]	@ float
+  65 00b0 FEFFFFEB 		bl	__gtsf2
+  66 00b4 000050E3 		cmp	r0, #0
+  67 00b8 BC4087C5 		strgt	r4, [r7, #188]	@ float
+  68 00bc 0130A0C3 		movgt	r3, #1
+  69 00c0 1F30C5C5 		strgtb	r3, [r5, #31]
+  70 00c4 BC0097E5 		ldr	r0, [r7, #188]	@ float
+  71 00c8 0010A0E3 		mov	r1, #0
+  72 00cc FEFFFFEB 		bl	__ltsf2
+  73 00d0 000050E3 		cmp	r0, #0
+  74 00d4 0130A0B3 		movlt	r3, #1
+  75 00d8 1F30C5B5 		strltb	r3, [r5, #31]
+  76 00dc 0020A0B3 		movlt	r2, #0
+  77 00e0 02018AE2 		add	r0, sl, #-2147483648
+  78 00e4 BC2087B5 		strlt	r2, [r7, #188]	@ float
+  79 00e8 FEFFFFEB 		bl	__extendsfdf2
+  80 00ec 122E8FE2 		adr	r2, .L29
+  81 00f0 0C0092E8 		ldmia	r2, {r2-r3}
+  82 00f4 FEFFFFEB 		bl	__muldf3
+  83 00f8 FEFFFFEB 		bl	__truncdfsf2
+  84 00fc D80087E5 		str	r0, [r7, #216]	@ float
+  85 0100 0800A0E1 		mov	r0, r8
+  86 0104 FEFFFFEB 		bl	__extendsfdf2
+  87 0108 412F8FE2 		adr	r2, .L29
+  88 010c 0C0092E8 		ldmia	r2, {r2-r3}
+  89 0110 FEFFFFEB 		bl	__muldf3
+  90 0114 FEFFFFEB 		bl	__truncdfsf2
+  91 0118 945297E5 		ldr	r5, [r7, #660]	@ float
+  92 011c 0040A0E1 		mov	r4, r0
+  93 0120 0510A0E1 		mov	r1, r5
+  94 0124 D44087E5 		str	r4, [r7, #212]	@ float
+  95 0128 FEFFFFEB 		bl	__gtsf2
+  96 012c 000050E3 		cmp	r0, #0
+  97 0130 330000CA 		bgt	.L25
+  98 0134 025185E2 		add	r5, r5, #-2147483648
+  99 0138 0400A0E1 		mov	r0, r4
+ 100 013c 0510A0E1 		mov	r1, r5
+ 101 0140 FEFFFFEB 		bl	__ltsf2
+ 102 0144 000050E3 		cmp	r0, #0
+ 103 0148 2D0000BA 		blt	.L25
+ 104              	.L11:
+ 105 014c D85097E5 		ldr	r5, [r7, #216]	@ float
+ 106 0150 944297E5 		ldr	r4, [r7, #660]	@ float
+ 107 0154 0500A0E1 		mov	r0, r5
+ 108 0158 0410A0E1 		mov	r1, r4
+ 109 015c FEFFFFEB 		bl	__gtsf2
+ 110 0160 000050E3 		cmp	r0, #0
+ 111 0164 B0609FE5 		ldr	r6, .L29+8
+ 112 0168 0F0000CA 		bgt	.L26
+ 113 016c 024184E2 		add	r4, r4, #-2147483648
+ 114 0170 0500A0E1 		mov	r0, r5
+ 115 0174 0410A0E1 		mov	r1, r4
+ 116 0178 FEFFFFEB 		bl	__ltsf2
+ 117 017c 000050E3 		cmp	r0, #0
+ 118 0180 090000BA 		blt	.L26
+ 119 0184 A4209FE5 		ldr	r2, .L29+28
+ 120 0188 0030D2E5 		ldrb	r3, [r2, #0]	@ zero_extendqisi2
+ 121 018c 013083E2 		add	r3, r3, #1
+ 122 0190 FF3003E2 		and	r3, r3, #255
+ 123 0194 040053E3 		cmp	r3, #4
+ 124 0198 0030C2E5 		strb	r3, [r2, #0]
+ 125 019c 0C00000A 		beq	.L28
+ 126              	.L24:
+ 127 01a0 04D08DE2 		add	sp, sp, #4
+ 128 01a4 F04FBDE8 		ldmfd	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+ 129 01a8 1EFF2FE1 		bx	lr
+ 130              	.L26:
+ 131 01ac 7C209FE5 		ldr	r2, .L29+28
+ 132 01b0 0130A0E3 		mov	r3, #1
+ 133 01b4 1F30CBE5 		strb	r3, [fp, #31]
+ 134 01b8 0030D2E5 		ldrb	r3, [r2, #0]	@ zero_extendqisi2
+ 135 01bc 013083E2 		add	r3, r3, #1
+ 136 01c0 FF3003E2 		and	r3, r3, #255
+ 137 01c4 040053E3 		cmp	r3, #4
+ 138 01c8 D84086E5 		str	r4, [r6, #216]	@ float
+ 139 01cc 0030C2E5 		strb	r3, [r2, #0]
+ 140 01d0 F2FFFF1A 		bne	.L24
+ 141              	.L28:
+ 142 01d4 043043E2 		sub	r3, r3, #4
+ 143 01d8 840397E5 		ldr	r0, [r7, #900]	@ float
+ 144 01dc FE15A0E3 		mov	r1, #1065353216
+ 145 01e0 0030C2E5 		strb	r3, [r2, #0]
+ 146 01e4 FEFFFFEB 		bl	__eqsf2
+ 147 01e8 000050E3 		cmp	r0, #0
+ 148 01ec EBFFFF1A 		bne	.L24
+ 149 01f0 3CC09FE5 		ldr	ip, .L29+32
+ 150 01f4 3C009FE5 		ldr	r0, .L29+36
+ 151 01f8 0E009CE8 		ldmia	ip, {r1, r2, r3}
+ 152 01fc FEFFFFEB 		bl	debug_vect
+ 153 0200 E6FFFFEA 		b	.L24
+ 154              	.L25:
+ 155 0204 0130A0E3 		mov	r3, #1
+ 156 0208 1F30C9E5 		strb	r3, [r9, #31]
+ 157 020c D45087E5 		str	r5, [r7, #212]	@ float
+ 158 0210 CDFFFFEA 		b	.L11
+ 159              	.L30:
+ 160              		.align	2
+ 161              	.L29:
+ 162 0214 9999A93F 		.word	1068079513
+ 163 0218 9A999999 		.word	-1717986918
+ 164 021c 00000000 		.word	global_data
+ 165 0220 00000000 		.word	x_axis_controller
+ 166 0224 0AD7A33C 		.word	1017370378
+ 167 0228 00000000 		.word	y_axis_controller
+ 168 022c 00000000 		.word	z_axis_controller
+ 169 0230 00000000 		.word	pos_controller_counter
+ 170 0234 D4000000 		.word	global_data+212
+ 171 0238 00000000 		.word	.LC0
+ 173              		.align	2
+ 174              		.global	control_quadrotor_position_init
+ 176              	control_quadrotor_position_init:
+ 177              		@ Function supports interworking.
+ 178              		@ args = 0, pretend = 0, frame = 0
+ 179              		@ frame_needed = 0, uses_anonymous_args = 0
+ 180 023c F0412DE9 		stmfd	sp!, {r4, r5, r6, r7, r8, lr}
+ 181 0240 B0409FE5 		ldr	r4, .L33
+ 182 0244 E0C294E5 		ldr	ip, [r4, #736]	@ float
+ 183 0248 E4E294E5 		ldr	lr, [r4, #740]	@ float
+ 184 024c 0020A0E3 		mov	r2, #0
+ 185 0250 E86294E5 		ldr	r6, [r4, #744]	@ float
+ 186 0254 EC7294E5 		ldr	r7, [r4, #748]	@ float
+ 187 0258 988294E5 		ldr	r8, [r4, #664]	@ float
+ 188 025c 4114A0E3 		mov	r1, #1090519040
+ 189 0260 0CD04DE2 		sub	sp, sp, #12
+ 190 0264 0150A0E3 		mov	r5, #1
+ 191 0268 0230A0E1 		mov	r3, r2
+ 192 026c 80C084E5 		str	ip, [r4, #128]	@ float
+ 193 0270 84009FE5 		ldr	r0, .L33+4
+ 194 0274 96C0A0E3 		mov	ip, #150
+ 195 0278 021681E2 		add	r1, r1, #2097152
+ 196 027c 84E084E5 		str	lr, [r4, #132]	@ float
+ 197 0280 08C08DE5 		str	ip, [sp, #8]
+ 198 0284 886084E5 		str	r6, [r4, #136]	@ float
+ 199 0288 8C7084E5 		str	r7, [r4, #140]	@ float
+ 200 028c 00808DE5 		str	r8, [sp, #0]	@ float
+ 201 0290 04508DE5 		str	r5, [sp, #4]
+ 202 0294 FEFFFFEB 		bl	pid_init
+ 203 0298 0020A0E3 		mov	r2, #0
+ 204 029c 98E294E5 		ldr	lr, [r4, #664]	@ float
+ 205 02a0 4114A0E3 		mov	r1, #1090519040
+ 206 02a4 0230A0E1 		mov	r3, r2
+ 207 02a8 97C0A0E3 		mov	ip, #151
+ 208 02ac 4C009FE5 		ldr	r0, .L33+8
+ 209 02b0 021681E2 		add	r1, r1, #2097152
+ 210 02b4 08C08DE5 		str	ip, [sp, #8]
+ 211 02b8 00E08DE5 		str	lr, [sp, #0]	@ float
+ 212 02bc 04508DE5 		str	r5, [sp, #4]
+ 213 02c0 FEFFFFEB 		bl	pid_init
+ 214 02c4 ACC294E5 		ldr	ip, [r4, #684]	@ float
+ 215 02c8 0020A0E3 		mov	r2, #0
+ 216 02cc 4114A0E3 		mov	r1, #1090519040
+ 217 02d0 00C08DE5 		str	ip, [sp, #0]	@ float
+ 218 02d4 28009FE5 		ldr	r0, .L33+12
+ 219 02d8 98C0A0E3 		mov	ip, #152
+ 220 02dc 021681E2 		add	r1, r1, #2097152
+ 221 02e0 0230A0E1 		mov	r3, r2
+ 222 02e4 20108DE9 		stmib	sp, {r5, ip}	@ phole stm
+ 223 02e8 FEFFFFEB 		bl	pid_init
+ 224 02ec 0CD08DE2 		add	sp, sp, #12
+ 225 02f0 F041BDE8 		ldmfd	sp!, {r4, r5, r6, r7, r8, lr}
+ 226 02f4 1EFF2FE1 		bx	lr
+ 227              	.L34:
+ 228              		.align	2
+ 229              	.L33:
+ 230 02f8 00000000 		.word	global_data
+ 231 02fc 00000000 		.word	x_axis_controller
+ 232 0300 00000000 		.word	y_axis_controller
+ 233 0304 00000000 		.word	z_axis_controller
+ 235              		.global	pos_controller_counter
+ 236              		.bss
+ 239              	pos_controller_counter:
+ 240 0000 00       		.space	1
+ 241              		.comm	x_axis_controller,32,4
+ 242              		.comm	y_axis_controller,32,4
+ 243              		.comm	z_axis_controller,32,4
+ 244              		.comm	global_param_id,4,4
+ 245              		.comm	state_fly_id,4,4
+ 246              		.comm	global_data,2588,4
+ 247              		.comm	mavlink_system,8,4
+ 248              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
+DEFINED SYMBOLS
+                            *ABS*:00000000 control_quadrotor_position.c
+C:\Users\Srdjan\AppData\Local\Temp/ccclaaaa.s:17     .text:00000000 control_quadrotor_position
+C:\Users\Srdjan\AppData\Local\Temp/ccclaaaa.s:21     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccclaaaa.s:162    .text:00000214 $d
+                            *COM*:00000a1c global_data
+                            *COM*:00000020 x_axis_controller
+                            *COM*:00000020 y_axis_controller
+                            *COM*:00000020 z_axis_controller
+C:\Users\Srdjan\AppData\Local\Temp/ccclaaaa.s:239    .bss:00000000 pos_controller_counter
+C:\Users\Srdjan\AppData\Local\Temp/ccclaaaa.s:176    .text:0000023c control_quadrotor_position_init
+C:\Users\Srdjan\AppData\Local\Temp/ccclaaaa.s:180    .text:0000023c $a
+C:\Users\Srdjan\AppData\Local\Temp/ccclaaaa.s:230    .text:000002f8 $d
+                            *COM*:00000004 global_param_id
+                            *COM*:00000004 state_fly_id
+                            *COM*:00000008 mavlink_system
+
+UNDEFINED SYMBOLS
+__subsf3
+__gtsf2
+__ltsf2
+__extendsfdf2
+__muldf3
+__truncdfsf2
+__eqsf2
+pid_calculate
+debug_vect
+pid_init

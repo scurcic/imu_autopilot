@@ -1,0 +1,908 @@
+   1              		.file	"gps_nmea.c"
+   2              		.text
+   3              		.align	2
+   4              		.global	ubxsend_cfg_rst
+   6              	ubxsend_cfg_rst:
+   7              		@ Function supports interworking.
+   8              		@ args = 0, pretend = 0, frame = 0
+   9              		@ frame_needed = 0, uses_anonymous_args = 0
+  10              		@ link register save eliminated.
+  11              		@ lr needed for prologue
+  12 0000 1EFF2FE1 		bx	lr
+  14              		.align	2
+  15              		.global	GpsFixValid
+  17              	GpsFixValid:
+  18              		@ Function supports interworking.
+  19              		@ args = 0, pretend = 0, frame = 0
+  20              		@ frame_needed = 0, uses_anonymous_args = 0
+  21              		@ link register save eliminated.
+  22 0004 04309FE5 		ldr	r3, .L5
+  23 0008 0000D3E5 		ldrb	r0, [r3, #0]	@ zero_extendqisi2
+  24              		@ lr needed for prologue
+  25 000c 1EFF2FE1 		bx	lr
+  26              	.L6:
+  27              		.align	2
+  28              	.L5:
+  29 0010 00000000 		.word	gps_pos_available
+  31              		.align	2
+  32              		.global	parse_nmea
+  34              	parse_nmea:
+  35              		@ Function supports interworking.
+  36              		@ args = 0, pretend = 0, frame = 0
+  37              		@ frame_needed = 0, uses_anonymous_args = 0
+  38 0014 B8C09FE5 		ldr	ip, .L24
+  39 0018 00109CE5 		ldr	r1, [ip, #0]
+  40 001c 000051E3 		cmp	r1, #0
+  41 0020 10402DE9 		stmfd	sp!, {r4, lr}
+  42 0024 FF0000E2 		and	r0, r0, #255
+  43 0028 1000001A 		bne	.L8
+  44 002c 0A0050E3 		cmp	r0, #10
+  45 0030 0D005013 		cmpne	r0, #13
+  46 0034 0010A013 		movne	r1, #0
+  47 0038 0110A003 		moveq	r1, #1
+  48 003c 2200000A 		beq	.L10
+  49 0040 240050E3 		cmp	r0, #36
+  50 0044 2000000A 		beq	.L10
+  51 0048 88409FE5 		ldr	r4, .L24+4
+  52 004c 88309FE5 		ldr	r3, .L24+8
+  53 0050 0120A0E3 		mov	r2, #1
+  54 0054 0000C3E5 		strb	r0, [r3, #0]
+  55 0058 00208CE5 		str	r2, [ip, #0]
+  56 005c 0010C4E5 		strb	r1, [r4, #0]
+  57              	.L17:
+  58 0060 0030D4E5 		ldrb	r3, [r4, #0]	@ zero_extendqisi2
+  59 0064 FF0003E2 		and	r0, r3, #255
+  60              	.L18:
+  61 0068 1040BDE8 		ldmfd	sp!, {r4, lr}
+  62 006c 1EFF2FE1 		bx	lr
+  63              	.L8:
+  64 0070 FD0051E3 		cmp	r1, #253
+  65 0074 5C409FC5 		ldrgt	r4, .L24+4
+  66 0078 0130A0C3 		movgt	r3, #1
+  67 007c 0030C4C5 		strgtb	r3, [r4, #0]
+  68 0080 F6FFFFCA 		bgt	.L17
+  69              	.L23:
+  70 0084 0A0050E3 		cmp	r0, #10
+  71 0088 0D005013 		cmpne	r0, #13
+  72 008c 44409F05 		ldreq	r4, .L24+4
+  73 0090 0130A003 		moveq	r3, #1
+  74 0094 00E0A013 		movne	lr, #0
+  75 0098 01E0A003 		moveq	lr, #1
+  76 009c 0030C405 		streqb	r3, [r4, #0]
+  77 00a0 EEFFFF0A 		beq	.L17
+  78 00a4 012081E2 		add	r2, r1, #1
+  79 00a8 28409FE5 		ldr	r4, .L24+4
+  80 00ac 28309FE5 		ldr	r3, .L24+8
+  81 00b0 FD0052E3 		cmp	r2, #253
+  82 00b4 0100C3E7 		strb	r0, [r3, r1]
+  83 00b8 00208CE5 		str	r2, [ip, #0]
+  84 00bc 00E0C4E5 		strb	lr, [r4, #0]
+  85 00c0 0130A0C3 		movgt	r3, #1
+  86 00c4 0030C4C5 		strgtb	r3, [r4, #0]
+  87 00c8 E4FFFFEA 		b	.L17
+  88              	.L10:
+  89 00cc 0000A0E3 		mov	r0, #0
+  90 00d0 E4FFFFEA 		b	.L18
+  91              	.L25:
+  92              		.align	2
+  93              	.L24:
+  94 00d4 00000000 		.word	nmea_msg_len
+  95 00d8 00000000 		.word	gps_msg_received
+  96 00dc 00000000 		.word	nmea_msg_buf
+  98              		.global	__muldf3
+  99              		.global	__divdf3
+ 100              		.global	__fixunsdfsi
+ 101              		.align	2
+ 102              		.global	parse_nmea_GPRMC
+ 104              	parse_nmea_GPRMC:
+ 105              		@ Function supports interworking.
+ 106              		@ args = 0, pretend = 0, frame = 4
+ 107              		@ frame_needed = 0, uses_anonymous_args = 0
+ 108 00e0 70402DE9 		stmfd	sp!, {r4, r5, r6, lr}
+ 109 00e4 88019FE5 		ldr	r0, .L60+8
+ 110 00e8 0830D0E5 		ldrb	r3, [r0, #8]	@ zero_extendqisi2
+ 111 00ec 2C0053E3 		cmp	r3, #44
+ 112 00f0 04D04DE2 		sub	sp, sp, #4
+ 113 00f4 1600000A 		beq	.L54
+ 114 00f8 78619FE5 		ldr	r6, .L60+12
+ 115 00fc 001096E5 		ldr	r1, [r6, #0]
+ 116 0100 0950A0E3 		mov	r5, #9
+ 117 0104 0020A0E1 		mov	r2, r0
+ 118              	.L31:
+ 119 0108 010055E1 		cmp	r5, r1
+ 120 010c 0D0000AA 		bge	.L51
+ 121 0110 0930D2E5 		ldrb	r3, [r2, #9]	@ zero_extendqisi2
+ 122 0114 2C0053E3 		cmp	r3, #44
+ 123 0118 015085E2 		add	r5, r5, #1
+ 124 011c 012082E2 		add	r2, r2, #1
+ 125 0120 F8FFFF1A 		bne	.L31
+ 126              	.L33:
+ 127 0124 001096E5 		ldr	r1, [r6, #0]
+ 128 0128 002085E0 		add	r2, r5, r0
+ 129              	.L35:
+ 130 012c 0030D2E5 		ldrb	r3, [r2, #0]	@ zero_extendqisi2
+ 131 0130 2C0053E3 		cmp	r3, #44
+ 132 0134 015085E2 		add	r5, r5, #1
+ 133 0138 0B00000A 		beq	.L55
+ 134 013c 010055E1 		cmp	r5, r1
+ 135 0140 012082E2 		add	r2, r2, #1
+ 136 0144 F8FFFFBA 		blt	.L35
+ 137              	.L51:
+ 138 0148 04D08DE2 		add	sp, sp, #4
+ 139 014c 7040BDE8 		ldmfd	sp!, {r4, r5, r6, lr}
+ 140 0150 1EFF2FE1 		bx	lr
+ 141              	.L54:
+ 142 0154 0930D0E5 		ldrb	r3, [r0, #9]	@ zero_extendqisi2
+ 143 0158 2C0053E3 		cmp	r3, #44
+ 144 015c 14619F15 		ldrne	r6, .L60+12
+ 145 0160 0950A013 		movne	r5, #9
+ 146 0164 EEFFFF1A 		bne	.L33
+ 147 0168 F6FFFFEA 		b	.L51
+ 148              	.L55:
+ 149 016c 002085E0 		add	r2, r5, r0
+ 150              	.L37:
+ 151 0170 0030D2E5 		ldrb	r3, [r2, #0]	@ zero_extendqisi2
+ 152 0174 2C0053E3 		cmp	r3, #44
+ 153 0178 012082E2 		add	r2, r2, #1
+ 154 017c 015085E2 		add	r5, r5, #1
+ 155 0180 0200000A 		beq	.L56
+ 156 0184 010055E1 		cmp	r5, r1
+ 157 0188 F8FFFFBA 		blt	.L37
+ 158 018c EDFFFFEA 		b	.L51
+ 159              	.L56:
+ 160 0190 002085E0 		add	r2, r5, r0
+ 161              	.L40:
+ 162 0194 0030D2E5 		ldrb	r3, [r2, #0]	@ zero_extendqisi2
+ 163 0198 2C0053E3 		cmp	r3, #44
+ 164 019c 012082E2 		add	r2, r2, #1
+ 165 01a0 015085E2 		add	r5, r5, #1
+ 166 01a4 0200000A 		beq	.L57
+ 167 01a8 010055E1 		cmp	r5, r1
+ 168 01ac F8FFFFBA 		blt	.L40
+ 169 01b0 E4FFFFEA 		b	.L51
+ 170              	.L57:
+ 171 01b4 002085E0 		add	r2, r5, r0
+ 172              	.L43:
+ 173 01b8 0030D2E5 		ldrb	r3, [r2, #0]	@ zero_extendqisi2
+ 174 01bc 2C0053E3 		cmp	r3, #44
+ 175 01c0 012082E2 		add	r2, r2, #1
+ 176 01c4 015085E2 		add	r5, r5, #1
+ 177 01c8 0200000A 		beq	.L58
+ 178 01cc 010055E1 		cmp	r5, r1
+ 179 01d0 F8FFFFBA 		blt	.L43
+ 180 01d4 DBFFFFEA 		b	.L51
+ 181              	.L58:
+ 182 01d8 002085E0 		add	r2, r5, r0
+ 183              	.L46:
+ 184 01dc 0030D2E5 		ldrb	r3, [r2, #0]	@ zero_extendqisi2
+ 185 01e0 2C0053E3 		cmp	r3, #44
+ 186 01e4 012082E2 		add	r2, r2, #1
+ 187 01e8 015085E2 		add	r5, r5, #1
+ 188 01ec 0200000A 		beq	.L59
+ 189 01f0 010055E1 		cmp	r5, r1
+ 190 01f4 F8FFFFBA 		blt	.L46
+ 191 01f8 D2FFFFEA 		b	.L51
+ 192              	.L59:
+ 193 01fc 004085E0 		add	r4, r5, r0
+ 194 0200 0400A0E1 		mov	r0, r4
+ 195 0204 0D10A0E1 		mov	r1, sp
+ 196 0208 FEFFFFEB 		bl	strtod
+ 197 020c 58208FE2 		adr	r2, .L60
+ 198 0210 0C0092E8 		ldmia	r2, {r2-r3}
+ 199 0214 FEFFFFEB 		bl	__muldf3
+ 200 0218 0121A0E3 		mov	r2, #1073741824
+ 201 021c 592882E2 		add	r2, r2, #5832704
+ 202 0220 0030A0E3 		mov	r3, #0
+ 203 0224 FEFFFFEB 		bl	__muldf3
+ 204 0228 0121A0E3 		mov	r2, #1073741824
+ 205 022c 2B2782E2 		add	r2, r2, #11272192
+ 206 0230 022A82E2 		add	r2, r2, #8192
+ 207 0234 0030A0E3 		mov	r3, #0
+ 208 0238 FEFFFFEB 		bl	__divdf3
+ 209 023c FEFFFFEB 		bl	__fixunsdfsi
+ 210 0240 34309FE5 		ldr	r3, .L60+16
+ 211 0244 002096E5 		ldr	r2, [r6, #0]
+ 212 0248 B000C3E1 		strh	r0, [r3, #0]	@ movhi
+ 213              	.L49:
+ 214 024c 0030D4E5 		ldrb	r3, [r4, #0]	@ zero_extendqisi2
+ 215 0250 2C0053E3 		cmp	r3, #44
+ 216 0254 015085E2 		add	r5, r5, #1
+ 217 0258 014084E2 		add	r4, r4, #1
+ 218 025c B9FFFF0A 		beq	.L51
+ 219 0260 020055E1 		cmp	r5, r2
+ 220 0264 F8FFFFBA 		blt	.L49
+ 221 0268 B6FFFFEA 		b	.L51
+ 222              	.L61:
+ 223              		.align	2
+ 224              	.L60:
+ 225 026c CAA1FD3F 		.word	1073586634
+ 226 0270 6F1283C0 		.word	-1065151889
+ 227 0274 00000000 		.word	nmea_msg_buf
+ 228 0278 00000000 		.word	nmea_msg_len
+ 229 027c 00000000 		.word	gps_gspeed
+ 231              		.global	__adddf3
+ 232              		.global	__fixdfsi
+ 233              		.global	__truncdfsf2
+ 234              		.global	__mulsf3
+ 235              		.global	__fixsfsi
+ 236              		.align	2
+ 237              		.global	parse_nmea_GPGGA
+ 239              	parse_nmea_GPGGA:
+ 240              		@ Function supports interworking.
+ 241              		@ args = 0, pretend = 0, frame = 20
+ 242              		@ frame_needed = 0, uses_anonymous_args = 0
+ 243 0280 F04F2DE9 		stmfd	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+ 244 0284 7CA49FE5 		ldr	sl, .L128+8
+ 245 0288 0830DAE5 		ldrb	r3, [sl, #8]	@ zero_extendqisi2
+ 246 028c 2C0053E3 		cmp	r3, #44
+ 247 0290 14D04DE2 		sub	sp, sp, #20
+ 248 0294 2B00000A 		beq	.L118
+ 249 0298 6C949FE5 		ldr	r9, .L128+12
+ 250 029c 001099E5 		ldr	r1, [r9, #0]
+ 251 02a0 0960A0E3 		mov	r6, #9
+ 252 02a4 0A20A0E1 		mov	r2, sl
+ 253              	.L68:
+ 254 02a8 010056E1 		cmp	r6, r1
+ 255 02ac 016086E2 		add	r6, r6, #1
+ 256 02b0 210000AA 		bge	.L113
+ 257 02b4 0930D2E5 		ldrb	r3, [r2, #9]	@ zero_extendqisi2
+ 258 02b8 2C0053E3 		cmp	r3, #44
+ 259 02bc 012082E2 		add	r2, r2, #1
+ 260 02c0 F8FFFF1A 		bne	.L68
+ 261 02c4 0600A0E1 		mov	r0, r6
+ 262              	.L67:
+ 263 02c8 0A0080E0 		add	r0, r0, sl
+ 264 02cc 10108DE2 		add	r1, sp, #16
+ 265 02d0 FEFFFFEB 		bl	strtod
+ 266 02d4 0121A0E3 		mov	r2, #1073741824
+ 267 02d8 0030A0E3 		mov	r3, #0
+ 268 02dc 592882E2 		add	r2, r2, #5832704
+ 269 02e0 08B08DE2 		add	fp, sp, #8
+ 270 02e4 FEFFFFEB 		bl	__divdf3
+ 271 02e8 0B20A0E1 		mov	r2, fp
+ 272 02ec FEFFFFEB 		bl	modf
+ 273 02f0 0121A0E3 		mov	r2, #1073741824
+ 274 02f4 592882E2 		add	r2, r2, #5832704
+ 275 02f8 0030A0E3 		mov	r3, #0
+ 276 02fc FEFFFFEB 		bl	__muldf3
+ 277 0300 0121A0E3 		mov	r2, #1073741824
+ 278 0304 4E2882E2 		add	r2, r2, #5111808
+ 279 0308 0030A0E3 		mov	r3, #0
+ 280 030c FEFFFFEB 		bl	__divdf3
+ 281 0310 08708DE2 		add	r7, sp, #8
+ 282 0314 800197E8 		ldmia	r7, {r7-r8}
+ 283 0318 005099E5 		ldr	r5, [r9, #0]
+ 284 031c 0AC086E0 		add	ip, r6, sl
+ 285              	.L71:
+ 286 0320 0030DCE5 		ldrb	r3, [ip, #0]	@ zero_extendqisi2
+ 287 0324 2C0053E3 		cmp	r3, #44
+ 288 0328 01C08CE2 		add	ip, ip, #1
+ 289 032c 016086E2 		add	r6, r6, #1
+ 290 0330 0B00000A 		beq	.L119
+ 291 0334 050056E1 		cmp	r6, r5
+ 292 0338 F8FFFFBA 		blt	.L71
+ 293              	.L113:
+ 294 033c 14D08DE2 		add	sp, sp, #20
+ 295 0340 F04FBDE8 		ldmfd	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+ 296 0344 1EFF2FE1 		bx	lr
+ 297              	.L118:
+ 298 0348 0930DAE5 		ldrb	r3, [sl, #9]	@ zero_extendqisi2
+ 299 034c 2C0053E3 		cmp	r3, #44
+ 300 0350 0960A013 		movne	r6, #9
+ 301 0354 B0939F15 		ldrne	r9, .L128+12
+ 302 0358 0600A011 		movne	r0, r6
+ 303 035c D9FFFF1A 		bne	.L67
+ 304 0360 F5FFFFEA 		b	.L113
+ 305              	.L119:
+ 306 0364 0720A0E1 		mov	r2, r7
+ 307 0368 0830A0E1 		mov	r3, r8
+ 308 036c FEFFFFEB 		bl	__adddf3
+ 309 0370 0630DAE7 		ldrb	r3, [sl, r6]	@ zero_extendqisi2
+ 310 0374 530053E3 		cmp	r3, #83
+ 311 0378 02318002 		addeq	r3, r0, #-2147483648
+ 312 037c 0140A001 		moveq	r4, r1
+ 313 0380 0070A0E1 		mov	r7, r0
+ 314 0384 0180A0E1 		mov	r8, r1
+ 315 0388 0370A001 		moveq	r7, r3
+ 316 038c 0480A001 		moveq	r8, r4
+ 317 0390 0A2086E0 		add	r2, r6, sl
+ 318              	.L77:
+ 319 0394 0030D2E5 		ldrb	r3, [r2, #0]	@ zero_extendqisi2
+ 320 0398 2C0053E3 		cmp	r3, #44
+ 321 039c 016086E2 		add	r6, r6, #1
+ 322 03a0 0300000A 		beq	.L120
+ 323 03a4 050056E1 		cmp	r6, r5
+ 324 03a8 012082E2 		add	r2, r2, #1
+ 325 03ac F8FFFFBA 		blt	.L77
+ 326 03b0 E1FFFFEA 		b	.L113
+ 327              	.L120:
+ 328 03b4 54239FE5 		ldr	r2, .L128+16
+ 329 03b8 0030A0E3 		mov	r3, #0
+ 330 03bc 0700A0E1 		mov	r0, r7
+ 331 03c0 0810A0E1 		mov	r1, r8
+ 332 03c4 FEFFFFEB 		bl	__muldf3
+ 333 03c8 FEFFFFEB 		bl	__fixdfsi
+ 334 03cc 40339FE5 		ldr	r3, .L128+20
+ 335 03d0 0A4086E0 		add	r4, r6, sl
+ 336 03d4 000083E5 		str	r0, [r3, #0]
+ 337 03d8 10108DE2 		add	r1, sp, #16
+ 338 03dc 0400A0E1 		mov	r0, r4
+ 339 03e0 FEFFFFEB 		bl	strtod
+ 340 03e4 0121A0E3 		mov	r2, #1073741824
+ 341 03e8 0030A0E3 		mov	r3, #0
+ 342 03ec 592882E2 		add	r2, r2, #5832704
+ 343 03f0 FEFFFFEB 		bl	__divdf3
+ 344 03f4 0B20A0E1 		mov	r2, fp
+ 345 03f8 FEFFFFEB 		bl	modf
+ 346 03fc 0121A0E3 		mov	r2, #1073741824
+ 347 0400 592882E2 		add	r2, r2, #5832704
+ 348 0404 0030A0E3 		mov	r3, #0
+ 349 0408 FEFFFFEB 		bl	__muldf3
+ 350 040c 0121A0E3 		mov	r2, #1073741824
+ 351 0410 4E2882E2 		add	r2, r2, #5111808
+ 352 0414 0030A0E3 		mov	r3, #0
+ 353 0418 FEFFFFEB 		bl	__divdf3
+ 354 041c 08B08DE2 		add	fp, sp, #8
+ 355 0420 00189BE8 		ldmia	fp, {fp-ip}
+ 356 0424 005099E5 		ldr	r5, [r9, #0]
+ 357              	.L79:
+ 358 0428 0030D4E5 		ldrb	r3, [r4, #0]	@ zero_extendqisi2
+ 359 042c 2C0053E3 		cmp	r3, #44
+ 360 0430 014084E2 		add	r4, r4, #1
+ 361 0434 016086E2 		add	r6, r6, #1
+ 362 0438 0200000A 		beq	.L121
+ 363 043c 050056E1 		cmp	r6, r5
+ 364 0440 F8FFFFBA 		blt	.L79
+ 365 0444 BCFFFFEA 		b	.L113
+ 366              	.L121:
+ 367 0448 0C30A0E1 		mov	r3, ip
+ 368 044c 0B20A0E1 		mov	r2, fp
+ 369 0450 FEFFFFEB 		bl	__adddf3
+ 370 0454 0630DAE7 		ldrb	r3, [sl, r6]	@ zero_extendqisi2
+ 371 0458 570053E3 		cmp	r3, #87
+ 372 045c 03008DE8 		stmia	sp, {r0-r1}
+ 373 0460 0800000A 		beq	.L122
+ 374              	.L82:
+ 375 0464 0A2086E0 		add	r2, r6, sl
+ 376              	.L85:
+ 377 0468 0030D2E5 		ldrb	r3, [r2, #0]	@ zero_extendqisi2
+ 378 046c 2C0053E3 		cmp	r3, #44
+ 379 0470 016086E2 		add	r6, r6, #1
+ 380 0474 0900000A 		beq	.L123
+ 381 0478 050056E1 		cmp	r6, r5
+ 382 047c 012082E2 		add	r2, r2, #1
+ 383 0480 F8FFFFBA 		blt	.L85
+ 384 0484 ACFFFFEA 		b	.L113
+ 385              	.L122:
+ 386 0488 00209DE5 		ldr	r2, [sp, #0]
+ 387 048c 023182E2 		add	r3, r2, #-2147483648
+ 388 0490 04209DE5 		ldr	r2, [sp, #4]
+ 389 0494 0240A0E1 		mov	r4, r2
+ 390 0498 18008DE8 		stmia	sp, {r3-r4}
+ 391 049c F0FFFFEA 		b	.L82
+ 392              	.L123:
+ 393 04a0 68229FE5 		ldr	r2, .L128+16
+ 394 04a4 0030A0E3 		mov	r3, #0
+ 395 04a8 03009DE8 		ldmia	sp, {r0-r1}
+ 396 04ac FEFFFFEB 		bl	__muldf3
+ 397 04b0 FEFFFFEB 		bl	__fixdfsi
+ 398 04b4 5C329FE5 		ldr	r3, .L128+24
+ 399 04b8 0810A0E1 		mov	r1, r8
+ 400 04bc 000083E5 		str	r0, [r3, #0]
+ 401 04c0 8E2F8FE2 		adr	r2, .L128
+ 402 04c4 0C0092E8 		ldmia	r2, {r2-r3}
+ 403 04c8 0700A0E1 		mov	r0, r7
+ 404 04cc FEFFFFEB 		bl	__muldf3
+ 405 04d0 0121A0E3 		mov	r2, #1073741824
+ 406 04d4 662882E2 		add	r2, r2, #6684672
+ 407 04d8 022982E2 		add	r2, r2, #32768
+ 408 04dc 0030A0E3 		mov	r3, #0
+ 409 04e0 FEFFFFEB 		bl	__divdf3
+ 410 04e4 FEFFFFEB 		bl	__truncdfsf2
+ 411 04e8 212E8FE2 		adr	r2, .L128
+ 412 04ec 0C0092E8 		ldmia	r2, {r2-r3}
+ 413 04f0 0040A0E1 		mov	r4, r0
+ 414 04f4 03009DE8 		ldmia	sp, {r0-r1}
+ 415 04f8 FEFFFFEB 		bl	__muldf3
+ 416 04fc 0121A0E3 		mov	r2, #1073741824
+ 417 0500 662882E2 		add	r2, r2, #6684672
+ 418 0504 0030A0E3 		mov	r3, #0
+ 419 0508 022982E2 		add	r2, r2, #32768
+ 420 050c FEFFFFEB 		bl	__divdf3
+ 421 0510 FEFFFFEB 		bl	__truncdfsf2
+ 422 0514 00529FE5 		ldr	r5, .L128+28
+ 423 0518 0010A0E1 		mov	r1, r0
+ 424 051c 0020D5E5 		ldrb	r2, [r5, #0]	@ zero_extendqisi2
+ 425 0520 0400A0E1 		mov	r0, r4
+ 426 0524 FEFFFFEB 		bl	latlong_utm_of
+ 427 0528 F0319FE5 		ldr	r3, .L128+32
+ 428 052c 4204A0E3 		mov	r0, #1107296256
+ 429 0530 001093E5 		ldr	r1, [r3, #0]	@ float
+ 430 0534 320780E2 		add	r0, r0, #13107200
+ 431 0538 FEFFFFEB 		bl	__mulsf3
+ 432 053c FEFFFFEB 		bl	__fixsfsi
+ 433 0540 DC319FE5 		ldr	r3, .L128+36
+ 434 0544 DC219FE5 		ldr	r2, .L128+40
+ 435 0548 000083E5 		str	r0, [r3, #0]
+ 436 054c 4204A0E3 		mov	r0, #1107296256
+ 437 0550 001092E5 		ldr	r1, [r2, #0]	@ float
+ 438 0554 320780E2 		add	r0, r0, #13107200
+ 439 0558 FEFFFFEB 		bl	__mulsf3
+ 440 055c FEFFFFEB 		bl	__fixsfsi
+ 441 0560 0630DAE7 		ldrb	r3, [sl, r6]	@ zero_extendqisi2
+ 442 0564 0010D5E5 		ldrb	r1, [r5, #0]	@ zero_extendqisi2
+ 443 0568 300053E3 		cmp	r3, #48
+ 444 056c 2C005313 		cmpne	r3, #44
+ 445 0570 B4319FE5 		ldr	r3, .L128+44
+ 446 0574 B4219FE5 		ldr	r2, .L128+48
+ 447 0578 0010C3E5 		strb	r1, [r3, #0]
+ 448 057c B0319F05 		ldreq	r3, .L128+52
+ 449 0580 00C0A003 		moveq	ip, #0
+ 450 0584 01C0A013 		movne	ip, #1
+ 451 0588 A4319F15 		ldrne	r3, .L128+52
+ 452 058c 000082E5 		str	r0, [r2, #0]
+ 453 0590 00C0C305 		streqb	ip, [r3, #0]
+ 454 0594 0120A013 		movne	r2, #1
+ 455 0598 001099E5 		ldr	r1, [r9, #0]
+ 456 059c 0020C315 		strneb	r2, [r3, #0]
+ 457 05a0 0A2086E0 		add	r2, r6, sl
+ 458              	.L91:
+ 459 05a4 0030D2E5 		ldrb	r3, [r2, #0]	@ zero_extendqisi2
+ 460 05a8 2C0053E3 		cmp	r3, #44
+ 461 05ac 016086E2 		add	r6, r6, #1
+ 462 05b0 0300000A 		beq	.L124
+ 463 05b4 010056E1 		cmp	r6, r1
+ 464 05b8 012082E2 		add	r2, r2, #1
+ 465 05bc F8FFFFBA 		blt	.L91
+ 466 05c0 5DFFFFEA 		b	.L113
+ 467              	.L124:
+ 468 05c4 0A4086E0 		add	r4, r6, sl
+ 469 05c8 0400A0E1 		mov	r0, r4
+ 470 05cc FEFFFFEB 		bl	atoi
+ 471 05d0 60319FE5 		ldr	r3, .L128+56
+ 472 05d4 001099E5 		ldr	r1, [r9, #0]
+ 473 05d8 0000C3E5 		strb	r0, [r3, #0]
+ 474              	.L93:
+ 475 05dc 0030D4E5 		ldrb	r3, [r4, #0]	@ zero_extendqisi2
+ 476 05e0 2C0053E3 		cmp	r3, #44
+ 477 05e4 014084E2 		add	r4, r4, #1
+ 478 05e8 016086E2 		add	r6, r6, #1
+ 479 05ec 0200000A 		beq	.L125
+ 480 05f0 010056E1 		cmp	r6, r1
+ 481 05f4 F8FFFFBA 		blt	.L93
+ 482 05f8 4FFFFFEA 		b	.L113
+ 483              	.L125:
+ 484 05fc 0A2086E0 		add	r2, r6, sl
+ 485 0600 010000EA 		b	.L96
+ 486              	.L97:
+ 487 0604 010056E1 		cmp	r6, r1
+ 488 0608 4BFFFFAA 		bge	.L113
+ 489              	.L96:
+ 490 060c 0030D2E5 		ldrb	r3, [r2, #0]	@ zero_extendqisi2
+ 491 0610 2C0053E3 		cmp	r3, #44
+ 492 0614 012082E2 		add	r2, r2, #1
+ 493 0618 016086E2 		add	r6, r6, #1
+ 494 061c F8FFFF1A 		bne	.L97
+ 495 0620 0A4086E0 		add	r4, r6, sl
+ 496 0624 10108DE2 		add	r1, sp, #16
+ 497 0628 0400A0E1 		mov	r0, r4
+ 498 062c FEFFFFEB 		bl	strtod
+ 499 0630 0121A0E3 		mov	r2, #1073741824
+ 500 0634 0030A0E3 		mov	r3, #0
+ 501 0638 592882E2 		add	r2, r2, #5832704
+ 502 063c FEFFFFEB 		bl	__muldf3
+ 503 0640 FEFFFFEB 		bl	__fixdfsi
+ 504 0644 F0309FE5 		ldr	r3, .L128+60
+ 505 0648 001099E5 		ldr	r1, [r9, #0]
+ 506 064c 000083E5 		str	r0, [r3, #0]
+ 507 0650 010000EA 		b	.L99
+ 508              	.L100:
+ 509 0654 010056E1 		cmp	r6, r1
+ 510 0658 37FFFFAA 		bge	.L113
+ 511              	.L99:
+ 512 065c 0030D4E5 		ldrb	r3, [r4, #0]	@ zero_extendqisi2
+ 513 0660 2C0053E3 		cmp	r3, #44
+ 514 0664 014084E2 		add	r4, r4, #1
+ 515 0668 016086E2 		add	r6, r6, #1
+ 516 066c F8FFFF1A 		bne	.L100
+ 517 0670 0A2086E0 		add	r2, r6, sl
+ 518 0674 010000EA 		b	.L102
+ 519              	.L103:
+ 520 0678 010056E1 		cmp	r6, r1
+ 521 067c 2EFFFFAA 		bge	.L113
+ 522              	.L102:
+ 523 0680 0030D2E5 		ldrb	r3, [r2, #0]	@ zero_extendqisi2
+ 524 0684 2C0053E3 		cmp	r3, #44
+ 525 0688 012082E2 		add	r2, r2, #1
+ 526 068c 016086E2 		add	r6, r6, #1
+ 527 0690 F8FFFF1A 		bne	.L103
+ 528 0694 0A2086E0 		add	r2, r6, sl
+ 529              	.L105:
+ 530 0698 0030D2E5 		ldrb	r3, [r2, #0]	@ zero_extendqisi2
+ 531 069c 2C0053E3 		cmp	r3, #44
+ 532 06a0 012082E2 		add	r2, r2, #1
+ 533 06a4 016086E2 		add	r6, r6, #1
+ 534 06a8 0200000A 		beq	.L126
+ 535 06ac 010056E1 		cmp	r6, r1
+ 536 06b0 F8FFFFBA 		blt	.L105
+ 537 06b4 20FFFFEA 		b	.L113
+ 538              	.L126:
+ 539 06b8 0A2086E0 		add	r2, r6, sl
+ 540              	.L108:
+ 541 06bc 0030D2E5 		ldrb	r3, [r2, #0]	@ zero_extendqisi2
+ 542 06c0 2C0053E3 		cmp	r3, #44
+ 543 06c4 012082E2 		add	r2, r2, #1
+ 544 06c8 016086E2 		add	r6, r6, #1
+ 545 06cc 0200000A 		beq	.L127
+ 546 06d0 010056E1 		cmp	r6, r1
+ 547 06d4 F8FFFFBA 		blt	.L108
+ 548 06d8 17FFFFEA 		b	.L113
+ 549              	.L127:
+ 550 06dc 0A2086E0 		add	r2, r6, sl
+ 551              	.L111:
+ 552 06e0 0030D2E5 		ldrb	r3, [r2, #0]	@ zero_extendqisi2
+ 553 06e4 2C0053E3 		cmp	r3, #44
+ 554 06e8 016086E2 		add	r6, r6, #1
+ 555 06ec 012082E2 		add	r2, r2, #1
+ 556 06f0 11FFFF0A 		beq	.L113
+ 557 06f4 010056E1 		cmp	r6, r1
+ 558 06f8 F8FFFFBA 		blt	.L111
+ 559 06fc 0EFFFFEA 		b	.L113
+ 560              	.L129:
+ 561              		.align	2
+ 562              	.L128:
+ 563 0700 FB210940 		.word	1074340347
+ 564 0704 182D4454 		.word	1413754136
+ 565 0708 00000000 		.word	nmea_msg_buf
+ 566 070c 00000000 		.word	nmea_msg_len
+ 567 0710 D0126341 		.word	1097011920
+ 568 0714 00000000 		.word	gps_lat
+ 569 0718 00000000 		.word	gps_lon
+ 570 071c 00000000 		.word	nav_utm_zone0
+ 571 0720 00000000 		.word	latlong_utm_x
+ 572 0724 00000000 		.word	gps_utm_east
+ 573 0728 00000000 		.word	latlong_utm_y
+ 574 072c 00000000 		.word	gps_utm_zone
+ 575 0730 00000000 		.word	gps_utm_north
+ 576 0734 00000000 		.word	gps_pos_available
+ 577 0738 00000000 		.word	gps_numSV
+ 578 073c 00000000 		.word	gps_alt
+ 580              		.align	2
+ 581              		.global	parse_nmea_GPGSA
+ 583              	parse_nmea_GPGSA:
+ 584              		@ Function supports interworking.
+ 585              		@ args = 0, pretend = 0, frame = 0
+ 586              		@ frame_needed = 0, uses_anonymous_args = 0
+ 587 0740 A8C09FE5 		ldr	ip, .L147
+ 588 0744 0830DCE5 		ldrb	r3, [ip, #8]	@ zero_extendqisi2
+ 589 0748 2C0053E3 		cmp	r3, #44
+ 590 074c 30402DE9 		stmfd	sp!, {r4, r5, lr}
+ 591 0750 1F00000A 		beq	.L146
+ 592 0754 98509FE5 		ldr	r5, .L147+4
+ 593 0758 001095E5 		ldr	r1, [r5, #0]
+ 594 075c 0940A0E3 		mov	r4, #9
+ 595 0760 0C20A0E1 		mov	r2, ip
+ 596              	.L136:
+ 597 0764 040051E1 		cmp	r1, r4
+ 598 0768 014084E2 		add	r4, r4, #1
+ 599 076c 160000DA 		ble	.L143
+ 600 0770 0930D2E5 		ldrb	r3, [r2, #9]	@ zero_extendqisi2
+ 601 0774 2C0053E3 		cmp	r3, #44
+ 602 0778 012082E2 		add	r2, r2, #1
+ 603 077c F8FFFF1A 		bne	.L136
+ 604 0780 0400A0E1 		mov	r0, r4
+ 605              	.L135:
+ 606 0784 0C0080E0 		add	r0, r0, ip
+ 607 0788 FEFFFFEB 		bl	atoi
+ 608 078c FF0000E2 		and	r0, r0, #255
+ 609 0790 60209FE5 		ldr	r2, .L147+8
+ 610 0794 010050E3 		cmp	r0, #1
+ 611 0798 0030A003 		moveq	r3, #0
+ 612 079c 0000C2E5 		strb	r0, [r2, #0]
+ 613 07a0 0030C205 		streqb	r3, [r2, #0]
+ 614 07a4 44309FE5 		ldr	r3, .L147
+ 615 07a8 001095E5 		ldr	r1, [r5, #0]
+ 616 07ac 032084E0 		add	r2, r4, r3
+ 617              	.L141:
+ 618 07b0 0030D2E5 		ldrb	r3, [r2, #0]	@ zero_extendqisi2
+ 619 07b4 2C0053E3 		cmp	r3, #44
+ 620 07b8 014084E2 		add	r4, r4, #1
+ 621 07bc 012082E2 		add	r2, r2, #1
+ 622 07c0 0100000A 		beq	.L143
+ 623 07c4 010054E1 		cmp	r4, r1
+ 624 07c8 F8FFFFBA 		blt	.L141
+ 625              	.L143:
+ 626 07cc 3040BDE8 		ldmfd	sp!, {r4, r5, lr}
+ 627 07d0 1EFF2FE1 		bx	lr
+ 628              	.L146:
+ 629 07d4 0930DCE5 		ldrb	r3, [ip, #9]	@ zero_extendqisi2
+ 630 07d8 2C0053E3 		cmp	r3, #44
+ 631 07dc 0940A013 		movne	r4, #9
+ 632 07e0 0C509F15 		ldrne	r5, .L147+4
+ 633 07e4 0400A011 		movne	r0, r4
+ 634 07e8 E5FFFF1A 		bne	.L135
+ 635 07ec F6FFFFEA 		b	.L143
+ 636              	.L148:
+ 637              		.align	2
+ 638              	.L147:
+ 639 07f0 00000000 		.word	nmea_msg_buf
+ 640 07f4 00000000 		.word	nmea_msg_len
+ 641 07f8 00000000 		.word	gps_mode
+ 643              		.global	__eqsf2
+ 644              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 645              		.align	2
+ 646              	.LC0:
+ 647 0000 4750524D 		.ascii	"GPRMC\000"
+ 647      4300
+ 648 0006 0000     		.align	2
+ 649              	.LC1:
+ 650 0008 6770733A 		.ascii	"gps: parsing nmea RMC\000"
+ 650      20706172 
+ 650      73696E67 
+ 650      206E6D65 
+ 650      6120524D 
+ 651 001e 0000     		.align	2
+ 652              	.LC2:
+ 653 0020 47504747 		.ascii	"GPGGA\000"
+ 653      4100
+ 654 0026 0000     		.align	2
+ 655              	.LC3:
+ 656 0028 6770733A 		.ascii	"gps: parsing nmea GGA\000"
+ 656      20706172 
+ 656      73696E67 
+ 656      206E6D65 
+ 656      61204747 
+ 657 003e 0000     		.align	2
+ 658              	.LC4:
+ 659 0040 47504753 		.ascii	"GPGSA\000"
+ 659      4100
+ 660 0046 0000     		.align	2
+ 661              	.LC5:
+ 662 0048 6770733A 		.ascii	"gps: parsing nmea GSA\000"
+ 662      20706172 
+ 662      73696E67 
+ 662      206E6D65 
+ 662      61204753 
+ 663 005e 0000     		.text
+ 664              		.align	2
+ 665              		.global	parse_gps_msg
+ 667              	parse_gps_msg:
+ 668              		@ Function supports interworking.
+ 669              		@ args = 0, pretend = 0, frame = 0
+ 670              		@ frame_needed = 0, uses_anonymous_args = 0
+ 671 07fc F0412DE9 		stmfd	sp!, {r4, r5, r6, r7, r8, lr}
+ 672 0800 54519FE5 		ldr	r5, .L177
+ 673 0804 4114A0E3 		mov	r1, #1090519040
+ 674 0808 031681E2 		add	r1, r1, #3145728
+ 675 080c B80395E5 		ldr	r0, [r5, #952]	@ float
+ 676 0810 FEFFFFEB 		bl	__eqsf2
+ 677 0814 000050E3 		cmp	r0, #0
+ 678 0818 40719F15 		ldrne	r7, .L177+4
+ 679 081c 0900000A 		beq	.L172
+ 680 0820 3C819FE5 		ldr	r8, .L177+8
+ 681 0824 004098E5 		ldr	r4, [r8, #0]
+ 682 0828 070054E3 		cmp	r4, #7
+ 683 082c 100000CA 		bgt	.L173
+ 684              	.L153:
+ 685 0830 0030A0E3 		mov	r3, #0
+ 686 0834 0430C7E7 		strb	r3, [r7, r4]
+ 687              	.L160:
+ 688 0838 0030A0E3 		mov	r3, #0
+ 689 083c 003088E5 		str	r3, [r8, #0]
+ 690 0840 F041BDE8 		ldmfd	sp!, {r4, r5, r6, r7, r8, lr}
+ 691 0844 1EFF2FE1 		bx	lr
+ 692              	.L172:
+ 693 0848 10719FE5 		ldr	r7, .L177+4
+ 694 084c 3220A0E3 		mov	r2, #50
+ 695 0850 0710A0E1 		mov	r1, r7
+ 696 0854 0C019FE5 		ldr	r0, .L177+12
+ 697 0858 04819FE5 		ldr	r8, .L177+8
+ 698 085c FEFFFFEB 		bl	strncpy
+ 699 0860 00019FE5 		ldr	r0, .L177+12
+ 700 0864 FEFFFFEB 		bl	debug_message_buffer
+ 701 0868 004098E5 		ldr	r4, [r8, #0]
+ 702 086c 070054E3 		cmp	r4, #7
+ 703 0870 EEFFFFDA 		ble	.L153
+ 704              	.L173:
+ 705 0874 E4609FE5 		ldr	r6, .L177+4
+ 706 0878 EC109FE5 		ldr	r1, .L177+16
+ 707 087c 0600A0E1 		mov	r0, r6
+ 708 0880 0520A0E3 		mov	r2, #5
+ 709 0884 FEFFFFEB 		bl	strncmp
+ 710 0888 003050E2 		subs	r3, r0, #0
+ 711 088c 0C00001A 		bne	.L155
+ 712 0890 4114A0E3 		mov	r1, #1090519040
+ 713 0894 B80395E5 		ldr	r0, [r5, #952]	@ float
+ 714 0898 031681E2 		add	r1, r1, #3145728
+ 715 089c 0430C6E7 		strb	r3, [r6, r4]
+ 716 08a0 FEFFFFEB 		bl	__eqsf2
+ 717 08a4 000050E3 		cmp	r0, #0
+ 718 08a8 0100000A 		beq	.L174
+ 719 08ac FEFFFFEB 		bl	parse_nmea_GPRMC
+ 720 08b0 E0FFFFEA 		b	.L160
+ 721              	.L174:
+ 722 08b4 B4009FE5 		ldr	r0, .L177+20
+ 723 08b8 FEFFFFEB 		bl	debug_message_buffer
+ 724 08bc FEFFFFEB 		bl	parse_nmea_GPRMC
+ 725 08c0 DCFFFFEA 		b	.L160
+ 726              	.L155:
+ 727 08c4 0600A0E1 		mov	r0, r6
+ 728 08c8 A4109FE5 		ldr	r1, .L177+24
+ 729 08cc 0520A0E3 		mov	r2, #5
+ 730 08d0 FEFFFFEB 		bl	strncmp
+ 731 08d4 003050E2 		subs	r3, r0, #0
+ 732 08d8 0C00001A 		bne	.L161
+ 733 08dc 4114A0E3 		mov	r1, #1090519040
+ 734 08e0 B80395E5 		ldr	r0, [r5, #952]	@ float
+ 735 08e4 031681E2 		add	r1, r1, #3145728
+ 736 08e8 0430C6E7 		strb	r3, [r6, r4]
+ 737 08ec FEFFFFEB 		bl	__eqsf2
+ 738 08f0 000050E3 		cmp	r0, #0
+ 739 08f4 0100000A 		beq	.L175
+ 740 08f8 FEFFFFEB 		bl	parse_nmea_GPGGA
+ 741 08fc CDFFFFEA 		b	.L160
+ 742              	.L175:
+ 743 0900 70009FE5 		ldr	r0, .L177+28
+ 744 0904 FEFFFFEB 		bl	debug_message_buffer
+ 745 0908 FEFFFFEB 		bl	parse_nmea_GPGGA
+ 746 090c C9FFFFEA 		b	.L160
+ 747              	.L161:
+ 748 0910 0600A0E1 		mov	r0, r6
+ 749 0914 60109FE5 		ldr	r1, .L177+32
+ 750 0918 0520A0E3 		mov	r2, #5
+ 751 091c FEFFFFEB 		bl	strncmp
+ 752 0920 003050E2 		subs	r3, r0, #0
+ 753 0924 C1FFFF1A 		bne	.L153
+ 754 0928 4114A0E3 		mov	r1, #1090519040
+ 755 092c B80395E5 		ldr	r0, [r5, #952]	@ float
+ 756 0930 031681E2 		add	r1, r1, #3145728
+ 757 0934 0430C6E7 		strb	r3, [r6, r4]
+ 758 0938 FEFFFFEB 		bl	__eqsf2
+ 759 093c 000050E3 		cmp	r0, #0
+ 760 0940 0100000A 		beq	.L176
+ 761 0944 FEFFFFEB 		bl	parse_nmea_GPGSA
+ 762 0948 BAFFFFEA 		b	.L160
+ 763              	.L176:
+ 764 094c 2C009FE5 		ldr	r0, .L177+36
+ 765 0950 FEFFFFEB 		bl	debug_message_buffer
+ 766 0954 FEFFFFEB 		bl	parse_nmea_GPGSA
+ 767 0958 B6FFFFEA 		b	.L160
+ 768              	.L178:
+ 769              		.align	2
+ 770              	.L177:
+ 771 095c 00000000 		.word	global_data
+ 772 0960 00000000 		.word	nmea_msg_buf
+ 773 0964 00000000 		.word	nmea_msg_len
+ 774 0968 08000000 		.word	nmea_msg_buf_tmp.19035
+ 775 096c 00000000 		.word	.LC0
+ 776 0970 08000000 		.word	.LC1
+ 777 0974 20000000 		.word	.LC2
+ 778 0978 28000000 		.word	.LC3
+ 779 097c 40000000 		.word	.LC4
+ 780 0980 48000000 		.word	.LC5
+ 782              		.global	gps_pos_available
+ 783              		.bss
+ 786              	gps_pos_available:
+ 787 0000 00       		.space	1
+ 788              		.global	nav_utm_zone0
+ 789              		.data
+ 792              	nav_utm_zone0:
+ 793 0000 20       		.byte	32
+ 794              		.global	gps_msg_received
+ 795              		.bss
+ 798              	gps_msg_received:
+ 799 0001 00       		.space	1
+ 800              		.global	nmea_msg_len
+ 801 0002 0000     		.align	2
+ 804              	nmea_msg_len:
+ 805 0004 00000000 		.space	4
+ 806              	nmea_msg_buf_tmp.19035:
+ 807 0008 00000000 		.space	50
+ 807      00000000 
+ 807      00000000 
+ 807      00000000 
+ 807      00000000 
+ 808              		.comm	global_param_id,4,4
+ 809              		.comm	state_fly_id,4,4
+ 810              		.comm	global_data,2588,4
+ 811              		.comm	gps_mode,1,1
+ 812              		.comm	gps_week,2,2
+ 813              		.comm	gps_itow,4,4
+ 814              		.comm	gps_alt,4,4
+ 815              		.comm	gps_gspeed,2,2
+ 816              		.comm	gps_climb,2,2
+ 817              		.comm	gps_course,2,2
+ 818              		.comm	gps_utm_east,4,4
+ 819              		.comm	gps_utm_north,4,4
+ 820              		.comm	gps_utm_zone,1,1
+ 821              		.comm	gps_lat,4,4
+ 822              		.comm	gps_lon,4,4
+ 823              		.comm	gps_PDOP,2,2
+ 824              		.comm	gps_Pacc,4,4
+ 825              		.comm	gps_Sacc,4,4
+ 826              		.comm	gps_numSV,1,1
+ 827              		.comm	gps_device_mode,1,1
+ 828              		.comm	gps_nb_channels,1,1
+ 829              		.comm	gps_svinfos,128,4
+ 830              		.comm	mavlink_system,8,4
+ 831              		.comm	ubx_id,1,1
+ 832              		.comm	ubx_class,1,1
+ 833              		.comm	gps_reset,2,2
+ 834              		.comm	gps_nb_ovrn,1,1
+ 835              		.comm	nmea_msg_buf,255,1
+ 836 003a 0000     		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
+DEFINED SYMBOLS
+                            *ABS*:00000000 gps_nmea.c
+C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:6      .text:00000000 ubxsend_cfg_rst
+C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:12     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:17     .text:00000004 GpsFixValid
+C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:29     .text:00000010 $d
+C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:786    .bss:00000000 gps_pos_available
+C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:34     .text:00000014 parse_nmea
+C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:38     .text:00000014 $a
+C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:94     .text:000000d4 $d
+C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:804    .bss:00000004 nmea_msg_len
+C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:798    .bss:00000001 gps_msg_received
+                            *COM*:000000ff nmea_msg_buf
+C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:104    .text:000000e0 parse_nmea_GPRMC
+C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:108    .text:000000e0 $a
+C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:225    .text:0000026c $d
+                            *COM*:00000002 gps_gspeed
+C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:239    .text:00000280 parse_nmea_GPGGA
+C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:243    .text:00000280 $a
+C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:563    .text:00000700 $d
+                            *COM*:00000004 gps_lat
+                            *COM*:00000004 gps_lon
+C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:792    .data:00000000 nav_utm_zone0
+                            *COM*:00000004 gps_utm_east
+                            *COM*:00000001 gps_utm_zone
+                            *COM*:00000004 gps_utm_north
+                            *COM*:00000001 gps_numSV
+                            *COM*:00000004 gps_alt
+C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:583    .text:00000740 parse_nmea_GPGSA
+C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:587    .text:00000740 $a
+C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:639    .text:000007f0 $d
+                            *COM*:00000001 gps_mode
+C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:667    .text:000007fc parse_gps_msg
+C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:671    .text:000007fc $a
+C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:771    .text:0000095c $d
+                            *COM*:00000a1c global_data
+C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:806    .bss:00000008 nmea_msg_buf_tmp.19035
+C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:789    .bss:00000001 $d
+                            *COM*:00000004 global_param_id
+                            *COM*:00000004 state_fly_id
+                            *COM*:00000002 gps_week
+                            *COM*:00000004 gps_itow
+                            *COM*:00000002 gps_climb
+                            *COM*:00000002 gps_course
+                            *COM*:00000002 gps_PDOP
+                            *COM*:00000004 gps_Pacc
+                            *COM*:00000004 gps_Sacc
+                            *COM*:00000001 gps_device_mode
+                            *COM*:00000001 gps_nb_channels
+                            *COM*:00000080 gps_svinfos
+                            *COM*:00000008 mavlink_system
+                            *COM*:00000001 ubx_id
+                            *COM*:00000001 ubx_class
+                            *COM*:00000002 gps_reset
+                            *COM*:00000001 gps_nb_ovrn
+
+UNDEFINED SYMBOLS
+__muldf3
+__divdf3
+__fixunsdfsi
+strtod
+__adddf3
+__fixdfsi
+__truncdfsf2
+__mulsf3
+__fixsfsi
+modf
+latlong_utm_of
+atoi
+latlong_utm_x
+latlong_utm_y
+__eqsf2
+strncpy
+debug_message_buffer
+strncmp

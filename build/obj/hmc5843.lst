@@ -1,0 +1,300 @@
+   1              		.file	"hmc5843.c"
+   2              		.text
+   3              		.align	2
+   4              		.global	hmc5843_get_data
+   6              	hmc5843_get_data:
+   7              		@ Function supports interworking.
+   8              		@ args = 0, pretend = 0, frame = 0
+   9              		@ frame_needed = 0, uses_anonymous_args = 0
+  10              		@ link register save eliminated.
+  11 0000 18309FE5 		ldr	r3, .L3
+  12 0004 B420D3E1 		ldrh	r2, [r3, #4]
+  13 0008 B420C0E1 		strh	r2, [r0, #4]	@ movhi
+  14 000c B020D3E1 		ldrh	r2, [r3, #0]
+  15 0010 B230D3E1 		ldrh	r3, [r3, #2]
+  16              		@ lr needed for prologue
+  17 0014 B020C0E1 		strh	r2, [r0, #0]	@ movhi
+  18 0018 B230C0E1 		strh	r3, [r0, #2]	@ movhi
+  19 001c 1EFF2FE1 		bx	lr
+  20              	.L4:
+  21              		.align	2
+  22              	.L3:
+  23 0020 00000000 		.word	hmc5843_result
+  25              		.align	2
+  26              		.global	hmc5843_data_ok
+  28              	hmc5843_data_ok:
+  29              		@ Function supports interworking.
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33 0024 04309FE5 		ldr	r3, .L7
+  34 0028 D000D3E1 		ldrsb	r0, [r3, #0]
+  35              		@ lr needed for prologue
+  36 002c 1EFF2FE1 		bx	lr
+  37              	.L8:
+  38              		.align	2
+  39              	.L7:
+  40 0030 00000000 		.word	hmc5843_data_valid
+  42              		.align	2
+  43              		.global	twos_complement_decode16
+  45              	twos_complement_decode16:
+  46              		@ Function supports interworking.
+  47              		@ args = 0, pretend = 0, frame = 0
+  48              		@ frame_needed = 0, uses_anonymous_args = 0
+  49              		@ link register save eliminated.
+  50 0034 0008A0E1 		mov	r0, r0, asl #16
+  51 0038 2008A0E1 		mov	r0, r0, lsr #16
+  52 003c 0239C0E3 		bic	r3, r0, #32768
+  53 0040 0008B0E1 		movs	r0, r0, asl #16
+  54 0044 2008A0E1 		mov	r0, r0, lsr #16
+  55 0048 02098343 		orrmi	r0, r3, #32768
+  56 004c 0008A0E1 		mov	r0, r0, asl #16
+  57 0050 4008A0E1 		mov	r0, r0, asr #16
+  58              		@ lr needed for prologue
+  59 0054 1EFF2FE1 		bx	lr
+  61              		.align	2
+  62              		.global	hmc5843_read_handler
+  64              	hmc5843_read_handler:
+  65              		@ Function supports interworking.
+  66              		@ args = 0, pretend = 0, frame = 0
+  67              		@ frame_needed = 0, uses_anonymous_args = 0
+  68 0058 F0402DE9 		stmfd	sp!, {r4, r5, r6, r7, lr}
+  69 005c 2C30D0E5 		ldrb	r3, [r0, #44]	@ zero_extendqisi2
+  70 0060 020053E3 		cmp	r3, #2
+  71 0064 A8709FE5 		ldr	r7, .L24
+  72 0068 0050A0E1 		mov	r5, r0
+  73 006c 2300000A 		beq	.L15
+  74 0070 0030D0E5 		ldrb	r3, [r0, #0]	@ zero_extendqisi2
+  75 0074 0100D0E5 		ldrb	r0, [r0, #1]	@ zero_extendqisi2
+  76 0078 030480E1 		orr	r0, r0, r3, asl #8
+  77 007c 0008A0E1 		mov	r0, r0, asl #16
+  78 0080 4008A0E1 		mov	r0, r0, asr #16
+  79 0084 FEFFFFEB 		bl	twos_complement_decode16
+  80 0088 0048A0E1 		mov	r4, r0, asl #16
+  81 008c 2448A0E1 		mov	r4, r4, lsr #16
+  82 0090 B040C7E1 		strh	r4, [r7, #0]	@ movhi
+  83 0094 0230D5E5 		ldrb	r3, [r5, #2]	@ zero_extendqisi2
+  84 0098 0300D5E5 		ldrb	r0, [r5, #3]	@ zero_extendqisi2
+  85 009c 030480E1 		orr	r0, r0, r3, asl #8
+  86 00a0 0008A0E1 		mov	r0, r0, asl #16
+  87 00a4 4008A0E1 		mov	r0, r0, asr #16
+  88 00a8 FEFFFFEB 		bl	twos_complement_decode16
+  89 00ac 0008A0E1 		mov	r0, r0, asl #16
+  90 00b0 2068A0E1 		mov	r6, r0, lsr #16
+  91 00b4 B260C7E1 		strh	r6, [r7, #2]	@ movhi
+  92 00b8 0430D5E5 		ldrb	r3, [r5, #4]	@ zero_extendqisi2
+  93 00bc 0500D5E5 		ldrb	r0, [r5, #5]	@ zero_extendqisi2
+  94 00c0 030480E1 		orr	r0, r0, r3, asl #8
+  95 00c4 0008A0E1 		mov	r0, r0, asl #16
+  96 00c8 4008A0E1 		mov	r0, r0, asr #16
+  97 00cc FEFFFFEB 		bl	twos_complement_decode16
+  98 00d0 0008A0E1 		mov	r0, r0, asl #16
+  99 00d4 2008A0E1 		mov	r0, r0, lsr #16
+ 100 00d8 0F0A54E3 		cmp	r4, #61440
+ 101 00dc B400C7E1 		strh	r0, [r7, #4]	@ movhi
+ 102 00e0 0600000A 		beq	.L15
+ 103 00e4 0F0A56E3 		cmp	r6, #61440
+ 104 00e8 0400000A 		beq	.L15
+ 105 00ec 0F0A50E3 		cmp	r0, #61440
+ 106 00f0 20309F15 		ldrne	r3, .L24+4
+ 107 00f4 0120A013 		movne	r2, #1
+ 108 00f8 0020C315 		strneb	r2, [r3, #0]
+ 109 00fc 0200001A 		bne	.L22
+ 110              	.L15:
+ 111 0100 10309FE5 		ldr	r3, .L24+4
+ 112 0104 0020A0E3 		mov	r2, #0
+ 113 0108 0020C3E5 		strb	r2, [r3, #0]
+ 114              	.L22:
+ 115 010c F040BDE8 		ldmfd	sp!, {r4, r5, r6, r7, lr}
+ 116 0110 1EFF2FE1 		bx	lr
+ 117              	.L25:
+ 118              		.align	2
+ 119              	.L24:
+ 120 0114 00000000 		.word	hmc5843_result
+ 121 0118 00000000 		.word	hmc5843_data_valid
+ 123              		.align	2
+ 124              		.global	hmc5843_start_read
+ 126              	hmc5843_start_read:
+ 127              		@ Function supports interworking.
+ 128              		@ args = 0, pretend = 0, frame = 96
+ 129              		@ frame_needed = 0, uses_anonymous_args = 0
+ 130 011c 30402DE9 		stmfd	sp!, {r4, r5, lr}
+ 131 0120 70309FE5 		ldr	r3, .L28
+ 132 0124 60D04DE2 		sub	sp, sp, #96
+ 133 0128 0050D3E5 		ldrb	r5, [r3, #0]	@ zero_extendqisi2
+ 134 012c 68209FE5 		ldr	r2, .L28+4
+ 135 0130 0330A0E3 		mov	r3, #3
+ 136 0134 3030CDE5 		strb	r3, [sp, #48]
+ 137 0138 033083E0 		add	r3, r3, r3
+ 138 013c 0040D2E5 		ldrb	r4, [r2, #0]	@ zero_extendqisi2
+ 139 0140 2030CDE5 		strb	r3, [sp, #32]
+ 140 0144 54309FE5 		ldr	r3, .L28+8
+ 141 0148 0120A0E3 		mov	r2, #1
+ 142 014c 00C0A0E3 		mov	ip, #0
+ 143 0150 01E085E2 		add	lr, r5, #1
+ 144 0154 30008DE2 		add	r0, sp, #48
+ 145 0158 0D10A0E1 		mov	r1, sp
+ 146 015c 58C08DE5 		str	ip, [sp, #88]
+ 147 0160 22E0CDE5 		strb	lr, [sp, #34]
+ 148 0164 2340CDE5 		strb	r4, [sp, #35]
+ 149 0168 2420CDE5 		strb	r2, [sp, #36]
+ 150 016c 28308DE5 		str	r3, [sp, #40]
+ 151 0170 5020CDE5 		strb	r2, [sp, #80]
+ 152 0174 51C0CDE5 		strb	ip, [sp, #81]
+ 153 0178 5250CDE5 		strb	r5, [sp, #82]
+ 154 017c 5340CDE5 		strb	r4, [sp, #83]
+ 155 0180 5420CDE5 		strb	r2, [sp, #84]
+ 156 0184 2120CDE5 		strb	r2, [sp, #33]
+ 157 0188 FEFFFFEB 		bl	i2c_write_read
+ 158 018c 60D08DE2 		add	sp, sp, #96
+ 159 0190 3040BDE8 		ldmfd	sp!, {r4, r5, lr}
+ 160 0194 1EFF2FE1 		bx	lr
+ 161              	.L29:
+ 162              		.align	2
+ 163              	.L28:
+ 164 0198 00000000 		.word	hmc5843_address
+ 165 019c 00000000 		.word	hmc5843_bus
+ 166 01a0 00000000 		.word	hmc5843_read_handler
+ 168              		.align	2
+ 170              	EXTINT_ISR:
+ 171              		@ Function supports interworking.
+ 172              		@ Naked Function: prologue and epilogue provided by programmer.
+ 173              		@ args = 0, pretend = 0, frame = 0
+ 174              		@ frame_needed = 0, uses_anonymous_args = 0
+ 175 01a4 04E04EE2 		 sub   lr, lr,#4
+ 176 01a8 FF5F2DE9 	 stmfd sp!,{r0-r12,lr}
+ 177 01ac 00104FE1 	 mrs   r1, spsr
+ 178 01b0 02002DE9 	 stmfd sp!,{r1}
+ 179 01b4 FEFFFFEB 		bl	hmc5843_start_read
+ 180 01b8 0E22A0E3 		mov	r2, #-536870912
+ 181 01bc 7F2982E2 		add	r2, r2, #2080768
+ 182 01c0 4031D2E5 		ldrb	r3, [r2, #320]	@ zero_extendqisi2
+ 183 01c4 083083E3 		orr	r3, r3, #8
+ 184 01c8 4031C2E5 		strb	r3, [r2, #320]
+ 185 01cc 0010A0E3 		mov	r1, #0
+ 186 01d0 0F3CE0E3 		mvn	r3, #3840
+ 187 01d4 CF1003E5 		str	r1, [r3, #-207]
+ 188 01d8 0200BDE8 		 ldmfd sp!,{r1}
+ 189 01dc 01F061E1 	 msr   spsr_c,r1
+ 190 01e0 FF9FFDE8 	 ldmfd sp!,{r0-r12,pc}^
+ 192              		.align	2
+ 193              		.global	hmc5843_init
+ 195              	hmc5843_init:
+ 196              		@ Function supports interworking.
+ 197              		@ args = 0, pretend = 0, frame = 48
+ 198              		@ frame_needed = 0, uses_anonymous_args = 0
+ 199 01e4 0E12A0E3 		mov	r1, #-536870912
+ 200 01e8 0B2981E2 		add	r2, r1, #180224
+ 201 01ec F0412DE9 		stmfd	sp!, {r4, r5, r6, r7, r8, lr}
+ 202 01f0 043092E5 		ldr	r3, [r2, #4]
+ 203 01f4 023283E3 		orr	r3, r3, #536870912
+ 204 01f8 043082E5 		str	r3, [r2, #4]
+ 205 01fc 7F1981E2 		add	r1, r1, #2080768
+ 206 0200 4831D1E5 		ldrb	r3, [r1, #328]	@ zero_extendqisi2
+ 207 0204 083083E3 		orr	r3, r3, #8
+ 208 0208 4831C1E5 		strb	r3, [r1, #328]
+ 209 020c 4C21D1E5 		ldrb	r2, [r1, #332]	@ zero_extendqisi2
+ 210 0210 082082E3 		orr	r2, r2, #8
+ 211 0214 4C21C1E5 		strb	r2, [r1, #332]
+ 212 0218 4031D1E5 		ldrb	r3, [r1, #320]	@ zero_extendqisi2
+ 213 021c 083083E3 		orr	r3, r3, #8
+ 214 0220 4031C1E5 		strb	r3, [r1, #320]
+ 215 0224 0FCCE0E3 		mvn	ip, #3840
+ 216 0228 F3201CE5 		ldr	r2, [ip, #-243]
+ 217 022c A0709FE5 		ldr	r7, .L34
+ 218 0230 A0809FE5 		ldr	r8, .L34+4
+ 219 0234 0228C2E3 		bic	r2, r2, #131072
+ 220 0238 0238A0E3 		mov	r3, #131072
+ 221 023c 0010D7E5 		ldrb	r1, [r7, #0]	@ zero_extendqisi2
+ 222 0240 00E0D8E5 		ldrb	lr, [r8, #0]	@ zero_extendqisi2
+ 223 0244 F3200CE5 		str	r2, [ip, #-243]
+ 224 0248 EF300CE5 		str	r3, [ip, #-239]
+ 225 024c 88309FE5 		ldr	r3, .L34+8
+ 226 0250 30D04DE2 		sub	sp, sp, #48
+ 227 0254 3120A0E3 		mov	r2, #49
+ 228 0258 1D218CE5 		str	r2, [ip, #285]
+ 229 025c 0040A0E3 		mov	r4, #0
+ 230 0260 1D308CE5 		str	r3, [ip, #29]
+ 231 0264 0250A0E3 		mov	r5, #2
+ 232 0268 0D00A0E1 		mov	r0, sp
+ 233 026c 2210CDE5 		strb	r1, [sp, #34]
+ 234 0270 23E0CDE5 		strb	lr, [sp, #35]
+ 235 0274 0050CDE5 		strb	r5, [sp, #0]
+ 236 0278 0140CDE5 		strb	r4, [sp, #1]
+ 237 027c 2050CDE5 		strb	r5, [sp, #32]
+ 238 0280 2140CDE5 		strb	r4, [sp, #33]
+ 239 0284 2440CDE5 		strb	r4, [sp, #36]
+ 240 0288 28408DE5 		str	r4, [sp, #40]
+ 241 028c FEFFFFEB 		bl	i2c_op
+ 242 0290 0020D7E5 		ldrb	r2, [r7, #0]	@ zero_extendqisi2
+ 243 0294 0010D8E5 		ldrb	r1, [r8, #0]	@ zero_extendqisi2
+ 244 0298 1830A0E3 		mov	r3, #24
+ 245 029c 0D00A0E1 		mov	r0, sp
+ 246 02a0 0D60A0E1 		mov	r6, sp
+ 247 02a4 0130CDE5 		strb	r3, [sp, #1]
+ 248 02a8 2050CDE5 		strb	r5, [sp, #32]
+ 249 02ac 2220CDE5 		strb	r2, [sp, #34]
+ 250 02b0 2310CDE5 		strb	r1, [sp, #35]
+ 251 02b4 28408DE5 		str	r4, [sp, #40]
+ 252 02b8 0040CDE5 		strb	r4, [sp, #0]
+ 253 02bc 2140CDE5 		strb	r4, [sp, #33]
+ 254 02c0 2440CDE5 		strb	r4, [sp, #36]
+ 255 02c4 FEFFFFEB 		bl	i2c_op
+ 256 02c8 30D08DE2 		add	sp, sp, #48
+ 257 02cc F041BDE8 		ldmfd	sp!, {r4, r5, r6, r7, r8, lr}
+ 258 02d0 1EFF2FE1 		bx	lr
+ 259              	.L35:
+ 260              		.align	2
+ 261              	.L34:
+ 262 02d4 00000000 		.word	hmc5843_address
+ 263 02d8 00000000 		.word	hmc5843_bus
+ 264 02dc 00000000 		.word	EXTINT_ISR
+ 266              		.global	hmc5843_address
+ 267              		.data
+ 270              	hmc5843_address:
+ 271 0000 3C       		.byte	60
+ 272              		.global	hmc5843_bus
+ 275              	hmc5843_bus:
+ 276 0001 01       		.byte	1
+ 277              		.global	hmc5843_data_valid
+ 278              		.bss
+ 281              	hmc5843_data_valid:
+ 282 0000 00       		.space	1
+ 283              		.comm	global_param_id,4,4
+ 284              		.comm	state_fly_id,4,4
+ 285              		.comm	global_data,2588,4
+ 286              		.comm	mavlink_system,8,4
+ 287              		.comm	hmc5843_result,8,4
+ 288              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
+DEFINED SYMBOLS
+                            *ABS*:00000000 hmc5843.c
+C:\Users\Srdjan\AppData\Local\Temp/ccCQaaaa.s:6      .text:00000000 hmc5843_get_data
+C:\Users\Srdjan\AppData\Local\Temp/ccCQaaaa.s:11     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccCQaaaa.s:23     .text:00000020 $d
+                            *COM*:00000008 hmc5843_result
+C:\Users\Srdjan\AppData\Local\Temp/ccCQaaaa.s:28     .text:00000024 hmc5843_data_ok
+C:\Users\Srdjan\AppData\Local\Temp/ccCQaaaa.s:33     .text:00000024 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccCQaaaa.s:40     .text:00000030 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccCQaaaa.s:281    .bss:00000000 hmc5843_data_valid
+C:\Users\Srdjan\AppData\Local\Temp/ccCQaaaa.s:45     .text:00000034 twos_complement_decode16
+C:\Users\Srdjan\AppData\Local\Temp/ccCQaaaa.s:50     .text:00000034 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccCQaaaa.s:64     .text:00000058 hmc5843_read_handler
+C:\Users\Srdjan\AppData\Local\Temp/ccCQaaaa.s:120    .text:00000114 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccCQaaaa.s:126    .text:0000011c hmc5843_start_read
+C:\Users\Srdjan\AppData\Local\Temp/ccCQaaaa.s:130    .text:0000011c $a
+C:\Users\Srdjan\AppData\Local\Temp/ccCQaaaa.s:164    .text:00000198 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccCQaaaa.s:270    .data:00000000 hmc5843_address
+C:\Users\Srdjan\AppData\Local\Temp/ccCQaaaa.s:275    .data:00000001 hmc5843_bus
+C:\Users\Srdjan\AppData\Local\Temp/ccCQaaaa.s:170    .text:000001a4 EXTINT_ISR
+C:\Users\Srdjan\AppData\Local\Temp/ccCQaaaa.s:175    .text:000001a4 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccCQaaaa.s:195    .text:000001e4 hmc5843_init
+C:\Users\Srdjan\AppData\Local\Temp/ccCQaaaa.s:262    .text:000002d4 $d
+                             .bss:00000000 $d
+                            *COM*:00000004 global_param_id
+                            *COM*:00000004 state_fly_id
+                            *COM*:00000a1c global_data
+                            *COM*:00000008 mavlink_system
+
+UNDEFINED SYMBOLS
+i2c_write_read
+i2c_op

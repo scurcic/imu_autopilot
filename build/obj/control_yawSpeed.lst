@@ -1,0 +1,66 @@
+   1              		.file	"control_yawSpeed.c"
+   2              		.global	__extendsfdf2
+   3              		.global	__muldf3
+   4              		.global	__truncdfsf2
+   5              		.global	__subsf3
+   6              		.text
+   7              		.align	2
+   8              		.global	control_yawSpeed
+  10              	control_yawSpeed:
+  11              		@ Function supports interworking.
+  12              		@ args = 0, pretend = 0, frame = 0
+  13              		@ frame_needed = 0, uses_anonymous_args = 0
+  14 0000 F0412DE9 		stmfd	sp!, {r4, r5, r6, r7, r8, lr}
+  15 0004 78408FE2 		adr	r4, .L3
+  16 0008 300094E8 		ldmia	r4, {r4-r5}
+  17 000c 0280A0E1 		mov	r8, r2
+  18 0010 0160A0E1 		mov	r6, r1
+  19 0014 FEFFFFEB 		bl	__extendsfdf2
+  20 0018 0420A0E1 		mov	r2, r4
+  21 001c 0530A0E1 		mov	r3, r5
+  22 0020 FEFFFFEB 		bl	__muldf3
+  23 0024 FEFFFFEB 		bl	__truncdfsf2
+  24 0028 0070A0E1 		mov	r7, r0
+  25 002c 0600A0E1 		mov	r0, r6
+  26 0030 FEFFFFEB 		bl	__extendsfdf2
+  27 0034 0420A0E1 		mov	r2, r4
+  28 0038 0530A0E1 		mov	r3, r5
+  29 003c FEFFFFEB 		bl	__muldf3
+  30 0040 FEFFFFEB 		bl	__truncdfsf2
+  31 0044 0010A0E1 		mov	r1, r0
+  32 0048 0700A0E1 		mov	r0, r7
+  33 004c FEFFFFEB 		bl	__subsf3
+  34 0050 FEFFFFEB 		bl	__extendsfdf2
+  35 0054 30208FE2 		adr	r2, .L3+8
+  36 0058 0C0092E8 		ldmia	r2, {r2-r3}
+  37 005c FEFFFFEB 		bl	__muldf3
+  38 0060 FEFFFFEB 		bl	__truncdfsf2
+  39 0064 FEFFFFEB 		bl	__extendsfdf2
+  40 0068 24208FE2 		adr	r2, .L3+16
+  41 006c 0C0092E8 		ldmia	r2, {r2-r3}
+  42 0070 FEFFFFEB 		bl	__muldf3
+  43 0074 FEFFFFEB 		bl	__truncdfsf2
+  44 0078 000088E5 		str	r0, [r8, #0]	@ float
+  45 007c F041BDE8 		ldmfd	sp!, {r4, r5, r6, r7, r8, lr}
+  46 0080 1EFF2FE1 		bx	lr
+  47              	.L4:
+  48              		.align	2
+  49              	.L3:
+  50 0084 305FD43F 		.word	1070882608
+  51 0088 3A58FFE7 		.word	-402696134
+  52 008c 9999D93F 		.word	1071225241
+  53 0090 9A999999 		.word	-1717986918
+  54 0094 FF04CF3F 		.word	1070531839
+  55 0098 309E4143 		.word	1128373808
+  57              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
+DEFINED SYMBOLS
+                            *ABS*:00000000 control_yawSpeed.c
+C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:10     .text:00000000 control_yawSpeed
+C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:14     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:50     .text:00000084 $d
+
+UNDEFINED SYMBOLS
+__extendsfdf2
+__muldf3
+__truncdfsf2
+__subsf3

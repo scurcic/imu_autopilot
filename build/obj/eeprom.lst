@@ -1,0 +1,303 @@
+   1              		.file	"eeprom.c"
+   2              		.text
+   3              		.align	2
+   5              	eeprom_save_data_after_read:
+   6              		@ Function supports interworking.
+   7              		@ args = 0, pretend = 0, frame = 0
+   8              		@ frame_needed = 0, uses_anonymous_args = 0
+   9              		@ link register save eliminated.
+  10 0000 2010D0E5 		ldrb	r1, [r0, #32]	@ zero_extendqisi2
+  11 0004 000051E3 		cmp	r1, #0
+  12              		@ lr needed for prologue
+  13 0008 0800000A 		beq	.L2
+  14 000c 28C09FE5 		ldr	ip, .L8
+  15 0010 0020A0E3 		mov	r2, #0
+  16              	.L4:
+  17 0014 0230D0E7 		ldrb	r3, [r0, r2]	@ zero_extendqisi2
+  18 0018 0230CCE7 		strb	r3, [ip, r2]
+  19 001c 012082E2 		add	r2, r2, #1
+  20 0020 2010D0E5 		ldrb	r1, [r0, #32]	@ zero_extendqisi2
+  21 0024 FF2002E2 		and	r2, r2, #255
+  22 0028 020051E1 		cmp	r1, r2
+  23 002c F8FFFF8A 		bhi	.L4
+  24              	.L2:
+  25 0030 08309FE5 		ldr	r3, .L8+4
+  26 0034 0010C3E5 		strb	r1, [r3, #0]
+  27 0038 1EFF2FE1 		bx	lr
+  28              	.L9:
+  29              		.align	2
+  30              	.L8:
+  31 003c 00000000 		.word	data_buffer
+  32 0040 00000000 		.word	data_ready
+  34              		.align	2
+  35              		.global	eeprom_read_data
+  37              	eeprom_read_data:
+  38              		@ Function supports interworking.
+  39              		@ args = 0, pretend = 0, frame = 0
+  40              		@ frame_needed = 0, uses_anonymous_args = 0
+  41              		@ link register save eliminated.
+  42 0044 3CC09FE5 		ldr	ip, .L21
+  43 0048 0030DCE5 		ldrb	r3, [ip, #0]	@ zero_extendqisi2
+  44              		@ lr needed for prologue
+  45 004c 000053E3 		cmp	r3, #0
+  46              	.L12:
+  47 0050 FEFFFF0A 		beq	.L12
+  48 0054 30109FE5 		ldr	r1, .L21+4
+  49 0058 0020A0E3 		mov	r2, #0
+  50              	.L14:
+  51 005c 0230D1E7 		ldrb	r3, [r1, r2]	@ zero_extendqisi2
+  52 0060 0030C2E7 		strb	r3, [r2, r0]
+  53 0064 012082E2 		add	r2, r2, #1
+  54 0068 0030DCE5 		ldrb	r3, [ip, #0]	@ zero_extendqisi2
+  55 006c FF2002E2 		and	r2, r2, #255
+  56 0070 020053E1 		cmp	r3, r2
+  57 0074 F8FFFF8A 		bhi	.L14
+  58 0078 08309FE5 		ldr	r3, .L21
+  59 007c 0020A0E3 		mov	r2, #0
+  60 0080 0020C3E5 		strb	r2, [r3, #0]
+  61 0084 1EFF2FE1 		bx	lr
+  62              	.L22:
+  63              		.align	2
+  64              	.L21:
+  65 0088 00000000 		.word	data_ready
+  66 008c 00000000 		.word	data_buffer
+  68              		.section	.rodata.str1.4,"aMS",%progbits,1
+  69              		.align	2
+  70              	.LC0:
+  71 0000 65657072 		.ascii	"eeprom_check is still -1 assuming 0\000"
+  71      6F6D5F63 
+  71      6865636B 
+  71      20697320 
+  71      7374696C 
+  72              		.text
+  73              		.align	2
+  74              		.global	eeprom_check_ok
+  76              	eeprom_check_ok:
+  77              		@ Function supports interworking.
+  78              		@ args = 0, pretend = 0, frame = 0
+  79              		@ frame_needed = 0, uses_anonymous_args = 0
+  80 0090 04E02DE5 		str	lr, [sp, #-4]!
+  81 0094 2C209FE5 		ldr	r2, .L29
+  82 0098 0030D2E5 		ldrb	r3, [r2, #0]	@ zero_extendqisi2
+  83 009c 033CA0E1 		mov	r3, r3, asl #24
+  84 00a0 433CA0E1 		mov	r3, r3, asr #24
+  85 00a4 010073E3 		cmn	r3, #1
+  86 00a8 1C009FE5 		ldr	r0, .L29+4
+  87 00ac 0300A011 		movne	r0, r3
+  88 00b0 0100000A 		beq	.L28
+  89              	.L26:
+  90 00b4 04E09DE4 		ldr	lr, [sp], #4
+  91 00b8 1EFF2FE1 		bx	lr
+  92              	.L28:
+  93 00bc FEFFFFEB 		bl	debug_message_buffer
+  94 00c0 0000A0E3 		mov	r0, #0
+  95 00c4 FAFFFFEA 		b	.L26
+  96              	.L30:
+  97              		.align	2
+  98              	.L29:
+  99 00c8 00000000 		.word	eeprom_available
+ 100 00cc 00000000 		.word	.LC0
+ 102              		.section	.rodata.str1.4
+ 103              		.align	2
+ 104              	.LC1:
+ 105 0024 59414141 		.ascii	"YAAAAY!!! eeprom_check_handler executed\000"
+ 105      41592121 
+ 105      21206565 
+ 105      70726F6D 
+ 105      5F636865 
+ 106              		.text
+ 107              		.align	2
+ 108              		.global	eeprom_check_handler
+ 110              	eeprom_check_handler:
+ 111              		@ Function supports interworking.
+ 112              		@ args = 0, pretend = 0, frame = 0
+ 113              		@ frame_needed = 0, uses_anonymous_args = 0
+ 114 00d0 10402DE9 		stmfd	sp!, {r4, lr}
+ 115 00d4 0040A0E1 		mov	r4, r0
+ 116 00d8 28009FE5 		ldr	r0, .L36
+ 117 00dc FEFFFFEB 		bl	debug_message_buffer
+ 118 00e0 2C30D4E5 		ldrb	r3, [r4, #44]	@ zero_extendqisi2
+ 119 00e4 020053E3 		cmp	r3, #2
+ 120 00e8 1C309F05 		ldreq	r3, .L36+4
+ 121 00ec 18309F15 		ldrne	r3, .L36+4
+ 122 00f0 0020A003 		moveq	r2, #0
+ 123 00f4 0120A013 		movne	r2, #1
+ 124 00f8 0020C305 		streqb	r2, [r3, #0]
+ 125 00fc 0020C315 		strneb	r2, [r3, #0]
+ 126 0100 1040BDE8 		ldmfd	sp!, {r4, lr}
+ 127 0104 1EFF2FE1 		bx	lr
+ 128              	.L37:
+ 129              		.align	2
+ 130              	.L36:
+ 131 0108 24000000 		.word	.LC1
+ 132 010c 00000000 		.word	eeprom_available
+ 134              		.align	2
+ 135              		.global	eeprom_check_start
+ 137              	eeprom_check_start:
+ 138              		@ Function supports interworking.
+ 139              		@ args = 0, pretend = 0, frame = 96
+ 140              		@ frame_needed = 0, uses_anonymous_args = 0
+ 141 0110 04E02DE5 		str	lr, [sp, #-4]!
+ 142 0114 0230A0E3 		mov	r3, #2
+ 143 0118 60D04DE2 		sub	sp, sp, #96
+ 144 011c 2030CDE5 		strb	r3, [sp, #32]
+ 145 0120 54309FE5 		ldr	r3, .L40
+ 146 0124 01C0A0E3 		mov	ip, #1
+ 147 0128 0020A0E3 		mov	r2, #0
+ 148 012c 5FE0E0E3 		mvn	lr, #95
+ 149 0130 0D00A0E1 		mov	r0, sp
+ 150 0134 30108DE2 		add	r1, sp, #48
+ 151 0138 28208DE5 		str	r2, [sp, #40]
+ 152 013c 52E0CDE5 		strb	lr, [sp, #82]
+ 153 0140 54C0CDE5 		strb	ip, [sp, #84]
+ 154 0144 58308DE5 		str	r3, [sp, #88]
+ 155 0148 0120CDE5 		strb	r2, [sp, #1]
+ 156 014c 0020CDE5 		strb	r2, [sp, #0]
+ 157 0150 2120CDE5 		strb	r2, [sp, #33]
+ 158 0154 22E0CDE5 		strb	lr, [sp, #34]
+ 159 0158 23C0CDE5 		strb	ip, [sp, #35]
+ 160 015c 24C0CDE5 		strb	ip, [sp, #36]
+ 161 0160 50C0CDE5 		strb	ip, [sp, #80]
+ 162 0164 51C0CDE5 		strb	ip, [sp, #81]
+ 163 0168 53C0CDE5 		strb	ip, [sp, #83]
+ 164 016c FEFFFFEB 		bl	i2c_write_read
+ 165 0170 60D08DE2 		add	sp, sp, #96
+ 166 0174 04E09DE4 		ldr	lr, [sp], #4
+ 167 0178 1EFF2FE1 		bx	lr
+ 168              	.L41:
+ 169              		.align	2
+ 170              	.L40:
+ 171 017c 00000000 		.word	eeprom_check_handler
+ 173              		.align	2
+ 174              		.global	eeprom_start_read
+ 176              	eeprom_start_read:
+ 177              		@ Function supports interworking.
+ 178              		@ args = 0, pretend = 0, frame = 96
+ 179              		@ frame_needed = 0, uses_anonymous_args = 0
+ 180 0180 30402DE9 		stmfd	sp!, {r4, r5, lr}
+ 181 0184 0130A0E1 		mov	r3, r1
+ 182 0188 FFC003E2 		and	ip, r3, #255
+ 183 018c 0028A0E1 		mov	r2, r0, asl #16
+ 184 0190 60D04DE2 		sub	sp, sp, #96
+ 185 0194 20005CE3 		cmp	ip, #32
+ 186 0198 223CA0E1 		mov	r3, r2, lsr #24
+ 187 019c 01E0A0E3 		mov	lr, #1
+ 188 01a0 0040A0E3 		mov	r4, #0
+ 189 01a4 5F50E0E3 		mvn	r5, #95
+ 190 01a8 30108DE2 		add	r1, sp, #48
+ 191 01ac 0D00A0E1 		mov	r0, sp
+ 192 01b0 2228A0E1 		mov	r2, r2, lsr #16
+ 193 01b4 1000008A 		bhi	.L45
+ 194 01b8 0030CDE5 		strb	r3, [sp, #0]
+ 195 01bc 0230A0E3 		mov	r3, #2
+ 196 01c0 2030CDE5 		strb	r3, [sp, #32]
+ 197 01c4 3C309FE5 		ldr	r3, .L46
+ 198 01c8 0120CDE5 		strb	r2, [sp, #1]
+ 199 01cc 28408DE5 		str	r4, [sp, #40]
+ 200 01d0 50C0CDE5 		strb	ip, [sp, #80]
+ 201 01d4 5250CDE5 		strb	r5, [sp, #82]
+ 202 01d8 54E0CDE5 		strb	lr, [sp, #84]
+ 203 01dc 58308DE5 		str	r3, [sp, #88]
+ 204 01e0 2140CDE5 		strb	r4, [sp, #33]
+ 205 01e4 2250CDE5 		strb	r5, [sp, #34]
+ 206 01e8 23E0CDE5 		strb	lr, [sp, #35]
+ 207 01ec 24E0CDE5 		strb	lr, [sp, #36]
+ 208 01f0 51E0CDE5 		strb	lr, [sp, #81]
+ 209 01f4 53E0CDE5 		strb	lr, [sp, #83]
+ 210 01f8 FEFFFFEB 		bl	i2c_write_read
+ 211              	.L45:
+ 212 01fc 60D08DE2 		add	sp, sp, #96
+ 213 0200 3040BDE8 		ldmfd	sp!, {r4, r5, lr}
+ 214 0204 1EFF2FE1 		bx	lr
+ 215              	.L47:
+ 216              		.align	2
+ 217              	.L46:
+ 218 0208 00000000 		.word	eeprom_save_data_after_read
+ 220              		.align	2
+ 221              		.global	eeprom_write
+ 223              	eeprom_write:
+ 224              		@ Function supports interworking.
+ 225              		@ args = 0, pretend = 0, frame = 48
+ 226              		@ frame_needed = 0, uses_anonymous_args = 0
+ 227 020c 10402DE9 		stmfd	sp!, {r4, lr}
+ 228 0210 FFC001E2 		and	ip, r1, #255
+ 229 0214 0008A0E1 		mov	r0, r0, asl #16
+ 230 0218 40005CE3 		cmp	ip, #64
+ 231 021c 30D04DE2 		sub	sp, sp, #48
+ 232 0220 02E0A0E1 		mov	lr, r2
+ 233 0224 2048A0E1 		mov	r4, r0, lsr #16
+ 234 0228 1900008A 		bhi	.L54
+ 235 022c 203CA0E1 		mov	r3, r0, lsr #24
+ 236 0230 02208CE2 		add	r2, ip, #2
+ 237 0234 0010A0E3 		mov	r1, #0
+ 238 0238 0030CDE5 		strb	r3, [sp, #0]
+ 239 023c 2020CDE5 		strb	r2, [sp, #32]
+ 240 0240 5F30E0E3 		mvn	r3, #95
+ 241 0244 0120A0E3 		mov	r2, #1
+ 242 0248 00005CE3 		cmp	ip, #0
+ 243 024c 0140CDE5 		strb	r4, [sp, #1]
+ 244 0250 2230CDE5 		strb	r3, [sp, #34]
+ 245 0254 2320CDE5 		strb	r2, [sp, #35]
+ 246 0258 2110CDE5 		strb	r1, [sp, #33]
+ 247 025c 2410CDE5 		strb	r1, [sp, #36]
+ 248 0260 28108DE5 		str	r1, [sp, #40]
+ 249 0264 0800000A 		beq	.L51
+ 250 0268 0100A0E1 		mov	r0, r1
+ 251              	.L53:
+ 252 026c 30208DE2 		add	r2, sp, #48
+ 253 0270 013080E2 		add	r3, r0, #1
+ 254 0274 001082E0 		add	r1, r2, r0
+ 255 0278 0E20D0E7 		ldrb	r2, [r0, lr]	@ zero_extendqisi2
+ 256 027c FF0003E2 		and	r0, r3, #255
+ 257 0280 00005CE1 		cmp	ip, r0
+ 258 0284 2E2041E5 		strb	r2, [r1, #-46]
+ 259 0288 F7FFFF1A 		bne	.L53
+ 260              	.L51:
+ 261 028c 0D00A0E1 		mov	r0, sp
+ 262 0290 FEFFFFEB 		bl	i2c_op
+ 263              	.L54:
+ 264 0294 30D08DE2 		add	sp, sp, #48
+ 265 0298 1040BDE8 		ldmfd	sp!, {r4, lr}
+ 266 029c 1EFF2FE1 		bx	lr
+ 268              		.global	data_ready
+ 269              		.bss
+ 272              	data_ready:
+ 273 0000 00       		.space	1
+ 274              		.data
+ 277              	eeprom_available:
+ 278 0000 FF       		.byte	-1
+ 279              		.comm	mavlink_system,8,4
+ 280              		.comm	data_buffer,32,1
+ 281              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
+DEFINED SYMBOLS
+                            *ABS*:00000000 eeprom.c
+C:\Users\Srdjan\AppData\Local\Temp/ccmiaaaa.s:5      .text:00000000 eeprom_save_data_after_read
+C:\Users\Srdjan\AppData\Local\Temp/ccmiaaaa.s:10     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccmiaaaa.s:31     .text:0000003c $d
+                            *COM*:00000020 data_buffer
+C:\Users\Srdjan\AppData\Local\Temp/ccmiaaaa.s:272    .bss:00000000 data_ready
+C:\Users\Srdjan\AppData\Local\Temp/ccmiaaaa.s:37     .text:00000044 eeprom_read_data
+C:\Users\Srdjan\AppData\Local\Temp/ccmiaaaa.s:42     .text:00000044 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccmiaaaa.s:65     .text:00000088 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccmiaaaa.s:76     .text:00000090 eeprom_check_ok
+C:\Users\Srdjan\AppData\Local\Temp/ccmiaaaa.s:80     .text:00000090 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccmiaaaa.s:99     .text:000000c8 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccmiaaaa.s:277    .data:00000000 eeprom_available
+C:\Users\Srdjan\AppData\Local\Temp/ccmiaaaa.s:110    .text:000000d0 eeprom_check_handler
+C:\Users\Srdjan\AppData\Local\Temp/ccmiaaaa.s:114    .text:000000d0 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccmiaaaa.s:131    .text:00000108 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccmiaaaa.s:137    .text:00000110 eeprom_check_start
+C:\Users\Srdjan\AppData\Local\Temp/ccmiaaaa.s:141    .text:00000110 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccmiaaaa.s:171    .text:0000017c $d
+C:\Users\Srdjan\AppData\Local\Temp/ccmiaaaa.s:176    .text:00000180 eeprom_start_read
+C:\Users\Srdjan\AppData\Local\Temp/ccmiaaaa.s:180    .text:00000180 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccmiaaaa.s:218    .text:00000208 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccmiaaaa.s:223    .text:0000020c eeprom_write
+C:\Users\Srdjan\AppData\Local\Temp/ccmiaaaa.s:227    .text:0000020c $a
+                             .bss:00000000 $d
+                            *COM*:00000008 mavlink_system
+
+UNDEFINED SYMBOLS
+debug_message_buffer
+i2c_write_read
+i2c_op

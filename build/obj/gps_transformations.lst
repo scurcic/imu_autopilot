@@ -1,0 +1,314 @@
+   1              		.file	"gps_transformations.c"
+   2              		.global	__floatsidf
+   3              		.global	__muldf3
+   4              		.global	__divdf3
+   5              		.global	__truncdfsf2
+   6              		.text
+   7              		.align	2
+   8              		.global	gps_get_local_velocity
+  10              	gps_get_local_velocity:
+  11              		@ Function supports interworking.
+  12              		@ args = 0, pretend = 0, frame = 0
+  13              		@ frame_needed = 0, uses_anonymous_args = 0
+  14 0000 CC209FE5 		ldr	r2, .L3+8
+  15 0004 F030D2E1 		ldrsh	r3, [r2, #0]
+  16 0008 033183E0 		add	r3, r3, r3, asl #2
+  17 000c F0472DE9 		stmfd	sp!, {r4, r5, r6, r7, r8, r9, sl, lr}
+  18 0010 00A0A0E1 		mov	sl, r0
+  19 0014 8300A0E1 		mov	r0, r3, asl #1
+  20 0018 FEFFFFEB 		bl	__floatsidf
+  21 001c A8208FE2 		adr	r2, .L3
+  22 0020 0C0092E8 		ldmia	r2, {r2-r3}
+  23 0024 FEFFFFEB 		bl	__muldf3
+  24 0028 0121A0E3 		mov	r2, #1073741824
+  25 002c 662882E2 		add	r2, r2, #6684672
+  26 0030 022982E2 		add	r2, r2, #32768
+  27 0034 0030A0E3 		mov	r3, #0
+  28 0038 FEFFFFEB 		bl	__divdf3
+  29 003c 94309FE5 		ldr	r3, .L3+12
+  30 0040 0080A0E1 		mov	r8, r0
+  31 0044 B000D3E1 		ldrh	r0, [r3, #0]
+  32 0048 0190A0E1 		mov	r9, r1
+  33 004c FEFFFFEB 		bl	__floatsidf
+  34 0050 0141A0E3 		mov	r4, #1073741824
+  35 0054 0060A0E1 		mov	r6, r0
+  36 0058 0170A0E1 		mov	r7, r1
+  37 005c 0800A0E1 		mov	r0, r8
+  38 0060 0910A0E1 		mov	r1, r9
+  39 0064 FEFFFFEB 		bl	cos
+  40 0068 594884E2 		add	r4, r4, #5832704
+  41 006c 0620A0E1 		mov	r2, r6
+  42 0070 0730A0E1 		mov	r3, r7
+  43 0074 0050A0E3 		mov	r5, #0
+  44 0078 FEFFFFEB 		bl	__muldf3
+  45 007c 0420A0E1 		mov	r2, r4
+  46 0080 0530A0E1 		mov	r3, r5
+  47 0084 FEFFFFEB 		bl	__muldf3
+  48 0088 FEFFFFEB 		bl	__truncdfsf2
+  49 008c 0910A0E1 		mov	r1, r9
+  50 0090 00008AE5 		str	r0, [sl, #0]	@ float
+  51 0094 0800A0E1 		mov	r0, r8
+  52 0098 FEFFFFEB 		bl	sin
+  53 009c 0020A0E1 		mov	r2, r0
+  54 00a0 0130A0E1 		mov	r3, r1
+  55 00a4 0600A0E1 		mov	r0, r6
+  56 00a8 0710A0E1 		mov	r1, r7
+  57 00ac FEFFFFEB 		bl	__muldf3
+  58 00b0 0420A0E1 		mov	r2, r4
+  59 00b4 0530A0E1 		mov	r3, r5
+  60 00b8 FEFFFFEB 		bl	__muldf3
+  61 00bc FEFFFFEB 		bl	__truncdfsf2
+  62 00c0 04008AE5 		str	r0, [sl, #4]	@ float
+  63 00c4 F047BDE8 		ldmfd	sp!, {r4, r5, r6, r7, r8, r9, sl, lr}
+  64 00c8 1EFF2FE1 		bx	lr
+  65              	.L4:
+  66              		.align	2
+  67              	.L3:
+  68 00cc CA210940 		.word	1074340298
+  69 00d0 6F1283C0 		.word	-1065151889
+  70 00d4 00000000 		.word	gps_course
+  71 00d8 00000000 		.word	gps_gspeed
+  73              		.global	__floatsisf
+  74              		.global	__divsf3
+  75              		.global	__extendsfdf2
+  76              		.section	.rodata.str1.4,"aMS",%progbits,1
+  77              		.align	2
+  78              	.LC0:
+  79 0000 47505320 		.ascii	"GPS Local Origin saved\000"
+  79      4C6F6361 
+  79      6C204F72 
+  79      6967696E 
+  79      20736176 
+  80 0017 00       		.text
+  81              		.align	2
+  82              		.global	gps_set_local_origin
+  84              	gps_set_local_origin:
+  85              		@ Function supports interworking.
+  86              		@ args = 0, pretend = 0, frame = 0
+  87              		@ frame_needed = 0, uses_anonymous_args = 0
+  88 00dc 70402DE9 		stmfd	sp!, {r4, r5, r6, lr}
+  89 00e0 B4309FE5 		ldr	r3, .L7+8
+  90 00e4 4B54A0E3 		mov	r5, #1258291200
+  91 00e8 625985E2 		add	r5, r5, #1605632
+  92 00ec 5A5D85E2 		add	r5, r5, #5760
+  93 00f0 000093E5 		ldr	r0, [r3, #0]
+  94 00f4 FEFFFFEB 		bl	__floatsisf
+  95 00f8 0510A0E1 		mov	r1, r5
+  96 00fc FEFFFFEB 		bl	__divsf3
+  97 0100 98309FE5 		ldr	r3, .L7+12
+  98 0104 98409FE5 		ldr	r4, .L7+16
+  99 0108 0060A0E1 		mov	r6, r0
+ 100 010c 000093E5 		ldr	r0, [r3, #0]
+ 101 0110 006084E5 		str	r6, [r4, #0]	@ float
+ 102 0114 FEFFFFEB 		bl	__floatsisf
+ 103 0118 0510A0E1 		mov	r1, r5
+ 104 011c FEFFFFEB 		bl	__divsf3
+ 105 0120 80309FE5 		ldr	r3, .L7+20
+ 106 0124 040084E5 		str	r0, [r4, #4]	@ float
+ 107 0128 000093E5 		ldr	r0, [r3, #0]
+ 108 012c FEFFFFEB 		bl	__floatsisf
+ 109 0130 4214A0E3 		mov	r1, #1107296256
+ 110 0134 321781E2 		add	r1, r1, #13107200
+ 111 0138 FEFFFFEB 		bl	__divsf3
+ 112 013c 080084E5 		str	r0, [r4, #8]	@ float
+ 113 0140 0600A0E1 		mov	r0, r6
+ 114 0144 FEFFFFEB 		bl	__extendsfdf2
+ 115 0148 44208FE2 		adr	r2, .L7
+ 116 014c 0C0092E8 		ldmia	r2, {r2-r3}
+ 117 0150 FEFFFFEB 		bl	__muldf3
+ 118 0154 0121A0E3 		mov	r2, #1073741824
+ 119 0158 662882E2 		add	r2, r2, #6684672
+ 120 015c 022982E2 		add	r2, r2, #32768
+ 121 0160 0030A0E3 		mov	r3, #0
+ 122 0164 FEFFFFEB 		bl	__divdf3
+ 123 0168 FEFFFFEB 		bl	cos
+ 124 016c FEFFFFEB 		bl	__truncdfsf2
+ 125 0170 34309FE5 		ldr	r3, .L7+24
+ 126 0174 000083E5 		str	r0, [r3, #0]	@ float
+ 127 0178 30309FE5 		ldr	r3, .L7+28
+ 128 017c 0120A0E3 		mov	r2, #1
+ 129 0180 0020C3E5 		strb	r2, [r3, #0]
+ 130 0184 28009FE5 		ldr	r0, .L7+32
+ 131 0188 FEFFFFEB 		bl	debug_message_buffer
+ 132 018c 7040BDE8 		ldmfd	sp!, {r4, r5, r6, lr}
+ 133 0190 1EFF2FE1 		bx	lr
+ 134              	.L8:
+ 135              		.align	2
+ 136              	.L7:
+ 137 0194 CA210940 		.word	1074340298
+ 138 0198 6F1283C0 		.word	-1065151889
+ 139 019c 00000000 		.word	gps_lat
+ 140 01a0 00000000 		.word	gps_lon
+ 141 01a4 08000000 		.word	gps_local_origin
+ 142 01a8 00000000 		.word	gps_alt
+ 143 01ac 04000000 		.word	gps_cos_origin_lat
+ 144 01b0 00000000 		.word	gps_local_origin_init
+ 145 01b4 00000000 		.word	.LC0
+ 147              		.global	__subsf3
+ 148              		.global	__mulsf3
+ 149              		.align	2
+ 150              		.global	gps_get_local_position
+ 152              	gps_get_local_position:
+ 153              		@ Function supports interworking.
+ 154              		@ args = 0, pretend = 0, frame = 0
+ 155              		@ frame_needed = 0, uses_anonymous_args = 0
+ 156 01b8 48319FE5 		ldr	r3, .L15+8
+ 157 01bc 0020D3E5 		ldrb	r2, [r3, #0]	@ zero_extendqisi2
+ 158 01c0 000052E3 		cmp	r2, #0
+ 159 01c4 F0402DE9 		stmfd	sp!, {r4, r5, r6, r7, lr}
+ 160 01c8 3C719FE5 		ldr	r7, .L15+12
+ 161 01cc 0060A0E1 		mov	r6, r0
+ 162 01d0 4400000A 		beq	.L10
+ 163 01d4 34319FE5 		ldr	r3, .L15+16
+ 164 01d8 000093E5 		ldr	r0, [r3, #0]
+ 165 01dc FEFFFFEB 		bl	__floatsisf
+ 166 01e0 4B14A0E3 		mov	r1, #1258291200
+ 167 01e4 621981E2 		add	r1, r1, #1605632
+ 168 01e8 5A1D81E2 		add	r1, r1, #5760
+ 169 01ec FEFFFFEB 		bl	__divsf3
+ 170 01f0 001097E5 		ldr	r1, [r7, #0]	@ float
+ 171 01f4 FEFFFFEB 		bl	__subsf3
+ 172 01f8 FEFFFFEB 		bl	__extendsfdf2
+ 173 01fc FC208FE2 		adr	r2, .L15
+ 174 0200 0C0092E8 		ldmia	r2, {r2-r3}
+ 175 0204 FEFFFFEB 		bl	__muldf3
+ 176 0208 0121A0E3 		mov	r2, #1073741824
+ 177 020c 662882E2 		add	r2, r2, #6684672
+ 178 0210 022982E2 		add	r2, r2, #32768
+ 179 0214 0030A0E3 		mov	r3, #0
+ 180 0218 FEFFFFEB 		bl	__divdf3
+ 181 021c FEFFFFEB 		bl	tan
+ 182 0220 EC209FE5 		ldr	r2, .L15+20
+ 183 0224 0030A0E3 		mov	r3, #0
+ 184 0228 FEFFFFEB 		bl	__muldf3
+ 185 022c FEFFFFEB 		bl	__truncdfsf2
+ 186 0230 E0309FE5 		ldr	r3, .L15+24
+ 187 0234 000086E5 		str	r0, [r6, #0]	@ float
+ 188 0238 DC009FE5 		ldr	r0, .L15+28
+ 189 023c 001093E5 		ldr	r1, [r3, #0]	@ float
+ 190 0240 FEFFFFEB 		bl	__mulsf3
+ 191 0244 FEFFFFEB 		bl	__extendsfdf2
+ 192 0248 D0309FE5 		ldr	r3, .L15+32
+ 193 024c 0040A0E1 		mov	r4, r0
+ 194 0250 000093E5 		ldr	r0, [r3, #0]
+ 195 0254 0150A0E1 		mov	r5, r1
+ 196 0258 FEFFFFEB 		bl	__floatsisf
+ 197 025c 4B14A0E3 		mov	r1, #1258291200
+ 198 0260 621981E2 		add	r1, r1, #1605632
+ 199 0264 5A1D81E2 		add	r1, r1, #5760
+ 200 0268 FEFFFFEB 		bl	__divsf3
+ 201 026c 041097E5 		ldr	r1, [r7, #4]	@ float
+ 202 0270 FEFFFFEB 		bl	__subsf3
+ 203 0274 FEFFFFEB 		bl	__extendsfdf2
+ 204 0278 80208FE2 		adr	r2, .L15
+ 205 027c 0C0092E8 		ldmia	r2, {r2-r3}
+ 206 0280 FEFFFFEB 		bl	__muldf3
+ 207 0284 0121A0E3 		mov	r2, #1073741824
+ 208 0288 662882E2 		add	r2, r2, #6684672
+ 209 028c 022982E2 		add	r2, r2, #32768
+ 210 0290 0030A0E3 		mov	r3, #0
+ 211 0294 FEFFFFEB 		bl	__divdf3
+ 212 0298 FEFFFFEB 		bl	tan
+ 213 029c 0020A0E1 		mov	r2, r0
+ 214 02a0 0130A0E1 		mov	r3, r1
+ 215 02a4 0400A0E1 		mov	r0, r4
+ 216 02a8 0510A0E1 		mov	r1, r5
+ 217 02ac FEFFFFEB 		bl	__muldf3
+ 218 02b0 FEFFFFEB 		bl	__truncdfsf2
+ 219 02b4 68309FE5 		ldr	r3, .L15+36
+ 220 02b8 040086E5 		str	r0, [r6, #4]	@ float
+ 221 02bc 000093E5 		ldr	r0, [r3, #0]
+ 222 02c0 FEFFFFEB 		bl	__floatsisf
+ 223 02c4 4214A0E3 		mov	r1, #1107296256
+ 224 02c8 321781E2 		add	r1, r1, #13107200
+ 225 02cc FEFFFFEB 		bl	__divsf3
+ 226 02d0 081097E5 		ldr	r1, [r7, #8]	@ float
+ 227 02d4 FEFFFFEB 		bl	__subsf3
+ 228 02d8 023180E2 		add	r3, r0, #-2147483648
+ 229 02dc 083086E5 		str	r3, [r6, #8]	@ float
+ 230              	.L13:
+ 231 02e0 F040BDE8 		ldmfd	sp!, {r4, r5, r6, r7, lr}
+ 232 02e4 1EFF2FE1 		bx	lr
+ 233              	.L10:
+ 234 02e8 FEFFFFEB 		bl	gps_set_local_origin
+ 235 02ec 0030A0E3 		mov	r3, #0
+ 236 02f0 083086E5 		str	r3, [r6, #8]	@ float
+ 237 02f4 003086E5 		str	r3, [r6, #0]	@ float
+ 238 02f8 043086E5 		str	r3, [r6, #4]	@ float
+ 239 02fc F7FFFFEA 		b	.L13
+ 240              	.L16:
+ 241              		.align	2
+ 242              	.L15:
+ 243 0300 CA210940 		.word	1074340298
+ 244 0304 6F1283C0 		.word	-1065151889
+ 245 0308 00000000 		.word	gps_local_origin_init
+ 246 030c 08000000 		.word	gps_local_origin
+ 247 0310 00000000 		.word	gps_lat
+ 248 0314 A7545841 		.word	1096307879
+ 249 0318 04000000 		.word	gps_cos_origin_lat
+ 250 031c 38A5C24A 		.word	1254270264
+ 251 0320 00000000 		.word	gps_lon
+ 252 0324 00000000 		.word	gps_alt
+ 254              		.global	r_earth
+ 255              		.section	.rodata
+ 256              		.align	2
+ 259              	r_earth:
+ 260 0000 38A5C24A 		.word	1254270264
+ 261              		.bss
+ 262              	gps_local_origin_init:
+ 263 0000 00       		.space	1
+ 264 0001 000000   		.align	2
+ 265              	gps_cos_origin_lat:
+ 266 0004 00000000 		.space	4
+ 267              		.align	2
+ 268              	gps_local_origin:
+ 269 0008 00000000 		.space	12
+ 269      00000000 
+ 269      00000000 
+ 270              		.comm	global_param_id,4,4
+ 271              		.comm	state_fly_id,4,4
+ 272              		.comm	global_data,2588,4
+ 273              		.comm	gps_device_mode,1,1
+ 274              		.comm	mavlink_system,8,4
+ 275              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
+DEFINED SYMBOLS
+                            *ABS*:00000000 gps_transformations.c
+C:\Users\Srdjan\AppData\Local\Temp/ccGWaaaa.s:10     .text:00000000 gps_get_local_velocity
+C:\Users\Srdjan\AppData\Local\Temp/ccGWaaaa.s:14     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccGWaaaa.s:68     .text:000000cc $d
+C:\Users\Srdjan\AppData\Local\Temp/ccGWaaaa.s:84     .text:000000dc gps_set_local_origin
+C:\Users\Srdjan\AppData\Local\Temp/ccGWaaaa.s:88     .text:000000dc $a
+C:\Users\Srdjan\AppData\Local\Temp/ccGWaaaa.s:137    .text:00000194 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccGWaaaa.s:268    .bss:00000008 gps_local_origin
+C:\Users\Srdjan\AppData\Local\Temp/ccGWaaaa.s:265    .bss:00000004 gps_cos_origin_lat
+C:\Users\Srdjan\AppData\Local\Temp/ccGWaaaa.s:262    .bss:00000000 gps_local_origin_init
+C:\Users\Srdjan\AppData\Local\Temp/ccGWaaaa.s:152    .text:000001b8 gps_get_local_position
+C:\Users\Srdjan\AppData\Local\Temp/ccGWaaaa.s:156    .text:000001b8 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccGWaaaa.s:243    .text:00000300 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccGWaaaa.s:259    .rodata:00000000 r_earth
+C:\Users\Srdjan\AppData\Local\Temp/ccGWaaaa.s:260    .rodata:00000000 $d
+                            *COM*:00000004 global_param_id
+                            *COM*:00000004 state_fly_id
+                            *COM*:00000a1c global_data
+                            *COM*:00000001 gps_device_mode
+                            *COM*:00000008 mavlink_system
+
+UNDEFINED SYMBOLS
+__floatsidf
+__muldf3
+__divdf3
+__truncdfsf2
+cos
+sin
+gps_course
+gps_gspeed
+__floatsisf
+__divsf3
+__extendsfdf2
+debug_message_buffer
+gps_lat
+gps_lon
+gps_alt
+__subsf3
+__mulsf3
+tan

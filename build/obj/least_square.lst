@@ -1,0 +1,175 @@
+   1              		.file	"least_square.c"
+   2              		.global	__floatsisf
+   3              		.global	__mulsf3
+   4              		.global	__addsf3
+   5              		.global	__subsf3
+   6              		.global	__divsf3
+   7              		.text
+   8              		.align	2
+   9              		.global	least_square
+  11              	least_square:
+  12              		@ Function supports interworking.
+  13              		@ args = 0, pretend = 0, frame = 28
+  14              		@ frame_needed = 0, uses_anonymous_args = 0
+  15 0000 F04F2DE9 		stmfd	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+  16 0004 0370A0E1 		mov	r7, r3
+  17 0008 003093E5 		ldr	r3, [r3, #0]	@ float
+  18 000c 1CD04DE2 		sub	sp, sp, #28
+  19 0010 0290A0E1 		mov	r9, r2
+  20 0014 0140A0E1 		mov	r4, r1
+  21 0018 10308DE5 		str	r3, [sp, #16]	@ float
+  22 001c FEFFFFEB 		bl	__floatsisf
+  23 0020 043097E5 		ldr	r3, [r7, #4]	@ float
+  24 0024 0060A0E1 		mov	r6, r0
+  25 0028 0610A0E1 		mov	r1, r6
+  26 002c 10009DE5 		ldr	r0, [sp, #16]	@ float
+  27 0030 14308DE5 		str	r3, [sp, #20]	@ float
+  28 0034 FEFFFFEB 		bl	__mulsf3
+  29 0038 0C008DE5 		str	r0, [sp, #12]	@ float
+  30 003c 0C109DE5 		ldr	r1, [sp, #12]	@ float
+  31 0040 14009DE5 		ldr	r0, [sp, #20]	@ float
+  32 0044 FEFFFFEB 		bl	__addsf3
+  33 0048 00B0A0E1 		mov	fp, r0
+  34 004c 0400A0E1 		mov	r0, r4
+  35 0050 FEFFFFEB 		bl	__floatsisf
+  36 0054 041099E5 		ldr	r1, [r9, #4]	@ float
+  37 0058 FEFFFFEB 		bl	__subsf3
+  38 005c 0610A0E1 		mov	r1, r6
+  39 0060 0040A0E1 		mov	r4, r0
+  40 0064 000099E5 		ldr	r0, [r9, #0]	@ float
+  41 0068 FEFFFFEB 		bl	__mulsf3
+  42 006c 0010A0E1 		mov	r1, r0
+  43 0070 0400A0E1 		mov	r0, r4
+  44 0074 FEFFFFEB 		bl	__subsf3
+  45 0078 0C3097E5 		ldr	r3, [r7, #12]	@ float
+  46 007c 0610A0E1 		mov	r1, r6
+  47 0080 08008DE5 		str	r0, [sp, #8]	@ float
+  48 0084 14009DE5 		ldr	r0, [sp, #20]	@ float
+  49 0088 18308DE5 		str	r3, [sp, #24]	@ float
+  50 008c FEFFFFEB 		bl	__mulsf3
+  51 0090 04008DE5 		str	r0, [sp, #4]	@ float
+  52 0094 04109DE5 		ldr	r1, [sp, #4]	@ float
+  53 0098 18009DE5 		ldr	r0, [sp, #24]	@ float
+  54 009c FEFFFFEB 		bl	__addsf3
+  55 00a0 08A097E5 		ldr	sl, [r7, #8]	@ float
+  56 00a4 0040A0E1 		mov	r4, r0
+  57 00a8 0C109DE5 		ldr	r1, [sp, #12]	@ float
+  58 00ac 0A00A0E1 		mov	r0, sl
+  59 00b0 FEFFFFEB 		bl	__addsf3
+  60 00b4 0010A0E1 		mov	r1, r0
+  61 00b8 0600A0E1 		mov	r0, r6
+  62 00bc FEFFFFEB 		bl	__mulsf3
+  63 00c0 0010A0E1 		mov	r1, r0
+  64 00c4 0400A0E1 		mov	r0, r4
+  65 00c8 FEFFFFEB 		bl	__addsf3
+  66 00cc FE15A0E3 		mov	r1, #1065353216
+  67 00d0 FEFFFFEB 		bl	__addsf3
+  68 00d4 0610A0E1 		mov	r1, r6
+  69 00d8 0050A0E1 		mov	r5, r0
+  70 00dc 0A00A0E1 		mov	r0, sl
+  71 00e0 FEFFFFEB 		bl	__mulsf3
+  72 00e4 0010A0E1 		mov	r1, r0
+  73 00e8 18009DE5 		ldr	r0, [sp, #24]	@ float
+  74 00ec FEFFFFEB 		bl	__addsf3
+  75 00f0 0B10A0E1 		mov	r1, fp
+  76 00f4 0080A0E1 		mov	r8, r0
+  77 00f8 0600A0E1 		mov	r0, r6
+  78 00fc FEFFFFEB 		bl	__mulsf3
+  79 0100 0510A0E1 		mov	r1, r5
+  80 0104 FEFFFFEB 		bl	__divsf3
+  81 0108 0010A0E1 		mov	r1, r0
+  82 010c FE05A0E3 		mov	r0, #1065353216
+  83 0110 FEFFFFEB 		bl	__subsf3
+  84 0114 0510A0E1 		mov	r1, r5
+  85 0118 0060A0E1 		mov	r6, r0
+  86 011c 0800A0E1 		mov	r0, r8
+  87 0120 FEFFFFEB 		bl	__divsf3
+  88 0124 0010A0E1 		mov	r1, r0
+  89 0128 FE05A0E3 		mov	r0, #1065353216
+  90 012c FEFFFFEB 		bl	__subsf3
+  91 0130 08109DE5 		ldr	r1, [sp, #8]	@ float
+  92 0134 00008DE5 		str	r0, [sp, #0]	@ float
+  93 0138 0B00A0E1 		mov	r0, fp
+  94 013c FEFFFFEB 		bl	__mulsf3
+  95 0140 0510A0E1 		mov	r1, r5
+  96 0144 FEFFFFEB 		bl	__divsf3
+  97 0148 0010A0E1 		mov	r1, r0
+  98 014c 000099E5 		ldr	r0, [r9, #0]	@ float
+  99 0150 FEFFFFEB 		bl	__addsf3
+ 100 0154 0810A0E1 		mov	r1, r8
+ 101 0158 000089E5 		str	r0, [r9, #0]	@ float
+ 102 015c 08009DE5 		ldr	r0, [sp, #8]	@ float
+ 103 0160 FEFFFFEB 		bl	__mulsf3
+ 104 0164 0510A0E1 		mov	r1, r5
+ 105 0168 FEFFFFEB 		bl	__divsf3
+ 106 016c 0010A0E1 		mov	r1, r0
+ 107 0170 040099E5 		ldr	r0, [r9, #4]	@ float
+ 108 0174 FEFFFFEB 		bl	__addsf3
+ 109 0178 0610A0E1 		mov	r1, r6
+ 110 017c 040089E5 		str	r0, [r9, #4]	@ float
+ 111 0180 10009DE5 		ldr	r0, [sp, #16]	@ float
+ 112 0184 FEFFFFEB 		bl	__mulsf3
+ 113 0188 0B10A0E1 		mov	r1, fp
+ 114 018c 0040A0E1 		mov	r4, r0
+ 115 0190 0A00A0E1 		mov	r0, sl
+ 116 0194 FEFFFFEB 		bl	__mulsf3
+ 117 0198 0510A0E1 		mov	r1, r5
+ 118 019c FEFFFFEB 		bl	__divsf3
+ 119 01a0 0010A0E1 		mov	r1, r0
+ 120 01a4 0400A0E1 		mov	r0, r4
+ 121 01a8 FEFFFFEB 		bl	__subsf3
+ 122 01ac 0610A0E1 		mov	r1, r6
+ 123 01b0 000087E5 		str	r0, [r7, #0]	@ float
+ 124 01b4 14009DE5 		ldr	r0, [sp, #20]	@ float
+ 125 01b8 FEFFFFEB 		bl	__mulsf3
+ 126 01bc 0B10A0E1 		mov	r1, fp
+ 127 01c0 0040A0E1 		mov	r4, r0
+ 128 01c4 18009DE5 		ldr	r0, [sp, #24]	@ float
+ 129 01c8 FEFFFFEB 		bl	__mulsf3
+ 130 01cc 0510A0E1 		mov	r1, r5
+ 131 01d0 FEFFFFEB 		bl	__divsf3
+ 132 01d4 0010A0E1 		mov	r1, r0
+ 133 01d8 0400A0E1 		mov	r0, r4
+ 134 01dc FEFFFFEB 		bl	__subsf3
+ 135 01e0 00109DE5 		ldr	r1, [sp, #0]	@ float
+ 136 01e4 040087E5 		str	r0, [r7, #4]	@ float
+ 137 01e8 0A00A0E1 		mov	r0, sl
+ 138 01ec FEFFFFEB 		bl	__mulsf3
+ 139 01f0 0810A0E1 		mov	r1, r8
+ 140 01f4 0040A0E1 		mov	r4, r0
+ 141 01f8 0C009DE5 		ldr	r0, [sp, #12]	@ float
+ 142 01fc FEFFFFEB 		bl	__mulsf3
+ 143 0200 0510A0E1 		mov	r1, r5
+ 144 0204 FEFFFFEB 		bl	__divsf3
+ 145 0208 0010A0E1 		mov	r1, r0
+ 146 020c 0400A0E1 		mov	r0, r4
+ 147 0210 FEFFFFEB 		bl	__subsf3
+ 148 0214 00109DE5 		ldr	r1, [sp, #0]	@ float
+ 149 0218 080087E5 		str	r0, [r7, #8]	@ float
+ 150 021c 18009DE5 		ldr	r0, [sp, #24]	@ float
+ 151 0220 FEFFFFEB 		bl	__mulsf3
+ 152 0224 0810A0E1 		mov	r1, r8
+ 153 0228 0040A0E1 		mov	r4, r0
+ 154 022c 04009DE5 		ldr	r0, [sp, #4]	@ float
+ 155 0230 FEFFFFEB 		bl	__mulsf3
+ 156 0234 0510A0E1 		mov	r1, r5
+ 157 0238 FEFFFFEB 		bl	__divsf3
+ 158 023c 0010A0E1 		mov	r1, r0
+ 159 0240 0400A0E1 		mov	r0, r4
+ 160 0244 FEFFFFEB 		bl	__subsf3
+ 161 0248 0C0087E5 		str	r0, [r7, #12]	@ float
+ 162 024c 1CD08DE2 		add	sp, sp, #28
+ 163 0250 F04FBDE8 		ldmfd	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+ 164 0254 1EFF2FE1 		bx	lr
+ 166              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
+DEFINED SYMBOLS
+                            *ABS*:00000000 least_square.c
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:11     .text:00000000 least_square
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:15     .text:00000000 $a
+
+UNDEFINED SYMBOLS
+__floatsisf
+__mulsf3
+__addsf3
+__subsf3
+__divsf3

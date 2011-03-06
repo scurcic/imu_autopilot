@@ -1,0 +1,579 @@
+   1              		.file	"ms2100.c"
+   2              		.text
+   3              		.align	2
+   5              	ms2100_reset:
+   6              		@ Function supports interworking.
+   7              		@ args = 0, pretend = 0, frame = 0
+   8              		@ frame_needed = 0, uses_anonymous_args = 0
+   9              		@ link register save eliminated.
+  10 0000 0E22A0E3 		mov	r2, #-536870912
+  11 0004 0A2982E2 		add	r2, r2, #163840
+  12 0008 0C3092E5 		ldr	r3, [r2, #12]
+  13 000c 023283E3 		orr	r3, r3, #536870912
+  14              		@ lr needed for prologue
+  15 0010 0C3082E5 		str	r3, [r2, #12]
+  16 0014 1EFF2FE1 		bx	lr
+  18              		.align	2
+  20              	ms2100_set:
+  21              		@ Function supports interworking.
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24              		@ link register save eliminated.
+  25 0018 0E22A0E3 		mov	r2, #-536870912
+  26 001c 0A2982E2 		add	r2, r2, #163840
+  27 0020 043092E5 		ldr	r3, [r2, #4]
+  28 0024 023283E3 		orr	r3, r3, #536870912
+  29              		@ lr needed for prologue
+  30 0028 043082E5 		str	r3, [r2, #4]
+  31 002c 1EFF2FE1 		bx	lr
+  33              		.align	2
+  35              	ms2100_select_and_reset:
+  36              		@ Function supports interworking.
+  37              		@ args = 0, pretend = 0, frame = 0
+  38              		@ frame_needed = 0, uses_anonymous_args = 0
+  39 0030 0E22A0E3 		mov	r2, #-536870912
+  40 0034 0A2982E2 		add	r2, r2, #163840
+  41 0038 0C3092E5 		ldr	r3, [r2, #12]
+  42 003c 013583E3 		orr	r3, r3, #4194304
+  43 0040 04E02DE5 		str	lr, [sp, #-4]!
+  44 0044 0C3082E5 		str	r3, [r2, #12]
+  45 0048 F2FFFFEB 		bl	ms2100_set
+  46 004c 04E09DE4 		ldr	lr, [sp], #4
+  47 0050 EAFFFFEA 		b	ms2100_reset
+  49              		.align	2
+  51              	ms2100_select:
+  52              		@ Function supports interworking.
+  53              		@ args = 0, pretend = 0, frame = 0
+  54              		@ frame_needed = 0, uses_anonymous_args = 0
+  55              		@ link register save eliminated.
+  56 0054 0E22A0E3 		mov	r2, #-536870912
+  57 0058 0A2982E2 		add	r2, r2, #163840
+  58 005c 0C3092E5 		ldr	r3, [r2, #12]
+  59 0060 013583E3 		orr	r3, r3, #4194304
+  60              		@ lr needed for prologue
+  61 0064 0C3082E5 		str	r3, [r2, #12]
+  62 0068 1EFF2FE1 		bx	lr
+  64              		.align	2
+  66              	ms2100_unselect:
+  67              		@ Function supports interworking.
+  68              		@ args = 0, pretend = 0, frame = 0
+  69              		@ frame_needed = 0, uses_anonymous_args = 0
+  70              		@ link register save eliminated.
+  71 006c 0E22A0E3 		mov	r2, #-536870912
+  72 0070 0A2982E2 		add	r2, r2, #163840
+  73 0074 043092E5 		ldr	r3, [r2, #4]
+  74 0078 013583E3 		orr	r3, r3, #4194304
+  75              		@ lr needed for prologue
+  76 007c 043082E5 		str	r3, [r2, #4]
+  77 0080 1EFF2FE1 		bx	lr
+  79              		.align	2
+  80              		.global	ms2100_init
+  82              	ms2100_init:
+  83              		@ Function supports interworking.
+  84              		@ args = 0, pretend = 0, frame = 0
+  85              		@ frame_needed = 0, uses_anonymous_args = 0
+  86 0084 30319FE5 		ldr	r3, .L21
+  87 0088 0020A0E3 		mov	r2, #0
+  88 008c 30402DE9 		stmfd	sp!, {r4, r5, lr}
+  89 0090 28019FE5 		ldr	r0, .L21+4
+  90 0094 0020C3E5 		strb	r2, [r3, #0]
+  91 0098 0210A0E1 		mov	r1, r2
+  92              	.L12:
+  93 009c 013181E0 		add	r3, r1, r1, asl #2
+  94 00a0 032180E0 		add	r2, r0, r3, asl #2
+  95 00a4 0030A0E3 		mov	r3, #0
+  96              	.L13:
+  97 00a8 013083E2 		add	r3, r3, #1
+  98 00ac 00C0A0E3 		mov	ip, #0	@ movhi
+  99 00b0 0A0053E3 		cmp	r3, #10
+ 100 00b4 B2C0C2E0 		strh	ip, [r2], #2	@ movhi
+ 101 00b8 FAFFFF1A 		bne	.L13
+ 102 00bc 011081E2 		add	r1, r1, #1
+ 103 00c0 030051E3 		cmp	r1, #3
+ 104 00c4 F4FFFF1A 		bne	.L12
+ 105 00c8 0E42A0E3 		mov	r4, #-536870912
+ 106 00cc 0A4984E2 		add	r4, r4, #163840
+ 107 00d0 083094E5 		ldr	r3, [r4, #8]
+ 108 00d4 013583E3 		orr	r3, r3, #4194304
+ 109 00d8 083084E5 		str	r3, [r4, #8]
+ 110 00dc E2FFFFEB 		bl	ms2100_unselect
+ 111 00e0 083094E5 		ldr	r3, [r4, #8]
+ 112 00e4 023283E3 		orr	r3, r3, #536870912
+ 113 00e8 083084E5 		str	r3, [r4, #8]
+ 114 00ec C3FFFFEB 		bl	ms2100_reset
+ 115 00f0 0E22A0E3 		mov	r2, #-536870912
+ 116 00f4 0B2982E2 		add	r2, r2, #180224
+ 117 00f8 043092E5 		ldr	r3, [r2, #4]
+ 118 00fc 023283E3 		orr	r3, r3, #536870912
+ 119 0100 043082E5 		str	r3, [r2, #4]
+ 120 0104 0E12A0E3 		mov	r1, #-536870912
+ 121 0108 7F1981E2 		add	r1, r1, #2080768
+ 122 010c 4831D1E5 		ldrb	r3, [r1, #328]	@ zero_extendqisi2
+ 123 0110 083083E3 		orr	r3, r3, #8
+ 124 0114 4831C1E5 		strb	r3, [r1, #328]
+ 125 0118 4C21D1E5 		ldrb	r2, [r1, #332]	@ zero_extendqisi2
+ 126 011c 082082E3 		orr	r2, r2, #8
+ 127 0120 4C21C1E5 		strb	r2, [r1, #332]
+ 128 0124 4031D1E5 		ldrb	r3, [r1, #320]	@ zero_extendqisi2
+ 129 0128 083083E3 		orr	r3, r3, #8
+ 130 012c 4031C1E5 		strb	r3, [r1, #320]
+ 131 0130 0FCCE0E3 		mvn	ip, #3840
+ 132 0134 F3001CE5 		ldr	r0, [ip, #-243]
+ 133 0138 84109FE5 		ldr	r1, .L21+8
+ 134 013c 84309FE5 		ldr	r3, .L21+12
+ 135 0140 0208C0E3 		bic	r0, r0, #131072
+ 136 0144 1C3081E5 		str	r3, [r1, #28]
+ 137 0148 0230A0E3 		mov	r3, #2
+ 138 014c F3000CE5 		str	r0, [ip, #-243]
+ 139 0150 74E09FE5 		ldr	lr, .L21+16
+ 140 0154 1030C1E5 		strb	r3, [r1, #16]
+ 141 0158 70209FE5 		ldr	r2, .L21+20
+ 142 015c 70309FE5 		ldr	r3, .L21+24
+ 143 0160 1C208EE5 		str	r2, [lr, #28]
+ 144 0164 143081E5 		str	r3, [r1, #20]
+ 145 0168 0228A0E3 		mov	r2, #131072
+ 146 016c 64309FE5 		ldr	r3, .L21+28
+ 147 0170 EF200CE5 		str	r2, [ip, #-239]
+ 148 0174 3120A0E3 		mov	r2, #49
+ 149 0178 1D218CE5 		str	r2, [ip, #285]
+ 150 017c 58509FE5 		ldr	r5, .L21+32
+ 151 0180 1D308CE5 		str	r3, [ip, #29]
+ 152 0184 54209FE5 		ldr	r2, .L21+36
+ 153 0188 0130A0E3 		mov	r3, #1
+ 154 018c 0740A0E3 		mov	r4, #7
+ 155 0190 1030CEE5 		strb	r3, [lr, #16]
+ 156 0194 0030A0E3 		mov	r3, #0	@ movhi
+ 157 0198 1140CEE5 		strb	r4, [lr, #17]
+ 158 019c 14208EE5 		str	r2, [lr, #20]
+ 159 01a0 18508EE5 		str	r5, [lr, #24]
+ 160 01a4 1140C1E5 		strb	r4, [r1, #17]
+ 161 01a8 185081E5 		str	r5, [r1, #24]
+ 162 01ac B030C1E1 		strh	r3, [r1, #0]	@ movhi
+ 163 01b0 B230C1E1 		strh	r3, [r1, #2]	@ movhi
+ 164 01b4 3040BDE8 		ldmfd	sp!, {r4, r5, lr}
+ 165 01b8 1EFF2FE1 		bx	lr
+ 166              	.L22:
+ 167              		.align	2
+ 168              	.L21:
+ 169 01bc 00000000 		.word	ms2100_status
+ 170 01c0 00000000 		.word	ms2100_values
+ 171 01c4 00000000 		.word	package_read
+ 172 01c8 00000000 		.word	ms2100_on_spi_int_read
+ 173 01cc 00000000 		.word	package_req
+ 174 01d0 00000000 		.word	ms2100_on_spi_int_req
+ 175 01d4 00000000 		.word	ms2100_select
+ 176 01d8 00000000 		.word	EXTINT_ISR
+ 177 01dc 00000000 		.word	ms2100_unselect
+ 178 01e0 00000000 		.word	ms2100_select_and_reset
+ 180              		.align	2
+ 181              		.global	ms2100_get_status
+ 183              	ms2100_get_status:
+ 184              		@ Function supports interworking.
+ 185              		@ args = 0, pretend = 0, frame = 0
+ 186              		@ frame_needed = 0, uses_anonymous_args = 0
+ 187              		@ link register save eliminated.
+ 188 01e4 04309FE5 		ldr	r3, .L25
+ 189 01e8 0000D3E5 		ldrb	r0, [r3, #0]	@ zero_extendqisi2
+ 190              		@ lr needed for prologue
+ 191 01ec 1EFF2FE1 		bx	lr
+ 192              	.L26:
+ 193              		.align	2
+ 194              	.L25:
+ 195 01f0 00000000 		.word	ms2100_status
+ 197              		.global	__floatsidf
+ 198              		.global	__muldf3
+ 199              		.global	__adddf3
+ 200              		.global	__fixdfsi
+ 201              		.align	2
+ 202              		.global	ms2100_get_value
+ 204              	ms2100_get_value:
+ 205              		@ Function supports interworking.
+ 206              		@ args = 0, pretend = 0, frame = 0
+ 207              		@ frame_needed = 0, uses_anonymous_args = 0
+ 208 01f4 F0472DE9 		stmfd	sp!, {r4, r5, r6, r7, r8, r9, sl, lr}
+ 209 01f8 18329FE5 		ldr	r3, .L29+40
+ 210 01fc 006180E0 		add	r6, r0, r0, asl #2
+ 211 0200 0661A0E1 		mov	r6, r6, asl #2
+ 212 0204 F30096E1 		ldrsh	r0, [r6, r3]
+ 213 0208 036086E0 		add	r6, r6, r3
+ 214 020c FEFFFFEB 		bl	__floatsidf
+ 215 0210 762F8FE2 		adr	r2, .L29
+ 216 0214 0C0092E8 		ldmia	r2, {r2-r3}
+ 217 0218 FEFFFFEB 		bl	__muldf3
+ 218 021c 0040A0E1 		mov	r4, r0
+ 219 0220 F200D6E1 		ldrsh	r0, [r6, #2]
+ 220 0224 0150A0E1 		mov	r5, r1
+ 221 0228 FEFFFFEB 		bl	__floatsidf
+ 222 022c 712F8FE2 		adr	r2, .L29+8
+ 223 0230 0C0092E8 		ldmia	r2, {r2-r3}
+ 224 0234 FEFFFFEB 		bl	__muldf3
+ 225 0238 0020A0E1 		mov	r2, r0
+ 226 023c 0130A0E1 		mov	r3, r1
+ 227 0240 0400A0E1 		mov	r0, r4
+ 228 0244 0510A0E1 		mov	r1, r5
+ 229 0248 FEFFFFEB 		bl	__adddf3
+ 230 024c 0040A0E1 		mov	r4, r0
+ 231 0250 F400D6E1 		ldrsh	r0, [r6, #4]
+ 232 0254 0150A0E1 		mov	r5, r1
+ 233 0258 FEFFFFEB 		bl	__floatsidf
+ 234 025c 672F8FE2 		adr	r2, .L29+16
+ 235 0260 0C0092E8 		ldmia	r2, {r2-r3}
+ 236 0264 FEFFFFEB 		bl	__muldf3
+ 237 0268 0020A0E1 		mov	r2, r0
+ 238 026c 0130A0E1 		mov	r3, r1
+ 239 0270 0400A0E1 		mov	r0, r4
+ 240 0274 0510A0E1 		mov	r1, r5
+ 241 0278 FEFFFFEB 		bl	__adddf3
+ 242 027c 619F8FE2 		adr	r9, .L29+24
+ 243 0280 000699E8 		ldmia	r9, {r9-sl}
+ 244 0284 0040A0E1 		mov	r4, r0
+ 245 0288 F600D6E1 		ldrsh	r0, [r6, #6]
+ 246 028c 0150A0E1 		mov	r5, r1
+ 247 0290 FEFFFFEB 		bl	__floatsidf
+ 248 0294 0920A0E1 		mov	r2, r9
+ 249 0298 0A30A0E1 		mov	r3, sl
+ 250 029c FEFFFFEB 		bl	__muldf3
+ 251 02a0 0020A0E1 		mov	r2, r0
+ 252 02a4 0130A0E1 		mov	r3, r1
+ 253 02a8 0400A0E1 		mov	r0, r4
+ 254 02ac 0510A0E1 		mov	r1, r5
+ 255 02b0 FEFFFFEB 		bl	__adddf3
+ 256 02b4 557F8FE2 		adr	r7, .L29+32
+ 257 02b8 800197E8 		ldmia	r7, {r7-r8}
+ 258 02bc 0040A0E1 		mov	r4, r0
+ 259 02c0 F800D6E1 		ldrsh	r0, [r6, #8]
+ 260 02c4 0150A0E1 		mov	r5, r1
+ 261 02c8 FEFFFFEB 		bl	__floatsidf
+ 262 02cc 0720A0E1 		mov	r2, r7
+ 263 02d0 0830A0E1 		mov	r3, r8
+ 264 02d4 FEFFFFEB 		bl	__muldf3
+ 265 02d8 0020A0E1 		mov	r2, r0
+ 266 02dc 0130A0E1 		mov	r3, r1
+ 267 02e0 0400A0E1 		mov	r0, r4
+ 268 02e4 0510A0E1 		mov	r1, r5
+ 269 02e8 FEFFFFEB 		bl	__adddf3
+ 270 02ec 0040A0E1 		mov	r4, r0
+ 271 02f0 FA00D6E1 		ldrsh	r0, [r6, #10]
+ 272 02f4 0150A0E1 		mov	r5, r1
+ 273 02f8 FEFFFFEB 		bl	__floatsidf
+ 274 02fc 0720A0E1 		mov	r2, r7
+ 275 0300 0830A0E1 		mov	r3, r8
+ 276 0304 FEFFFFEB 		bl	__muldf3
+ 277 0308 0020A0E1 		mov	r2, r0
+ 278 030c 0130A0E1 		mov	r3, r1
+ 279 0310 0400A0E1 		mov	r0, r4
+ 280 0314 0510A0E1 		mov	r1, r5
+ 281 0318 FEFFFFEB 		bl	__adddf3
+ 282 031c 0040A0E1 		mov	r4, r0
+ 283 0320 FC00D6E1 		ldrsh	r0, [r6, #12]
+ 284 0324 0150A0E1 		mov	r5, r1
+ 285 0328 FEFFFFEB 		bl	__floatsidf
+ 286 032c 0920A0E1 		mov	r2, r9
+ 287 0330 0A30A0E1 		mov	r3, sl
+ 288 0334 FEFFFFEB 		bl	__muldf3
+ 289 0338 0020A0E1 		mov	r2, r0
+ 290 033c 0130A0E1 		mov	r3, r1
+ 291 0340 0400A0E1 		mov	r0, r4
+ 292 0344 0510A0E1 		mov	r1, r5
+ 293 0348 FEFFFFEB 		bl	__adddf3
+ 294 034c 0040A0E1 		mov	r4, r0
+ 295 0350 FE00D6E1 		ldrsh	r0, [r6, #14]
+ 296 0354 0150A0E1 		mov	r5, r1
+ 297 0358 FEFFFFEB 		bl	__floatsidf
+ 298 035c 9C208FE2 		adr	r2, .L29+16
+ 299 0360 0C0092E8 		ldmia	r2, {r2-r3}
+ 300 0364 FEFFFFEB 		bl	__muldf3
+ 301 0368 0020A0E1 		mov	r2, r0
+ 302 036c 0130A0E1 		mov	r3, r1
+ 303 0370 0400A0E1 		mov	r0, r4
+ 304 0374 0510A0E1 		mov	r1, r5
+ 305 0378 FEFFFFEB 		bl	__adddf3
+ 306 037c 0040A0E1 		mov	r4, r0
+ 307 0380 F001D6E1 		ldrsh	r0, [r6, #16]
+ 308 0384 0150A0E1 		mov	r5, r1
+ 309 0388 FEFFFFEB 		bl	__floatsidf
+ 310 038c 64208FE2 		adr	r2, .L29+8
+ 311 0390 0C0092E8 		ldmia	r2, {r2-r3}
+ 312 0394 FEFFFFEB 		bl	__muldf3
+ 313 0398 0020A0E1 		mov	r2, r0
+ 314 039c 0130A0E1 		mov	r3, r1
+ 315 03a0 0400A0E1 		mov	r0, r4
+ 316 03a4 0510A0E1 		mov	r1, r5
+ 317 03a8 FEFFFFEB 		bl	__adddf3
+ 318 03ac 0040A0E1 		mov	r4, r0
+ 319 03b0 F201D6E1 		ldrsh	r0, [r6, #18]
+ 320 03b4 0150A0E1 		mov	r5, r1
+ 321 03b8 FEFFFFEB 		bl	__floatsidf
+ 322 03bc 2C208FE2 		adr	r2, .L29
+ 323 03c0 0C0092E8 		ldmia	r2, {r2-r3}
+ 324 03c4 FEFFFFEB 		bl	__muldf3
+ 325 03c8 0020A0E1 		mov	r2, r0
+ 326 03cc 0130A0E1 		mov	r3, r1
+ 327 03d0 0400A0E1 		mov	r0, r4
+ 328 03d4 0510A0E1 		mov	r1, r5
+ 329 03d8 FEFFFFEB 		bl	__adddf3
+ 330 03dc FEFFFFEB 		bl	__fixdfsi
+ 331 03e0 0008A0E1 		mov	r0, r0, asl #16
+ 332 03e4 4008A0E1 		mov	r0, r0, asr #16
+ 333 03e8 F047BDE8 		ldmfd	sp!, {r4, r5, r6, r7, r8, r9, sl, lr}
+ 334 03ec 1EFF2FE1 		bx	lr
+ 335              	.L30:
+ 336              		.align	2
+ 337              	.L29:
+ 338 03f0 FC18A33F 		.word	1067653372
+ 339 03f4 F0164850 		.word	1346901744
+ 340 03f8 C05BB03F 		.word	1068522432
+ 341 03fc EBE2361A 		.word	439804651
+ 342 0400 5EBAB93F 		.word	1069136478
+ 343 0404 EE7C3F35 		.word	893353198
+ 344 0408 09F9C03F 		.word	1069611273
+ 345 040c 7E8CB96B 		.word	1807322238
+ 346 0410 1361C33F 		.word	1069768979
+ 347 0414 A9A44E40 		.word	1078895785
+ 348 0418 00000000 		.word	ms2100_values
+ 350              		.align	2
+ 352              	ms2100_on_spi_int_req:
+ 353              		@ Function supports interworking.
+ 354              		@ args = 0, pretend = 0, frame = 0
+ 355              		@ frame_needed = 0, uses_anonymous_args = 0
+ 356              		@ link register save eliminated.
+ 357 041c 0E32A0E3 		mov	r3, #-536870912
+ 358 0420 1A3983E2 		add	r3, r3, #425984
+ 359 0424 B810D3E1 		ldrh	r1, [r3, #8]
+ 360 0428 08309FE5 		ldr	r3, .L33
+ 361 042c 0320A0E3 		mov	r2, #3
+ 362              		@ lr needed for prologue
+ 363 0430 0020C3E5 		strb	r2, [r3, #0]
+ 364 0434 1EFF2FE1 		bx	lr
+ 365              	.L34:
+ 366              		.align	2
+ 367              	.L33:
+ 368 0438 00000000 		.word	ms2100_status
+ 370              		.align	2
+ 371              		.global	ms2100_do_before_spi_transmit
+ 373              	ms2100_do_before_spi_transmit:
+ 374              		@ Function supports interworking.
+ 375              		@ args = 0, pretend = 0, frame = 0
+ 376              		@ frame_needed = 0, uses_anonymous_args = 0
+ 377 043c 0E32A0E3 		mov	r3, #-536870912
+ 378 0440 0A3983E2 		add	r3, r3, #163840
+ 379 0444 0C2093E5 		ldr	r2, [r3, #12]
+ 380 0448 012582E3 		orr	r2, r2, #4194304
+ 381 044c 0C2083E5 		str	r2, [r3, #12]
+ 382 0450 0E22A0E3 		mov	r2, #-536870912
+ 383 0454 012982E2 		add	r2, r2, #16384
+ 384 0458 30402DE9 		stmfd	sp!, {r4, r5, lr}
+ 385 045c 084092E5 		ldr	r4, [r2, #8]
+ 386 0460 FF3464E2 		rsb	r3, r4, #-16777216
+ 387 0464 FF3883E2 		add	r3, r3, #16711680
+ 388 0468 FF3C83E2 		add	r3, r3, #65280
+ 389 046c FE5083E2 		add	r5, r3, #254
+ 390 0470 010055E3 		cmp	r5, #1
+ 391 0474 0E00009A 		bls	.L44
+ 392              	.L37:
+ 393 0478 083092E5 		ldr	r3, [r2, #8]
+ 394 047c 033064E0 		rsb	r3, r4, r3
+ 395 0480 010053E3 		cmp	r3, #1
+ 396 0484 FBFFFF9A 		bls	.L37
+ 397 0488 E2FEFFEB 		bl	ms2100_set
+ 398 048c 020055E3 		cmp	r5, #2
+ 399 0490 0D00009A 		bls	.L45
+ 400 0494 0E22A0E3 		mov	r2, #-536870912
+ 401 0498 012982E2 		add	r2, r2, #16384
+ 402              	.L41:
+ 403 049c 083092E5 		ldr	r3, [r2, #8]
+ 404 04a0 033064E0 		rsb	r3, r4, r3
+ 405 04a4 020053E3 		cmp	r3, #2
+ 406 04a8 FBFFFF9A 		bls	.L41
+ 407              	.L42:
+ 408 04ac 3040BDE8 		ldmfd	sp!, {r4, r5, lr}
+ 409 04b0 D2FEFFEA 		b	ms2100_reset
+ 410              	.L44:
+ 411 04b4 0E32A0E3 		mov	r3, #-536870912
+ 412 04b8 013983E2 		add	r3, r3, #16384
+ 413 04bc 082093E5 		ldr	r2, [r3, #8]
+ 414 04c0 000052E3 		cmp	r2, #0
+ 415 04c4 FAFFFF0A 		beq	.L44
+ 416 04c8 D2FEFFEB 		bl	ms2100_set
+ 417              	.L45:
+ 418 04cc 0E32A0E3 		mov	r3, #-536870912
+ 419 04d0 013983E2 		add	r3, r3, #16384
+ 420 04d4 082093E5 		ldr	r2, [r3, #8]
+ 421 04d8 010052E3 		cmp	r2, #1
+ 422 04dc F2FFFF8A 		bhi	.L42
+ 423 04e0 0E32A0E3 		mov	r3, #-536870912
+ 424 04e4 013983E2 		add	r3, r3, #16384
+ 425 04e8 082093E5 		ldr	r2, [r3, #8]
+ 426 04ec 010052E3 		cmp	r2, #1
+ 427 04f0 F5FFFF9A 		bls	.L45
+ 428 04f4 ECFFFFEA 		b	.L42
+ 430              		.align	2
+ 432              	EXTINT_ISR:
+ 433              		@ Function supports interworking.
+ 434              		@ Naked Function: prologue and epilogue provided by programmer.
+ 435              		@ args = 0, pretend = 0, frame = 0
+ 436              		@ frame_needed = 0, uses_anonymous_args = 0
+ 437 04f8 04E04EE2 		 sub   lr, lr,#4
+ 438 04fc FF5F2DE9 	 stmfd sp!,{r0-r12,lr}
+ 439 0500 00104FE1 	 mrs   r1, spsr
+ 440 0504 02002DE9 	 stmfd sp!,{r1}
+ 441 0508 38309FE5 		ldr	r3, .L55
+ 442 050c 0520A0E3 		mov	r2, #5
+ 443 0510 0020C3E5 		strb	r2, [r3, #0]
+ 444 0514 30009FE5 		ldr	r0, .L55+4
+ 445 0518 FEFFFFEB 		bl	spi_transmit
+ 446 051c 0E22A0E3 		mov	r2, #-536870912
+ 447 0520 7F2982E2 		add	r2, r2, #2080768
+ 448 0524 4031D2E5 		ldrb	r3, [r2, #320]	@ zero_extendqisi2
+ 449 0528 083083E3 		orr	r3, r3, #8
+ 450 052c 4031C2E5 		strb	r3, [r2, #320]
+ 451 0530 0010A0E3 		mov	r1, #0
+ 452 0534 0F3CE0E3 		mvn	r3, #3840
+ 453 0538 CF1003E5 		str	r1, [r3, #-207]
+ 454 053c 0200BDE8 		 ldmfd sp!,{r1}
+ 455 0540 01F061E1 	 msr   spsr_c,r1
+ 456 0544 FF9FFDE8 	 ldmfd sp!,{r0-r12,pc}^
+ 457              	.L56:
+ 458              		.align	2
+ 459              	.L55:
+ 460 0548 00000000 		.word	ms2100_status
+ 461 054c 00000000 		.word	package_read
+ 463              		.align	2
+ 465              	ms2100_on_spi_int_read:
+ 466              		@ Function supports interworking.
+ 467              		@ args = 0, pretend = 0, frame = 0
+ 468              		@ frame_needed = 0, uses_anonymous_args = 0
+ 469 0550 0E32A0E3 		mov	r3, #-536870912
+ 470 0554 1A3983E2 		add	r3, r3, #425984
+ 471 0558 B810D3E1 		ldrh	r1, [r3, #8]
+ 472 055c B820D3E1 		ldrh	r2, [r3, #8]
+ 473 0560 012482E0 		add	r2, r2, r1, asl #8
+ 474 0564 0228A0E1 		mov	r2, r2, asl #16
+ 475 0568 04E02DE5 		str	lr, [sp, #-4]!
+ 476 056c 4B3782E2 		add	r3, r2, #19660800
+ 477 0570 960753E3 		cmp	r3, #39321600
+ 478 0574 2208A0E1 		mov	r0, r2, lsr #16
+ 479 0578 64209F95 		ldrls	r2, .L66
+ 480 057c 64C09FE5 		ldr	ip, .L66+4
+ 481 0580 0030D295 		ldrlsb	r3, [r2, #0]	@ zero_extendqisi2
+ 482 0584 0010DC95 		ldrlsb	r1, [ip, #0]	@ zero_extendqisi2
+ 483 0588 03318390 		addls	r3, r3, r3, asl #2
+ 484 058c 83108190 		addls	r1, r1, r3, asl #1
+ 485 0590 50C09F85 		ldrhi	ip, .L66+4
+ 486 0594 50309F95 		ldrls	r3, .L66+8
+ 487 0598 8110A091 		movls	r1, r1, asl #1
+ 488 059c B3008191 		strlsh	r0, [r1, r3]	@ movhi
+ 489 05a0 0030DCE5 		ldrb	r3, [ip, #0]	@ zero_extendqisi2
+ 490 05a4 013083E2 		add	r3, r3, #1
+ 491 05a8 FF3003E2 		and	r3, r3, #255
+ 492 05ac 090053E3 		cmp	r3, #9
+ 493 05b0 0030CCE5 		strb	r3, [ip, #0]
+ 494 05b4 34309F85 		ldrhi	r3, .L66+12
+ 495 05b8 0020A083 		movhi	r2, #0
+ 496 05bc 30009FE5 		ldr	r0, .L66+16
+ 497 05c0 0020C385 		strhib	r2, [r3, #0]
+ 498 05c4 0100009A 		bls	.L65
+ 499              	.L63:
+ 500 05c8 04E09DE4 		ldr	lr, [sp], #4
+ 501 05cc 1EFF2FE1 		bx	lr
+ 502              	.L65:
+ 503 05d0 18309FE5 		ldr	r3, .L66+12
+ 504 05d4 0220A0E3 		mov	r2, #2
+ 505 05d8 0020C3E5 		strb	r2, [r3, #0]
+ 506 05dc FEFFFFEB 		bl	spi_transmit
+ 507 05e0 F8FFFFEA 		b	.L63
+ 508              	.L67:
+ 509              		.align	2
+ 510              	.L66:
+ 511 05e4 00000000 		.word	ms2100_current_axis
+ 512 05e8 00000000 		.word	ms2100_sampling_nr
+ 513 05ec 00000000 		.word	ms2100_values
+ 514 05f0 00000000 		.word	ms2100_status
+ 515 05f4 00000000 		.word	package_req
+ 517              		.align	2
+ 518              		.global	ms2100_send_request
+ 520              	ms2100_send_request:
+ 521              		@ Function supports interworking.
+ 522              		@ args = 0, pretend = 0, frame = 0
+ 523              		@ frame_needed = 0, uses_anonymous_args = 0
+ 524 05f8 30402DE9 		stmfd	sp!, {r4, r5, lr}
+ 525 05fc 4C409FE5 		ldr	r4, .L72
+ 526 0600 0020A0E1 		mov	r2, r0
+ 527 0604 00E0D4E5 		ldrb	lr, [r4, #0]	@ zero_extendqisi2
+ 528 0608 FF1002E2 		and	r1, r2, #255
+ 529 060c 40509FE5 		ldr	r5, .L72+4
+ 530 0610 013081E2 		add	r3, r1, #1
+ 531 0614 203083E3 		orr	r3, r3, #32
+ 532 0618 00005EE3 		cmp	lr, #0
+ 533 061c 0500A0E1 		mov	r0, r5
+ 534 0620 FFC003E2 		and	ip, r3, #255
+ 535 0624 0700001A 		bne	.L71
+ 536 0628 0230A0E3 		mov	r3, #2
+ 537 062c 0030C4E5 		strb	r3, [r4, #0]
+ 538 0630 20209FE5 		ldr	r2, .L72+8
+ 539 0634 20309FE5 		ldr	r3, .L72+12
+ 540 0638 00E0C2E5 		strb	lr, [r2, #0]
+ 541 063c 0010C3E5 		strb	r1, [r3, #0]
+ 542 0640 B0C0C5E1 		strh	ip, [r5, #0]	@ movhi
+ 543 0644 FEFFFFEB 		bl	spi_transmit
+ 544              	.L71:
+ 545 0648 3040BDE8 		ldmfd	sp!, {r4, r5, lr}
+ 546 064c 1EFF2FE1 		bx	lr
+ 547              	.L73:
+ 548              		.align	2
+ 549              	.L72:
+ 550 0650 00000000 		.word	ms2100_status
+ 551 0654 00000000 		.word	package_req
+ 552 0658 00000000 		.word	ms2100_sampling_nr
+ 553 065c 00000000 		.word	ms2100_current_axis
+ 555              		.comm	mavlink_system,8,4
+ 556              		.comm	ms2100_status,1,1
+ 557              		.comm	ms2100_current_axis,1,1
+ 558              		.comm	ms2100_sampling_nr,1,1
+ 559              		.comm	ms2100_values,60,2
+ 560              		.comm	package_read,32,4
+ 561              		.comm	package_req,32,4
+ 562              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
+DEFINED SYMBOLS
+                            *ABS*:00000000 ms2100.c
+C:\Users\Srdjan\AppData\Local\Temp/cckFaaaa.s:5      .text:00000000 ms2100_reset
+C:\Users\Srdjan\AppData\Local\Temp/cckFaaaa.s:10     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/cckFaaaa.s:20     .text:00000018 ms2100_set
+C:\Users\Srdjan\AppData\Local\Temp/cckFaaaa.s:35     .text:00000030 ms2100_select_and_reset
+C:\Users\Srdjan\AppData\Local\Temp/cckFaaaa.s:51     .text:00000054 ms2100_select
+C:\Users\Srdjan\AppData\Local\Temp/cckFaaaa.s:66     .text:0000006c ms2100_unselect
+C:\Users\Srdjan\AppData\Local\Temp/cckFaaaa.s:82     .text:00000084 ms2100_init
+C:\Users\Srdjan\AppData\Local\Temp/cckFaaaa.s:169    .text:000001bc $d
+                            *COM*:00000001 ms2100_status
+                            *COM*:0000003c ms2100_values
+                            *COM*:00000020 package_read
+C:\Users\Srdjan\AppData\Local\Temp/cckFaaaa.s:465    .text:00000550 ms2100_on_spi_int_read
+                            *COM*:00000020 package_req
+C:\Users\Srdjan\AppData\Local\Temp/cckFaaaa.s:352    .text:0000041c ms2100_on_spi_int_req
+C:\Users\Srdjan\AppData\Local\Temp/cckFaaaa.s:432    .text:000004f8 EXTINT_ISR
+C:\Users\Srdjan\AppData\Local\Temp/cckFaaaa.s:183    .text:000001e4 ms2100_get_status
+C:\Users\Srdjan\AppData\Local\Temp/cckFaaaa.s:188    .text:000001e4 $a
+C:\Users\Srdjan\AppData\Local\Temp/cckFaaaa.s:195    .text:000001f0 $d
+C:\Users\Srdjan\AppData\Local\Temp/cckFaaaa.s:204    .text:000001f4 ms2100_get_value
+C:\Users\Srdjan\AppData\Local\Temp/cckFaaaa.s:208    .text:000001f4 $a
+C:\Users\Srdjan\AppData\Local\Temp/cckFaaaa.s:338    .text:000003f0 $d
+C:\Users\Srdjan\AppData\Local\Temp/cckFaaaa.s:357    .text:0000041c $a
+C:\Users\Srdjan\AppData\Local\Temp/cckFaaaa.s:368    .text:00000438 $d
+C:\Users\Srdjan\AppData\Local\Temp/cckFaaaa.s:373    .text:0000043c ms2100_do_before_spi_transmit
+C:\Users\Srdjan\AppData\Local\Temp/cckFaaaa.s:377    .text:0000043c $a
+C:\Users\Srdjan\AppData\Local\Temp/cckFaaaa.s:460    .text:00000548 $d
+C:\Users\Srdjan\AppData\Local\Temp/cckFaaaa.s:469    .text:00000550 $a
+C:\Users\Srdjan\AppData\Local\Temp/cckFaaaa.s:511    .text:000005e4 $d
+                            *COM*:00000001 ms2100_current_axis
+                            *COM*:00000001 ms2100_sampling_nr
+C:\Users\Srdjan\AppData\Local\Temp/cckFaaaa.s:520    .text:000005f8 ms2100_send_request
+C:\Users\Srdjan\AppData\Local\Temp/cckFaaaa.s:524    .text:000005f8 $a
+C:\Users\Srdjan\AppData\Local\Temp/cckFaaaa.s:550    .text:00000650 $d
+                            *COM*:00000008 mavlink_system
+
+UNDEFINED SYMBOLS
+__floatsidf
+__muldf3
+__adddf3
+__fixdfsi
+spi_transmit

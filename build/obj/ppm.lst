@@ -1,0 +1,194 @@
+   1              		.file	"ppm.c"
+   2              		.text
+   3              		.align	2
+   4              		.global	ppm_is_valid
+   6              	ppm_is_valid:
+   7              		@ Function supports interworking.
+   8              		@ args = 0, pretend = 0, frame = 0
+   9              		@ frame_needed = 0, uses_anonymous_args = 0
+  10              		@ link register save eliminated.
+  11 0000 04309FE5 		ldr	r3, .L3
+  12 0004 000093E5 		ldr	r0, [r3, #0]
+  13              		@ lr needed for prologue
+  14 0008 1EFF2FE1 		bx	lr
+  15              	.L4:
+  16              		.align	2
+  17              	.L3:
+  18 000c 00000000 		.word	ppm_valid
+  20              		.global	__floatsidf
+  21              		.global	__muldf3
+  22              		.global	__subdf3
+  23              		.global	__divdf3
+  24              		.global	__fixunsdfsi
+  25              		.align	2
+  26              		.global	ppm_get_channel
+  28              	ppm_get_channel:
+  29              		@ Function supports interworking.
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0010 010040E2 		sub	r0, r0, #1
+  33 0014 080050E3 		cmp	r0, #8
+  34 0018 04E02DE5 		str	lr, [sp, #-4]!
+  35 001c 0030E0E3 		mvn	r3, #0
+  36 0020 1200008A 		bhi	.L8
+  37 0024 50309FE5 		ldr	r3, .L11
+  38 0028 000193E7 		ldr	r0, [r3, r0, asl #2]
+  39 002c FEFFFFEB 		bl	__floatsidf
+  40 0030 4124A0E3 		mov	r2, #1090519040
+  41 0034 BA2982E2 		add	r2, r2, #3047424
+  42 0038 122D82E2 		add	r2, r2, #1152
+  43 003c 0030A0E3 		mov	r3, #0
+  44 0040 FEFFFFEB 		bl	__muldf3
+  45 0044 FF25A0E3 		mov	r2, #1069547520
+  46 0048 022682E2 		add	r2, r2, #2097152
+  47 004c 0030A0E3 		mov	r3, #0
+  48 0050 FEFFFFEB 		bl	__subdf3
+  49 0054 E121A0E3 		mov	r2, #1073741880
+  50 0058 5B2782E2 		add	r2, r2, #23855104
+  51 005c 0030A0E3 		mov	r3, #0
+  52 0060 272B82E2 		add	r2, r2, #39936
+  53 0064 FEFFFFEB 		bl	__divdf3
+  54 0068 FEFFFFEB 		bl	__fixunsdfsi
+  55 006c 0030A0E1 		mov	r3, r0
+  56              	.L8:
+  57 0070 0300A0E1 		mov	r0, r3
+  58 0074 04E09DE4 		ldr	lr, [sp], #4
+  59 0078 1EFF2FE1 		bx	lr
+  60              	.L12:
+  61              		.align	2
+  62              	.L11:
+  63 007c 00000000 		.word	ppm_pulses
+  65              		.align	2
+  66              		.global	ppm_init
+  68              	ppm_init:
+  69              		@ Function supports interworking.
+  70              		@ args = 0, pretend = 0, frame = 0
+  71              		@ frame_needed = 0, uses_anonymous_args = 0
+  72              		@ link register save eliminated.
+  73 0080 0E12A0E3 		mov	r1, #-536870912
+  74 0084 0B1981E2 		add	r1, r1, #180224
+  75 0088 002091E5 		ldr	r2, [r1, #0]
+  76 008c 0E02A0E3 		mov	r0, #-536870912
+  77 0090 022A82E3 		orr	r2, r2, #8192
+  78 0094 063DA0E3 		mov	r3, #384
+  79 0098 010980E2 		add	r0, r0, #16384
+  80 009c 38C09FE5 		ldr	ip, .L19
+  81 00a0 002081E5 		str	r2, [r1, #0]
+  82 00a4 283080E5 		str	r3, [r0, #40]
+  83 00a8 573CA0E3 		mov	r3, #22272
+  84              		@ lr needed for prologue
+  85 00ac E43083E2 		add	r3, r3, #228
+  86 00b0 24208CE2 		add	r2, ip, #36
+  87              	.L14:
+  88 00b4 04308CE4 		str	r3, [ip], #4
+  89 00b8 02005CE1 		cmp	ip, r2
+  90 00bc FCFFFF1A 		bne	.L14
+  91 00c0 EA3DA0E3 		mov	r3, #14976
+  92 00c4 183083E2 		add	r3, r3, #24
+  93 00c8 1C300CE5 		str	r3, [ip, #-28]
+  94 00cc 0C309FE5 		ldr	r3, .L19+4
+  95 00d0 0020A0E3 		mov	r2, #0
+  96 00d4 002083E5 		str	r2, [r3, #0]
+  97 00d8 1EFF2FE1 		bx	lr
+  98              	.L20:
+  99              		.align	2
+ 100              	.L19:
+ 101 00dc 00000000 		.word	ppm_pulses
+ 102 00e0 00000000 		.word	ppm_valid
+ 104              		.align	2
+ 105              		.global	PPM_ISR
+ 107              	PPM_ISR:
+ 108              		@ Function supports interworking.
+ 109              		@ args = 0, pretend = 0, frame = 0
+ 110              		@ frame_needed = 0, uses_anonymous_args = 0
+ 111 00e4 A4109FE5 		ldr	r1, .L34
+ 112 00e8 0E32A0E3 		mov	r3, #-536870912
+ 113 00ec 10402DE9 		stmfd	sp!, {r4, lr}
+ 114 00f0 013983E2 		add	r3, r3, #16384
+ 115 00f4 98409FE5 		ldr	r4, .L34+4
+ 116 00f8 342093E5 		ldr	r2, [r3, #52]
+ 117 00fc 003091E5 		ldr	r3, [r1, #0]
+ 118 0100 000094E5 		ldr	r0, [r4, #0]
+ 119 0104 002081E5 		str	r2, [r1, #0]
+ 120 0108 022063E0 		rsb	r2, r3, r2
+ 121 010c 0BE9A0E3 		mov	lr, #180224
+ 122 0110 52CCA0E3 		mov	ip, #20992
+ 123 0114 AF1C42E2 		sub	r1, r2, #44800
+ 124 0118 BB3D42E2 		sub	r3, r2, #11968
+ 125 011c 090050E3 		cmp	r0, #9
+ 126 0120 E2E04EE2 		sub	lr, lr, #226
+ 127 0124 06C08CE2 		add	ip, ip, #6
+ 128 0128 C91041E2 		sub	r1, r1, #201
+ 129 012c 213043E2 		sub	r3, r3, #33
+ 130 0130 1100000A 		beq	.L32
+ 131 0134 0C0053E1 		cmp	r3, ip
+ 132 0138 0930A083 		movhi	r3, #9
+ 133 013c 011080E2 		add	r1, r0, #1
+ 134 0140 00308485 		strhi	r3, [r4, #0]
+ 135 0144 0400009A 		bls	.L33
+ 136              	.L31:
+ 137 0148 48309FE5 		ldr	r3, .L34+8
+ 138 014c 0020A0E3 		mov	r2, #0
+ 139 0150 002083E5 		str	r2, [r3, #0]
+ 140              	.L30:
+ 141 0154 1040BDE8 		ldmfd	sp!, {r4, lr}
+ 142 0158 1EFF2FE1 		bx	lr
+ 143              	.L33:
+ 144 015c 38309FE5 		ldr	r3, .L34+12
+ 145 0160 090051E3 		cmp	r1, #9
+ 146 0164 002183E7 		str	r2, [r3, r0, asl #2]
+ 147 0168 28309F05 		ldreq	r3, .L34+8
+ 148 016c 0120A003 		moveq	r2, #1
+ 149 0170 001084E5 		str	r1, [r4, #0]
+ 150 0174 00208305 		streq	r2, [r3, #0]
+ 151 0178 F5FFFFEA 		b	.L30
+ 152              	.L32:
+ 153 017c 0E0051E1 		cmp	r1, lr
+ 154 0180 0030A093 		movls	r3, #0
+ 155 0184 00308495 		strls	r3, [r4, #0]
+ 156 0188 F1FFFF9A 		bls	.L30
+ 157 018c EDFFFFEA 		b	.L31
+ 158              	.L35:
+ 159              		.align	2
+ 160              	.L34:
+ 161 0190 00000000 		.word	last.1602
+ 162 0194 00000000 		.word	state.1601
+ 163 0198 00000000 		.word	ppm_valid
+ 164 019c 00000000 		.word	ppm_pulses
+ 166              		.bss
+ 167              		.align	2
+ 168              	last.1602:
+ 169 0000 00000000 		.space	4
+ 170              		.data
+ 171              		.align	2
+ 174              	state.1601:
+ 175 0000 09000000 		.word	9
+ 176              		.comm	ppm_valid,4,4
+ 177              		.comm	ppm_pulses,36,4
+ 178              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
+DEFINED SYMBOLS
+                            *ABS*:00000000 ppm.c
+C:\Users\Srdjan\AppData\Local\Temp/cce8aaaa.s:6      .text:00000000 ppm_is_valid
+C:\Users\Srdjan\AppData\Local\Temp/cce8aaaa.s:11     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/cce8aaaa.s:18     .text:0000000c $d
+                            *COM*:00000004 ppm_valid
+C:\Users\Srdjan\AppData\Local\Temp/cce8aaaa.s:28     .text:00000010 ppm_get_channel
+C:\Users\Srdjan\AppData\Local\Temp/cce8aaaa.s:32     .text:00000010 $a
+C:\Users\Srdjan\AppData\Local\Temp/cce8aaaa.s:63     .text:0000007c $d
+                            *COM*:00000024 ppm_pulses
+C:\Users\Srdjan\AppData\Local\Temp/cce8aaaa.s:68     .text:00000080 ppm_init
+C:\Users\Srdjan\AppData\Local\Temp/cce8aaaa.s:73     .text:00000080 $a
+C:\Users\Srdjan\AppData\Local\Temp/cce8aaaa.s:101    .text:000000dc $d
+C:\Users\Srdjan\AppData\Local\Temp/cce8aaaa.s:107    .text:000000e4 PPM_ISR
+C:\Users\Srdjan\AppData\Local\Temp/cce8aaaa.s:111    .text:000000e4 $a
+C:\Users\Srdjan\AppData\Local\Temp/cce8aaaa.s:161    .text:00000190 $d
+C:\Users\Srdjan\AppData\Local\Temp/cce8aaaa.s:168    .bss:00000000 last.1602
+C:\Users\Srdjan\AppData\Local\Temp/cce8aaaa.s:174    .data:00000000 state.1601
+C:\Users\Srdjan\AppData\Local\Temp/cce8aaaa.s:175    .data:00000000 $d
+
+UNDEFINED SYMBOLS
+__floatsidf
+__muldf3
+__subdf3
+__divdf3
+__fixunsdfsi

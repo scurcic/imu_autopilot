@@ -1,0 +1,249 @@
+   1              		.file	"sys_state.c"
+   2              		.text
+   3              		.align	2
+   4              		.global	sys_state_is_flying
+   6              	sys_state_is_flying:
+   7              		@ Function supports interworking.
+   8              		@ args = 0, pretend = 0, frame = 0
+   9              		@ frame_needed = 0, uses_anonymous_args = 0
+  10              		@ link register save eliminated.
+  11 0000 18309FE5 		ldr	r3, .L3
+  12 0004 580193E5 		ldr	r0, [r3, #344]
+  13 0008 000050E3 		cmp	r0, #0
+  14 000c 03005013 		cmpne	r0, #3
+  15 0010 0000A013 		movne	r0, #0
+  16 0014 0100A003 		moveq	r0, #1
+  17 0018 010020E2 		eor	r0, r0, #1
+  18              		@ lr needed for prologue
+  19 001c 1EFF2FE1 		bx	lr
+  20              	.L4:
+  21              		.align	2
+  22              	.L3:
+  23 0020 00000000 		.word	global_data
+  25              		.align	2
+  26              		.global	sys_get_mode
+  28              	sys_get_mode:
+  29              		@ Function supports interworking.
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33 0024 04309FE5 		ldr	r3, .L7
+  34 0028 4C01D3E5 		ldrb	r0, [r3, #332]	@ zero_extendqisi2
+  35              		@ lr needed for prologue
+  36 002c 1EFF2FE1 		bx	lr
+  37              	.L8:
+  38              		.align	2
+  39              	.L7:
+  40 0030 00000000 		.word	global_data
+  42              		.align	2
+  43              		.global	sys_get_state
+  45              	sys_get_state:
+  46              		@ Function supports interworking.
+  47              		@ args = 0, pretend = 0, frame = 0
+  48              		@ frame_needed = 0, uses_anonymous_args = 0
+  49              		@ link register save eliminated.
+  50 0034 04309FE5 		ldr	r3, .L11
+  51 0038 5801D3E5 		ldrb	r0, [r3, #344]	@ zero_extendqisi2
+  52              		@ lr needed for prologue
+  53 003c 1EFF2FE1 		bx	lr
+  54              	.L12:
+  55              		.align	2
+  56              	.L11:
+  57 0040 00000000 		.word	global_data
+  59              		.align	2
+  60              		.global	sys_set_type
+  62              	sys_set_type:
+  63              		@ Function supports interworking.
+  64              		@ args = 0, pretend = 0, frame = 0
+  65              		@ frame_needed = 0, uses_anonymous_args = 0
+  66              		@ link register save eliminated.
+  67 0044 04309FE5 		ldr	r3, .L15
+  68              		@ lr needed for prologue
+  69 0048 540183E5 		str	r0, [r3, #340]
+  70 004c 1EFF2FE1 		bx	lr
+  71              	.L16:
+  72              		.align	2
+  73              	.L15:
+  74 0050 00000000 		.word	global_data
+  76              		.align	2
+  77              		.global	sys_set_nav_mode
+  79              	sys_set_nav_mode:
+  80              		@ Function supports interworking.
+  81              		@ args = 0, pretend = 0, frame = 0
+  82              		@ frame_needed = 0, uses_anonymous_args = 0
+  83              		@ link register save eliminated.
+  84 0054 04309FE5 		ldr	r3, .L19
+  85              		@ lr needed for prologue
+  86 0058 500183E5 		str	r0, [r3, #336]
+  87 005c 1EFF2FE1 		bx	lr
+  88              	.L20:
+  89              		.align	2
+  90              	.L19:
+  91 0060 00000000 		.word	global_data
+  93              		.section	.rodata.str1.4,"aMS",%progbits,1
+  94              		.align	2
+  95              	.LC0:
+  96 0000 5741524E 		.ascii	"WARNING: Attempted to set invalid state\000"
+  96      494E473A 
+  96      20417474 
+  96      656D7074 
+  96      65642074 
+  97              		.text
+  98              		.align	2
+  99              		.global	sys_set_state
+ 101              	sys_set_state:
+ 102              		@ Function supports interworking.
+ 103              		@ args = 0, pretend = 0, frame = 0
+ 104              		@ frame_needed = 0, uses_anonymous_args = 0
+ 105 0064 FF0000E2 		and	r0, r0, #255
+ 106 0068 040050E3 		cmp	r0, #4
+ 107 006c 04E02DE5 		str	lr, [sp, #-4]!
+ 108 0070 1800000A 		beq	.L42
+ 109 0074 010050E3 		cmp	r0, #1
+ 110 0078 70309F05 		ldreq	r3, .L44
+ 111 007c 0010A001 		moveq	r1, r0
+ 112 0080 58018305 		streq	r0, [r3, #344]
+ 113 0084 1600000A 		beq	.L24
+ 114 0088 020050E3 		cmp	r0, #2
+ 115 008c 1100000A 		beq	.L42
+ 116 0090 050050E3 		cmp	r0, #5
+ 117 0094 0F00000A 		beq	.L42
+ 118 0098 060050E3 		cmp	r0, #6
+ 119 009c 0D00000A 		beq	.L42
+ 120 00a0 070050E3 		cmp	r0, #7
+ 121 00a4 0B00000A 		beq	.L42
+ 122 00a8 030050E3 		cmp	r0, #3
+ 123 00ac 0900000A 		beq	.L42
+ 124 00b0 000050E3 		cmp	r0, #0
+ 125 00b4 34309F05 		ldreq	r3, .L44
+ 126 00b8 0320A003 		moveq	r2, #3
+ 127 00bc 0110A003 		moveq	r1, #1
+ 128 00c0 58218305 		streq	r2, [r3, #344]
+ 129 00c4 0600000A 		beq	.L24
+ 130 00c8 24009FE5 		ldr	r0, .L44+4
+ 131 00cc FEFFFFEB 		bl	debug_message_buffer
+ 132 00d0 0010A0E3 		mov	r1, #0
+ 133 00d4 020000EA 		b	.L24
+ 134              	.L42:
+ 135 00d8 10309FE5 		ldr	r3, .L44
+ 136 00dc 580183E5 		str	r0, [r3, #344]
+ 137 00e0 0110A0E3 		mov	r1, #1
+ 138              	.L24:
+ 139 00e4 0100A0E1 		mov	r0, r1
+ 140 00e8 04E09DE4 		ldr	lr, [sp], #4
+ 141 00ec 1EFF2FE1 		bx	lr
+ 142              	.L45:
+ 143              		.align	2
+ 144              	.L44:
+ 145 00f0 00000000 		.word	global_data
+ 146 00f4 00000000 		.word	.LC0
+ 148              		.section	.rodata.str1.4
+ 149              		.align	2
+ 150              	.LC1:
+ 151 0028 5741524E 		.ascii	"WARNING: SYSTEM IS IN FLIGHT! Denied to switch to R"
+ 151      494E473A 
+ 151      20535953 
+ 151      54454D20 
+ 151      49532049 
+ 152 005b 43206D6F 		.ascii	"C mode\000"
+ 152      646500
+ 153 0062 0000     		.align	2
+ 154              	.LC2:
+ 155 0064 5741524E 		.ascii	"WARNING: Attempted to set invalid mode\000"
+ 155      494E473A 
+ 155      20417474 
+ 155      656D7074 
+ 155      65642074 
+ 156 008b 00       		.text
+ 157              		.align	2
+ 158              		.global	sys_set_mode
+ 160              	sys_set_mode:
+ 161              		@ Function supports interworking.
+ 162              		@ args = 0, pretend = 0, frame = 0
+ 163              		@ frame_needed = 0, uses_anonymous_args = 0
+ 164 00f8 10402DE9 		stmfd	sp!, {r4, lr}
+ 165 00fc FF4000E2 		and	r4, r0, #255
+ 166 0100 040054E3 		cmp	r4, #4
+ 167 0104 1700000A 		beq	.L72
+ 168 0108 030054E3 		cmp	r4, #3
+ 169 010c 1500000A 		beq	.L72
+ 170 0110 010054E3 		cmp	r4, #1
+ 171 0114 84309F05 		ldreq	r3, .L74
+ 172 0118 0400A001 		moveq	r0, r4
+ 173 011c 4C418305 		streq	r4, [r3, #332]
+ 174 0120 0E00000A 		beq	.L49
+ 175 0124 020054E3 		cmp	r4, #2
+ 176 0128 0E00000A 		beq	.L72
+ 177 012c 080054E3 		cmp	r4, #8
+ 178 0130 0C00000A 		beq	.L72
+ 179 0134 050054E3 		cmp	r4, #5
+ 180 0138 0A00000A 		beq	.L72
+ 181 013c 060054E3 		cmp	r4, #6
+ 182 0140 0800000A 		beq	.L72
+ 183 0144 070054E3 		cmp	r4, #7
+ 184 0148 0600000A 		beq	.L72
+ 185 014c 090054E3 		cmp	r4, #9
+ 186 0150 0800000A 		beq	.L73
+ 187 0154 48009FE5 		ldr	r0, .L74+4
+ 188 0158 FEFFFFEB 		bl	debug_message_buffer
+ 189 015c 0000A0E3 		mov	r0, #0
+ 190              	.L49:
+ 191 0160 1040BDE8 		ldmfd	sp!, {r4, lr}
+ 192 0164 1EFF2FE1 		bx	lr
+ 193              	.L72:
+ 194 0168 30309FE5 		ldr	r3, .L74
+ 195 016c 0100A0E3 		mov	r0, #1
+ 196 0170 4C4183E5 		str	r4, [r3, #332]
+ 197 0174 F9FFFFEA 		b	.L49
+ 198              	.L73:
+ 199 0178 FEFFFFEB 		bl	sys_state_is_flying
+ 200 017c 000050E3 		cmp	r0, #0
+ 201 0180 18309F05 		ldreq	r3, .L74
+ 202 0184 01008002 		addeq	r0, r0, #1
+ 203 0188 4C418305 		streq	r4, [r3, #332]
+ 204 018c F3FFFF0A 		beq	.L49
+ 205 0190 10009FE5 		ldr	r0, .L74+8
+ 206 0194 FEFFFFEB 		bl	debug_message_buffer
+ 207 0198 0000A0E3 		mov	r0, #0
+ 208 019c EFFFFFEA 		b	.L49
+ 209              	.L75:
+ 210              		.align	2
+ 211              	.L74:
+ 212 01a0 00000000 		.word	global_data
+ 213 01a4 64000000 		.word	.LC2
+ 214 01a8 28000000 		.word	.LC1
+ 216              		.comm	mavlink_system,8,4
+ 217              		.comm	global_param_id,4,4
+ 218              		.comm	state_fly_id,4,4
+ 219              		.comm	global_data,2588,4
+ 220              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
+DEFINED SYMBOLS
+                            *ABS*:00000000 sys_state.c
+C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:6      .text:00000000 sys_state_is_flying
+C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:11     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:23     .text:00000020 $d
+                            *COM*:00000a1c global_data
+C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:28     .text:00000024 sys_get_mode
+C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:33     .text:00000024 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:40     .text:00000030 $d
+C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:45     .text:00000034 sys_get_state
+C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:50     .text:00000034 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:57     .text:00000040 $d
+C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:62     .text:00000044 sys_set_type
+C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:67     .text:00000044 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:74     .text:00000050 $d
+C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:79     .text:00000054 sys_set_nav_mode
+C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:84     .text:00000054 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:91     .text:00000060 $d
+C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:101    .text:00000064 sys_set_state
+C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:105    .text:00000064 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:145    .text:000000f0 $d
+C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:160    .text:000000f8 sys_set_mode
+C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:164    .text:000000f8 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:212    .text:000001a0 $d
+                            *COM*:00000008 mavlink_system
+                            *COM*:00000004 global_param_id
+                            *COM*:00000004 state_fly_id
+
+UNDEFINED SYMBOLS
+debug_message_buffer
