@@ -1,0 +1,129 @@
+   1              		.file	"led.c"
+   2              		.text
+   3              		.align	2
+   4              		.global	led_on
+   6              	led_on:
+   7              		@ Function supports interworking.
+   8              		@ args = 0, pretend = 0, frame = 0
+   9              		@ frame_needed = 0, uses_anonymous_args = 0
+  10              		@ link register save eliminated.
+  11 0000 110050E3 		cmp	r0, #17
+  12 0004 0E22A0E3 		mov	r2, #-536870912
+  13 0008 0A2982E2 		add	r2, r2, #163840
+  14 000c 0238A003 		moveq	r3, #131072
+  15              		@ lr needed for prologue
+  16 0010 1C308205 		streq	r3, [r2, #28]
+  17 0014 1EFF2F01 		bxeq	lr
+  18 0018 170050E3 		cmp	r0, #23
+  19 001c 0A2942E2 		sub	r2, r2, #163840
+  20 0020 0A2982E2 		add	r2, r2, #163840
+  21 0024 0235A003 		moveq	r3, #8388608
+  22 0028 1C308205 		streq	r3, [r2, #28]
+  23 002c 1EFF2F01 		bxeq	lr
+  24 0030 100050E3 		cmp	r0, #16
+  25 0034 0E32A003 		moveq	r3, #-536870912
+  26 0038 0A398302 		addeq	r3, r3, #163840
+  27 003c 0128A003 		moveq	r2, #65536
+  28 0040 1C208305 		streq	r2, [r3, #28]
+  29 0044 1EFF2FE1 		bx	lr
+  31              		.align	2
+  32              		.global	led_off
+  34              	led_off:
+  35              		@ Function supports interworking.
+  36              		@ args = 0, pretend = 0, frame = 0
+  37              		@ frame_needed = 0, uses_anonymous_args = 0
+  38              		@ link register save eliminated.
+  39 0048 110050E3 		cmp	r0, #17
+  40 004c 0E22A0E3 		mov	r2, #-536870912
+  41 0050 0A2982E2 		add	r2, r2, #163840
+  42 0054 0238A003 		moveq	r3, #131072
+  43              		@ lr needed for prologue
+  44 0058 14308205 		streq	r3, [r2, #20]
+  45 005c 1EFF2F01 		bxeq	lr
+  46 0060 170050E3 		cmp	r0, #23
+  47 0064 0A2942E2 		sub	r2, r2, #163840
+  48 0068 0A2982E2 		add	r2, r2, #163840
+  49 006c 0235A003 		moveq	r3, #8388608
+  50 0070 14308205 		streq	r3, [r2, #20]
+  51 0074 1EFF2F01 		bxeq	lr
+  52 0078 100050E3 		cmp	r0, #16
+  53 007c 0E32A003 		moveq	r3, #-536870912
+  54 0080 0A398302 		addeq	r3, r3, #163840
+  55 0084 0128A003 		moveq	r2, #65536
+  56 0088 14208305 		streq	r2, [r3, #20]
+  57 008c 1EFF2FE1 		bx	lr
+  59              		.align	2
+  60              		.global	led_init
+  62              	led_init:
+  63              		@ Function supports interworking.
+  64              		@ args = 0, pretend = 0, frame = 0
+  65              		@ frame_needed = 0, uses_anonymous_args = 0
+  66 0090 0E12A0E3 		mov	r1, #-536870912
+  67 0094 0B2981E2 		add	r2, r1, #180224
+  68 0098 143092E5 		ldr	r3, [r2, #20]
+  69 009c 0830C3E3 		bic	r3, r3, #8
+  70 00a0 143082E5 		str	r3, [r2, #20]
+  71 00a4 0A1981E2 		add	r1, r1, #163840
+  72 00a8 183091E5 		ldr	r3, [r1, #24]
+  73 00ac 023883E3 		orr	r3, r3, #131072
+  74 00b0 183081E5 		str	r3, [r1, #24]
+  75 00b4 182091E5 		ldr	r2, [r1, #24]
+  76 00b8 012882E3 		orr	r2, r2, #65536
+  77 00bc 182081E5 		str	r2, [r1, #24]
+  78 00c0 183091E5 		ldr	r3, [r1, #24]
+  79 00c4 023583E3 		orr	r3, r3, #8388608
+  80 00c8 04E02DE5 		str	lr, [sp, #-4]!
+  81 00cc 183081E5 		str	r3, [r1, #24]
+  82 00d0 1000A0E3 		mov	r0, #16
+  83 00d4 FEFFFFEB 		bl	led_off
+  84 00d8 1100A0E3 		mov	r0, #17
+  85 00dc FEFFFFEB 		bl	led_off
+  86 00e0 1700A0E3 		mov	r0, #23
+  87 00e4 04E09DE4 		ldr	lr, [sp], #4
+  88 00e8 FEFFFFEA 		b	led_off
+  90              		.align	2
+  91              		.global	led_toggle
+  93              	led_toggle:
+  94              		@ Function supports interworking.
+  95              		@ args = 0, pretend = 0, frame = 0
+  96              		@ frame_needed = 0, uses_anonymous_args = 0
+  97              		@ link register save eliminated.
+  98 00ec 110050E3 		cmp	r0, #17
+  99              		@ lr needed for prologue
+ 100 00f0 0900000A 		beq	.L19
+ 101 00f4 170050E3 		cmp	r0, #23
+ 102 00f8 0D00000A 		beq	.L20
+ 103 00fc 100050E3 		cmp	r0, #16
+ 104 0100 1EFF2F11 		bxne	lr
+ 105 0104 0E32A0E3 		mov	r3, #-536870912
+ 106 0108 0A3983E2 		add	r3, r3, #163840
+ 107 010c 102093E5 		ldr	r2, [r3, #16]
+ 108 0110 010812E3 		tst	r2, #65536
+ 109 0114 0500001A 		bne	.L30
+ 110              	.L25:
+ 111 0118 FEFFFFEA 		b	led_off
+ 112              	.L19:
+ 113 011c 0E32A0E3 		mov	r3, #-536870912
+ 114 0120 0A3983E2 		add	r3, r3, #163840
+ 115 0124 102093E5 		ldr	r2, [r3, #16]
+ 116 0128 020812E3 		tst	r2, #131072
+ 117 012c F9FFFF0A 		beq	.L25
+ 118              	.L30:
+ 119 0130 FEFFFFEA 		b	led_on
+ 120              	.L20:
+ 121 0134 0E32A0E3 		mov	r3, #-536870912
+ 122 0138 0A3983E2 		add	r3, r3, #163840
+ 123 013c 102093E5 		ldr	r2, [r3, #16]
+ 124 0140 020512E3 		tst	r2, #8388608
+ 125 0144 F3FFFF0A 		beq	.L25
+ 126 0148 F8FFFFEA 		b	.L30
+ 128              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
+DEFINED SYMBOLS
+                            *ABS*:00000000 led.c
+C:\Users\Srdjan\AppData\Local\Temp/cc2dbaaa.s:6      .text:00000000 led_on
+C:\Users\Srdjan\AppData\Local\Temp/cc2dbaaa.s:11     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc2dbaaa.s:34     .text:00000048 led_off
+C:\Users\Srdjan\AppData\Local\Temp/cc2dbaaa.s:62     .text:00000090 led_init
+C:\Users\Srdjan\AppData\Local\Temp/cc2dbaaa.s:93     .text:000000ec led_toggle
+
+NO UNDEFINED SYMBOLS

@@ -1,0 +1,18 @@
+   1              		.file	"cam_trigger.c"
+   2              		.text
+   3              		.align	2
+   4              		.global	cam_trigger_init
+   6              	cam_trigger_init:
+   7              		@ Function supports interworking.
+   8              		@ args = 0, pretend = 0, frame = 0
+   9              		@ frame_needed = 0, uses_anonymous_args = 0
+  10              		@ link register save eliminated.
+  11              		@ lr needed for prologue
+  12 0000 1EFF2FE1 		bx	lr
+  14              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
+DEFINED SYMBOLS
+                            *ABS*:00000000 cam_trigger.c
+C:\Users\Srdjan\AppData\Local\Temp/ccCuaaaa.s:6      .text:00000000 cam_trigger_init
+C:\Users\Srdjan\AppData\Local\Temp/ccCuaaaa.s:12     .text:00000000 $a
+
+NO UNDEFINED SYMBOLS

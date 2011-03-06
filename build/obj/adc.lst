@@ -1,0 +1,115 @@
+   1              		.file	"adc.c"
+   2              		.text
+   3              		.align	2
+   4              		.global	adc_init
+   6              	adc_init:
+   7              		@ Function supports interworking.
+   8              		@ args = 0, pretend = 0, frame = 0
+   9              		@ frame_needed = 0, uses_anonymous_args = 0
+  10 0000 0EC2A0E3 		mov	ip, #-536870912
+  11 0004 0B198CE2 		add	r1, ip, #180224
+  12 0008 003091E5 		ldr	r3, [r1, #0]
+  13 000c 033C83E3 		orr	r3, r3, #768
+  14 0010 003081E5 		str	r3, [r1, #0]
+  15 0014 042091E5 		ldr	r2, [r1, #4]
+  16 0018 032382E3 		orr	r2, r2, #201326592
+  17 001c 042081E5 		str	r2, [r1, #4]
+  18 0020 043091E5 		ldr	r3, [r1, #4]
+  19 0024 033483E3 		orr	r3, r3, #50331648
+  20 0028 043081E5 		str	r3, [r1, #4]
+  21 002c 002091E5 		ldr	r2, [r1, #0]
+  22 0030 032482E3 		orr	r2, r2, #50331648
+  23 0034 002081E5 		str	r2, [r1, #0]
+  24 0038 04E02DE5 		str	lr, [sp, #-4]!
+  25 003c 003091E5 		ldr	r3, [r1, #0]
+  26 0040 2108A0E3 		mov	r0, #2162688
+  27 0044 912F80E2 		add	r2, r0, #580
+  28 0048 06E88CE2 		add	lr, ip, #393216
+  29 004c 033183E3 		orr	r3, r3, #-1073741824
+  30 0050 022082E2 		add	r2, r2, #2
+  31 0054 8A0F80E2 		add	r0, r0, #552
+  32 0058 0DC98CE2 		add	ip, ip, #212992
+  33 005c 003081E5 		str	r3, [r1, #0]
+  34 0060 00208CE5 		str	r2, [ip, #0]
+  35 0064 00008EE5 		str	r0, [lr, #0]
+  36 0068 04E09DE4 		ldr	lr, [sp], #4
+  37 006c 1EFF2FE1 		bx	lr
+  39              		.align	2
+  40              		.global	adc_get_value
+  42              	adc_get_value:
+  43              		@ Function supports interworking.
+  44              		@ args = 0, pretend = 0, frame = 0
+  45              		@ frame_needed = 0, uses_anonymous_args = 0
+  46              		@ link register save eliminated.
+  47 0070 FF0000E2 		and	r0, r0, #255
+  48 0074 010040E2 		sub	r0, r0, #1
+  49              		@ lr needed for prologue
+  50 0078 050050E3 		cmp	r0, #5
+  51 007c 00F19F97 		ldrls	pc, [pc, r0, asl #2]
+  52 0080 1D0000EA 		b	.L4
+  53              		.p2align 2
+  54              	.L10:
+  55 0084 9C000000 		.word	.L5
+  56 0088 24010000 		.word	.L6
+  57 008c 04010000 		.word	.L7
+  58 0090 FC000000 		.word	.L4
+  59 0094 DC000000 		.word	.L8
+  60 0098 BC000000 		.word	.L9
+  61              	.L5:
+  62 009c 0E22A0E3 		mov	r2, #-536870912
+  63 00a0 0D2982E2 		add	r2, r2, #212992
+  64 00a4 143092E5 		ldr	r3, [r2, #20]
+  65 00a8 2333A0E1 		mov	r3, r3, lsr #6
+  66 00ac 3F3BC3E3 		bic	r3, r3, #64512
+  67 00b0 0338A0E1 		mov	r3, r3, asl #16
+  68 00b4 2308A0E1 		mov	r0, r3, lsr #16
+  69 00b8 1EFF2FE1 		bx	lr
+  70              	.L9:
+  71 00bc 0E22A0E3 		mov	r2, #-536870912
+  72 00c0 0D2982E2 		add	r2, r2, #212992
+  73 00c4 283092E5 		ldr	r3, [r2, #40]
+  74 00c8 2333A0E1 		mov	r3, r3, lsr #6
+  75 00cc 3F3BC3E3 		bic	r3, r3, #64512
+  76 00d0 0338A0E1 		mov	r3, r3, asl #16
+  77 00d4 2308A0E1 		mov	r0, r3, lsr #16
+  78 00d8 1EFF2FE1 		bx	lr
+  79              	.L8:
+  80 00dc 0E22A0E3 		mov	r2, #-536870912
+  81 00e0 062882E2 		add	r2, r2, #393216
+  82 00e4 243092E5 		ldr	r3, [r2, #36]
+  83 00e8 2333A0E1 		mov	r3, r3, lsr #6
+  84 00ec 3F3BC3E3 		bic	r3, r3, #64512
+  85 00f0 0338A0E1 		mov	r3, r3, asl #16
+  86 00f4 2308A0E1 		mov	r0, r3, lsr #16
+  87 00f8 1EFF2FE1 		bx	lr
+  88              	.L4:
+  89 00fc 0000A0E3 		mov	r0, #0
+  90 0100 1EFF2FE1 		bx	lr
+  91              	.L7:
+  92 0104 0E22A0E3 		mov	r2, #-536870912
+  93 0108 062882E2 		add	r2, r2, #393216
+  94 010c 1C3092E5 		ldr	r3, [r2, #28]
+  95 0110 2333A0E1 		mov	r3, r3, lsr #6
+  96 0114 3F3BC3E3 		bic	r3, r3, #64512
+  97 0118 0338A0E1 		mov	r3, r3, asl #16
+  98 011c 2308A0E1 		mov	r0, r3, lsr #16
+  99 0120 1EFF2FE1 		bx	lr
+ 100              	.L6:
+ 101 0124 0E22A0E3 		mov	r2, #-536870912
+ 102 0128 0D2982E2 		add	r2, r2, #212992
+ 103 012c 183092E5 		ldr	r3, [r2, #24]
+ 104 0130 2333A0E1 		mov	r3, r3, lsr #6
+ 105 0134 3F3BC3E3 		bic	r3, r3, #64512
+ 106 0138 0338A0E1 		mov	r3, r3, asl #16
+ 107 013c 2308A0E1 		mov	r0, r3, lsr #16
+ 108 0140 1EFF2FE1 		bx	lr
+ 110              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
+DEFINED SYMBOLS
+                            *ABS*:00000000 adc.c
+C:\Users\Srdjan\AppData\Local\Temp/ccQrbaaa.s:6      .text:00000000 adc_init
+C:\Users\Srdjan\AppData\Local\Temp/ccQrbaaa.s:10     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccQrbaaa.s:42     .text:00000070 adc_get_value
+C:\Users\Srdjan\AppData\Local\Temp/ccQrbaaa.s:55     .text:00000084 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccQrbaaa.s:62     .text:0000009c $a
+
+NO UNDEFINED SYMBOLS

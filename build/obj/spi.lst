@@ -1,0 +1,102 @@
+   1              		.file	"spi.c"
+   2              		.text
+   3              		.align	2
+   4              		.global	spi_transmit
+   6              	spi_transmit:
+   7              		@ Function supports interworking.
+   8              		@ args = 0, pretend = 0, frame = 0
+   9              		@ frame_needed = 0, uses_anonymous_args = 0
+  10 0000 30402DE9 		stmfd	sp!, {r4, r5, lr}
+  11 0004 10C0D0E5 		ldrb	ip, [r0, #16]	@ zero_extendqisi2
+  12 0008 00005CE3 		cmp	ip, #0
+  13 000c 0050A0E1 		mov	r5, r0
+  14 0010 080000DA 		ble	.L2
+  15 0014 0E02A0E3 		mov	r0, #-536870912
+  16 0018 1A0980E2 		add	r0, r0, #425984
+  17 001c 0010A0E3 		mov	r1, #0
+  18              	.L4:
+  19 0020 8130A0E1 		mov	r3, r1, asl #1
+  20 0024 B52093E1 		ldrh	r2, [r3, r5]
+  21 0028 011081E2 		add	r1, r1, #1
+  22 002c 01005CE1 		cmp	ip, r1
+  23 0030 B820C0E1 		strh	r2, [r0, #8]	@ movhi
+  24 0034 F9FFFF1A 		bne	.L4
+  25              	.L2:
+  26 0038 1130D5E5 		ldrb	r3, [r5, #17]	@ zero_extendqisi2
+  27 003c 0E42A0E3 		mov	r4, #-536870912
+  28 0040 1A4984E2 		add	r4, r4, #425984
+  29 0044 033C83E3 		orr	r3, r3, #768
+  30 0048 B030C4E1 		strh	r3, [r4, #0]	@ movhi
+  31 004c 14C095E5 		ldr	ip, [r5, #20]
+  32 0050 0FE0A0E1 		mov	lr, pc
+  33 0054 1CFF2FE1 		bx	ip
+  34 0058 0430D4E5 		ldrb	r3, [r4, #4]	@ zero_extendqisi2
+  35 005c 023083E3 		orr	r3, r3, #2
+  36 0060 0430C4E5 		strb	r3, [r4, #4]
+  37              	.L5:
+  38 0064 0C30D4E5 		ldrb	r3, [r4, #12]	@ zero_extendqisi2
+  39 0068 100013E3 		tst	r3, #16
+  40 006c FCFFFF1A 		bne	.L5
+  41 0070 18C095E5 		ldr	ip, [r5, #24]
+  42 0074 0FE0A0E1 		mov	lr, pc
+  43 0078 1CFF2FE1 		bx	ip
+  44 007c 0430D4E5 		ldrb	r3, [r4, #4]	@ zero_extendqisi2
+  45 0080 FD3003E2 		and	r3, r3, #253
+  46 0084 0430C4E5 		strb	r3, [r4, #4]
+  47 0088 1CC095E5 		ldr	ip, [r5, #28]
+  48 008c 0FE0A0E1 		mov	lr, pc
+  49 0090 1CFF2FE1 		bx	ip
+  50 0094 3040BDE8 		ldmfd	sp!, {r4, r5, lr}
+  51 0098 1EFF2FE1 		bx	lr
+  53              		.align	2
+  54              		.global	spi_init
+  56              	spi_init:
+  57              		@ Function supports interworking.
+  58              		@ args = 0, pretend = 0, frame = 0
+  59              		@ frame_needed = 0, uses_anonymous_args = 0
+  60              		@ link register save eliminated.
+  61 009c 0E12A0E3 		mov	r1, #-536870912
+  62 00a0 0B0981E2 		add	r0, r1, #180224
+  63 00a4 042090E5 		ldr	r2, [r0, #4]
+  64 00a8 C33FA0E3 		mov	r3, #780
+  65 00ac 1A1981E2 		add	r1, r1, #425984
+  66 00b0 A82082E3 		orr	r2, r2, #168
+  67 00b4 033083E2 		add	r3, r3, #3
+  68 00b8 042080E5 		str	r2, [r0, #4]
+  69 00bc B030C1E1 		strh	r3, [r1, #0]	@ movhi
+  70 00c0 0020A0E3 		mov	r2, #0
+  71 00c4 0230A0E3 		mov	r3, #2
+  72 00c8 0420C1E5 		strb	r2, [r1, #4]
+  73              		@ lr needed for prologue
+  74 00cc 1030C1E5 		strb	r3, [r1, #16]
+  75 00d0 1EFF2FE1 		bx	lr
+  77              		.align	2
+  78              		.global	spi_running
+  80              	spi_running:
+  81              		@ Function supports interworking.
+  82              		@ args = 0, pretend = 0, frame = 0
+  83              		@ frame_needed = 0, uses_anonymous_args = 0
+  84              		@ link register save eliminated.
+  85 00d4 0000A0E3 		mov	r0, #0
+  86              		@ lr needed for prologue
+  87 00d8 1EFF2FE1 		bx	lr
+  89              		.align	2
+  90              		.global	spi_number_of_packages_in_buffer
+  92              	spi_number_of_packages_in_buffer:
+  93              		@ Function supports interworking.
+  94              		@ args = 0, pretend = 0, frame = 0
+  95              		@ frame_needed = 0, uses_anonymous_args = 0
+  96              		@ link register save eliminated.
+  97 00dc 0000A0E3 		mov	r0, #0
+  98              		@ lr needed for prologue
+  99 00e0 1EFF2FE1 		bx	lr
+ 101              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
+DEFINED SYMBOLS
+                            *ABS*:00000000 spi.c
+C:\Users\Srdjan\AppData\Local\Temp/ccyubaaa.s:6      .text:00000000 spi_transmit
+C:\Users\Srdjan\AppData\Local\Temp/ccyubaaa.s:10     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccyubaaa.s:56     .text:0000009c spi_init
+C:\Users\Srdjan\AppData\Local\Temp/ccyubaaa.s:80     .text:000000d4 spi_running
+C:\Users\Srdjan\AppData\Local\Temp/ccyubaaa.s:92     .text:000000dc spi_number_of_packages_in_buffer
+
+NO UNDEFINED SYMBOLS
