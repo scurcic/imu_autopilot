@@ -55,6 +55,9 @@ SRCARM += fusion/altitude_kalman.c
 SRCARM += fusion/attitude_observer.c
 SRCARM += fusion/position_kalman.c
 SRCARM += fusion/vision_buffer.c
+SRCARM += fusion/kalman.c
+SRCARM += fusion/outdoor_position_kalman.c
+SRCARM += fusion/vision_position_kalman.c
 SRCARM += fusion/attitude_compl_euler.c
 SRCARM += fusion/simple_altitude_moving_average.c
 SRCARM += fusion/least_square.c
@@ -63,6 +66,7 @@ SRCARM += fusion/world_to_body.c
 SRCARM += fusion/position_kalman2.c
 SRCARM += fusion/position_kalman3.c
 SRCARM += math/transformation.c
+SRCARM += math/matrix.c
 SRCARM += math/geodetic/latlong.c
 SRCARM += arm7/sdfat/syscalls.c
 SRCARM += math/geodetic/gps_transformations.c
@@ -93,14 +97,18 @@ FORMAT = ihex
 # ENABLE ONCE GCC 4.4.x is broadly used
 #DEADCODESTRIP = -Wl,-static -fdata-sections -ffunction-sections -Wl,--gc-sections -Wl,-s
  
+ #define compiler name
+#CCNAME = -none-eabi
+CCNAME = -elf
+ 
 # Define programs and commands.
-CC     = arm-elf-gcc
-LD     = arm-elf-gcc
+CC     = arm$(CCNAME)-gcc
+LD     = arm$(CCNAME)-gcc
 SHELL = sh
-OBJCOPY = arm-elf-objcopy
-OBJDUMP = arm-elf-objdump
-SIZE = arm-elf-size
-NM = arm-elf-nm
+OBJCOPY = arm$(CCNAME)-objcopy
+OBJDUMP = arm$(CCNAME)-objdump
+SIZE = arm$(CCNAME)-size
+NM = arm$(CCNAME)-nm
 REMOVE = rm -f
 COPY = cp
  
