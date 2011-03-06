@@ -833,42 +833,42 @@
  836 003a 0000     		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 gps_nmea.c
-C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:6      .text:00000000 ubxsend_cfg_rst
-C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:12     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:17     .text:00000004 GpsFixValid
-C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:29     .text:00000010 $d
-C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:786    .bss:00000000 gps_pos_available
-C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:34     .text:00000014 parse_nmea
-C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:38     .text:00000014 $a
-C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:94     .text:000000d4 $d
-C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:804    .bss:00000004 nmea_msg_len
-C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:798    .bss:00000001 gps_msg_received
+C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:6      .text:00000000 ubxsend_cfg_rst
+C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:12     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:17     .text:00000004 GpsFixValid
+C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:29     .text:00000010 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:786    .bss:00000000 gps_pos_available
+C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:34     .text:00000014 parse_nmea
+C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:38     .text:00000014 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:94     .text:000000d4 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:804    .bss:00000004 nmea_msg_len
+C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:798    .bss:00000001 gps_msg_received
                             *COM*:000000ff nmea_msg_buf
-C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:104    .text:000000e0 parse_nmea_GPRMC
-C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:108    .text:000000e0 $a
-C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:225    .text:0000026c $d
+C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:104    .text:000000e0 parse_nmea_GPRMC
+C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:108    .text:000000e0 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:225    .text:0000026c $d
                             *COM*:00000002 gps_gspeed
-C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:239    .text:00000280 parse_nmea_GPGGA
-C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:243    .text:00000280 $a
-C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:563    .text:00000700 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:239    .text:00000280 parse_nmea_GPGGA
+C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:243    .text:00000280 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:563    .text:00000700 $d
                             *COM*:00000004 gps_lat
                             *COM*:00000004 gps_lon
-C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:792    .data:00000000 nav_utm_zone0
+C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:792    .data:00000000 nav_utm_zone0
                             *COM*:00000004 gps_utm_east
                             *COM*:00000001 gps_utm_zone
                             *COM*:00000004 gps_utm_north
                             *COM*:00000001 gps_numSV
                             *COM*:00000004 gps_alt
-C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:583    .text:00000740 parse_nmea_GPGSA
-C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:587    .text:00000740 $a
-C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:639    .text:000007f0 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:583    .text:00000740 parse_nmea_GPGSA
+C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:587    .text:00000740 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:639    .text:000007f0 $d
                             *COM*:00000001 gps_mode
-C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:667    .text:000007fc parse_gps_msg
-C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:671    .text:000007fc $a
-C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:771    .text:0000095c $d
+C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:667    .text:000007fc parse_gps_msg
+C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:671    .text:000007fc $a
+C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:771    .text:0000095c $d
                             *COM*:00000a1c global_data
-C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:806    .bss:00000008 nmea_msg_buf_tmp.19035
-C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:789    .bss:00000001 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:806    .bss:00000008 nmea_msg_buf_tmp.19035
+C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:789    .bss:00000001 $d
                             *COM*:00000004 global_param_id
                             *COM*:00000004 state_fly_id
                             *COM*:00000002 gps_week

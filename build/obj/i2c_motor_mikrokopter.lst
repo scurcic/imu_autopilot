@@ -26,8 +26,8 @@
   28              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 i2c_motor_mikrokopter.c
-C:\Users\Srdjan\AppData\Local\Temp/cc0Saaaa.s:6      .text:00000000 motor_i2c_set_pwm
-C:\Users\Srdjan\AppData\Local\Temp/cc0Saaaa.s:10     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccWMaaaa.s:6      .text:00000000 motor_i2c_set_pwm
+C:\Users\Srdjan\AppData\Local\Temp/ccWMaaaa.s:10     .text:00000000 $a
                             *COM*:00000008 mavlink_system
 
 UNDEFINED SYMBOLS

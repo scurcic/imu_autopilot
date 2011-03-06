@@ -3279,25 +3279,25 @@
  2989              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 mainloop_generic.c
-C:\Users\Srdjan\AppData\Local\Temp/ccMVaaaa.s:36     .text:00000000 main_loop_generic
-C:\Users\Srdjan\AppData\Local\Temp/ccMVaaaa.s:40     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccMVaaaa.s:383    .text:0000050c $d
+C:\Users\Srdjan\AppData\Local\Temp/cc8Gaaaa.s:36     .text:00000000 main_loop_generic
+C:\Users\Srdjan\AppData\Local\Temp/cc8Gaaaa.s:40     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc8Gaaaa.s:383    .text:0000050c $d
                             *COM*:00000a1c global_data
-C:\Users\Srdjan\AppData\Local\Temp/ccMVaaaa.s:2977   .bss:00000008 mag_count.20806
+C:\Users\Srdjan\AppData\Local\Temp/cc8Gaaaa.s:2977   .bss:00000008 mag_count.20806
                             *COM*:00000001 bmp085_measurement_mode
-C:\Users\Srdjan\AppData\Local\Temp/ccMVaaaa.s:2975   .bss:00000000 last_mainloop_idle
-C:\Users\Srdjan\AppData\Local\Temp/ccMVaaaa.s:409    .text:00000570 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccMVaaaa.s:855    .text:00000790 global_data_reset_param_defaults
-C:\Users\Srdjan\AppData\Local\Temp/ccMVaaaa.s:1548   .text:00001248 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccMVaaaa.s:1656   .text:000013ec mavlink_send_uart
-C:\Users\Srdjan\AppData\Local\Temp/ccMVaaaa.s:1660   .text:000013ec $a
-C:\Users\Srdjan\AppData\Local\Temp/ccMVaaaa.s:1740   .text:00001494 main_init_generic
-C:\Users\Srdjan\AppData\Local\Temp/ccMVaaaa.s:2234   .text:00001bf4 $d
+C:\Users\Srdjan\AppData\Local\Temp/cc8Gaaaa.s:2975   .bss:00000000 last_mainloop_idle
+C:\Users\Srdjan\AppData\Local\Temp/cc8Gaaaa.s:409    .text:00000570 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc8Gaaaa.s:855    .text:00000790 global_data_reset_param_defaults
+C:\Users\Srdjan\AppData\Local\Temp/cc8Gaaaa.s:1548   .text:00001248 $d
+C:\Users\Srdjan\AppData\Local\Temp/cc8Gaaaa.s:1656   .text:000013ec mavlink_send_uart
+C:\Users\Srdjan\AppData\Local\Temp/cc8Gaaaa.s:1660   .text:000013ec $a
+C:\Users\Srdjan\AppData\Local\Temp/cc8Gaaaa.s:1740   .text:00001494 main_init_generic
+C:\Users\Srdjan\AppData\Local\Temp/cc8Gaaaa.s:2234   .text:00001bf4 $d
                             *COM*:00000001 mag_axis
                             *COM*:00000001 gps_device_mode
-C:\Users\Srdjan\AppData\Local\Temp/ccMVaaaa.s:2980   .bss:0000000c m_mavlink_status.2145
+C:\Users\Srdjan\AppData\Local\Temp/cc8Gaaaa.s:2980   .bss:0000000c m_mavlink_status.2145
                             *COM*:00000008 mavlink_system
-C:\Users\Srdjan\AppData\Local\Temp/ccMVaaaa.s:2257   .text:00001c48 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc8Gaaaa.s:2257   .text:00001c48 $a
                              .bss:00000000 $d
                             *COM*:00000004 global_param_id
                             *COM*:00000004 state_fly_id

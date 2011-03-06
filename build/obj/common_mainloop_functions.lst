@@ -5099,42 +5099,42 @@
  4846              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 common_mainloop_functions.c
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:7      .text:00000000 sync_state_parameters
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:11     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:26     .text:00000030 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:7      .text:00000000 sync_state_parameters
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:11     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:26     .text:00000030 $d
                             *COM*:00000a1c global_data
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:31     .text:00000034 beep_on_low_voltage
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:35     .text:00000034 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:64     .text:00000098 $d
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:69     .text:0000009c measure_peak_cpu_load
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:74     .text:0000009c $a
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:81     .text:000000a4 measure_avg_cpu_load
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:93     .text:000000ac us_run_init
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:110    .text:000000c8 $d
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:4827   .bss:0000006c next_exec_time
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:115    .text:000000cc us_run_every
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:119    .text:000000cc $a
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:138    .text:00000104 $d
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:151    .text:00000108 update_system_statemachine
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:155    .text:00000108 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:166    .text:0000012c $d
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:172    .text:00000140 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:276    .text:000002a8 $d
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:294    .text:000002b4 adc_read
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:298    .text:000002b4 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:427    .text:00000494 $d
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:748    .text:000004b8 handle_eeprom_write_request
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:752    .text:000004b8 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:770    .text:000004f0 $d
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:776    .text:00000504 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:1388   .text:00000e74 $d
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:1596   .text:00001174 handle_reset_request
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:1600   .text:00001174 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:1648   .text:00001214 $d
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:4824   .bss:00000068 reset_countdown.20948
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:1686   .text:00001228 communication_send_controller_feedback
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:1690   .text:00001228 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:1781   .text:00001374 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:31     .text:00000034 beep_on_low_voltage
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:35     .text:00000034 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:64     .text:00000098 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:69     .text:0000009c measure_peak_cpu_load
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:74     .text:0000009c $a
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:81     .text:000000a4 measure_avg_cpu_load
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:93     .text:000000ac us_run_init
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:110    .text:000000c8 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:4827   .bss:0000006c next_exec_time
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:115    .text:000000cc us_run_every
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:119    .text:000000cc $a
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:138    .text:00000104 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:151    .text:00000108 update_system_statemachine
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:155    .text:00000108 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:166    .text:0000012c $d
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:172    .text:00000140 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:276    .text:000002a8 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:294    .text:000002b4 adc_read
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:298    .text:000002b4 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:427    .text:00000494 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:748    .text:000004b8 handle_eeprom_write_request
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:752    .text:000004b8 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:770    .text:000004f0 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:776    .text:00000504 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:1388   .text:00000e74 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:1596   .text:00001174 handle_reset_request
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:1600   .text:00001174 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:1648   .text:00001214 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:4824   .bss:00000068 reset_countdown.20948
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:1686   .text:00001228 communication_send_controller_feedback
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:1690   .text:00001228 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:1781   .text:00001374 $d
                             *COM*:00000020 roll_controller
                             *COM*:00000020 nick_controller
                             *COM*:00000020 yaw_speed_controller
@@ -5142,33 +5142,33 @@ C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:1781   .text:00001374 $d
                             *COM*:00000020 y_axis_controller
                             *COM*:00000020 z_axis_controller
                             *COM*:00000020 yaw_pos_controller
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:1802   .text:000013b8 position_integrate
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:1806   .text:000013b8 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:1819   .text:000013dc rc_to_255
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:1893   .text:000014d8 communication_send_raw_data
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:2130   .text:0000185c $d
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:4815   .bss:00000000 m_mavlink_status.2141
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:1802   .text:000013b8 position_integrate
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:1806   .text:000013b8 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:1819   .text:000013dc rc_to_255
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:1893   .text:000014d8 communication_send_raw_data
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:2130   .text:0000185c $d
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:4815   .bss:00000000 m_mavlink_status.2141
                             *COM*:00000008 mavlink_system
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:2137   .text:00001868 fuse_vision_altitude_200hz
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:2141   .text:00001868 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:2290   .text:00001a98 $d
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:4821   .bss:0000005c pos_est3.21051
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:4818   .bss:00000050 vel_est3.21052
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:2299   .text:00001aac camera_shutter_handling
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:2303   .text:00001aac $a
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:2678   .text:0000205c $d
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:2686   .text:0000206c communication_send_remote_control
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:2690   .text:0000206c $a
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:3048   .text:000025d8 $d
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:3056   .text:000025e8 handle_controller_timeouts
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:3060   .text:000025e8 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:3466   .text:00002bfc $d
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:3474   .text:00002c0c communication_send_attitude_position
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:3478   .text:00002c0c $a
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:4118   .text:000035cc $d
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:4126   .text:000035dc send_system_state
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:4130   .text:000035dc $a
-C:\Users\Srdjan\AppData\Local\Temp/cc6naaaa.s:4808   .text:00004020 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:2137   .text:00001868 fuse_vision_altitude_200hz
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:2141   .text:00001868 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:2290   .text:00001a98 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:4821   .bss:0000005c pos_est3.21051
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:4818   .bss:00000050 vel_est3.21052
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:2299   .text:00001aac camera_shutter_handling
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:2303   .text:00001aac $a
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:2678   .text:0000205c $d
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:2686   .text:0000206c communication_send_remote_control
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:2690   .text:0000206c $a
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:3048   .text:000025d8 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:3056   .text:000025e8 handle_controller_timeouts
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:3060   .text:000025e8 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:3466   .text:00002bfc $d
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:3474   .text:00002c0c communication_send_attitude_position
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:3478   .text:00002c0c $a
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:4118   .text:000035cc $d
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:4126   .text:000035dc send_system_state
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:4130   .text:000035dc $a
+C:\Users\Srdjan\AppData\Local\Temp/ccQHaaaa.s:4808   .text:00004020 $d
                             *COM*:00000004 global_param_id
                             *COM*:00000004 state_fly_id
                             *COM*:00000001 mag_axis

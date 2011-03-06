@@ -114,16 +114,16 @@
  124 0003 00       		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 i2c_motor_controller.c
-C:\Users\Srdjan\AppData\Local\Temp/ccOwaaaa.s:5      .text:00000000 mot_save_rpm_after_read
-C:\Users\Srdjan\AppData\Local\Temp/ccOwaaaa.s:10     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccOwaaaa.s:28     .text:00000034 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccOwaaaa.s:116    .bss:00000000 current_rpm
-C:\Users\Srdjan\AppData\Local\Temp/ccOwaaaa.s:121    .bss:00000002 mot_rpm_data_ready
-C:\Users\Srdjan\AppData\Local\Temp/ccOwaaaa.s:34     .text:0000003c motor_i2c_get_rpm
-C:\Users\Srdjan\AppData\Local\Temp/ccOwaaaa.s:38     .text:0000003c $a
-C:\Users\Srdjan\AppData\Local\Temp/ccOwaaaa.s:80     .text:000000d4 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccOwaaaa.s:87     .text:000000e0 motor_i2c_set_rpm
-C:\Users\Srdjan\AppData\Local\Temp/ccOwaaaa.s:91     .text:000000e0 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccqGaaaa.s:5      .text:00000000 mot_save_rpm_after_read
+C:\Users\Srdjan\AppData\Local\Temp/ccqGaaaa.s:10     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccqGaaaa.s:28     .text:00000034 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccqGaaaa.s:116    .bss:00000000 current_rpm
+C:\Users\Srdjan\AppData\Local\Temp/ccqGaaaa.s:121    .bss:00000002 mot_rpm_data_ready
+C:\Users\Srdjan\AppData\Local\Temp/ccqGaaaa.s:34     .text:0000003c motor_i2c_get_rpm
+C:\Users\Srdjan\AppData\Local\Temp/ccqGaaaa.s:38     .text:0000003c $a
+C:\Users\Srdjan\AppData\Local\Temp/ccqGaaaa.s:80     .text:000000d4 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccqGaaaa.s:87     .text:000000e0 motor_i2c_set_rpm
+C:\Users\Srdjan\AppData\Local\Temp/ccqGaaaa.s:91     .text:000000e0 $a
                              .bss:00000000 $d
                             *COM*:00000008 mavlink_system
 

@@ -1120,22 +1120,22 @@
  1122              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 attitude_compl_euler.c
-C:\Users\Srdjan\AppData\Local\Temp/cc8Maaaa.s:22     .text:00000000 complimentary_filter_predict_rad
-C:\Users\Srdjan\AppData\Local\Temp/cc8Maaaa.s:26     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc8Maaaa.s:318    .text:0000047c $d
-C:\Users\Srdjan\AppData\Local\Temp/cc8Maaaa.s:1117   .bss:00000024 phi_acc_state.2852
-C:\Users\Srdjan\AppData\Local\Temp/cc8Maaaa.s:1114   .bss:00000020 theta_acc_state.2853
-C:\Users\Srdjan\AppData\Local\Temp/cc8Maaaa.s:1108   .bss:00000018 phi_gyro_state.2855
-C:\Users\Srdjan\AppData\Local\Temp/cc8Maaaa.s:1105   .bss:00000014 theta_gyro_state.2856
-C:\Users\Srdjan\AppData\Local\Temp/cc8Maaaa.s:1090   .bss:00000000 psi_prev.2870
-C:\Users\Srdjan\AppData\Local\Temp/cc8Maaaa.s:340    .text:000004d0 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc8Maaaa.s:872    .text:00000cf4 $d
-C:\Users\Srdjan\AppData\Local\Temp/cc8Maaaa.s:1111   .bss:0000001c psi_mag_state.2854
-C:\Users\Srdjan\AppData\Local\Temp/cc8Maaaa.s:1102   .bss:00000010 psi_gyro_state.2857
-C:\Users\Srdjan\AppData\Local\Temp/cc8Maaaa.s:1099   .bss:0000000c phi_rate_state.2858
-C:\Users\Srdjan\AppData\Local\Temp/cc8Maaaa.s:1096   .bss:00000008 theta_rate_state.2859
-C:\Users\Srdjan\AppData\Local\Temp/cc8Maaaa.s:1093   .bss:00000004 psi_rate_state.2860
-C:\Users\Srdjan\AppData\Local\Temp/cc8Maaaa.s:900    .text:00000d60 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccSYaaaa.s:22     .text:00000000 complimentary_filter_predict_rad
+C:\Users\Srdjan\AppData\Local\Temp/ccSYaaaa.s:26     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccSYaaaa.s:318    .text:0000047c $d
+C:\Users\Srdjan\AppData\Local\Temp/ccSYaaaa.s:1117   .bss:00000024 phi_acc_state.2852
+C:\Users\Srdjan\AppData\Local\Temp/ccSYaaaa.s:1114   .bss:00000020 theta_acc_state.2853
+C:\Users\Srdjan\AppData\Local\Temp/ccSYaaaa.s:1108   .bss:00000018 phi_gyro_state.2855
+C:\Users\Srdjan\AppData\Local\Temp/ccSYaaaa.s:1105   .bss:00000014 theta_gyro_state.2856
+C:\Users\Srdjan\AppData\Local\Temp/ccSYaaaa.s:1090   .bss:00000000 psi_prev.2870
+C:\Users\Srdjan\AppData\Local\Temp/ccSYaaaa.s:340    .text:000004d0 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccSYaaaa.s:872    .text:00000cf4 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccSYaaaa.s:1111   .bss:0000001c psi_mag_state.2854
+C:\Users\Srdjan\AppData\Local\Temp/ccSYaaaa.s:1102   .bss:00000010 psi_gyro_state.2857
+C:\Users\Srdjan\AppData\Local\Temp/ccSYaaaa.s:1099   .bss:0000000c phi_rate_state.2858
+C:\Users\Srdjan\AppData\Local\Temp/ccSYaaaa.s:1096   .bss:00000008 theta_rate_state.2859
+C:\Users\Srdjan\AppData\Local\Temp/ccSYaaaa.s:1093   .bss:00000004 psi_rate_state.2860
+C:\Users\Srdjan\AppData\Local\Temp/ccSYaaaa.s:900    .text:00000d60 $a
                              .bss:00000000 $d
                             *COM*:00000004 global_param_id
                             *COM*:00000004 state_fly_id

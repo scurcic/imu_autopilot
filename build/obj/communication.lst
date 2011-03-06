@@ -3601,40 +3601,40 @@
  3537              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 communication.c
-C:\Users\Srdjan\AppData\Local\Temp/cciiaaaa.s:5      .text:00000000 mavlink_parse_state_initialize
-C:\Users\Srdjan\AppData\Local\Temp/cciiaaaa.s:10     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/cciiaaaa.s:33     .text:00000044 communication_init
-C:\Users\Srdjan\AppData\Local\Temp/cciiaaaa.s:52     .text:00000074 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccCuaaaa.s:5      .text:00000000 mavlink_parse_state_initialize
+C:\Users\Srdjan\AppData\Local\Temp/ccCuaaaa.s:10     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccCuaaaa.s:33     .text:00000044 communication_init
+C:\Users\Srdjan\AppData\Local\Temp/ccCuaaaa.s:52     .text:00000074 $d
                             *COM*:00000a1c global_data
-C:\Users\Srdjan\AppData\Local\Temp/cciiaaaa.s:56     .text:00000078 mavlink_send_uart
-C:\Users\Srdjan\AppData\Local\Temp/cciiaaaa.s:60     .text:00000078 $a
-C:\Users\Srdjan\AppData\Local\Temp/cciiaaaa.s:119    .text:00000120 execute_action
-C:\Users\Srdjan\AppData\Local\Temp/cciiaaaa.s:131    .text:00000138 $d
-C:\Users\Srdjan\AppData\Local\Temp/cciiaaaa.s:152    .text:00000188 $a
-C:\Users\Srdjan\AppData\Local\Temp/cciiaaaa.s:199    .text:00000210 $d
-C:\Users\Srdjan\AppData\Local\Temp/cciiaaaa.s:262    .text:00000220 handle_mavlink_message
-C:\Users\Srdjan\AppData\Local\Temp/cciiaaaa.s:266    .text:00000220 $a
-C:\Users\Srdjan\AppData\Local\Temp/cciiaaaa.s:684    .text:00000878 $d
-C:\Users\Srdjan\AppData\Local\Temp/cciiaaaa.s:694    .text:0000089c $a
-C:\Users\Srdjan\AppData\Local\Temp/cciiaaaa.s:1393   .text:00001320 $d
-C:\Users\Srdjan\AppData\Local\Temp/cciiaaaa.s:3524   .bss:00000454 m_mavlink_status.2036
-C:\Users\Srdjan\AppData\Local\Temp/cciiaaaa.s:3527   .bss:000004a4 m_parameter_i
+C:\Users\Srdjan\AppData\Local\Temp/ccCuaaaa.s:56     .text:00000078 mavlink_send_uart
+C:\Users\Srdjan\AppData\Local\Temp/ccCuaaaa.s:60     .text:00000078 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccCuaaaa.s:119    .text:00000120 execute_action
+C:\Users\Srdjan\AppData\Local\Temp/ccCuaaaa.s:131    .text:00000138 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccCuaaaa.s:152    .text:00000188 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccCuaaaa.s:199    .text:00000210 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccCuaaaa.s:262    .text:00000220 handle_mavlink_message
+C:\Users\Srdjan\AppData\Local\Temp/ccCuaaaa.s:266    .text:00000220 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccCuaaaa.s:684    .text:00000878 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccCuaaaa.s:694    .text:0000089c $a
+C:\Users\Srdjan\AppData\Local\Temp/ccCuaaaa.s:1393   .text:00001320 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccCuaaaa.s:3524   .bss:00000454 m_mavlink_status.2036
+C:\Users\Srdjan\AppData\Local\Temp/ccCuaaaa.s:3527   .bss:000004a4 m_parameter_i
                             *COM*:00000008 mavlink_system
-C:\Users\Srdjan\AppData\Local\Temp/cciiaaaa.s:1411   .text:00001364 $a
-C:\Users\Srdjan\AppData\Local\Temp/cciiaaaa.s:2296   .text:00002078 $d
-C:\Users\Srdjan\AppData\Local\Temp/cciiaaaa.s:2309   .text:00002098 communication_receive
-C:\Users\Srdjan\AppData\Local\Temp/cciiaaaa.s:2313   .text:00002098 $a
-C:\Users\Srdjan\AppData\Local\Temp/cciiaaaa.s:2386   .text:00002198 $d
-C:\Users\Srdjan\AppData\Local\Temp/cciiaaaa.s:2397   .text:000021c0 $a
-C:\Users\Srdjan\AppData\Local\Temp/cciiaaaa.s:2451   .text:00002284 $d
-C:\Users\Srdjan\AppData\Local\Temp/cciiaaaa.s:2462   .text:000022ac $a
-C:\Users\Srdjan\AppData\Local\Temp/cciiaaaa.s:3263   .text:00002ea4 $d
-C:\Users\Srdjan\AppData\Local\Temp/cciiaaaa.s:3521   .bss:00000034 m_mavlink_message.2151
-C:\Users\Srdjan\AppData\Local\Temp/cciiaaaa.s:3518   .bss:00000032 gps_i.19345
-C:\Users\Srdjan\AppData\Local\Temp/cciiaaaa.s:3516   .bss:00000000 gps_chars.19346
-C:\Users\Srdjan\AppData\Local\Temp/cciiaaaa.s:3281   .text:00002edc communication_queued_send
-C:\Users\Srdjan\AppData\Local\Temp/cciiaaaa.s:3285   .text:00002edc $a
-C:\Users\Srdjan\AppData\Local\Temp/cciiaaaa.s:3508   .text:0000322c $d
+C:\Users\Srdjan\AppData\Local\Temp/ccCuaaaa.s:1411   .text:00001364 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccCuaaaa.s:2296   .text:00002078 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccCuaaaa.s:2309   .text:00002098 communication_receive
+C:\Users\Srdjan\AppData\Local\Temp/ccCuaaaa.s:2313   .text:00002098 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccCuaaaa.s:2386   .text:00002198 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccCuaaaa.s:2397   .text:000021c0 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccCuaaaa.s:2451   .text:00002284 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccCuaaaa.s:2462   .text:000022ac $a
+C:\Users\Srdjan\AppData\Local\Temp/ccCuaaaa.s:3263   .text:00002ea4 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccCuaaaa.s:3521   .bss:00000034 m_mavlink_message.2151
+C:\Users\Srdjan\AppData\Local\Temp/ccCuaaaa.s:3518   .bss:00000032 gps_i.19345
+C:\Users\Srdjan\AppData\Local\Temp/ccCuaaaa.s:3516   .bss:00000000 gps_chars.19346
+C:\Users\Srdjan\AppData\Local\Temp/ccCuaaaa.s:3281   .text:00002edc communication_queued_send
+C:\Users\Srdjan\AppData\Local\Temp/ccCuaaaa.s:3285   .text:00002edc $a
+C:\Users\Srdjan\AppData\Local\Temp/ccCuaaaa.s:3508   .text:0000322c $d
                             *COM*:00000004 global_param_id
                             *COM*:00000004 state_fly_id
                             *COM*:00000001 gps_device_mode

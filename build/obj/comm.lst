@@ -148,16 +148,16 @@
  158              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 comm.c
-C:\Users\Srdjan\AppData\Local\Temp/cc69aaaa.s:6      .text:00000000 comm_check_free_space
-C:\Users\Srdjan\AppData\Local\Temp/cc69aaaa.s:10     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc69aaaa.s:35     .text:00000048 comm_send_ch
-C:\Users\Srdjan\AppData\Local\Temp/cc69aaaa.s:67     .text:000000a0 $d
+C:\Users\Srdjan\AppData\Local\Temp/cciwaaaa.s:6      .text:00000000 comm_check_free_space
+C:\Users\Srdjan\AppData\Local\Temp/cciwaaaa.s:10     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/cciwaaaa.s:35     .text:00000048 comm_send_ch
+C:\Users\Srdjan\AppData\Local\Temp/cciwaaaa.s:67     .text:000000a0 $d
                             *COM*:00000a1c global_data
-C:\Users\Srdjan\AppData\Local\Temp/cc69aaaa.s:72     .text:000000a4 comm_get_ch
-C:\Users\Srdjan\AppData\Local\Temp/cc69aaaa.s:76     .text:000000a4 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc69aaaa.s:95     .text:000000d4 comm_ch_available
-C:\Users\Srdjan\AppData\Local\Temp/cc69aaaa.s:121    .text:0000010c comm_init
-C:\Users\Srdjan\AppData\Local\Temp/cc69aaaa.s:152    .text:00000160 $d
+C:\Users\Srdjan\AppData\Local\Temp/cciwaaaa.s:72     .text:000000a4 comm_get_ch
+C:\Users\Srdjan\AppData\Local\Temp/cciwaaaa.s:76     .text:000000a4 $a
+C:\Users\Srdjan\AppData\Local\Temp/cciwaaaa.s:95     .text:000000d4 comm_ch_available
+C:\Users\Srdjan\AppData\Local\Temp/cciwaaaa.s:121    .text:0000010c comm_init
+C:\Users\Srdjan\AppData\Local\Temp/cciwaaaa.s:152    .text:00000160 $d
                             *COM*:00000008 mavlink_system
                             *COM*:00000004 global_param_id
                             *COM*:00000004 state_fly_id

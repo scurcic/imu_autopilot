@@ -659,31 +659,31 @@
  659              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 debug.c
-C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:6      .text:00000000 debug_message_init
-C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:12     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:17     .text:00000004 debug_message_buffer
-C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:58     .text:0000007c $d
-C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:642    .bss:00000051 m_debug_index_read
-C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:640    .bss:00000050 m_debug_index_write
-C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:647    .bss:00000054 m_debug_count
-C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:650    .bss:00000058 m_debug_buf_pointer
-C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:644    .bss:00000052 m_debug_was_full
-C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:67     .text:00000090 debug_message_buffer_sprintf
-C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:71     .text:00000090 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:85     .text:000000bc $d
-C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:653    .bss:00000098 m_debug_buf_int
-C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:91     .text:000000c4 debug_message_send_immediate
-C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:95     .text:000000c4 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:210    .text:0000026c $d
+C:\Users\Srdjan\AppData\Local\Temp/ccwPaaaa.s:6      .text:00000000 debug_message_init
+C:\Users\Srdjan\AppData\Local\Temp/ccwPaaaa.s:12     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccwPaaaa.s:17     .text:00000004 debug_message_buffer
+C:\Users\Srdjan\AppData\Local\Temp/ccwPaaaa.s:58     .text:0000007c $d
+C:\Users\Srdjan\AppData\Local\Temp/ccwPaaaa.s:642    .bss:00000051 m_debug_index_read
+C:\Users\Srdjan\AppData\Local\Temp/ccwPaaaa.s:640    .bss:00000050 m_debug_index_write
+C:\Users\Srdjan\AppData\Local\Temp/ccwPaaaa.s:647    .bss:00000054 m_debug_count
+C:\Users\Srdjan\AppData\Local\Temp/ccwPaaaa.s:650    .bss:00000058 m_debug_buf_pointer
+C:\Users\Srdjan\AppData\Local\Temp/ccwPaaaa.s:644    .bss:00000052 m_debug_was_full
+C:\Users\Srdjan\AppData\Local\Temp/ccwPaaaa.s:67     .text:00000090 debug_message_buffer_sprintf
+C:\Users\Srdjan\AppData\Local\Temp/ccwPaaaa.s:71     .text:00000090 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccwPaaaa.s:85     .text:000000bc $d
+C:\Users\Srdjan\AppData\Local\Temp/ccwPaaaa.s:653    .bss:00000098 m_debug_buf_int
+C:\Users\Srdjan\AppData\Local\Temp/ccwPaaaa.s:91     .text:000000c4 debug_message_send_immediate
+C:\Users\Srdjan\AppData\Local\Temp/ccwPaaaa.s:95     .text:000000c4 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccwPaaaa.s:210    .text:0000026c $d
                             *COM*:00000008 mavlink_system
-C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:638    .bss:00000000 m_mavlink_status.2028
-C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:217    .text:00000274 debug_vect
-C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:221    .text:00000274 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:422    .text:00000580 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccwPaaaa.s:638    .bss:00000000 m_mavlink_status.2028
+C:\Users\Srdjan\AppData\Local\Temp/ccwPaaaa.s:217    .text:00000274 debug_vect
+C:\Users\Srdjan\AppData\Local\Temp/ccwPaaaa.s:221    .text:00000274 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccwPaaaa.s:422    .text:00000580 $d
                             *COM*:00000a1c global_data
-C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:429    .text:0000058c debug_message_send_one
-C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:433    .text:0000058c $a
-C:\Users\Srdjan\AppData\Local\Temp/ccQraaaa.s:628    .text:00000870 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccwPaaaa.s:429    .text:0000058c debug_message_send_one
+C:\Users\Srdjan\AppData\Local\Temp/ccwPaaaa.s:433    .text:0000058c $a
+C:\Users\Srdjan\AppData\Local\Temp/ccwPaaaa.s:628    .text:00000870 $d
                             *COM*:00000004 global_param_id
                             *COM*:00000004 state_fly_id
 

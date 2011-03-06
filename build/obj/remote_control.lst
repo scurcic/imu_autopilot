@@ -257,9 +257,9 @@
  247              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 remote_control.c
-C:\Users\Srdjan\AppData\Local\Temp/ccCabaaa.s:25     .text:00000000 remote_control
-C:\Users\Srdjan\AppData\Local\Temp/ccCabaaa.s:29     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccCabaaa.s:226    .text:000002e0 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccUbaaaa.s:25     .text:00000000 remote_control
+C:\Users\Srdjan\AppData\Local\Temp/ccUbaaaa.s:29     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccUbaaaa.s:226    .text:000002e0 $d
                             *COM*:00000a1c global_data
                             *COM*:00000020 yaw_pos_controller
                             *COM*:00000020 yaw_speed_controller

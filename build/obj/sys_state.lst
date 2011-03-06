@@ -219,28 +219,28 @@
  220              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 sys_state.c
-C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:6      .text:00000000 sys_state_is_flying
-C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:11     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:23     .text:00000020 $d
+C:\Users\Srdjan\AppData\Local\Temp/cc8Gaaaa.s:6      .text:00000000 sys_state_is_flying
+C:\Users\Srdjan\AppData\Local\Temp/cc8Gaaaa.s:11     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc8Gaaaa.s:23     .text:00000020 $d
                             *COM*:00000a1c global_data
-C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:28     .text:00000024 sys_get_mode
-C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:33     .text:00000024 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:40     .text:00000030 $d
-C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:45     .text:00000034 sys_get_state
-C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:50     .text:00000034 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:57     .text:00000040 $d
-C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:62     .text:00000044 sys_set_type
-C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:67     .text:00000044 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:74     .text:00000050 $d
-C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:79     .text:00000054 sys_set_nav_mode
-C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:84     .text:00000054 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:91     .text:00000060 $d
-C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:101    .text:00000064 sys_set_state
-C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:105    .text:00000064 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:145    .text:000000f0 $d
-C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:160    .text:000000f8 sys_set_mode
-C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:164    .text:000000f8 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:212    .text:000001a0 $d
+C:\Users\Srdjan\AppData\Local\Temp/cc8Gaaaa.s:28     .text:00000024 sys_get_mode
+C:\Users\Srdjan\AppData\Local\Temp/cc8Gaaaa.s:33     .text:00000024 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc8Gaaaa.s:40     .text:00000030 $d
+C:\Users\Srdjan\AppData\Local\Temp/cc8Gaaaa.s:45     .text:00000034 sys_get_state
+C:\Users\Srdjan\AppData\Local\Temp/cc8Gaaaa.s:50     .text:00000034 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc8Gaaaa.s:57     .text:00000040 $d
+C:\Users\Srdjan\AppData\Local\Temp/cc8Gaaaa.s:62     .text:00000044 sys_set_type
+C:\Users\Srdjan\AppData\Local\Temp/cc8Gaaaa.s:67     .text:00000044 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc8Gaaaa.s:74     .text:00000050 $d
+C:\Users\Srdjan\AppData\Local\Temp/cc8Gaaaa.s:79     .text:00000054 sys_set_nav_mode
+C:\Users\Srdjan\AppData\Local\Temp/cc8Gaaaa.s:84     .text:00000054 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc8Gaaaa.s:91     .text:00000060 $d
+C:\Users\Srdjan\AppData\Local\Temp/cc8Gaaaa.s:101    .text:00000064 sys_set_state
+C:\Users\Srdjan\AppData\Local\Temp/cc8Gaaaa.s:105    .text:00000064 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc8Gaaaa.s:145    .text:000000f0 $d
+C:\Users\Srdjan\AppData\Local\Temp/cc8Gaaaa.s:160    .text:000000f8 sys_set_mode
+C:\Users\Srdjan\AppData\Local\Temp/cc8Gaaaa.s:164    .text:000000f8 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc8Gaaaa.s:212    .text:000001a0 $d
                             *COM*:00000008 mavlink_system
                             *COM*:00000004 global_param_id
                             *COM*:00000004 state_fly_id

@@ -93,10 +93,10 @@
  101              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 spi.c
-C:\Users\Srdjan\AppData\Local\Temp/ccq0aaaa.s:6      .text:00000000 spi_transmit
-C:\Users\Srdjan\AppData\Local\Temp/ccq0aaaa.s:10     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccq0aaaa.s:56     .text:0000009c spi_init
-C:\Users\Srdjan\AppData\Local\Temp/ccq0aaaa.s:80     .text:000000d4 spi_running
-C:\Users\Srdjan\AppData\Local\Temp/ccq0aaaa.s:92     .text:000000dc spi_number_of_packages_in_buffer
+C:\Users\Srdjan\AppData\Local\Temp/cciabaaa.s:6      .text:00000000 spi_transmit
+C:\Users\Srdjan\AppData\Local\Temp/cciabaaa.s:10     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/cciabaaa.s:56     .text:0000009c spi_init
+C:\Users\Srdjan\AppData\Local\Temp/cciabaaa.s:80     .text:000000d4 spi_running
+C:\Users\Srdjan\AppData\Local\Temp/cciabaaa.s:92     .text:000000dc spi_number_of_packages_in_buffer
 
 NO UNDEFINED SYMBOLS

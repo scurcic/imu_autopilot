@@ -42,10 +42,10 @@
   48              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 watchdog.c
-C:\Users\Srdjan\AppData\Local\Temp/cccXaaaa.s:6      .text:00000000 watchdog_kick
-C:\Users\Srdjan\AppData\Local\Temp/cccXaaaa.s:11     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/cccXaaaa.s:22     .text:00000018 watchdog_init
-C:\Users\Srdjan\AppData\Local\Temp/cccXaaaa.s:36     .text:00000028 watchdog_wait_reset
+C:\Users\Srdjan\AppData\Local\Temp/ccCSaaaa.s:6      .text:00000000 watchdog_kick
+C:\Users\Srdjan\AppData\Local\Temp/ccCSaaaa.s:11     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccCSaaaa.s:22     .text:00000018 watchdog_init
+C:\Users\Srdjan\AppData\Local\Temp/ccCSaaaa.s:36     .text:00000028 watchdog_wait_reset
                             *COM*:00000004 global_param_id
                             *COM*:00000004 state_fly_id
                             *COM*:00000a1c global_data

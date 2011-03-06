@@ -448,24 +448,24 @@
  454              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 attitude_observer.c
-C:\Users\Srdjan\AppData\Local\Temp/ccA1aaaa.s:6      .text:00000000 attitude_observer_init
-C:\Users\Srdjan\AppData\Local\Temp/ccA1aaaa.s:10     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccA1aaaa.s:29     .text:00000040 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccA1aaaa.s:445    .bss:00000000 state_accel
-C:\Users\Srdjan\AppData\Local\Temp/ccA1aaaa.s:448    .bss:0000000c state_magnet
-C:\Users\Srdjan\AppData\Local\Temp/ccA1aaaa.s:38     .text:00000048 attitude_observer_predict
-C:\Users\Srdjan\AppData\Local\Temp/ccA1aaaa.s:42     .text:00000048 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccA1aaaa.s:157    .text:00000208 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccA1aaaa.s:165    .text:00000214 attitude_observer_correct_accel
-C:\Users\Srdjan\AppData\Local\Temp/ccA1aaaa.s:169    .text:00000214 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccA1aaaa.s:228    .text:000002f4 $d
+C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:6      .text:00000000 attitude_observer_init
+C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:10     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:29     .text:00000040 $d
+C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:445    .bss:00000000 state_accel
+C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:448    .bss:0000000c state_magnet
+C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:38     .text:00000048 attitude_observer_predict
+C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:42     .text:00000048 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:157    .text:00000208 $d
+C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:165    .text:00000214 attitude_observer_correct_accel
+C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:169    .text:00000214 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:228    .text:000002f4 $d
                             *COM*:00000a1c global_data
-C:\Users\Srdjan\AppData\Local\Temp/ccA1aaaa.s:234    .text:000002fc attitude_observer_correct_magnet
-C:\Users\Srdjan\AppData\Local\Temp/ccA1aaaa.s:238    .text:000002fc $a
-C:\Users\Srdjan\AppData\Local\Temp/ccA1aaaa.s:291    .text:000003c4 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccA1aaaa.s:304    .text:000003d0 attitude_observer_get_angles
-C:\Users\Srdjan\AppData\Local\Temp/ccA1aaaa.s:308    .text:000003d0 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccA1aaaa.s:440    .text:000005d4 $d
+C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:234    .text:000002fc attitude_observer_correct_magnet
+C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:238    .text:000002fc $a
+C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:291    .text:000003c4 $d
+C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:304    .text:000003d0 attitude_observer_get_angles
+C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:308    .text:000003d0 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc00aaaa.s:440    .text:000005d4 $d
                             *COM*:00000004 global_param_id
                             *COM*:00000004 state_fly_id
                             *COM*:00000008 mavlink_system

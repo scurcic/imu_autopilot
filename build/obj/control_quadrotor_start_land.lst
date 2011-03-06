@@ -441,15 +441,15 @@
  418              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 control_quadrotor_start_land.c
-C:\Users\Srdjan\AppData\Local\Temp/ccCQaaaa.s:21     .text:00000000 quadrotor_start_land_motor_thrust
-C:\Users\Srdjan\AppData\Local\Temp/ccCQaaaa.s:25     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccCQaaaa.s:107    .text:00000128 $d
+C:\Users\Srdjan\AppData\Local\Temp/cc2Faaaa.s:21     .text:00000000 quadrotor_start_land_motor_thrust
+C:\Users\Srdjan\AppData\Local\Temp/cc2Faaaa.s:25     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc2Faaaa.s:107    .text:00000128 $d
                             *COM*:00000a1c global_data
-C:\Users\Srdjan\AppData\Local\Temp/ccCQaaaa.s:133    .text:00000134 quadrotor_start_land_handler
-C:\Users\Srdjan\AppData\Local\Temp/ccCQaaaa.s:137    .text:00000134 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccCQaaaa.s:370    .text:00000494 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccCQaaaa.s:402    .bss:00000004 landing_wait_counter.18068
-C:\Users\Srdjan\AppData\Local\Temp/ccCQaaaa.s:405    .bss:00000008 initial_wait_counter.18067
+C:\Users\Srdjan\AppData\Local\Temp/cc2Faaaa.s:133    .text:00000134 quadrotor_start_land_handler
+C:\Users\Srdjan\AppData\Local\Temp/cc2Faaaa.s:137    .text:00000134 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc2Faaaa.s:370    .text:00000494 $d
+C:\Users\Srdjan\AppData\Local\Temp/cc2Faaaa.s:402    .bss:00000004 landing_wait_counter.18068
+C:\Users\Srdjan\AppData\Local\Temp/cc2Faaaa.s:405    .bss:00000008 initial_wait_counter.18067
                             *COM*:00000020 roll_controller
                             *COM*:00000020 x_axis_controller
                             *COM*:00000020 y_axis_controller
@@ -457,7 +457,7 @@ C:\Users\Srdjan\AppData\Local\Temp/ccCQaaaa.s:405    .bss:00000008 initial_wait_
                             *COM*:00000020 yaw_pos_controller
                             *COM*:00000020 yaw_speed_controller
                             *COM*:00000020 nick_controller
-C:\Users\Srdjan\AppData\Local\Temp/ccCQaaaa.s:399    .bss:00000000 landing_counter.18069
+C:\Users\Srdjan\AppData\Local\Temp/cc2Faaaa.s:399    .bss:00000000 landing_counter.18069
                             *COM*:00000004 global_param_id
                             *COM*:00000004 state_fly_id
                             *COM*:00000008 mavlink_system

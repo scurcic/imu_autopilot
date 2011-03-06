@@ -273,20 +273,20 @@
  275              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 gps_transformations.c
-C:\Users\Srdjan\AppData\Local\Temp/ccGWaaaa.s:10     .text:00000000 gps_get_local_velocity
-C:\Users\Srdjan\AppData\Local\Temp/ccGWaaaa.s:14     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccGWaaaa.s:68     .text:000000cc $d
-C:\Users\Srdjan\AppData\Local\Temp/ccGWaaaa.s:84     .text:000000dc gps_set_local_origin
-C:\Users\Srdjan\AppData\Local\Temp/ccGWaaaa.s:88     .text:000000dc $a
-C:\Users\Srdjan\AppData\Local\Temp/ccGWaaaa.s:137    .text:00000194 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccGWaaaa.s:268    .bss:00000008 gps_local_origin
-C:\Users\Srdjan\AppData\Local\Temp/ccGWaaaa.s:265    .bss:00000004 gps_cos_origin_lat
-C:\Users\Srdjan\AppData\Local\Temp/ccGWaaaa.s:262    .bss:00000000 gps_local_origin_init
-C:\Users\Srdjan\AppData\Local\Temp/ccGWaaaa.s:152    .text:000001b8 gps_get_local_position
-C:\Users\Srdjan\AppData\Local\Temp/ccGWaaaa.s:156    .text:000001b8 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccGWaaaa.s:243    .text:00000300 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccGWaaaa.s:259    .rodata:00000000 r_earth
-C:\Users\Srdjan\AppData\Local\Temp/ccGWaaaa.s:260    .rodata:00000000 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccaebaaa.s:10     .text:00000000 gps_get_local_velocity
+C:\Users\Srdjan\AppData\Local\Temp/ccaebaaa.s:14     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccaebaaa.s:68     .text:000000cc $d
+C:\Users\Srdjan\AppData\Local\Temp/ccaebaaa.s:84     .text:000000dc gps_set_local_origin
+C:\Users\Srdjan\AppData\Local\Temp/ccaebaaa.s:88     .text:000000dc $a
+C:\Users\Srdjan\AppData\Local\Temp/ccaebaaa.s:137    .text:00000194 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccaebaaa.s:268    .bss:00000008 gps_local_origin
+C:\Users\Srdjan\AppData\Local\Temp/ccaebaaa.s:265    .bss:00000004 gps_cos_origin_lat
+C:\Users\Srdjan\AppData\Local\Temp/ccaebaaa.s:262    .bss:00000000 gps_local_origin_init
+C:\Users\Srdjan\AppData\Local\Temp/ccaebaaa.s:152    .text:000001b8 gps_get_local_position
+C:\Users\Srdjan\AppData\Local\Temp/ccaebaaa.s:156    .text:000001b8 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccaebaaa.s:243    .text:00000300 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccaebaaa.s:259    .rodata:00000000 r_earth
+C:\Users\Srdjan\AppData\Local\Temp/ccaebaaa.s:260    .rodata:00000000 $d
                             *COM*:00000004 global_param_id
                             *COM*:00000004 state_fly_id
                             *COM*:00000a1c global_data

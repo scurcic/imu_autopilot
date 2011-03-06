@@ -6604,13 +6604,13 @@
  6610              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 lookup_sin_cos.c
-C:\Users\Srdjan\AppData\Local\Temp/ccEZaaaa.s:17     .text:00000000 lookup_sin
-C:\Users\Srdjan\AppData\Local\Temp/ccEZaaaa.s:21     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccEZaaaa.s:138    .text:000001b0 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccEZaaaa.s:175    .rodata:00000000 lookup_table_sin
-C:\Users\Srdjan\AppData\Local\Temp/ccEZaaaa.s:153    .text:000001dc lookup_cos
-C:\Users\Srdjan\AppData\Local\Temp/ccEZaaaa.s:157    .text:000001dc $a
-C:\Users\Srdjan\AppData\Local\Temp/ccEZaaaa.s:168    .text:000001fc $d
+C:\Users\Srdjan\AppData\Local\Temp/ccA9aaaa.s:17     .text:00000000 lookup_sin
+C:\Users\Srdjan\AppData\Local\Temp/ccA9aaaa.s:21     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccA9aaaa.s:138    .text:000001b0 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccA9aaaa.s:175    .rodata:00000000 lookup_table_sin
+C:\Users\Srdjan\AppData\Local\Temp/ccA9aaaa.s:153    .text:000001dc lookup_cos
+C:\Users\Srdjan\AppData\Local\Temp/ccA9aaaa.s:157    .text:000001dc $a
+C:\Users\Srdjan\AppData\Local\Temp/ccA9aaaa.s:168    .text:000001fc $d
 
 UNDEFINED SYMBOLS
 __extendsfdf2

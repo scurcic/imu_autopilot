@@ -631,16 +631,16 @@
  610 0015 000000   		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 mainloop_ground_car.c
-C:\Users\Srdjan\AppData\Local\Temp/ccWMaaaa.s:37     .text:00000000 main_loop_ground_car
-C:\Users\Srdjan\AppData\Local\Temp/ccWMaaaa.s:41     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccWMaaaa.s:361    .text:000004b8 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccURaaaa.s:37     .text:00000000 main_loop_ground_car
+C:\Users\Srdjan\AppData\Local\Temp/ccURaaaa.s:41     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccURaaaa.s:361    .text:000004b8 $d
                             *COM*:00000a1c global_data
-C:\Users\Srdjan\AppData\Local\Temp/ccWMaaaa.s:591    .bss:00000014 mag_count.20771
-C:\Users\Srdjan\AppData\Local\Temp/ccWMaaaa.s:589    .bss:00000008 att.20772
+C:\Users\Srdjan\AppData\Local\Temp/ccURaaaa.s:591    .bss:00000014 mag_count.20771
+C:\Users\Srdjan\AppData\Local\Temp/ccURaaaa.s:589    .bss:00000008 att.20772
                             *COM*:00000001 bmp085_measurement_mode
-C:\Users\Srdjan\AppData\Local\Temp/ccWMaaaa.s:586    .bss:00000000 last_mainloop_idle
-C:\Users\Srdjan\AppData\Local\Temp/ccWMaaaa.s:389    .text:00000524 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccWMaaaa.s:572    .text:000007b8 main_init_ground_car
+C:\Users\Srdjan\AppData\Local\Temp/ccURaaaa.s:586    .bss:00000000 last_mainloop_idle
+C:\Users\Srdjan\AppData\Local\Temp/ccURaaaa.s:389    .text:00000524 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccURaaaa.s:572    .text:000007b8 main_init_ground_car
                              .bss:00000000 $d
                             *COM*:00000008 mavlink_system
                             *COM*:00000004 global_param_id

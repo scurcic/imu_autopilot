@@ -121,14 +121,14 @@
  119              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 simple_altitude_moving_average.c
-C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:14     .text:00000000 simple_altitude_moving_average
-C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:18     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:90     .text:00000110 $d
-C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:114    .bss:000000d4 height_prev.3172
-C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:102    .bss:00000000 index_lowpass.3176
-C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:108    .bss:00000008 height_array.3174
-C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:105    .bss:00000004 lowpass_height.3175
-C:\Users\Srdjan\AppData\Local\Temp/cci8aaaa.s:111    .bss:000000d0 height_low_prev.3173
+C:\Users\Srdjan\AppData\Local\Temp/cccTaaaa.s:14     .text:00000000 simple_altitude_moving_average
+C:\Users\Srdjan\AppData\Local\Temp/cccTaaaa.s:18     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/cccTaaaa.s:90     .text:00000110 $d
+C:\Users\Srdjan\AppData\Local\Temp/cccTaaaa.s:114    .bss:000000d4 height_prev.3172
+C:\Users\Srdjan\AppData\Local\Temp/cccTaaaa.s:102    .bss:00000000 index_lowpass.3176
+C:\Users\Srdjan\AppData\Local\Temp/cccTaaaa.s:108    .bss:00000008 height_array.3174
+C:\Users\Srdjan\AppData\Local\Temp/cccTaaaa.s:105    .bss:00000004 lowpass_height.3175
+C:\Users\Srdjan\AppData\Local\Temp/cccTaaaa.s:111    .bss:000000d0 height_low_prev.3173
                             *COM*:00000004 global_param_id
                             *COM*:00000004 state_fly_id
                             *COM*:00000a1c global_data
