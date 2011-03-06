@@ -38,10 +38,10 @@
   39              	.L6:
   40              		.align	2
   41              	.L5:
-  42 0070 00000000 		.word	MarkerPos.3172
+  42 0070 00000000 		.word	MarkerPos.3192
   44              		.section	.rodata
   45              		.align	2
-  48              	MarkerPos.3172:
+  48              	MarkerPos.3192:
   49 0000 00000000 		.word	0
   50 0004 00000000 		.word	0
   51 0008 00000000 		.word	0
@@ -68,18 +68,18 @@
   72 005c 6F1283BE 		.word	-1098706321
   73              		.comm	global_param_id,4,4
   74              		.comm	state_fly_id,4,4
-  75              		.comm	global_data,2588,4
+  75              		.comm	global_data,2684,4
   76              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 global_pos.c
-C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:7      .text:00000000 global_pos
-C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:11     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:42     .text:00000070 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:48     .rodata:00000000 MarkerPos.3172
-C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:49     .rodata:00000000 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccUvaaaa.s:7      .text:00000000 global_pos
+C:\Users\Srdjan\AppData\Local\Temp/ccUvaaaa.s:11     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccUvaaaa.s:42     .text:00000070 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccUvaaaa.s:48     .rodata:00000000 MarkerPos.3192
+C:\Users\Srdjan\AppData\Local\Temp/ccUvaaaa.s:49     .rodata:00000000 $d
                             *COM*:00000004 global_param_id
                             *COM*:00000004 state_fly_id
-                            *COM*:00000a1c global_data
+                            *COM*:00000a7c global_data
 
 UNDEFINED SYMBOLS
 __addsf3

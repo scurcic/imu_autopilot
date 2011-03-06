@@ -164,8 +164,8 @@
  166              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 least_square.c
-C:\Users\Srdjan\AppData\Local\Temp/cc2Daaaa.s:11     .text:00000000 least_square
-C:\Users\Srdjan\AppData\Local\Temp/cc2Daaaa.s:15     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccy4aaaa.s:11     .text:00000000 least_square
+C:\Users\Srdjan\AppData\Local\Temp/ccy4aaaa.s:15     .text:00000000 $a
 
 UNDEFINED SYMBOLS
 __floatsisf

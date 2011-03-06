@@ -168,23 +168,23 @@
  178              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 ppm.c
-C:\Users\Srdjan\AppData\Local\Temp/ccIHaaaa.s:6      .text:00000000 ppm_is_valid
-C:\Users\Srdjan\AppData\Local\Temp/ccIHaaaa.s:11     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccIHaaaa.s:18     .text:0000000c $d
+C:\Users\Srdjan\AppData\Local\Temp/ccs1aaaa.s:6      .text:00000000 ppm_is_valid
+C:\Users\Srdjan\AppData\Local\Temp/ccs1aaaa.s:11     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccs1aaaa.s:18     .text:0000000c $d
                             *COM*:00000004 ppm_valid
-C:\Users\Srdjan\AppData\Local\Temp/ccIHaaaa.s:28     .text:00000010 ppm_get_channel
-C:\Users\Srdjan\AppData\Local\Temp/ccIHaaaa.s:32     .text:00000010 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccIHaaaa.s:63     .text:0000007c $d
+C:\Users\Srdjan\AppData\Local\Temp/ccs1aaaa.s:28     .text:00000010 ppm_get_channel
+C:\Users\Srdjan\AppData\Local\Temp/ccs1aaaa.s:32     .text:00000010 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccs1aaaa.s:63     .text:0000007c $d
                             *COM*:00000024 ppm_pulses
-C:\Users\Srdjan\AppData\Local\Temp/ccIHaaaa.s:68     .text:00000080 ppm_init
-C:\Users\Srdjan\AppData\Local\Temp/ccIHaaaa.s:73     .text:00000080 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccIHaaaa.s:101    .text:000000dc $d
-C:\Users\Srdjan\AppData\Local\Temp/ccIHaaaa.s:107    .text:000000e4 PPM_ISR
-C:\Users\Srdjan\AppData\Local\Temp/ccIHaaaa.s:111    .text:000000e4 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccIHaaaa.s:161    .text:00000190 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccIHaaaa.s:168    .bss:00000000 last.1602
-C:\Users\Srdjan\AppData\Local\Temp/ccIHaaaa.s:174    .data:00000000 state.1601
-C:\Users\Srdjan\AppData\Local\Temp/ccIHaaaa.s:175    .data:00000000 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccs1aaaa.s:68     .text:00000080 ppm_init
+C:\Users\Srdjan\AppData\Local\Temp/ccs1aaaa.s:73     .text:00000080 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccs1aaaa.s:101    .text:000000dc $d
+C:\Users\Srdjan\AppData\Local\Temp/ccs1aaaa.s:107    .text:000000e4 PPM_ISR
+C:\Users\Srdjan\AppData\Local\Temp/ccs1aaaa.s:111    .text:000000e4 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccs1aaaa.s:161    .text:00000190 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccs1aaaa.s:168    .bss:00000000 last.1602
+C:\Users\Srdjan\AppData\Local\Temp/ccs1aaaa.s:174    .data:00000000 state.1601
+C:\Users\Srdjan\AppData\Local\Temp/ccs1aaaa.s:175    .data:00000000 $d
 
 UNDEFINED SYMBOLS
 __floatsidf

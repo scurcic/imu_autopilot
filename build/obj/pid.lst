@@ -142,18 +142,18 @@
  148              		.comm	mavlink_system,8,4
  149              		.comm	global_param_id,4,4
  150              		.comm	state_fly_id,4,4
- 151              		.comm	global_data,2588,4
+ 151              		.comm	global_data,2684,4
  152              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 pid.c
-C:\Users\Srdjan\AppData\Local\Temp/cc6taaaa.s:6      .text:00000000 pid_init
-C:\Users\Srdjan\AppData\Local\Temp/cc6taaaa.s:10     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc6taaaa.s:33     .text:0000004c pid_set_parameters
-C:\Users\Srdjan\AppData\Local\Temp/cc6taaaa.s:56     .text:00000064 pid_calculate
+C:\Users\Srdjan\AppData\Local\Temp/ccwraaaa.s:6      .text:00000000 pid_init
+C:\Users\Srdjan\AppData\Local\Temp/ccwraaaa.s:10     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccwraaaa.s:33     .text:0000004c pid_set_parameters
+C:\Users\Srdjan\AppData\Local\Temp/ccwraaaa.s:56     .text:00000064 pid_calculate
                             *COM*:00000008 mavlink_system
                             *COM*:00000004 global_param_id
                             *COM*:00000004 state_fly_id
-                            *COM*:00000a1c global_data
+                            *COM*:00000a7c global_data
 
 UNDEFINED SYMBOLS
 __subsf3

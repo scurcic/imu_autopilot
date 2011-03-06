@@ -8,16 +8,16 @@
    9              		@ frame_needed = 0, uses_anonymous_args = 0
   10 0000 04E02DE5 		str	lr, [sp, #-4]!
   11 0004 30D04DE2 		sub	sp, sp, #48
-  12 0008 0030A0E3 		mov	r3, #0
-  13 000c 0120A0E3 		mov	r2, #1
-  14 0010 2200CDE5 		strb	r0, [sp, #34]
+  12 0008 0020A0E3 		mov	r2, #0
+  13 000c 2200CDE5 		strb	r0, [sp, #34]
+  14 0010 0130A0E3 		mov	r3, #1
   15 0014 0D00A0E1 		mov	r0, sp
   16 0018 0010CDE5 		strb	r1, [sp, #0]
-  17 001c 2320CDE5 		strb	r2, [sp, #35]
-  18 0020 28308DE5 		str	r3, [sp, #40]
-  19 0024 2020CDE5 		strb	r2, [sp, #32]
-  20 0028 2130CDE5 		strb	r3, [sp, #33]
-  21 002c 2430CDE5 		strb	r3, [sp, #36]
+  17 001c 2030CDE5 		strb	r3, [sp, #32]
+  18 0020 28208DE5 		str	r2, [sp, #40]
+  19 0024 2120CDE5 		strb	r2, [sp, #33]
+  20 0028 2320CDE5 		strb	r2, [sp, #35]
+  21 002c 2420CDE5 		strb	r2, [sp, #36]
   22 0030 FEFFFFEB 		bl	i2c_op
   23 0034 30D08DE2 		add	sp, sp, #48
   24 0038 04E09DE4 		ldr	lr, [sp], #4
@@ -26,8 +26,8 @@
   28              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 i2c_motor_mikrokopter.c
-C:\Users\Srdjan\AppData\Local\Temp/ccWMaaaa.s:6      .text:00000000 motor_i2c_set_pwm
-C:\Users\Srdjan\AppData\Local\Temp/ccWMaaaa.s:10     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccq6aaaa.s:6      .text:00000000 motor_i2c_set_pwm
+C:\Users\Srdjan\AppData\Local\Temp/ccq6aaaa.s:10     .text:00000000 $a
                             *COM*:00000008 mavlink_system
 
 UNDEFINED SYMBOLS

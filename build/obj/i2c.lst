@@ -428,7 +428,7 @@
  389 0440 0C00000A 		beq	.L83
  390              	.L47:
  391 0444 04069FE5 		ldr	r0, .L86+28
- 392 0448 272DA0E3 		mov	r2, #2496
+ 392 0448 A22EA0E3 		mov	r2, #2592
  393 044c 082082E2 		add	r2, r2, #8
  394 0450 B010D6E1 		ldrh	r1, [r6, #0]
  395 0454 B23090E1 		ldrh	r3, [r0, r2]
@@ -977,7 +977,7 @@
  908 0b64 0C00000A 		beq	.L133
  909              	.L97:
  910 0b68 84069FE5 		ldr	r0, .L136+28
- 911 0b6c 272DA0E3 		mov	r2, #2496
+ 911 0b6c A22EA0E3 		mov	r2, #2592
  912 0b70 0A2082E2 		add	r2, r2, #10
  913 0b74 B010D6E1 		ldrh	r1, [r6, #0]
  914 0b78 B23090E1 		ldrh	r3, [r0, r2]
@@ -1456,7 +1456,7 @@
  1400              		.comm	mavlink_system,8,4
  1401              		.comm	global_param_id,4,4
  1402              		.comm	state_fly_id,4,4
- 1403              		.comm	global_data,2588,4
+ 1403              		.comm	global_data,2684,4
  1404              		.comm	package_buffer0,768,4
  1405              		.comm	package_buffer1,768,4
  1406              		.comm	i2c_package_buffer0_insert_idx,1,1
@@ -1472,45 +1472,45 @@
  1416              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 i2c.c
-C:\Users\Srdjan\AppData\Local\Temp/cc2Daaaa.s:6      .text:00000000 i2c_init
-C:\Users\Srdjan\AppData\Local\Temp/cc2Daaaa.s:10     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc2Daaaa.s:68     .text:000000dc $d
-C:\Users\Srdjan\AppData\Local\Temp/cc2Daaaa.s:322    .text:00000354 I2C0_ISR
+C:\Users\Srdjan\AppData\Local\Temp/cciGaaaa.s:6      .text:00000000 i2c_init
+C:\Users\Srdjan\AppData\Local\Temp/cciGaaaa.s:10     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/cciGaaaa.s:68     .text:000000dc $d
+C:\Users\Srdjan\AppData\Local\Temp/cciGaaaa.s:322    .text:00000354 I2C0_ISR
                             *COM*:00000001 i2c1_busy
                             *COM*:00000001 i2c_package_buffer0_insert_idx
                             *COM*:00000001 i2c_package_buffer0_current_idx
-C:\Users\Srdjan\AppData\Local\Temp/cc2Daaaa.s:841    .text:00000a78 I2C1_ISR
+C:\Users\Srdjan\AppData\Local\Temp/cciGaaaa.s:841    .text:00000a78 I2C1_ISR
                             *COM*:00000001 i2c_package_buffer1_insert_idx
                             *COM*:00000001 i2c_package_buffer1_current_idx
                             *COM*:00000001 i2c0_busy
-C:\Users\Srdjan\AppData\Local\Temp/cc2Daaaa.s:88     .text:000000fc i2c0_op
-C:\Users\Srdjan\AppData\Local\Temp/cc2Daaaa.s:92     .text:000000fc $a
-C:\Users\Srdjan\AppData\Local\Temp/cc2Daaaa.s:158    .text:000001e8 $d
+C:\Users\Srdjan\AppData\Local\Temp/cciGaaaa.s:88     .text:000000fc i2c0_op
+C:\Users\Srdjan\AppData\Local\Temp/cciGaaaa.s:92     .text:000000fc $a
+C:\Users\Srdjan\AppData\Local\Temp/cciGaaaa.s:158    .text:000001e8 $d
                             *COM*:00000300 package_buffer0
                             *COM*:00000002 error_counter0
-C:\Users\Srdjan\AppData\Local\Temp/cc2Daaaa.s:1386   .bss:0000000c i2c0_reject_count
-C:\Users\Srdjan\AppData\Local\Temp/cc2Daaaa.s:178    .text:00000208 i2c1_op
-C:\Users\Srdjan\AppData\Local\Temp/cc2Daaaa.s:182    .text:00000208 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc2Daaaa.s:248    .text:000002f4 $d
+C:\Users\Srdjan\AppData\Local\Temp/cciGaaaa.s:1386   .bss:0000000c i2c0_reject_count
+C:\Users\Srdjan\AppData\Local\Temp/cciGaaaa.s:178    .text:00000208 i2c1_op
+C:\Users\Srdjan\AppData\Local\Temp/cciGaaaa.s:182    .text:00000208 $a
+C:\Users\Srdjan\AppData\Local\Temp/cciGaaaa.s:248    .text:000002f4 $d
                             *COM*:00000300 package_buffer1
                             *COM*:00000002 error_counter1
-C:\Users\Srdjan\AppData\Local\Temp/cc2Daaaa.s:1368   .bss:00000000 i2c1_reject_count
-C:\Users\Srdjan\AppData\Local\Temp/cc2Daaaa.s:260    .text:00000314 i2c_op
-C:\Users\Srdjan\AppData\Local\Temp/cc2Daaaa.s:265    .text:00000314 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc2Daaaa.s:278    .text:00000330 i2c_write_read
-C:\Users\Srdjan\AppData\Local\Temp/cc2Daaaa.s:414    .text:00000494 $d
-C:\Users\Srdjan\AppData\Local\Temp/cc2Daaaa.s:496    .text:000005d8 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc2Daaaa.s:794    .text:00000a34 $d
-C:\Users\Srdjan\AppData\Local\Temp/cc2Daaaa.s:1392   .bss:00000010 i2c0_permanent_error_count
-                            *COM*:00000a1c global_data
+C:\Users\Srdjan\AppData\Local\Temp/cciGaaaa.s:1368   .bss:00000000 i2c1_reject_count
+C:\Users\Srdjan\AppData\Local\Temp/cciGaaaa.s:260    .text:00000314 i2c_op
+C:\Users\Srdjan\AppData\Local\Temp/cciGaaaa.s:265    .text:00000314 $a
+C:\Users\Srdjan\AppData\Local\Temp/cciGaaaa.s:278    .text:00000330 i2c_write_read
+C:\Users\Srdjan\AppData\Local\Temp/cciGaaaa.s:414    .text:00000494 $d
+C:\Users\Srdjan\AppData\Local\Temp/cciGaaaa.s:496    .text:000005d8 $a
+C:\Users\Srdjan\AppData\Local\Temp/cciGaaaa.s:794    .text:00000a34 $d
+C:\Users\Srdjan\AppData\Local\Temp/cciGaaaa.s:1392   .bss:00000010 i2c0_permanent_error_count
+                            *COM*:00000a7c global_data
                             *COM*:00000001 current_data_byte_i2c0
-C:\Users\Srdjan\AppData\Local\Temp/cc2Daaaa.s:1398   .bss:00000014 i2c0stat_prior_state
-C:\Users\Srdjan\AppData\Local\Temp/cc2Daaaa.s:846    .text:00000a78 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc2Daaaa.s:933    .text:00000bb8 $d
-C:\Users\Srdjan\AppData\Local\Temp/cc2Daaaa.s:1015   .text:00000cfc $a
-C:\Users\Srdjan\AppData\Local\Temp/cc2Daaaa.s:1345   .text:000011d8 $d
-C:\Users\Srdjan\AppData\Local\Temp/cc2Daaaa.s:1374   .bss:00000004 i2c1_permanent_error_count
-C:\Users\Srdjan\AppData\Local\Temp/cc2Daaaa.s:1380   .bss:00000008 i2c1stat_prior_state
+C:\Users\Srdjan\AppData\Local\Temp/cciGaaaa.s:1398   .bss:00000014 i2c0stat_prior_state
+C:\Users\Srdjan\AppData\Local\Temp/cciGaaaa.s:846    .text:00000a78 $a
+C:\Users\Srdjan\AppData\Local\Temp/cciGaaaa.s:933    .text:00000bb8 $d
+C:\Users\Srdjan\AppData\Local\Temp/cciGaaaa.s:1015   .text:00000cfc $a
+C:\Users\Srdjan\AppData\Local\Temp/cciGaaaa.s:1345   .text:000011d8 $d
+C:\Users\Srdjan\AppData\Local\Temp/cciGaaaa.s:1374   .bss:00000004 i2c1_permanent_error_count
+C:\Users\Srdjan\AppData\Local\Temp/cciGaaaa.s:1380   .bss:00000008 i2c1stat_prior_state
                             *COM*:00000001 current_data_byte_i2c1
                             *COM*:00000008 mavlink_system
                             *COM*:00000004 global_param_id

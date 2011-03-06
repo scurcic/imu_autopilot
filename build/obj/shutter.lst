@@ -39,13 +39,13 @@
   42 0044 000054E3 		cmp	r4, #0
   43 0048 0400A0E1 		mov	r0, r4
   44 004c 011004E2 		and	r1, r4, #1
-  45 0050 BC2383E5 		str	r2, [r3, #956]	@ float
+  45 0050 D02383E5 		str	r2, [r3, #976]	@ float
   46 0054 0F0000BA 		blt	.L11
   47              	.L14:
   48 0058 FEFFFFEB 		bl	__floatsisf
   49              	.L10:
   50 005c 48309FE5 		ldr	r3, .L15
-  51 0060 C00383E5 		str	r0, [r3, #960]	@ float
+  51 0060 D40383E5 		str	r0, [r3, #980]	@ float
   52 0064 1040BDE8 		ldmfd	sp!, {r4, lr}
   53 0068 1EFF2FE1 		bx	lr
   54              	.L9:
@@ -58,7 +58,7 @@
   61 0084 000054E3 		cmp	r4, #0
   62 0088 0400A0E1 		mov	r0, r4
   63 008c 011004E2 		and	r1, r4, #1
-  64 0090 BC2383E5 		str	r2, [r3, #956]	@ float
+  64 0090 D02383E5 		str	r2, [r3, #976]	@ float
   65 0094 EFFFFFAA 		bge	.L14
   66              	.L11:
   67 0098 A40081E1 		orr	r0, r1, r4, lsr #1
@@ -104,7 +104,7 @@
  111 00dc FEFFFFEB 		bl	sys_time_clock_get_time_usec
  112 00e0 A8609FE5 		ldr	r6, .L36+4
  113 00e4 0040A0E1 		mov	r4, r0
- 114 00e8 BC0396E5 		ldr	r0, [r6, #956]	@ float
+ 114 00e8 D00396E5 		ldr	r0, [r6, #976]	@ float
  115 00ec FEFFFFEB 		bl	__fixunssfsi
  116 00f0 9C509FE5 		ldr	r5, .L36+8
  117 00f4 003095E5 		ldr	r3, [r5, #0]
@@ -130,7 +130,7 @@
  137 0144 0070A013 		movne	r7, #0
  138 0148 0170A001 		moveq	r7, r1
  139              	.L27:
- 140 014c C00396E5 		ldr	r0, [r6, #960]	@ float
+ 140 014c D40396E5 		ldr	r0, [r6, #980]	@ float
  141 0150 FEFFFFEB 		bl	__fixunssfsi
  142 0154 003095E5 		ldr	r3, [r5, #0]
  143 0158 030080E0 		add	r0, r0, r3
@@ -196,30 +196,30 @@
  206 000c 00000000 		.space	4
  207              		.comm	global_param_id,4,4
  208              		.comm	state_fly_id,4,4
- 209              		.comm	global_data,2588,4
+ 209              		.comm	global_data,2684,4
  210              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 shutter.c
-C:\Users\Srdjan\AppData\Local\Temp/cceuaaaa.s:6      .text:00000000 shutter_control
-C:\Users\Srdjan\AppData\Local\Temp/cceuaaaa.s:11     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/cceuaaaa.s:22     .text:0000001c $d
-C:\Users\Srdjan\AppData\Local\Temp/cceuaaaa.s:197    .bss:00000000 m_shutter_active
-C:\Users\Srdjan\AppData\Local\Temp/cceuaaaa.s:205    .bss:0000000c m_shutter_seq
-C:\Users\Srdjan\AppData\Local\Temp/cceuaaaa.s:30     .text:00000024 shutter_set
-C:\Users\Srdjan\AppData\Local\Temp/cceuaaaa.s:34     .text:00000024 $a
-C:\Users\Srdjan\AppData\Local\Temp/cceuaaaa.s:75     .text:000000ac $d
-                            *COM*:00000a1c global_data
-C:\Users\Srdjan\AppData\Local\Temp/cceuaaaa.s:80     .text:000000b0 shutter_get_seq
-C:\Users\Srdjan\AppData\Local\Temp/cceuaaaa.s:85     .text:000000b0 $a
-C:\Users\Srdjan\AppData\Local\Temp/cceuaaaa.s:92     .text:000000bc $d
-C:\Users\Srdjan\AppData\Local\Temp/cceuaaaa.s:98     .text:000000c0 shutter_loop
-C:\Users\Srdjan\AppData\Local\Temp/cceuaaaa.s:102    .text:000000c0 $a
-C:\Users\Srdjan\AppData\Local\Temp/cceuaaaa.s:160    .text:0000018c $d
-C:\Users\Srdjan\AppData\Local\Temp/cceuaaaa.s:200    .bss:00000004 m_last_shut
-C:\Users\Srdjan\AppData\Local\Temp/cceuaaaa.s:202    .bss:00000008 m_shutter_was_low
-C:\Users\Srdjan\AppData\Local\Temp/cceuaaaa.s:169    .text:000001a0 shutter_init
-C:\Users\Srdjan\AppData\Local\Temp/cceuaaaa.s:173    .text:000001a0 $a
-C:\Users\Srdjan\AppData\Local\Temp/cceuaaaa.s:193    .text:000001e4 $d
+C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:6      .text:00000000 shutter_control
+C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:11     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:22     .text:0000001c $d
+C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:197    .bss:00000000 m_shutter_active
+C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:205    .bss:0000000c m_shutter_seq
+C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:30     .text:00000024 shutter_set
+C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:34     .text:00000024 $a
+C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:75     .text:000000ac $d
+                            *COM*:00000a7c global_data
+C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:80     .text:000000b0 shutter_get_seq
+C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:85     .text:000000b0 $a
+C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:92     .text:000000bc $d
+C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:98     .text:000000c0 shutter_loop
+C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:102    .text:000000c0 $a
+C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:160    .text:0000018c $d
+C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:200    .bss:00000004 m_last_shut
+C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:202    .bss:00000008 m_shutter_was_low
+C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:169    .text:000001a0 shutter_init
+C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:173    .text:000001a0 $a
+C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:193    .text:000001e4 $d
                             *COM*:00000004 global_param_id
                             *COM*:00000004 state_fly_id
 

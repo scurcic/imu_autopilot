@@ -14,6 +14,9 @@
 #include "stdbool.h"
 #include "features.h"
 
+#define IMU_PIXHAWK_V250 // IMU_PIXHAWK_AMIRANDIIMU_PIXHAWK_V250//
+
+
 //############### GENERAL SETUP #####################
 
 #define ONBOARD_PARAM_NAME_LENGTH 15    ///< Parameter names are transmitted with max. 15 chars over MAVLink

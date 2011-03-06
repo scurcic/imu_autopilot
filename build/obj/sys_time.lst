@@ -368,45 +368,45 @@
  397              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 sys_time.c
-C:\Users\Srdjan\AppData\Local\Temp/ccq4aaaa.s:6      .text:00000000 timer0_init
-C:\Users\Srdjan\AppData\Local\Temp/ccq4aaaa.s:11     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccq4aaaa.s:37     .text:00000058 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccq4aaaa.s:315    .text:00000260 TIMER0_ISR
-C:\Users\Srdjan\AppData\Local\Temp/ccq4aaaa.s:42     .text:0000005c sys_time_init
-C:\Users\Srdjan\AppData\Local\Temp/ccq4aaaa.s:48     .text:0000005c $a
-C:\Users\Srdjan\AppData\Local\Temp/ccq4aaaa.s:53     .text:00000060 sys_time_periodic_init
-C:\Users\Srdjan\AppData\Local\Temp/ccq4aaaa.s:74     .text:00000090 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccmWaaaa.s:6      .text:00000000 timer0_init
+C:\Users\Srdjan\AppData\Local\Temp/ccmWaaaa.s:11     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccmWaaaa.s:37     .text:00000058 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccmWaaaa.s:315    .text:00000260 TIMER0_ISR
+C:\Users\Srdjan\AppData\Local\Temp/ccmWaaaa.s:42     .text:0000005c sys_time_init
+C:\Users\Srdjan\AppData\Local\Temp/ccmWaaaa.s:48     .text:0000005c $a
+C:\Users\Srdjan\AppData\Local\Temp/ccmWaaaa.s:53     .text:00000060 sys_time_periodic_init
+C:\Users\Srdjan\AppData\Local\Temp/ccmWaaaa.s:74     .text:00000090 $d
                             *COM*:00000001 periodic_state
-C:\Users\Srdjan\AppData\Local\Temp/ccq4aaaa.s:79     .text:00000094 SYS_TIME_PERIODIC_ISR
-C:\Users\Srdjan\AppData\Local\Temp/ccq4aaaa.s:84     .text:00000094 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccq4aaaa.s:99     .text:000000c0 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccq4aaaa.s:104    .text:000000c4 sys_time_periodic
-C:\Users\Srdjan\AppData\Local\Temp/ccq4aaaa.s:109    .text:000000c4 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccq4aaaa.s:121    .text:000000e4 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccq4aaaa.s:126    .text:000000e8 SYS_TIME_CLOCK_ISR
-C:\Users\Srdjan\AppData\Local\Temp/ccq4aaaa.s:131    .text:000000e8 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccq4aaaa.s:140    .text:000000fc $d
-C:\Users\Srdjan\AppData\Local\Temp/ccq4aaaa.s:388    .bss:00000000 number_of_timer_overflow
-C:\Users\Srdjan\AppData\Local\Temp/ccq4aaaa.s:145    .text:00000100 sys_time_clock_init
-C:\Users\Srdjan\AppData\Local\Temp/ccq4aaaa.s:150    .text:00000100 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccq4aaaa.s:168    .text:00000138 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccq4aaaa.s:394    .bss:00000004 m_clock_offset
-C:\Users\Srdjan\AppData\Local\Temp/ccq4aaaa.s:180    .text:00000140 sys_time_clock_get_time_usec
-C:\Users\Srdjan\AppData\Local\Temp/ccq4aaaa.s:184    .text:00000140 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccq4aaaa.s:235    .text:000001f8 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccq4aaaa.s:240    .text:000001fc sys_time_clock_set_unix_offset
-C:\Users\Srdjan\AppData\Local\Temp/ccq4aaaa.s:245    .text:000001fc $a
-C:\Users\Srdjan\AppData\Local\Temp/ccq4aaaa.s:252    .text:00000208 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccq4aaaa.s:257    .text:0000020c sys_time_clock_get_unix_offset
-C:\Users\Srdjan\AppData\Local\Temp/ccq4aaaa.s:262    .text:0000020c $a
-C:\Users\Srdjan\AppData\Local\Temp/ccq4aaaa.s:269    .text:00000218 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccq4aaaa.s:274    .text:0000021c sys_time_clock_get_unix_time
-C:\Users\Srdjan\AppData\Local\Temp/ccq4aaaa.s:278    .text:0000021c $a
-C:\Users\Srdjan\AppData\Local\Temp/ccq4aaaa.s:289    .text:0000023c $d
-C:\Users\Srdjan\AppData\Local\Temp/ccq4aaaa.s:294    .text:00000240 sys_time_clock_to_local_time
-C:\Users\Srdjan\AppData\Local\Temp/ccq4aaaa.s:299    .text:00000240 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccq4aaaa.s:310    .text:0000025c $d
-C:\Users\Srdjan\AppData\Local\Temp/ccq4aaaa.s:320    .text:00000260 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccmWaaaa.s:79     .text:00000094 SYS_TIME_PERIODIC_ISR
+C:\Users\Srdjan\AppData\Local\Temp/ccmWaaaa.s:84     .text:00000094 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccmWaaaa.s:99     .text:000000c0 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccmWaaaa.s:104    .text:000000c4 sys_time_periodic
+C:\Users\Srdjan\AppData\Local\Temp/ccmWaaaa.s:109    .text:000000c4 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccmWaaaa.s:121    .text:000000e4 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccmWaaaa.s:126    .text:000000e8 SYS_TIME_CLOCK_ISR
+C:\Users\Srdjan\AppData\Local\Temp/ccmWaaaa.s:131    .text:000000e8 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccmWaaaa.s:140    .text:000000fc $d
+C:\Users\Srdjan\AppData\Local\Temp/ccmWaaaa.s:388    .bss:00000000 number_of_timer_overflow
+C:\Users\Srdjan\AppData\Local\Temp/ccmWaaaa.s:145    .text:00000100 sys_time_clock_init
+C:\Users\Srdjan\AppData\Local\Temp/ccmWaaaa.s:150    .text:00000100 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccmWaaaa.s:168    .text:00000138 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccmWaaaa.s:394    .bss:00000004 m_clock_offset
+C:\Users\Srdjan\AppData\Local\Temp/ccmWaaaa.s:180    .text:00000140 sys_time_clock_get_time_usec
+C:\Users\Srdjan\AppData\Local\Temp/ccmWaaaa.s:184    .text:00000140 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccmWaaaa.s:235    .text:000001f8 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccmWaaaa.s:240    .text:000001fc sys_time_clock_set_unix_offset
+C:\Users\Srdjan\AppData\Local\Temp/ccmWaaaa.s:245    .text:000001fc $a
+C:\Users\Srdjan\AppData\Local\Temp/ccmWaaaa.s:252    .text:00000208 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccmWaaaa.s:257    .text:0000020c sys_time_clock_get_unix_offset
+C:\Users\Srdjan\AppData\Local\Temp/ccmWaaaa.s:262    .text:0000020c $a
+C:\Users\Srdjan\AppData\Local\Temp/ccmWaaaa.s:269    .text:00000218 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccmWaaaa.s:274    .text:0000021c sys_time_clock_get_unix_time
+C:\Users\Srdjan\AppData\Local\Temp/ccmWaaaa.s:278    .text:0000021c $a
+C:\Users\Srdjan\AppData\Local\Temp/ccmWaaaa.s:289    .text:0000023c $d
+C:\Users\Srdjan\AppData\Local\Temp/ccmWaaaa.s:294    .text:00000240 sys_time_clock_to_local_time
+C:\Users\Srdjan\AppData\Local\Temp/ccmWaaaa.s:299    .text:00000240 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccmWaaaa.s:310    .text:0000025c $d
+C:\Users\Srdjan\AppData\Local\Temp/ccmWaaaa.s:320    .text:00000260 $a
                              .bss:00000000 $d
 
 UNDEFINED SYMBOLS

@@ -34,7 +34,7 @@
   33 0014 20009FE5 		ldr	r0, .L7
   34 0018 FEFFFFEB 		bl	debug_message_buffer
   35 001c 1C309FE5 		ldr	r3, .L7+4
-  36 0020 6120A0E3 		mov	r2, #97
+  36 0020 6520A0E3 		mov	r2, #101
   37 0024 002083E5 		str	r2, [r3, #0]
   38 0028 14309FE5 		ldr	r3, .L7+8
   39 002c 1410A0E3 		mov	r1, #20
@@ -126,11 +126,11 @@
  107 0094 040054E3 		cmp	r4, #4
  108 0098 88009FE5 		ldr	r0, .L25
  109 009c 0A00000A 		beq	.L15
- 110 00a0 610054E3 		cmp	r4, #97
+ 110 00a0 650054E3 		cmp	r4, #101
  111 00a4 80309FE5 		ldr	r3, .L25+4
  112 00a8 00109D15 		ldrne	r1, [sp, #0]	@ float
  113 00ac 043183E0 		add	r3, r3, r4, asl #2
- 114 00b0 40128315 		strne	r1, [r3, #576]	@ float
+ 114 00b0 54128315 		strne	r1, [r3, #596]	@ float
  115 00b4 0700000A 		beq	.L23
  116              	.L17:
  117 00b8 70309FE5 		ldr	r3, .L25+8
@@ -217,9 +217,9 @@
  194 0174 68009FE5 		ldr	r0, .L37
  195 0178 1000000A 		beq	.L31
  196 017c 64309FE5 		ldr	r3, .L37+4
- 197 0180 610054E3 		cmp	r4, #97
+ 197 0180 650054E3 		cmp	r4, #101
  198 0184 043183E0 		add	r3, r3, r4, asl #2
- 199 0188 40329315 		ldrne	r3, [r3, #576]	@ float
+ 199 0188 54329315 		ldrne	r3, [r3, #596]	@ float
  200 018c 00308D15 		strne	r3, [sp, #0]	@ float
  201 0190 0E00000A 		beq	.L36
  202              	.L33:
@@ -326,7 +326,7 @@
  293              	.L42:
  294 0290 E4509FE5 		ldr	r5, .L55+4
  295 0294 003095E5 		ldr	r3, [r5, #0]
- 296 0298 610053E3 		cmp	r3, #97
+ 296 0298 650053E3 		cmp	r3, #101
  297 029c 300000DA 		ble	.L54
  298 02a0 0B30A0E3 		mov	r3, #11
  299 02a4 0020A0E3 		mov	r2, #0
@@ -411,37 +411,37 @@
  381              		.comm	mavlink_system,8,4
  382              		.comm	global_param_id,4,4
  383              		.comm	state_fly_id,4,4
- 384              		.comm	global_data,2588,4
+ 384              		.comm	global_data,2684,4
  385              		.comm	debug,12,4
  386 0005 000000   		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 params.c
-C:\Users\Srdjan\AppData\Local\Temp/ccQnaaaa.s:6      .text:00000000 param_size_check
-C:\Users\Srdjan\AppData\Local\Temp/ccQnaaaa.s:11     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccQnaaaa.s:18     .text:0000000c $d
-C:\Users\Srdjan\AppData\Local\Temp/ccQnaaaa.s:373    .data:00000000 param_sizecheck
-C:\Users\Srdjan\AppData\Local\Temp/ccQnaaaa.s:28     .text:00000010 param_read_all
-C:\Users\Srdjan\AppData\Local\Temp/ccQnaaaa.s:32     .text:00000010 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccQnaaaa.s:46     .text:0000003c $d
-C:\Users\Srdjan\AppData\Local\Temp/ccQnaaaa.s:377    .bss:00000000 param_handler_counter
-C:\Users\Srdjan\AppData\Local\Temp/ccQnaaaa.s:379    .bss:00000004 param_handler_step
-C:\Users\Srdjan\AppData\Local\Temp/ccQnaaaa.s:58     .text:00000048 param_write_all
-C:\Users\Srdjan\AppData\Local\Temp/ccQnaaaa.s:62     .text:00000048 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccQnaaaa.s:76     .text:00000074 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccQnaaaa.s:98     .text:00000080 param_read_update
-C:\Users\Srdjan\AppData\Local\Temp/ccQnaaaa.s:102    .text:00000080 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccQnaaaa.s:151    .text:00000128 $d
-                            *COM*:00000a1c global_data
+C:\Users\Srdjan\AppData\Local\Temp/cc8Yaaaa.s:6      .text:00000000 param_size_check
+C:\Users\Srdjan\AppData\Local\Temp/cc8Yaaaa.s:11     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc8Yaaaa.s:18     .text:0000000c $d
+C:\Users\Srdjan\AppData\Local\Temp/cc8Yaaaa.s:373    .data:00000000 param_sizecheck
+C:\Users\Srdjan\AppData\Local\Temp/cc8Yaaaa.s:28     .text:00000010 param_read_all
+C:\Users\Srdjan\AppData\Local\Temp/cc8Yaaaa.s:32     .text:00000010 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc8Yaaaa.s:46     .text:0000003c $d
+C:\Users\Srdjan\AppData\Local\Temp/cc8Yaaaa.s:377    .bss:00000000 param_handler_counter
+C:\Users\Srdjan\AppData\Local\Temp/cc8Yaaaa.s:379    .bss:00000004 param_handler_step
+C:\Users\Srdjan\AppData\Local\Temp/cc8Yaaaa.s:58     .text:00000048 param_write_all
+C:\Users\Srdjan\AppData\Local\Temp/cc8Yaaaa.s:62     .text:00000048 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc8Yaaaa.s:76     .text:00000074 $d
+C:\Users\Srdjan\AppData\Local\Temp/cc8Yaaaa.s:98     .text:00000080 param_read_update
+C:\Users\Srdjan\AppData\Local\Temp/cc8Yaaaa.s:102    .text:00000080 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc8Yaaaa.s:151    .text:00000128 $d
+                            *COM*:00000a7c global_data
                             *COM*:0000000c debug
-C:\Users\Srdjan\AppData\Local\Temp/ccQnaaaa.s:163    .text:00000148 param_start_read
-C:\Users\Srdjan\AppData\Local\Temp/ccQnaaaa.s:167    .text:00000148 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccQnaaaa.s:186    .text:00000164 param_write
-C:\Users\Srdjan\AppData\Local\Temp/ccQnaaaa.s:228    .text:000001e4 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccQnaaaa.s:249    .text:000001f8 param_handler
-C:\Users\Srdjan\AppData\Local\Temp/ccQnaaaa.s:253    .text:000001f8 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccQnaaaa.s:261    .text:00000210 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccQnaaaa.s:294    .text:00000290 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccQnaaaa.s:361    .text:00000378 $d
+C:\Users\Srdjan\AppData\Local\Temp/cc8Yaaaa.s:163    .text:00000148 param_start_read
+C:\Users\Srdjan\AppData\Local\Temp/cc8Yaaaa.s:167    .text:00000148 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc8Yaaaa.s:186    .text:00000164 param_write
+C:\Users\Srdjan\AppData\Local\Temp/cc8Yaaaa.s:228    .text:000001e4 $d
+C:\Users\Srdjan\AppData\Local\Temp/cc8Yaaaa.s:249    .text:000001f8 param_handler
+C:\Users\Srdjan\AppData\Local\Temp/cc8Yaaaa.s:253    .text:000001f8 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc8Yaaaa.s:261    .text:00000210 $d
+C:\Users\Srdjan\AppData\Local\Temp/cc8Yaaaa.s:294    .text:00000290 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc8Yaaaa.s:361    .text:00000378 $d
                              .bss:00000000 $d
                             *COM*:00000008 mavlink_system
                             *COM*:00000004 global_param_id

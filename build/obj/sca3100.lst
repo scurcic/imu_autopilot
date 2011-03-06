@@ -386,31 +386,31 @@
  406              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 sca3100.c
-C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:5      .text:00000000 sca3100_select
-C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:10     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:20     .text:00000018 sca3100_unselect
-C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:36     .text:00000030 sca3100_get_value
-C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:48     .text:0000003c $d
+C:\Users\Srdjan\AppData\Local\Temp/ccaYaaaa.s:5      .text:00000000 sca3100_select
+C:\Users\Srdjan\AppData\Local\Temp/ccaYaaaa.s:10     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccaYaaaa.s:20     .text:00000018 sca3100_unselect
+C:\Users\Srdjan\AppData\Local\Temp/ccaYaaaa.s:36     .text:00000030 sca3100_get_value
+C:\Users\Srdjan\AppData\Local\Temp/ccaYaaaa.s:48     .text:0000003c $d
                             *COM*:0000000c sca3100_values
-C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:52     .text:00000040 sca3100_on_spi_write
-C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:57     .text:00000040 $a
-C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:67     .text:00000054 sca3100_read_int_status
-C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:95     .text:000000a8 $d
-C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:201    .text:000001c0 sca3100_on_spi_read_reg
-C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:102    .text:000000b4 sca3100_reset_porst_bit
-C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:106    .text:000000b4 $a
-C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:129    .text:00000104 $d
-C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:136    .text:00000110 sca3100_init
-C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:140    .text:00000110 $a
-C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:158    .text:0000014c $d
-C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:163    .text:00000150 sca3100_read_res
-C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:167    .text:00000150 $a
-C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:195    .text:000001b4 $d
-C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:249    .text:00000250 sca3100_on_spi_int
-C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:205    .text:000001c0 $a
-C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:243    .text:00000244 $d
-C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:253    .text:00000250 $a
-C:\Users\Srdjan\AppData\Local\Temp/cckXaaaa.s:398    .text:00000468 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccaYaaaa.s:52     .text:00000040 sca3100_on_spi_write
+C:\Users\Srdjan\AppData\Local\Temp/ccaYaaaa.s:57     .text:00000040 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccaYaaaa.s:67     .text:00000054 sca3100_read_int_status
+C:\Users\Srdjan\AppData\Local\Temp/ccaYaaaa.s:95     .text:000000a8 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccaYaaaa.s:201    .text:000001c0 sca3100_on_spi_read_reg
+C:\Users\Srdjan\AppData\Local\Temp/ccaYaaaa.s:102    .text:000000b4 sca3100_reset_porst_bit
+C:\Users\Srdjan\AppData\Local\Temp/ccaYaaaa.s:106    .text:000000b4 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccaYaaaa.s:129    .text:00000104 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccaYaaaa.s:136    .text:00000110 sca3100_init
+C:\Users\Srdjan\AppData\Local\Temp/ccaYaaaa.s:140    .text:00000110 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccaYaaaa.s:158    .text:0000014c $d
+C:\Users\Srdjan\AppData\Local\Temp/ccaYaaaa.s:163    .text:00000150 sca3100_read_res
+C:\Users\Srdjan\AppData\Local\Temp/ccaYaaaa.s:167    .text:00000150 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccaYaaaa.s:195    .text:000001b4 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccaYaaaa.s:249    .text:00000250 sca3100_on_spi_int
+C:\Users\Srdjan\AppData\Local\Temp/ccaYaaaa.s:205    .text:000001c0 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccaYaaaa.s:243    .text:00000244 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccaYaaaa.s:253    .text:00000250 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccaYaaaa.s:398    .text:00000468 $d
                             *COM*:00000008 mavlink_system
 
 UNDEFINED SYMBOLS

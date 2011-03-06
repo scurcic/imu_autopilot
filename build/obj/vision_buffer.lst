@@ -330,7 +330,7 @@
  303 0380 0C608DE5 		str	r6, [sp, #12]
  304 0384 FEFFFFEB 		bl	__subsf3
  305 0388 B0129FE5 		ldr	r1, .L88+12
- 306 038c 644391E5 		ldr	r4, [r1, #868]	@ float
+ 306 038c 784391E5 		ldr	r4, [r1, #888]	@ float
  307 0390 0201C0E3 		bic	r0, r0, #-2147483648
  308 0394 0410A0E1 		mov	r1, r4
  309 0398 FEFFFFEB 		bl	__ltsf2
@@ -397,8 +397,8 @@
  370 046c 10509DE5 		ldr	r5, [sp, #16]
  371 0470 C8319FE5 		ldr	r3, .L88+12
  372 0474 054192E7 		ldr	r4, [r2, r5, asl #2]	@ float
- 373 0478 B80983E5 		str	r0, [r3, #2488]
- 374 047c BC1983E5 		str	r1, [r3, #2492]
+ 373 0478 180A83E5 		str	r0, [r3, #2584]
+ 374 047c 1C1A83E5 		str	r1, [r3, #2588]
  375 0480 080099E5 		ldr	r0, [r9, #8]	@ float
  376 0484 0410A0E1 		mov	r1, r4
  377 0488 FEFFFFEB 		bl	__subsf3
@@ -417,7 +417,7 @@
  390 04bc FEFFFFEB 		bl	__subsf3
  391 04c0 78319FE5 		ldr	r3, .L88+12
  392 04c4 08008DE5 		str	r0, [sp, #8]	@ float
- 393 04c8 601393E5 		ldr	r1, [r3, #864]	@ float
+ 393 04c8 741393E5 		ldr	r1, [r3, #884]	@ float
  394 04cc 1C0099E5 		ldr	r0, [r9, #28]	@ float
  395 04d0 FEFFFFEB 		bl	__subsf3
  396 04d4 0C209DE5 		ldr	r2, [sp, #12]
@@ -445,19 +445,19 @@
  418 052c 0C109DE5 		ldr	r1, [sp, #12]
  419 0530 281081E2 		add	r1, r1, #40
  420 0534 060091E8 		ldmia	r1, {r1-r2}
- 421 0538 A41984E5 		str	r1, [r4, #2468]
- 422 053c A82984E5 		str	r2, [r4, #2472]
+ 421 0538 041A84E5 		str	r1, [r4, #2564]
+ 422 053c 082A84E5 		str	r2, [r4, #2568]
  423 0540 FEFFFFEB 		bl	sys_time_clock_get_time_usec
  424 0544 143099E5 		ldr	r3, [r9, #20]	@ float
- 425 0548 943984E5 		str	r3, [r4, #2452]	@ float
+ 425 0548 F43984E5 		str	r3, [r4, #2548]	@ float
  426 054c 182099E5 		ldr	r2, [r9, #24]	@ float
- 427 0550 982984E5 		str	r2, [r4, #2456]	@ float
- 428 0554 AC0984E5 		str	r0, [r4, #2476]
- 429 0558 B01984E5 		str	r1, [r4, #2480]
+ 427 0550 F82984E5 		str	r2, [r4, #2552]	@ float
+ 428 0554 0C0A84E5 		str	r0, [r4, #2572]
+ 429 0558 101A84E5 		str	r1, [r4, #2576]
  430 055c D8209FE5 		ldr	r2, .L88+8
  431 0560 1C3099E5 		ldr	r3, [r9, #28]	@ float
  432 0564 10109DE5 		ldr	r1, [sp, #16]
- 433 0568 9C3984E5 		str	r3, [r4, #2460]	@ float
+ 433 0568 FC3984E5 		str	r3, [r4, #2556]	@ float
  434 056c 010192E7 		ldr	r0, [r2, r1, asl #2]	@ float
  435 0570 30109DE5 		ldr	r1, [sp, #48]	@ float
  436 0574 FEFFFFEB 		bl	__addsf3
@@ -465,14 +465,14 @@
  438 057c 0500A0E1 		mov	r0, r5
  439 0580 FEFFFFEB 		bl	__addsf3
  440 0584 0C309DE5 		ldr	r3, [sp, #12]
- 441 0588 7C0984E5 		str	r0, [r4, #2428]	@ float
+ 441 0588 DC0984E5 		str	r0, [r4, #2524]	@ float
  442 058c 34109DE5 		ldr	r1, [sp, #52]	@ float
  443 0590 040093E5 		ldr	r0, [r3, #4]	@ float
  444 0594 FEFFFFEB 		bl	__addsf3
  445 0598 0010A0E1 		mov	r1, r0
  446 059c 0700A0E1 		mov	r0, r7
  447 05a0 FEFFFFEB 		bl	__addsf3
- 448 05a4 800984E5 		str	r0, [r4, #2432]	@ float
+ 448 05a4 E00984E5 		str	r0, [r4, #2528]	@ float
  449 05a8 0C409DE5 		ldr	r4, [sp, #12]
  450 05ac 38109DE5 		ldr	r1, [sp, #56]	@ float
  451 05b0 080094E5 		ldr	r0, [r4, #8]	@ float
@@ -481,7 +481,7 @@
  454 05bc 08009DE5 		ldr	r0, [sp, #8]	@ float
  455 05c0 FEFFFFEB 		bl	__addsf3
  456 05c4 74109FE5 		ldr	r1, .L88+12
- 457 05c8 840981E5 		str	r0, [r1, #2436]	@ float
+ 457 05c8 E40981E5 		str	r0, [r1, #2532]	@ float
  458 05cc 641091E5 		ldr	r1, [r1, #100]	@ float
  459 05d0 04009DE5 		ldr	r0, [sp, #4]	@ float
  460 05d4 FEFFFFEB 		bl	__addsf3
@@ -508,7 +508,7 @@
  481              	.L65:
  482 0624 14109FE5 		ldr	r1, .L88+12
  483 0628 0130A0E3 		mov	r3, #1
- 484 062c B43981E5 		str	r3, [r1, #2484]
+ 484 062c 143A81E5 		str	r3, [r1, #2580]
  485 0630 84FFFFEA 		b	.L57
  486              	.L89:
  487              		.align	2
@@ -546,7 +546,7 @@
  520      00000000 
  521              		.comm	global_param_id,4,4
  522              		.comm	state_fly_id,4,4
- 523              		.comm	global_data,2588,4
+ 523              		.comm	global_data,2684,4
  524              		.comm	mavlink_system,8,4
  525              		.comm	yaw_pos_controller,32,4
  526              		.comm	yaw_speed_controller,32,4
@@ -558,21 +558,21 @@
  532              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 vision_buffer.c
-C:\Users\Srdjan\AppData\Local\Temp/cceOaaaa.s:6      .text:00000000 vision_buffer_buffer_init
-C:\Users\Srdjan\AppData\Local\Temp/cceOaaaa.s:11     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/cceOaaaa.s:26     .text:00000028 $d
-C:\Users\Srdjan\AppData\Local\Temp/cceOaaaa.s:519    .bss:0000000c vision_buffer
-C:\Users\Srdjan\AppData\Local\Temp/cceOaaaa.s:36     .text:0000002c vision_buffer_buffer_camera_triggered
-C:\Users\Srdjan\AppData\Local\Temp/cceOaaaa.s:40     .text:0000002c $a
-C:\Users\Srdjan\AppData\Local\Temp/cceOaaaa.s:90     .text:000000e0 $d
-C:\Users\Srdjan\AppData\Local\Temp/cceOaaaa.s:514    .bss:00000008 vision_buffer_index_write
-C:\Users\Srdjan\AppData\Local\Temp/cceOaaaa.s:516    .bss:00000009 vision_buffer_index_read
-C:\Users\Srdjan\AppData\Local\Temp/cceOaaaa.s:506    .bss:00000000 vision_buffer_full_count
-                            *COM*:00000a1c global_data
-C:\Users\Srdjan\AppData\Local\Temp/cceOaaaa.s:127    .text:000000f8 vision_buffer_handle_data
-C:\Users\Srdjan\AppData\Local\Temp/cceOaaaa.s:131    .text:000000f8 $a
-C:\Users\Srdjan\AppData\Local\Temp/cceOaaaa.s:489    .text:00000634 $d
-C:\Users\Srdjan\AppData\Local\Temp/cceOaaaa.s:512    .bss:00000004 vision_buffer_reject_count
+C:\Users\Srdjan\AppData\Local\Temp/ccOKaaaa.s:6      .text:00000000 vision_buffer_buffer_init
+C:\Users\Srdjan\AppData\Local\Temp/ccOKaaaa.s:11     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccOKaaaa.s:26     .text:00000028 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccOKaaaa.s:519    .bss:0000000c vision_buffer
+C:\Users\Srdjan\AppData\Local\Temp/ccOKaaaa.s:36     .text:0000002c vision_buffer_buffer_camera_triggered
+C:\Users\Srdjan\AppData\Local\Temp/ccOKaaaa.s:40     .text:0000002c $a
+C:\Users\Srdjan\AppData\Local\Temp/ccOKaaaa.s:90     .text:000000e0 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccOKaaaa.s:514    .bss:00000008 vision_buffer_index_write
+C:\Users\Srdjan\AppData\Local\Temp/ccOKaaaa.s:516    .bss:00000009 vision_buffer_index_read
+C:\Users\Srdjan\AppData\Local\Temp/ccOKaaaa.s:506    .bss:00000000 vision_buffer_full_count
+                            *COM*:00000a7c global_data
+C:\Users\Srdjan\AppData\Local\Temp/ccOKaaaa.s:127    .text:000000f8 vision_buffer_handle_data
+C:\Users\Srdjan\AppData\Local\Temp/ccOKaaaa.s:131    .text:000000f8 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccOKaaaa.s:489    .text:00000634 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccOKaaaa.s:512    .bss:00000004 vision_buffer_reject_count
                             *COM*:00000004 global_param_id
                             *COM*:00000004 state_fly_id
                             *COM*:00000008 mavlink_system

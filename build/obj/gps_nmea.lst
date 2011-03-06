@@ -671,15 +671,15 @@
  669              		@ args = 0, pretend = 0, frame = 0
  670              		@ frame_needed = 0, uses_anonymous_args = 0
  671 07fc F0412DE9 		stmfd	sp!, {r4, r5, r6, r7, r8, lr}
- 672 0800 54519FE5 		ldr	r5, .L177
+ 672 0800 58519FE5 		ldr	r5, .L177
  673 0804 4114A0E3 		mov	r1, #1090519040
  674 0808 031681E2 		add	r1, r1, #3145728
- 675 080c B80395E5 		ldr	r0, [r5, #952]	@ float
+ 675 080c CC0395E5 		ldr	r0, [r5, #972]	@ float
  676 0810 FEFFFFEB 		bl	__eqsf2
  677 0814 000050E3 		cmp	r0, #0
- 678 0818 40719F15 		ldrne	r7, .L177+4
+ 678 0818 44719F15 		ldrne	r7, .L177+4
  679 081c 0900000A 		beq	.L172
- 680 0820 3C819FE5 		ldr	r8, .L177+8
+ 680 0820 40819FE5 		ldr	r8, .L177+8
  681 0824 004098E5 		ldr	r4, [r8, #0]
  682 0828 070054E3 		cmp	r4, #7
  683 082c 100000CA 		bgt	.L173
@@ -692,27 +692,27 @@
  690 0840 F041BDE8 		ldmfd	sp!, {r4, r5, r6, r7, r8, lr}
  691 0844 1EFF2FE1 		bx	lr
  692              	.L172:
- 693 0848 10719FE5 		ldr	r7, .L177+4
+ 693 0848 14719FE5 		ldr	r7, .L177+4
  694 084c 3220A0E3 		mov	r2, #50
  695 0850 0710A0E1 		mov	r1, r7
- 696 0854 0C019FE5 		ldr	r0, .L177+12
- 697 0858 04819FE5 		ldr	r8, .L177+8
+ 696 0854 10019FE5 		ldr	r0, .L177+12
+ 697 0858 08819FE5 		ldr	r8, .L177+8
  698 085c FEFFFFEB 		bl	strncpy
- 699 0860 00019FE5 		ldr	r0, .L177+12
+ 699 0860 04019FE5 		ldr	r0, .L177+12
  700 0864 FEFFFFEB 		bl	debug_message_buffer
  701 0868 004098E5 		ldr	r4, [r8, #0]
  702 086c 070054E3 		cmp	r4, #7
  703 0870 EEFFFFDA 		ble	.L153
  704              	.L173:
- 705 0874 E4609FE5 		ldr	r6, .L177+4
- 706 0878 EC109FE5 		ldr	r1, .L177+16
+ 705 0874 E8609FE5 		ldr	r6, .L177+4
+ 706 0878 F0109FE5 		ldr	r1, .L177+16
  707 087c 0600A0E1 		mov	r0, r6
  708 0880 0520A0E3 		mov	r2, #5
  709 0884 FEFFFFEB 		bl	strncmp
  710 0888 003050E2 		subs	r3, r0, #0
  711 088c 0C00001A 		bne	.L155
  712 0890 4114A0E3 		mov	r1, #1090519040
- 713 0894 B80395E5 		ldr	r0, [r5, #952]	@ float
+ 713 0894 CC0395E5 		ldr	r0, [r5, #972]	@ float
  714 0898 031681E2 		add	r1, r1, #3145728
  715 089c 0430C6E7 		strb	r3, [r6, r4]
  716 08a0 FEFFFFEB 		bl	__eqsf2
@@ -721,154 +721,156 @@
  719 08ac FEFFFFEB 		bl	parse_nmea_GPRMC
  720 08b0 E0FFFFEA 		b	.L160
  721              	.L174:
- 722 08b4 B4009FE5 		ldr	r0, .L177+20
+ 722 08b4 B8009FE5 		ldr	r0, .L177+20
  723 08b8 FEFFFFEB 		bl	debug_message_buffer
  724 08bc FEFFFFEB 		bl	parse_nmea_GPRMC
  725 08c0 DCFFFFEA 		b	.L160
  726              	.L155:
  727 08c4 0600A0E1 		mov	r0, r6
- 728 08c8 A4109FE5 		ldr	r1, .L177+24
+ 728 08c8 A8109FE5 		ldr	r1, .L177+24
  729 08cc 0520A0E3 		mov	r2, #5
  730 08d0 FEFFFFEB 		bl	strncmp
  731 08d4 003050E2 		subs	r3, r0, #0
- 732 08d8 0C00001A 		bne	.L161
+ 732 08d8 0D00001A 		bne	.L161
  733 08dc 4114A0E3 		mov	r1, #1090519040
- 734 08e0 B80395E5 		ldr	r0, [r5, #952]	@ float
+ 734 08e0 CC0395E5 		ldr	r0, [r5, #972]	@ float
  735 08e4 031681E2 		add	r1, r1, #3145728
  736 08e8 0430C6E7 		strb	r3, [r6, r4]
  737 08ec FEFFFFEB 		bl	__eqsf2
  738 08f0 000050E3 		cmp	r0, #0
- 739 08f4 0100000A 		beq	.L175
- 740 08f8 FEFFFFEB 		bl	parse_nmea_GPGGA
- 741 08fc CDFFFFEA 		b	.L160
- 742              	.L175:
- 743 0900 70009FE5 		ldr	r0, .L177+28
- 744 0904 FEFFFFEB 		bl	debug_message_buffer
- 745 0908 FEFFFFEB 		bl	parse_nmea_GPGGA
- 746 090c C9FFFFEA 		b	.L160
- 747              	.L161:
- 748 0910 0600A0E1 		mov	r0, r6
- 749 0914 60109FE5 		ldr	r1, .L177+32
- 750 0918 0520A0E3 		mov	r2, #5
- 751 091c FEFFFFEB 		bl	strncmp
- 752 0920 003050E2 		subs	r3, r0, #0
- 753 0924 C1FFFF1A 		bne	.L153
- 754 0928 4114A0E3 		mov	r1, #1090519040
- 755 092c B80395E5 		ldr	r0, [r5, #952]	@ float
- 756 0930 031681E2 		add	r1, r1, #3145728
- 757 0934 0430C6E7 		strb	r3, [r6, r4]
- 758 0938 FEFFFFEB 		bl	__eqsf2
- 759 093c 000050E3 		cmp	r0, #0
- 760 0940 0100000A 		beq	.L176
- 761 0944 FEFFFFEB 		bl	parse_nmea_GPGSA
- 762 0948 BAFFFFEA 		b	.L160
- 763              	.L176:
- 764 094c 2C009FE5 		ldr	r0, .L177+36
- 765 0950 FEFFFFEB 		bl	debug_message_buffer
- 766 0954 FEFFFFEB 		bl	parse_nmea_GPGSA
- 767 0958 B6FFFFEA 		b	.L160
- 768              	.L178:
- 769              		.align	2
- 770              	.L177:
- 771 095c 00000000 		.word	global_data
- 772 0960 00000000 		.word	nmea_msg_buf
- 773 0964 00000000 		.word	nmea_msg_len
- 774 0968 08000000 		.word	nmea_msg_buf_tmp.19035
- 775 096c 00000000 		.word	.LC0
- 776 0970 08000000 		.word	.LC1
- 777 0974 20000000 		.word	.LC2
- 778 0978 28000000 		.word	.LC3
- 779 097c 40000000 		.word	.LC4
- 780 0980 48000000 		.word	.LC5
- 782              		.global	gps_pos_available
- 783              		.bss
- 786              	gps_pos_available:
- 787 0000 00       		.space	1
- 788              		.global	nav_utm_zone0
- 789              		.data
- 792              	nav_utm_zone0:
- 793 0000 20       		.byte	32
- 794              		.global	gps_msg_received
- 795              		.bss
- 798              	gps_msg_received:
- 799 0001 00       		.space	1
- 800              		.global	nmea_msg_len
- 801 0002 0000     		.align	2
- 804              	nmea_msg_len:
- 805 0004 00000000 		.space	4
- 806              	nmea_msg_buf_tmp.19035:
- 807 0008 00000000 		.space	50
- 807      00000000 
- 807      00000000 
- 807      00000000 
- 807      00000000 
- 808              		.comm	global_param_id,4,4
- 809              		.comm	state_fly_id,4,4
- 810              		.comm	global_data,2588,4
- 811              		.comm	gps_mode,1,1
- 812              		.comm	gps_week,2,2
- 813              		.comm	gps_itow,4,4
- 814              		.comm	gps_alt,4,4
- 815              		.comm	gps_gspeed,2,2
- 816              		.comm	gps_climb,2,2
- 817              		.comm	gps_course,2,2
- 818              		.comm	gps_utm_east,4,4
- 819              		.comm	gps_utm_north,4,4
- 820              		.comm	gps_utm_zone,1,1
- 821              		.comm	gps_lat,4,4
- 822              		.comm	gps_lon,4,4
- 823              		.comm	gps_PDOP,2,2
- 824              		.comm	gps_Pacc,4,4
- 825              		.comm	gps_Sacc,4,4
- 826              		.comm	gps_numSV,1,1
- 827              		.comm	gps_device_mode,1,1
- 828              		.comm	gps_nb_channels,1,1
- 829              		.comm	gps_svinfos,128,4
- 830              		.comm	mavlink_system,8,4
- 831              		.comm	ubx_id,1,1
- 832              		.comm	ubx_class,1,1
- 833              		.comm	gps_reset,2,2
- 834              		.comm	gps_nb_ovrn,1,1
- 835              		.comm	nmea_msg_buf,255,1
- 836 003a 0000     		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
+ 739 08f4 0300000A 		beq	.L175
+ 740              	.L163:
+ 741 08f8 FEFFFFEB 		bl	parse_nmea_GPGGA
+ 742 08fc 0130A0E3 		mov	r3, #1
+ 743 0900 2E31C5E5 		strb	r3, [r5, #302]
+ 744 0904 CBFFFFEA 		b	.L160
+ 745              	.L175:
+ 746 0908 6C009FE5 		ldr	r0, .L177+28
+ 747 090c FEFFFFEB 		bl	debug_message_buffer
+ 748 0910 F8FFFFEA 		b	.L163
+ 749              	.L161:
+ 750 0914 0600A0E1 		mov	r0, r6
+ 751 0918 60109FE5 		ldr	r1, .L177+32
+ 752 091c 0520A0E3 		mov	r2, #5
+ 753 0920 FEFFFFEB 		bl	strncmp
+ 754 0924 003050E2 		subs	r3, r0, #0
+ 755 0928 C0FFFF1A 		bne	.L153
+ 756 092c 4114A0E3 		mov	r1, #1090519040
+ 757 0930 CC0395E5 		ldr	r0, [r5, #972]	@ float
+ 758 0934 031681E2 		add	r1, r1, #3145728
+ 759 0938 0430C6E7 		strb	r3, [r6, r4]
+ 760 093c FEFFFFEB 		bl	__eqsf2
+ 761 0940 000050E3 		cmp	r0, #0
+ 762 0944 0100000A 		beq	.L176
+ 763 0948 FEFFFFEB 		bl	parse_nmea_GPGSA
+ 764 094c B9FFFFEA 		b	.L160
+ 765              	.L176:
+ 766 0950 2C009FE5 		ldr	r0, .L177+36
+ 767 0954 FEFFFFEB 		bl	debug_message_buffer
+ 768 0958 FEFFFFEB 		bl	parse_nmea_GPGSA
+ 769 095c B5FFFFEA 		b	.L160
+ 770              	.L178:
+ 771              		.align	2
+ 772              	.L177:
+ 773 0960 00000000 		.word	global_data
+ 774 0964 00000000 		.word	nmea_msg_buf
+ 775 0968 00000000 		.word	nmea_msg_len
+ 776 096c 08000000 		.word	nmea_msg_buf_tmp.19055
+ 777 0970 00000000 		.word	.LC0
+ 778 0974 08000000 		.word	.LC1
+ 779 0978 20000000 		.word	.LC2
+ 780 097c 28000000 		.word	.LC3
+ 781 0980 40000000 		.word	.LC4
+ 782 0984 48000000 		.word	.LC5
+ 784              		.global	gps_pos_available
+ 785              		.bss
+ 788              	gps_pos_available:
+ 789 0000 00       		.space	1
+ 790              		.global	nav_utm_zone0
+ 791              		.data
+ 794              	nav_utm_zone0:
+ 795 0000 20       		.byte	32
+ 796              		.global	gps_msg_received
+ 797              		.bss
+ 800              	gps_msg_received:
+ 801 0001 00       		.space	1
+ 802              		.global	nmea_msg_len
+ 803 0002 0000     		.align	2
+ 806              	nmea_msg_len:
+ 807 0004 00000000 		.space	4
+ 808              	nmea_msg_buf_tmp.19055:
+ 809 0008 00000000 		.space	50
+ 809      00000000 
+ 809      00000000 
+ 809      00000000 
+ 809      00000000 
+ 810              		.comm	global_param_id,4,4
+ 811              		.comm	state_fly_id,4,4
+ 812              		.comm	global_data,2684,4
+ 813              		.comm	gps_mode,1,1
+ 814              		.comm	gps_week,2,2
+ 815              		.comm	gps_itow,4,4
+ 816              		.comm	gps_alt,4,4
+ 817              		.comm	gps_gspeed,2,2
+ 818              		.comm	gps_climb,2,2
+ 819              		.comm	gps_course,2,2
+ 820              		.comm	gps_utm_east,4,4
+ 821              		.comm	gps_utm_north,4,4
+ 822              		.comm	gps_utm_zone,1,1
+ 823              		.comm	gps_lat,4,4
+ 824              		.comm	gps_lon,4,4
+ 825              		.comm	gps_PDOP,2,2
+ 826              		.comm	gps_Pacc,4,4
+ 827              		.comm	gps_Sacc,4,4
+ 828              		.comm	gps_numSV,1,1
+ 829              		.comm	gps_device_mode,1,1
+ 830              		.comm	gps_nb_channels,1,1
+ 831              		.comm	gps_svinfos,128,4
+ 832              		.comm	mavlink_system,8,4
+ 833              		.comm	ubx_id,1,1
+ 834              		.comm	ubx_class,1,1
+ 835              		.comm	gps_reset,2,2
+ 836              		.comm	gps_nb_ovrn,1,1
+ 837              		.comm	nmea_msg_buf,255,1
+ 838 003a 0000     		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 gps_nmea.c
-C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:6      .text:00000000 ubxsend_cfg_rst
-C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:12     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:17     .text:00000004 GpsFixValid
-C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:29     .text:00000010 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:786    .bss:00000000 gps_pos_available
-C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:34     .text:00000014 parse_nmea
-C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:38     .text:00000014 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:94     .text:000000d4 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:804    .bss:00000004 nmea_msg_len
-C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:798    .bss:00000001 gps_msg_received
+C:\Users\Srdjan\AppData\Local\Temp/ccgXaaaa.s:6      .text:00000000 ubxsend_cfg_rst
+C:\Users\Srdjan\AppData\Local\Temp/ccgXaaaa.s:12     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccgXaaaa.s:17     .text:00000004 GpsFixValid
+C:\Users\Srdjan\AppData\Local\Temp/ccgXaaaa.s:29     .text:00000010 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccgXaaaa.s:788    .bss:00000000 gps_pos_available
+C:\Users\Srdjan\AppData\Local\Temp/ccgXaaaa.s:34     .text:00000014 parse_nmea
+C:\Users\Srdjan\AppData\Local\Temp/ccgXaaaa.s:38     .text:00000014 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccgXaaaa.s:94     .text:000000d4 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccgXaaaa.s:806    .bss:00000004 nmea_msg_len
+C:\Users\Srdjan\AppData\Local\Temp/ccgXaaaa.s:800    .bss:00000001 gps_msg_received
                             *COM*:000000ff nmea_msg_buf
-C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:104    .text:000000e0 parse_nmea_GPRMC
-C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:108    .text:000000e0 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:225    .text:0000026c $d
+C:\Users\Srdjan\AppData\Local\Temp/ccgXaaaa.s:104    .text:000000e0 parse_nmea_GPRMC
+C:\Users\Srdjan\AppData\Local\Temp/ccgXaaaa.s:108    .text:000000e0 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccgXaaaa.s:225    .text:0000026c $d
                             *COM*:00000002 gps_gspeed
-C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:239    .text:00000280 parse_nmea_GPGGA
-C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:243    .text:00000280 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:563    .text:00000700 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccgXaaaa.s:239    .text:00000280 parse_nmea_GPGGA
+C:\Users\Srdjan\AppData\Local\Temp/ccgXaaaa.s:243    .text:00000280 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccgXaaaa.s:563    .text:00000700 $d
                             *COM*:00000004 gps_lat
                             *COM*:00000004 gps_lon
-C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:792    .data:00000000 nav_utm_zone0
+C:\Users\Srdjan\AppData\Local\Temp/ccgXaaaa.s:794    .data:00000000 nav_utm_zone0
                             *COM*:00000004 gps_utm_east
                             *COM*:00000001 gps_utm_zone
                             *COM*:00000004 gps_utm_north
                             *COM*:00000001 gps_numSV
                             *COM*:00000004 gps_alt
-C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:583    .text:00000740 parse_nmea_GPGSA
-C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:587    .text:00000740 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:639    .text:000007f0 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccgXaaaa.s:583    .text:00000740 parse_nmea_GPGSA
+C:\Users\Srdjan\AppData\Local\Temp/ccgXaaaa.s:587    .text:00000740 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccgXaaaa.s:639    .text:000007f0 $d
                             *COM*:00000001 gps_mode
-C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:667    .text:000007fc parse_gps_msg
-C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:671    .text:000007fc $a
-C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:771    .text:0000095c $d
-                            *COM*:00000a1c global_data
-C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:806    .bss:00000008 nmea_msg_buf_tmp.19035
-C:\Users\Srdjan\AppData\Local\Temp/ccGAaaaa.s:789    .bss:00000001 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccgXaaaa.s:667    .text:000007fc parse_gps_msg
+C:\Users\Srdjan\AppData\Local\Temp/ccgXaaaa.s:671    .text:000007fc $a
+C:\Users\Srdjan\AppData\Local\Temp/ccgXaaaa.s:773    .text:00000960 $d
+                            *COM*:00000a7c global_data
+C:\Users\Srdjan\AppData\Local\Temp/ccgXaaaa.s:808    .bss:00000008 nmea_msg_buf_tmp.19055
+C:\Users\Srdjan\AppData\Local\Temp/ccgXaaaa.s:791    .bss:00000001 $d
                             *COM*:00000004 global_param_id
                             *COM*:00000004 state_fly_id
                             *COM*:00000002 gps_week

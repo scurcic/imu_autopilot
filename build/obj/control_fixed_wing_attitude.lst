@@ -22,7 +22,7 @@
   25              		@ frame_needed = 0, uses_anonymous_args = 0
   26 0004 F0402DE9 		stmfd	sp!, {r4, r5, r6, r7, lr}
   27 0008 A4619FE5 		ldr	r6, .L14
-  28 000c B00396E5 		ldr	r0, [r6, #944]	@ float
+  28 000c C40396E5 		ldr	r0, [r6, #964]	@ float
   29 0010 FEFFFFEB 		bl	__fixunssfsi
   30 0014 0040A0E1 		mov	r4, r0
   31 0018 FEFFFFEB 		bl	ppm_get_channel
@@ -78,7 +78,7 @@
   81 00dc 0400A0E1 		mov	r0, r4
   82 00e0 FEFFFFEB 		bl	__addsf3
   83 00e4 000085E5 		str	r0, [r5, #0]	@ float
-  84 00e8 B40396E5 		ldr	r0, [r6, #948]	@ float
+  84 00e8 C80396E5 		ldr	r0, [r6, #968]	@ float
   85 00ec FEFFFFEB 		bl	__fixunssfsi
   86 00f0 0040A0E1 		mov	r4, r0
   87 00f4 FEFFFFEB 		bl	ppm_get_channel
@@ -136,33 +136,33 @@
  139              		.align	2
  140              	.L14:
  141 01b4 00000000 		.word	global_data
- 142 01b8 04000000 		.word	lp_roll.2566
+ 142 01b8 04000000 		.word	lp_roll.2586
  143 01bc CDCC4CBE 		.word	-1102263091
- 144 01c0 00000000 		.word	lp_pitch.2567
+ 144 01c0 00000000 		.word	lp_pitch.2587
  145 01c4 9A99993E 		.word	1050253722
  147              		.bss
  148              		.align	2
- 149              	lp_pitch.2567:
+ 149              	lp_pitch.2587:
  150 0000 00000000 		.space	4
  151              		.align	2
- 152              	lp_roll.2566:
+ 152              	lp_roll.2586:
  153 0004 00000000 		.space	4
  154              		.comm	fw_yaw_controller,32,4
  155              		.comm	fw_nick_controller,32,4
  156              		.comm	fw_roll_controller,32,4
  157              		.comm	global_param_id,4,4
  158              		.comm	state_fly_id,4,4
- 159              		.comm	global_data,2588,4
+ 159              		.comm	global_data,2684,4
  160              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 control_fixed_wing_attitude.c
-C:\Users\Srdjan\AppData\Local\Temp/cc0Saaaa.s:6      .text:00000000 control_fixed_wing_attitude_init
-C:\Users\Srdjan\AppData\Local\Temp/cc0Saaaa.s:12     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc0Saaaa.s:22     .text:00000004 control_fixed_wing_attitude
-C:\Users\Srdjan\AppData\Local\Temp/cc0Saaaa.s:141    .text:000001b4 $d
-                            *COM*:00000a1c global_data
-C:\Users\Srdjan\AppData\Local\Temp/cc0Saaaa.s:152    .bss:00000004 lp_roll.2566
-C:\Users\Srdjan\AppData\Local\Temp/cc0Saaaa.s:149    .bss:00000000 lp_pitch.2567
+C:\Users\Srdjan\AppData\Local\Temp/ccURaaaa.s:6      .text:00000000 control_fixed_wing_attitude_init
+C:\Users\Srdjan\AppData\Local\Temp/ccURaaaa.s:12     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccURaaaa.s:22     .text:00000004 control_fixed_wing_attitude
+C:\Users\Srdjan\AppData\Local\Temp/ccURaaaa.s:141    .text:000001b4 $d
+                            *COM*:00000a7c global_data
+C:\Users\Srdjan\AppData\Local\Temp/ccURaaaa.s:152    .bss:00000004 lp_roll.2586
+C:\Users\Srdjan\AppData\Local\Temp/ccURaaaa.s:149    .bss:00000000 lp_pitch.2587
                             *COM*:00000020 fw_yaw_controller
                             *COM*:00000020 fw_nick_controller
                             *COM*:00000020 fw_roll_controller

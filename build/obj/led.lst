@@ -120,10 +120,10 @@
  128              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 led.c
-C:\Users\Srdjan\AppData\Local\Temp/cc0abaaa.s:6      .text:00000000 led_on
-C:\Users\Srdjan\AppData\Local\Temp/cc0abaaa.s:11     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc0abaaa.s:34     .text:00000048 led_off
-C:\Users\Srdjan\AppData\Local\Temp/cc0abaaa.s:62     .text:00000090 led_init
-C:\Users\Srdjan\AppData\Local\Temp/cc0abaaa.s:93     .text:000000ec led_toggle
+C:\Users\Srdjan\AppData\Local\Temp/cc4Caaaa.s:6      .text:00000000 led_on
+C:\Users\Srdjan\AppData\Local\Temp/cc4Caaaa.s:11     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc4Caaaa.s:34     .text:00000048 led_off
+C:\Users\Srdjan\AppData\Local\Temp/cc4Caaaa.s:62     .text:00000090 led_init
+C:\Users\Srdjan\AppData\Local\Temp/cc4Caaaa.s:93     .text:000000ec led_toggle
 
 NO UNDEFINED SYMBOLS

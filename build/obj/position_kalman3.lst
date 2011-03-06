@@ -298,31 +298,31 @@
  301              	.L26:
  302              		.align	2
  303              	.L25:
- 304 0434 A0000000 		.word	initialized.2859
- 305 0438 B0000000 		.word	r11.2852
+ 304 0434 A0000000 		.word	initialized.2879
+ 305 0438 B0000000 		.word	r11.2872
  306 043c FAED6B3A 		.word	980151802
  307 0440 BD378635 		.word	897988541
- 308 0444 C0000000 		.word	q11.2848
- 309 0448 A8000000 		.word	xdotprior.2854
- 310 044c B4000000 		.word	q22.2851
+ 308 0444 C0000000 		.word	q11.2868
+ 309 0448 A8000000 		.word	xdotprior.2874
+ 310 044c B4000000 		.word	q22.2871
  311 0450 8FC2753B 		.word	997573263
- 312 0454 BC000000 		.word	q12.2849
- 313 0458 B8000000 		.word	q21.2850
- 314 045c D0000000 		.word	p11.2844
- 315 0460 CC000000 		.word	p12.2845
- 316 0464 C8000000 		.word	p21.2846
- 317 0468 C4000000 		.word	p22.2847
- 318 046c A4000000 		.word	counter.2855
- 319 0470 AC000000 		.word	xprior.2853
+ 312 0454 BC000000 		.word	q12.2869
+ 313 0458 B8000000 		.word	q21.2870
+ 314 045c D0000000 		.word	p11.2864
+ 315 0460 CC000000 		.word	p12.2865
+ 316 0464 C8000000 		.word	p21.2866
+ 317 0468 C4000000 		.word	p22.2867
+ 318 046c A4000000 		.word	counter.2875
+ 319 0470 AC000000 		.word	xprior.2873
  320 0474 0C000000 		.word	state3_dot
  321 0478 0AD7A33B 		.word	1000593162
  322 047c 00000000 		.word	state3
  323 0480 00000000 		.word	thresh
  324 0484 00000000 		.word	slope
- 325 0488 E0000000 		.word	a11.2840
- 326 048c DC000000 		.word	a12.2841
- 327 0490 D8000000 		.word	a21.2842
- 328 0494 D4000000 		.word	a22.2843
+ 325 0488 E0000000 		.word	a11.2860
+ 326 048c DC000000 		.word	a12.2861
+ 327 0490 D8000000 		.word	a21.2862
+ 328 0494 D4000000 		.word	a22.2863
  329 0498 00000000 		.word	maxV
  330 049c 00000000 		.word	minV
  332              		.align	2
@@ -594,31 +594,31 @@
  599              	.L47:
  600              		.align	2
  601              	.L46:
- 602 089c 5C000000 		.word	initialized.2949
- 603 08a0 6C000000 		.word	r11.2942
+ 602 089c 5C000000 		.word	initialized.2969
+ 603 08a0 6C000000 		.word	r11.2962
  604 08a4 FAED6B3A 		.word	980151802
  605 08a8 BD378635 		.word	897988541
- 606 08ac 7C000000 		.word	q11.2938
- 607 08b0 64000000 		.word	ydotprior.2944
- 608 08b4 70000000 		.word	q22.2941
+ 606 08ac 7C000000 		.word	q11.2958
+ 607 08b0 64000000 		.word	ydotprior.2964
+ 608 08b4 70000000 		.word	q22.2961
  609 08b8 8FC2753B 		.word	997573263
- 610 08bc 78000000 		.word	q12.2939
- 611 08c0 8C000000 		.word	p11.2934
- 612 08c4 88000000 		.word	p12.2935
- 613 08c8 84000000 		.word	p21.2936
- 614 08cc 80000000 		.word	p22.2937
- 615 08d0 74000000 		.word	q21.2940
- 616 08d4 68000000 		.word	yprior.2943
- 617 08d8 60000000 		.word	counter.2945
+ 610 08bc 78000000 		.word	q12.2959
+ 611 08c0 8C000000 		.word	p11.2954
+ 612 08c4 88000000 		.word	p12.2955
+ 613 08c8 84000000 		.word	p21.2956
+ 614 08cc 80000000 		.word	p22.2957
+ 615 08d0 74000000 		.word	q21.2960
+ 616 08d4 68000000 		.word	yprior.2963
+ 617 08d8 60000000 		.word	counter.2965
  618 08dc 0C000000 		.word	state3_dot
  619 08e0 0AD7A33B 		.word	1000593162
  620 08e4 00000000 		.word	state3
  621 08e8 00000000 		.word	thresh
  622 08ec 00000000 		.word	slope
- 623 08f0 9C000000 		.word	a11.2930
- 624 08f4 98000000 		.word	a12.2931
- 625 08f8 94000000 		.word	a21.2932
- 626 08fc 90000000 		.word	a22.2933
+ 623 08f0 9C000000 		.word	a11.2950
+ 624 08f4 98000000 		.word	a12.2951
+ 625 08f8 94000000 		.word	a21.2952
+ 626 08fc 90000000 		.word	a22.2953
  627 0900 00000000 		.word	maxV
  628 0904 00000000 		.word	minV
  630              		.align	2
@@ -890,31 +890,31 @@
  897              	.L68:
  898              		.align	2
  899              	.L67:
- 900 0d04 18000000 		.word	initialized.3035
- 901 0d08 28000000 		.word	r11.3028
+ 900 0d04 18000000 		.word	initialized.3055
+ 901 0d08 28000000 		.word	r11.3048
  902 0d0c FAED6B3A 		.word	980151802
  903 0d10 BD378635 		.word	897988541
- 904 0d14 38000000 		.word	q11.3024
- 905 0d18 20000000 		.word	zdotprior.3030
- 906 0d1c 2C000000 		.word	q22.3027
+ 904 0d14 38000000 		.word	q11.3044
+ 905 0d18 20000000 		.word	zdotprior.3050
+ 906 0d1c 2C000000 		.word	q22.3047
  907 0d20 8FC2753B 		.word	997573263
- 908 0d24 34000000 		.word	q12.3025
- 909 0d28 48000000 		.word	p11.3020
- 910 0d2c 44000000 		.word	p12.3021
- 911 0d30 40000000 		.word	p21.3022
- 912 0d34 3C000000 		.word	p22.3023
- 913 0d38 30000000 		.word	q21.3026
- 914 0d3c 24000000 		.word	zprior.3029
- 915 0d40 1C000000 		.word	counter.3031
+ 908 0d24 34000000 		.word	q12.3045
+ 909 0d28 48000000 		.word	p11.3040
+ 910 0d2c 44000000 		.word	p12.3041
+ 911 0d30 40000000 		.word	p21.3042
+ 912 0d34 3C000000 		.word	p22.3043
+ 913 0d38 30000000 		.word	q21.3046
+ 914 0d3c 24000000 		.word	zprior.3049
+ 915 0d40 1C000000 		.word	counter.3051
  916 0d44 0C000000 		.word	state3_dot
  917 0d48 0AD7A33B 		.word	1000593162
  918 0d4c 00000000 		.word	state3
  919 0d50 00000000 		.word	thresh
  920 0d54 00000000 		.word	slope
- 921 0d58 58000000 		.word	a11.3016
- 922 0d5c 54000000 		.word	a12.3017
- 923 0d60 50000000 		.word	a21.3018
- 924 0d64 4C000000 		.word	a22.3019
+ 921 0d58 58000000 		.word	a11.3036
+ 922 0d5c 54000000 		.word	a12.3037
+ 923 0d60 50000000 		.word	a21.3038
+ 924 0d64 4C000000 		.word	a22.3039
  925 0d68 00000000 		.word	maxV
  926 0d6c 00000000 		.word	minV
  928              		.global	maxV
@@ -945,235 +945,235 @@
  959 000c 00000000 		.space	12
  959      00000000 
  959      00000000 
- 960              	initialized.3035:
+ 960              	initialized.3055:
  961 0018 00       		.space	1
  962 0019 000000   		.align	2
- 963              	counter.3031:
+ 963              	counter.3051:
  964 001c 00000000 		.space	4
  965              		.align	2
- 966              	zdotprior.3030:
+ 966              	zdotprior.3050:
  967 0020 00000000 		.space	4
  968              		.align	2
- 969              	zprior.3029:
+ 969              	zprior.3049:
  970 0024 00000000 		.space	4
  971              		.align	2
- 972              	r11.3028:
+ 972              	r11.3048:
  973 0028 00000000 		.space	4
  974              		.align	2
- 975              	q22.3027:
+ 975              	q22.3047:
  976 002c 00000000 		.space	4
  977              		.align	2
- 978              	q21.3026:
+ 978              	q21.3046:
  979 0030 00000000 		.space	4
  980              		.align	2
- 981              	q12.3025:
+ 981              	q12.3045:
  982 0034 00000000 		.space	4
  983              		.align	2
- 984              	q11.3024:
+ 984              	q11.3044:
  985 0038 00000000 		.space	4
  986              		.align	2
- 987              	p22.3023:
+ 987              	p22.3043:
  988 003c 00000000 		.space	4
  989              		.align	2
- 990              	p21.3022:
+ 990              	p21.3042:
  991 0040 00000000 		.space	4
  992              		.align	2
- 993              	p12.3021:
+ 993              	p12.3041:
  994 0044 00000000 		.space	4
  995              		.align	2
- 996              	p11.3020:
+ 996              	p11.3040:
  997 0048 00000000 		.space	4
  998              		.align	2
- 999              	a22.3019:
+ 999              	a22.3039:
  1000 004c 00000000 		.space	4
  1001              		.align	2
- 1002              	a21.3018:
+ 1002              	a21.3038:
  1003 0050 00000000 		.space	4
  1004              		.align	2
- 1005              	a12.3017:
+ 1005              	a12.3037:
  1006 0054 00000000 		.space	4
  1007              		.align	2
- 1008              	a11.3016:
+ 1008              	a11.3036:
  1009 0058 00000000 		.space	4
- 1010              	initialized.2949:
+ 1010              	initialized.2969:
  1011 005c 00       		.space	1
  1012 005d 000000   		.align	2
- 1013              	counter.2945:
+ 1013              	counter.2965:
  1014 0060 00000000 		.space	4
  1015              		.align	2
- 1016              	ydotprior.2944:
+ 1016              	ydotprior.2964:
  1017 0064 00000000 		.space	4
  1018              		.align	2
- 1019              	yprior.2943:
+ 1019              	yprior.2963:
  1020 0068 00000000 		.space	4
  1021              		.align	2
- 1022              	r11.2942:
+ 1022              	r11.2962:
  1023 006c 00000000 		.space	4
  1024              		.align	2
- 1025              	q22.2941:
+ 1025              	q22.2961:
  1026 0070 00000000 		.space	4
  1027              		.align	2
- 1028              	q21.2940:
+ 1028              	q21.2960:
  1029 0074 00000000 		.space	4
  1030              		.align	2
- 1031              	q12.2939:
+ 1031              	q12.2959:
  1032 0078 00000000 		.space	4
  1033              		.align	2
- 1034              	q11.2938:
+ 1034              	q11.2958:
  1035 007c 00000000 		.space	4
  1036              		.align	2
- 1037              	p22.2937:
+ 1037              	p22.2957:
  1038 0080 00000000 		.space	4
  1039              		.align	2
- 1040              	p21.2936:
+ 1040              	p21.2956:
  1041 0084 00000000 		.space	4
  1042              		.align	2
- 1043              	p12.2935:
+ 1043              	p12.2955:
  1044 0088 00000000 		.space	4
  1045              		.align	2
- 1046              	p11.2934:
+ 1046              	p11.2954:
  1047 008c 00000000 		.space	4
  1048              		.align	2
- 1049              	a22.2933:
+ 1049              	a22.2953:
  1050 0090 00000000 		.space	4
  1051              		.align	2
- 1052              	a21.2932:
+ 1052              	a21.2952:
  1053 0094 00000000 		.space	4
  1054              		.align	2
- 1055              	a12.2931:
+ 1055              	a12.2951:
  1056 0098 00000000 		.space	4
  1057              		.align	2
- 1058              	a11.2930:
+ 1058              	a11.2950:
  1059 009c 00000000 		.space	4
- 1060              	initialized.2859:
+ 1060              	initialized.2879:
  1061 00a0 00       		.space	1
  1062 00a1 000000   		.align	2
- 1063              	counter.2855:
+ 1063              	counter.2875:
  1064 00a4 00000000 		.space	4
  1065              		.align	2
- 1066              	xdotprior.2854:
+ 1066              	xdotprior.2874:
  1067 00a8 00000000 		.space	4
  1068              		.align	2
- 1069              	xprior.2853:
+ 1069              	xprior.2873:
  1070 00ac 00000000 		.space	4
  1071              		.align	2
- 1072              	r11.2852:
+ 1072              	r11.2872:
  1073 00b0 00000000 		.space	4
  1074              		.align	2
- 1075              	q22.2851:
+ 1075              	q22.2871:
  1076 00b4 00000000 		.space	4
  1077              		.align	2
- 1078              	q21.2850:
+ 1078              	q21.2870:
  1079 00b8 00000000 		.space	4
  1080              		.align	2
- 1081              	q12.2849:
+ 1081              	q12.2869:
  1082 00bc 00000000 		.space	4
  1083              		.align	2
- 1084              	q11.2848:
+ 1084              	q11.2868:
  1085 00c0 00000000 		.space	4
  1086              		.align	2
- 1087              	p22.2847:
+ 1087              	p22.2867:
  1088 00c4 00000000 		.space	4
  1089              		.align	2
- 1090              	p21.2846:
+ 1090              	p21.2866:
  1091 00c8 00000000 		.space	4
  1092              		.align	2
- 1093              	p12.2845:
+ 1093              	p12.2865:
  1094 00cc 00000000 		.space	4
  1095              		.align	2
- 1096              	p11.2844:
+ 1096              	p11.2864:
  1097 00d0 00000000 		.space	4
  1098              		.align	2
- 1099              	a22.2843:
+ 1099              	a22.2863:
  1100 00d4 00000000 		.space	4
  1101              		.align	2
- 1102              	a21.2842:
+ 1102              	a21.2862:
  1103 00d8 00000000 		.space	4
  1104              		.align	2
- 1105              	a12.2841:
+ 1105              	a12.2861:
  1106 00dc 00000000 		.space	4
  1107              		.align	2
- 1108              	a11.2840:
+ 1108              	a11.2860:
  1109 00e0 00000000 		.space	4
  1110              		.comm	global_param_id,4,4
  1111              		.comm	state_fly_id,4,4
- 1112              		.comm	global_data,2588,4
+ 1112              		.comm	global_data,2684,4
  1113              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 position_kalman3.c
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:6      .text:00000000 position_kalman3_init
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:10     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:23     .text:00000028 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:955    .bss:00000000 state3
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:958    .bss:0000000c state3_dot
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:35     .text:00000030 x_position_kalman3
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:39     .text:00000030 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:304    .text:00000434 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:1060   .bss:000000a0 initialized.2859
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:1072   .bss:000000b0 r11.2852
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:1084   .bss:000000c0 q11.2848
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:1066   .bss:000000a8 xdotprior.2854
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:1075   .bss:000000b4 q22.2851
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:1081   .bss:000000bc q12.2849
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:1078   .bss:000000b8 q21.2850
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:1096   .bss:000000d0 p11.2844
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:1093   .bss:000000cc p12.2845
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:1090   .bss:000000c8 p21.2846
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:1087   .bss:000000c4 p22.2847
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:1063   .bss:000000a4 counter.2855
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:1069   .bss:000000ac xprior.2853
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:945    .data:00000008 thresh
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:951    .data:0000000c slope
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:1108   .bss:000000e0 a11.2840
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:1105   .bss:000000dc a12.2841
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:1102   .bss:000000d8 a21.2842
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:1099   .bss:000000d4 a22.2843
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:933    .data:00000000 maxV
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:939    .data:00000004 minV
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:335    .text:000004a0 y_position_kalman3
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:339    .text:000004a0 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:602    .text:0000089c $d
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:1010   .bss:0000005c initialized.2949
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:1022   .bss:0000006c r11.2942
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:1034   .bss:0000007c q11.2938
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:1016   .bss:00000064 ydotprior.2944
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:1025   .bss:00000070 q22.2941
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:1031   .bss:00000078 q12.2939
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:1046   .bss:0000008c p11.2934
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:1043   .bss:00000088 p12.2935
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:1040   .bss:00000084 p21.2936
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:1037   .bss:00000080 p22.2937
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:1028   .bss:00000074 q21.2940
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:1019   .bss:00000068 yprior.2943
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:1013   .bss:00000060 counter.2945
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:1058   .bss:0000009c a11.2930
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:1055   .bss:00000098 a12.2931
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:1052   .bss:00000094 a21.2932
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:1049   .bss:00000090 a22.2933
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:633    .text:00000908 z_position_kalman3
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:637    .text:00000908 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:900    .text:00000d04 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:960    .bss:00000018 initialized.3035
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:972    .bss:00000028 r11.3028
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:984    .bss:00000038 q11.3024
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:966    .bss:00000020 zdotprior.3030
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:975    .bss:0000002c q22.3027
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:981    .bss:00000034 q12.3025
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:996    .bss:00000048 p11.3020
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:993    .bss:00000044 p12.3021
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:990    .bss:00000040 p21.3022
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:987    .bss:0000003c p22.3023
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:978    .bss:00000030 q21.3026
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:969    .bss:00000024 zprior.3029
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:963    .bss:0000001c counter.3031
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:1008   .bss:00000058 a11.3016
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:1005   .bss:00000054 a12.3017
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:1002   .bss:00000050 a21.3018
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:999    .bss:0000004c a22.3019
-C:\Users\Srdjan\AppData\Local\Temp/ccIZaaaa.s:934    .data:00000000 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:6      .text:00000000 position_kalman3_init
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:10     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:23     .text:00000028 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:955    .bss:00000000 state3
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:958    .bss:0000000c state3_dot
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:35     .text:00000030 x_position_kalman3
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:39     .text:00000030 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:304    .text:00000434 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:1060   .bss:000000a0 initialized.2879
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:1072   .bss:000000b0 r11.2872
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:1084   .bss:000000c0 q11.2868
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:1066   .bss:000000a8 xdotprior.2874
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:1075   .bss:000000b4 q22.2871
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:1081   .bss:000000bc q12.2869
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:1078   .bss:000000b8 q21.2870
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:1096   .bss:000000d0 p11.2864
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:1093   .bss:000000cc p12.2865
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:1090   .bss:000000c8 p21.2866
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:1087   .bss:000000c4 p22.2867
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:1063   .bss:000000a4 counter.2875
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:1069   .bss:000000ac xprior.2873
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:945    .data:00000008 thresh
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:951    .data:0000000c slope
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:1108   .bss:000000e0 a11.2860
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:1105   .bss:000000dc a12.2861
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:1102   .bss:000000d8 a21.2862
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:1099   .bss:000000d4 a22.2863
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:933    .data:00000000 maxV
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:939    .data:00000004 minV
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:335    .text:000004a0 y_position_kalman3
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:339    .text:000004a0 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:602    .text:0000089c $d
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:1010   .bss:0000005c initialized.2969
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:1022   .bss:0000006c r11.2962
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:1034   .bss:0000007c q11.2958
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:1016   .bss:00000064 ydotprior.2964
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:1025   .bss:00000070 q22.2961
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:1031   .bss:00000078 q12.2959
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:1046   .bss:0000008c p11.2954
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:1043   .bss:00000088 p12.2955
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:1040   .bss:00000084 p21.2956
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:1037   .bss:00000080 p22.2957
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:1028   .bss:00000074 q21.2960
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:1019   .bss:00000068 yprior.2963
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:1013   .bss:00000060 counter.2965
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:1058   .bss:0000009c a11.2950
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:1055   .bss:00000098 a12.2951
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:1052   .bss:00000094 a21.2952
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:1049   .bss:00000090 a22.2953
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:633    .text:00000908 z_position_kalman3
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:637    .text:00000908 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:900    .text:00000d04 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:960    .bss:00000018 initialized.3055
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:972    .bss:00000028 r11.3048
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:984    .bss:00000038 q11.3044
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:966    .bss:00000020 zdotprior.3050
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:975    .bss:0000002c q22.3047
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:981    .bss:00000034 q12.3045
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:996    .bss:00000048 p11.3040
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:993    .bss:00000044 p12.3041
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:990    .bss:00000040 p21.3042
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:987    .bss:0000003c p22.3043
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:978    .bss:00000030 q21.3046
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:969    .bss:00000024 zprior.3049
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:963    .bss:0000001c counter.3051
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:1008   .bss:00000058 a11.3036
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:1005   .bss:00000054 a12.3037
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:1002   .bss:00000050 a21.3038
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:999    .bss:0000004c a22.3039
+C:\Users\Srdjan\AppData\Local\Temp/ccoDaaaa.s:934    .data:00000000 $d
                             *COM*:00000004 global_param_id
                             *COM*:00000004 state_fly_id
-                            *COM*:00000a1c global_data
+                            *COM*:00000a7c global_data
 
 UNDEFINED SYMBOLS
 __addsf3

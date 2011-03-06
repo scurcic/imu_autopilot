@@ -90,16 +90,16 @@
  104              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 syscalls.c
-C:\Users\Srdjan\AppData\Local\Temp/ccc1aaaa.s:6      .text:00000000 _read_r
-C:\Users\Srdjan\AppData\Local\Temp/ccc1aaaa.s:11     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccc1aaaa.s:18     .text:00000008 _write_r
-C:\Users\Srdjan\AppData\Local\Temp/ccc1aaaa.s:30     .text:00000010 _close_r
-C:\Users\Srdjan\AppData\Local\Temp/ccc1aaaa.s:42     .text:00000018 _lseek_r
-C:\Users\Srdjan\AppData\Local\Temp/ccc1aaaa.s:54     .text:00000020 _fstat_r
-C:\Users\Srdjan\AppData\Local\Temp/ccc1aaaa.s:68     .text:00000030 isatty
-C:\Users\Srdjan\AppData\Local\Temp/ccc1aaaa.s:80     .text:00000038 _sbrk_r
-C:\Users\Srdjan\AppData\Local\Temp/ccc1aaaa.s:97     .text:00000058 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccc1aaaa.s:102    .bss:00000000 heap_ptr
+C:\Users\Srdjan\AppData\Local\Temp/ccQlaaaa.s:6      .text:00000000 _read_r
+C:\Users\Srdjan\AppData\Local\Temp/ccQlaaaa.s:11     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccQlaaaa.s:18     .text:00000008 _write_r
+C:\Users\Srdjan\AppData\Local\Temp/ccQlaaaa.s:30     .text:00000010 _close_r
+C:\Users\Srdjan\AppData\Local\Temp/ccQlaaaa.s:42     .text:00000018 _lseek_r
+C:\Users\Srdjan\AppData\Local\Temp/ccQlaaaa.s:54     .text:00000020 _fstat_r
+C:\Users\Srdjan\AppData\Local\Temp/ccQlaaaa.s:68     .text:00000030 isatty
+C:\Users\Srdjan\AppData\Local\Temp/ccQlaaaa.s:80     .text:00000038 _sbrk_r
+C:\Users\Srdjan\AppData\Local\Temp/ccQlaaaa.s:97     .text:00000058 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccQlaaaa.s:102    .bss:00000000 heap_ptr
 
 UNDEFINED SYMBOLS
 end

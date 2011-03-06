@@ -617,17 +617,17 @@
  618 0934 9FFFFFEA 		b	.L5
  620              		.comm	global_param_id,4,4
  621              		.comm	state_fly_id,4,4
- 622              		.comm	global_data,2588,4
+ 622              		.comm	global_data,2684,4
  623              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 control_position.c
-C:\Users\Srdjan\AppData\Local\Temp/ccsNaaaa.s:13     .text:00000000 control_position
-C:\Users\Srdjan\AppData\Local\Temp/ccsNaaaa.s:17     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccsNaaaa.s:302    .text:00000468 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccsNaaaa.s:371    .text:00000578 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc61aaaa.s:13     .text:00000000 control_position
+C:\Users\Srdjan\AppData\Local\Temp/cc61aaaa.s:17     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc61aaaa.s:302    .text:00000468 $d
+C:\Users\Srdjan\AppData\Local\Temp/cc61aaaa.s:371    .text:00000578 $a
                             *COM*:00000004 global_param_id
                             *COM*:00000004 state_fly_id
-                            *COM*:00000a1c global_data
+                            *COM*:00000a7c global_data
 
 UNDEFINED SYMBOLS
 __subsf3

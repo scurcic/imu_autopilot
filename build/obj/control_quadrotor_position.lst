@@ -22,7 +22,7 @@
   21 0000 F04F2DE9 		stmfd	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
   22 0004 10729FE5 		ldr	r7, .L29+8
   23 0008 04D04DE2 		sub	sp, sp, #4
-  24 000c 001397E5 		ldr	r1, [r7, #768]	@ float
+  24 000c 141397E5 		ldr	r1, [r7, #788]	@ float
   25 0010 680097E5 		ldr	r0, [r7, #104]	@ float
   26 0014 FEFFFFEB 		bl	__subsf3
   27 0018 805097E5 		ldr	r5, [r7, #128]	@ float
@@ -35,7 +35,7 @@
   34 0034 0B00A0E1 		mov	r0, fp
   35 0038 00608DE5 		str	r6, [sp, #0]	@ float
   36 003c FEFFFFEB 		bl	pid_calculate
-  37 0040 041397E5 		ldr	r1, [r7, #772]	@ float
+  37 0040 181397E5 		ldr	r1, [r7, #792]	@ float
   38 0044 00A0A0E1 		mov	sl, r0
   39 0048 6C0097E5 		ldr	r0, [r7, #108]	@ float
   40 004c B4A087E5 		str	sl, [r7, #180]	@ float
@@ -58,7 +58,7 @@
   57 0090 00608DE5 		str	r6, [sp, #0]	@ float
   58 0094 B88087E5 		str	r8, [r7, #184]	@ float
   59 0098 FEFFFFEB 		bl	pid_calculate
-  60 009c A84297E5 		ldr	r4, [r7, #680]	@ float
+  60 009c BC4297E5 		ldr	r4, [r7, #700]	@ float
   61 00a0 023180E2 		add	r3, r0, #-2147483648
   62 00a4 0300A0E1 		mov	r0, r3
   63 00a8 0410A0E1 		mov	r1, r4
@@ -89,7 +89,7 @@
   88 010c 0C0092E8 		ldmia	r2, {r2-r3}
   89 0110 FEFFFFEB 		bl	__muldf3
   90 0114 FEFFFFEB 		bl	__truncdfsf2
-  91 0118 945297E5 		ldr	r5, [r7, #660]	@ float
+  91 0118 A85297E5 		ldr	r5, [r7, #680]	@ float
   92 011c 0040A0E1 		mov	r4, r0
   93 0120 0510A0E1 		mov	r1, r5
   94 0124 D44087E5 		str	r4, [r7, #212]	@ float
@@ -104,7 +104,7 @@
  103 0148 2D0000BA 		blt	.L25
  104              	.L11:
  105 014c D85097E5 		ldr	r5, [r7, #216]	@ float
- 106 0150 944297E5 		ldr	r4, [r7, #660]	@ float
+ 106 0150 A84297E5 		ldr	r4, [r7, #680]	@ float
  107 0154 0500A0E1 		mov	r0, r5
  108 0158 0410A0E1 		mov	r1, r4
  109 015c FEFFFFEB 		bl	__gtsf2
@@ -141,7 +141,7 @@
  140 01d0 F2FFFF1A 		bne	.L24
  141              	.L28:
  142 01d4 043043E2 		sub	r3, r3, #4
- 143 01d8 840397E5 		ldr	r0, [r7, #900]	@ float
+ 143 01d8 980397E5 		ldr	r0, [r7, #920]	@ float
  144 01dc FE15A0E3 		mov	r1, #1065353216
  145 01e0 0030C2E5 		strb	r3, [r2, #0]
  146 01e4 FEFFFFEB 		bl	__eqsf2
@@ -178,12 +178,12 @@
  179              		@ frame_needed = 0, uses_anonymous_args = 0
  180 023c F0412DE9 		stmfd	sp!, {r4, r5, r6, r7, r8, lr}
  181 0240 B0409FE5 		ldr	r4, .L33
- 182 0244 E0C294E5 		ldr	ip, [r4, #736]	@ float
- 183 0248 E4E294E5 		ldr	lr, [r4, #740]	@ float
+ 182 0244 F4C294E5 		ldr	ip, [r4, #756]	@ float
+ 183 0248 F8E294E5 		ldr	lr, [r4, #760]	@ float
  184 024c 0020A0E3 		mov	r2, #0
- 185 0250 E86294E5 		ldr	r6, [r4, #744]	@ float
- 186 0254 EC7294E5 		ldr	r7, [r4, #748]	@ float
- 187 0258 988294E5 		ldr	r8, [r4, #664]	@ float
+ 185 0250 FC6294E5 		ldr	r6, [r4, #764]	@ float
+ 186 0254 007394E5 		ldr	r7, [r4, #768]	@ float
+ 187 0258 AC8294E5 		ldr	r8, [r4, #684]	@ float
  188 025c 4114A0E3 		mov	r1, #1090519040
  189 0260 0CD04DE2 		sub	sp, sp, #12
  190 0264 0150A0E3 		mov	r5, #1
@@ -200,7 +200,7 @@
  201 0290 04508DE5 		str	r5, [sp, #4]
  202 0294 FEFFFFEB 		bl	pid_init
  203 0298 0020A0E3 		mov	r2, #0
- 204 029c 98E294E5 		ldr	lr, [r4, #664]	@ float
+ 204 029c ACE294E5 		ldr	lr, [r4, #684]	@ float
  205 02a0 4114A0E3 		mov	r1, #1090519040
  206 02a4 0230A0E1 		mov	r3, r2
  207 02a8 97C0A0E3 		mov	ip, #151
@@ -210,7 +210,7 @@
  211 02b8 00E08DE5 		str	lr, [sp, #0]	@ float
  212 02bc 04508DE5 		str	r5, [sp, #4]
  213 02c0 FEFFFFEB 		bl	pid_init
- 214 02c4 ACC294E5 		ldr	ip, [r4, #684]	@ float
+ 214 02c4 C0C294E5 		ldr	ip, [r4, #704]	@ float
  215 02c8 0020A0E3 		mov	r2, #0
  216 02cc 4114A0E3 		mov	r1, #1090519040
  217 02d0 00C08DE5 		str	ip, [sp, #0]	@ float
@@ -239,22 +239,22 @@
  243              		.comm	z_axis_controller,32,4
  244              		.comm	global_param_id,4,4
  245              		.comm	state_fly_id,4,4
- 246              		.comm	global_data,2588,4
+ 246              		.comm	global_data,2684,4
  247              		.comm	mavlink_system,8,4
  248              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 control_quadrotor_position.c
-C:\Users\Srdjan\AppData\Local\Temp/ccaebaaa.s:17     .text:00000000 control_quadrotor_position
-C:\Users\Srdjan\AppData\Local\Temp/ccaebaaa.s:21     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccaebaaa.s:162    .text:00000214 $d
-                            *COM*:00000a1c global_data
+C:\Users\Srdjan\AppData\Local\Temp/cc23aaaa.s:17     .text:00000000 control_quadrotor_position
+C:\Users\Srdjan\AppData\Local\Temp/cc23aaaa.s:21     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc23aaaa.s:162    .text:00000214 $d
+                            *COM*:00000a7c global_data
                             *COM*:00000020 x_axis_controller
                             *COM*:00000020 y_axis_controller
                             *COM*:00000020 z_axis_controller
-C:\Users\Srdjan\AppData\Local\Temp/ccaebaaa.s:239    .bss:00000000 pos_controller_counter
-C:\Users\Srdjan\AppData\Local\Temp/ccaebaaa.s:176    .text:0000023c control_quadrotor_position_init
-C:\Users\Srdjan\AppData\Local\Temp/ccaebaaa.s:180    .text:0000023c $a
-C:\Users\Srdjan\AppData\Local\Temp/ccaebaaa.s:230    .text:000002f8 $d
+C:\Users\Srdjan\AppData\Local\Temp/cc23aaaa.s:239    .bss:00000000 pos_controller_counter
+C:\Users\Srdjan\AppData\Local\Temp/cc23aaaa.s:176    .text:0000023c control_quadrotor_position_init
+C:\Users\Srdjan\AppData\Local\Temp/cc23aaaa.s:180    .text:0000023c $a
+C:\Users\Srdjan\AppData\Local\Temp/cc23aaaa.s:230    .text:000002f8 $d
                             *COM*:00000004 global_param_id
                             *COM*:00000004 state_fly_id
                             *COM*:00000008 mavlink_system

@@ -88,50 +88,50 @@
   89              	.L11:
   90 0110 E17A943F 		.word	1066695393
   91 0114 7B14AE47 		.word	1202590843
-  92 0118 D4000000 		.word	height_prev.3172
+  92 0118 D4000000 		.word	height_prev.3192
   93 011c 9A99193F 		.word	1058642330
-  94 0120 00000000 		.word	index_lowpass.3176
-  95 0124 08000000 		.word	height_array.3174
-  96 0128 04000000 		.word	lowpass_height.3175
+  94 0120 00000000 		.word	index_lowpass.3196
+  95 0124 08000000 		.word	height_array.3194
+  96 0128 04000000 		.word	lowpass_height.3195
   97 012c 9A9919BF 		.word	-1088841318
-  98 0130 D0000000 		.word	height_low_prev.3173
+  98 0130 D0000000 		.word	height_low_prev.3193
  100              		.bss
  101              		.align	2
- 102              	index_lowpass.3176:
+ 102              	index_lowpass.3196:
  103 0000 00000000 		.space	4
  104              		.align	2
- 105              	lowpass_height.3175:
+ 105              	lowpass_height.3195:
  106 0004 00000000 		.space	4
  107              		.align	2
- 108              	height_array.3174:
+ 108              	height_array.3194:
  109 0008 00000000 		.space	200
  109      00000000 
  109      00000000 
  109      00000000 
  109      00000000 
  110              		.align	2
- 111              	height_low_prev.3173:
+ 111              	height_low_prev.3193:
  112 00d0 00000000 		.space	4
  113              		.align	2
- 114              	height_prev.3172:
+ 114              	height_prev.3192:
  115 00d4 00000000 		.space	4
  116              		.comm	global_param_id,4,4
  117              		.comm	state_fly_id,4,4
- 118              		.comm	global_data,2588,4
+ 118              		.comm	global_data,2684,4
  119              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 simple_altitude_moving_average.c
-C:\Users\Srdjan\AppData\Local\Temp/cccTaaaa.s:14     .text:00000000 simple_altitude_moving_average
-C:\Users\Srdjan\AppData\Local\Temp/cccTaaaa.s:18     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/cccTaaaa.s:90     .text:00000110 $d
-C:\Users\Srdjan\AppData\Local\Temp/cccTaaaa.s:114    .bss:000000d4 height_prev.3172
-C:\Users\Srdjan\AppData\Local\Temp/cccTaaaa.s:102    .bss:00000000 index_lowpass.3176
-C:\Users\Srdjan\AppData\Local\Temp/cccTaaaa.s:108    .bss:00000008 height_array.3174
-C:\Users\Srdjan\AppData\Local\Temp/cccTaaaa.s:105    .bss:00000004 lowpass_height.3175
-C:\Users\Srdjan\AppData\Local\Temp/cccTaaaa.s:111    .bss:000000d0 height_low_prev.3173
+C:\Users\Srdjan\AppData\Local\Temp/cc6Xaaaa.s:14     .text:00000000 simple_altitude_moving_average
+C:\Users\Srdjan\AppData\Local\Temp/cc6Xaaaa.s:18     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc6Xaaaa.s:90     .text:00000110 $d
+C:\Users\Srdjan\AppData\Local\Temp/cc6Xaaaa.s:114    .bss:000000d4 height_prev.3192
+C:\Users\Srdjan\AppData\Local\Temp/cc6Xaaaa.s:102    .bss:00000000 index_lowpass.3196
+C:\Users\Srdjan\AppData\Local\Temp/cc6Xaaaa.s:108    .bss:00000008 height_array.3194
+C:\Users\Srdjan\AppData\Local\Temp/cc6Xaaaa.s:105    .bss:00000004 lowpass_height.3195
+C:\Users\Srdjan\AppData\Local\Temp/cc6Xaaaa.s:111    .bss:000000d0 height_low_prev.3193
                             *COM*:00000004 global_param_id
                             *COM*:00000004 state_fly_id
-                            *COM*:00000a1c global_data
+                            *COM*:00000a7c global_data
 
 UNDEFINED SYMBOLS
 __divsf3
