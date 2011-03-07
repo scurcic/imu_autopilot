@@ -10,33 +10,58 @@
 //void configure_adns9500();
 //
 
-void adns9500_write_reg(unsigned char reg,unsigned char data);
+void adns9500_1_write_reg(unsigned char reg,unsigned char data);
+void adns9500_2_write_reg(unsigned char reg,unsigned char data);
+
 void adns9500_on_spi_write_reg(void);
-void adns9500_srom_download(void);
-void adns9500_write_srom(void);
+
+void adns9500_1_srom_download(void);
+void adns9500_2_srom_download(void);
+
+void adns9500_1_write_srom(void);
+void adns9500_2_write_srom(void);
+
 void my_delay(unsigned long delay );
 void delay_us(unsigned long us);
 
-void adns9500_power_up_sequence(void);
+void adns9500_1_power_up_sequence(void);
+void adns9500_2_power_up_sequence(void);
 
-void adns9500_read_reg(unsigned char reg);
-int adns9500_get_value(int axis);
+void adns9500_1_read_reg(unsigned char reg);
+void adns9500_2_read_reg(unsigned char reg);
+
+int adns9500_1_get_value(int axis);
+int adns9500_2_get_value(int axis);
+
 void adns9500_init(void);
 
-void adns9500_select(void);
-void adns9500_unselect(void);
+void adns9500_1_select(void);
+void adns9500_1_unselect(void);
+
+void adns9500_2_select(void);
+void adns9500_2_unselect(void);
+
 void us_delay(unsigned long us);
+
 
 void adns9500_on_spi_motion_burst(void);
 
 unsigned char set_bits(unsigned char data,unsigned char mask);
 unsigned char clear_bits(unsigned char data,unsigned char mask);
 void adns9500_on_spi_write(void);
-void adns9500_on_spi_read_reg(void);
+void adns9500_1_on_spi_read_reg(void);
+void adns9500_2_on_spi_read_reg(void);
+
 void adns9500_on_spi_write_srom(void);
-void adns9500_read_sensor(void);
+
+void adns9500_1_read_sensor(void);
+void adns9500_2_read_sensor(void);
+
 void check_connection(void);
-void adns9500_check_motion(void);
+
+//void adns9500_1_check_motion(void);
+//void adns9500_2_check_motion(void);
+
 void adns9500_read_motion_burst(void);
 
 //Registers

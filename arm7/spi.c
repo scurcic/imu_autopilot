@@ -36,6 +36,76 @@ void spi_transmit(spi_package* package) {
 	(*package).spi_interrupt_handler();
 }
 
+void spi_transmit_srom(srom_spi_package* package) {
+	/*copy data into fifo*/
+	SSPDR = (*package).data[0];
+	/*set bit mode (8bit or 16bit)*/
+	SSPCR0 = (*package).bit_mode |  SSP_FRF | SSP_CPOL | SSP_CPHA | SSP_SCR;
+	/*select the device*/
+	(*package).slave_select();
+	/*enable spi and send fifo*/
+	SpiEnable();
+	/*wait until the address has been sent(Transmit fifo is emtpy)*/
+	while(SSPSR&(1<<BSY));
+	/*disable spi*/
+	SpiDisable();
+	delay_us(15);
+//	SSPDR = (*package).data[1];
+//	SpiEnable();
+//	while(SSPSR&(1<<BSY));
+//		/*disable spi*/
+//		SpiDisable();
+//		delay_us(50);
+	for(int i=1; i<(*package).length; i++){
+		/*copy data into fifo*/
+		SSPDR = (*package).data[i];
+		/*enable spi and send fifo*/
+		SpiEnable();
+		/*wait until all data has been sent(Transmit fifo is emtpy)*/
+		while(SSPSR&(1<<BSY));
+		/*disable spi*/
+		SpiDisable();
+		delay_us(15);
+		if ((*package).data[3070]==187)
+		{
+			led_on(LED_GREEN);
+		}
+	}
+	/*unselect device*/
+	(*package).slave_unselect();
+	/*read out the dummy bytes or the data bytes*/
+	(*package).spi_interrupt_handler();
+}
+
+void spi_adns9500_read_reg_transmit(spi_package* package) {
+	/*copy address into fifo*/
+	SSPDR = (*package).data[0];
+	/*set bit mode (8bit or 16bit)*/
+	SSPCR0 = (*package).bit_mode |  SSP_FRF | SSP_CPOL | SSP_CPHA | SSP_SCR;
+	/*select the device*/
+	(*package).slave_select();
+	/*enable spi and send fifo*/
+	SpiEnable();
+	/*wait until the address has been sent(Transmit fifo is emtpy)*/
+	while(SSPSR&(1<<BSY));
+	/*disable spi*/
+	SpiDisable();
+	/*wait for T_SRAD and let the sensor prepare data*/
+	delay_us(120);
+	/*generate clock for ADNS9500 -> MCU transmission*/
+	SSPDR = (*package).data[1];
+	/*enable spi and send fifo*/
+	SpiEnable();
+	/*wait until all data has been sent(Transmit fifo is emtpy)*/
+	while(SSPSR&(1<<BSY));
+	/*disable spi*/
+	SpiDisable();
+	/*unselect device*/
+	(*package).slave_unselect();
+	/*read out the dummy bytes or the data bytes*/
+	(*package).spi_interrupt_handler();
+}
+
 void spi_init(void){
 	/* setup pins for SSP (SCK, MISO, MOSI) */
 	PINSEL1 |= SSP_PINSEL1_SCK  | SSP_PINSEL1_MISO | SSP_PINSEL1_MOSI;

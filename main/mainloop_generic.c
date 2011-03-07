@@ -94,8 +94,7 @@ void main_init_generic(void)
 	hw_init();
 	enableIRQ();
 	led_init();
-	led_on(LED_GREEN);
-	buzzer_init();
+//	buzzer_init();
 	sys_time_init();
 	sys_time_periodic_init();
 	sys_time_clock_init();
@@ -132,7 +131,6 @@ void main_init_generic(void)
 
 	// Do the auto-gyro calibration for 1 second
 	// Get current temperature
-	led_on(LED_RED);
 	gyro_init();
 
 //	uint8_t timeout = 3;
@@ -155,7 +153,7 @@ void main_init_generic(void)
 //	}
 	//FIXME redo init because of SD driver decreasing speed
 	//spi_init();
-	led_off(LED_RED);
+//	led_off(LED_RED);
 
 	// Stop trying to reach the EEPROM - if it has not been found by now, assume
 	// there is no EEPROM mounted
@@ -179,6 +177,10 @@ void main_init_generic(void)
 	//Magnet sensor
 	hmc5843_init();
 	acc_init();
+	led_on(LED_RED);
+
+	//Mouse sensor init
+	mouse_init();
 
 	// Comm parameter init
 	mavlink_system.sysid = global_data.param[PARAM_SYSTEM_ID]; // System ID, 1-255
@@ -240,7 +242,7 @@ void main_init_generic(void)
 	attitude_observer_init(init_state_accel, init_state_magnet);
 
 	debug_message_buffer("Attitude Filter initialized");
-	led_on(LED_RED);
+//	led_on(LED_RED);
 
 	// Send second message heartbeat
 	mavlink_msg_heartbeat_send(MAVLINK_COMM_1,
@@ -264,7 +266,7 @@ void main_init_generic(void)
 	debug_message_buffer("System is initialized");
 
 	// Calibration stopped
-	led_off(LED_RED);
+//	led_off(LED_RED);
 
 	global_data.state.mav_mode = MAV_MODE_READY;
 	global_data.state.status = MAV_STATE_STANDBY;
@@ -281,13 +283,13 @@ void main_init_generic(void)
 	{
 		global_data.state.mav_mode = MAV_MODE_MANUAL;
 		debug_message_buffer("RESULT: remote control switched ON");
-		led_on(LED_GREEN);
+//		led_on(LED_GREEN);
 	}
 	else
 	{
 		global_data.state.mav_mode = MAV_MODE_LOCKED;
 		debug_message_buffer("RESULT: remote control switched OFF");
-		led_off(LED_GREEN);
+//		led_off(LED_GREEN);
 	}
 }
 

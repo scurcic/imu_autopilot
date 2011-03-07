@@ -74,6 +74,34 @@ typedef struct {
 	void (*spi_interrupt_handler)(void);
 } spi_package;
 
+typedef struct {
+	/*! An array of max 8 frames. You can put in here 8 or 16 bit
+	 * values. You have then to choose the correct bit_mode */
+	unsigned short data[3071];
+	/*! the number of frames in the data array */
+	unsigned short length;
+	/*! The number of bits for one spi transfer. You can
+	 * choose here SPI_8_BIT_MODE or SPI_16_BIT_MODE
+	 * @see SPI_8_BIT_MODE
+	 * @see SPI_16_BIT_MODE */
+	unsigned char bit_mode;
+	/*! The slave select function for your spi device. You have to
+	 * set the slave select pin of your device to low to be able to
+	 * communicate with it. */
+	void (*slave_select)(void);
+	/*! The slave deselect function for your spi device. You have to
+	 * set the slave select pin of your device to high if you don't
+	 * communicate with it, if you don't do this, other spi devices
+	 * might have problems. */
+	void (*slave_unselect)(void);
+	/*! After the transmission of the data of your spi package is
+	 * finished, an spi receive timeout interrupt will occur. The
+	 * SPI_ISR will call this interrupt handler. In this interrupt
+	 * handler you have to read out dummy frames for data you have
+	 * sent or you have to read out the data which you have ordered */
+	void (*spi_interrupt_handler)(void);
+} srom_spi_package;
+
 /**
  * @brief spi initialization
  *
@@ -94,6 +122,10 @@ void spi_init(void);
  * @see spi_package
  */
 void spi_transmit( spi_package* package );
+
+/** Transmit function for the ADNS-9500 sensor **/
+void spi_adns9500_read_reg_transmit(spi_package* package);
+void spi_transmit_srom(srom_spi_package* package);
 
 int spi_running(void);
 

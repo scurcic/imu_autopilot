@@ -374,7 +374,7 @@
  377 0528 00000000 		.word	roll_controller
  378 052c 00000000 		.word	controller_counter
  379 0530 00000000 		.word	mavlink_system
- 380 0534 04000000 		.word	m_mavlink_status.2548
+ 380 0534 04000000 		.word	m_mavlink_status.2550
  381 0538 00000000 		.word	global_data
  382              	.L130:
  383 053c FEFFFFEB 		bl	__subsf3
@@ -1060,7 +1060,7 @@
  1066              	controller_counter:
  1067 0000 00       		.space	1
  1068 0001 000000   		.align	2
- 1069              	m_mavlink_status.2548:
+ 1069              	m_mavlink_status.2550:
  1070 0004 00000000 		.space	80
  1070      00000000 
  1070      00000000 
@@ -1072,26 +1072,26 @@
  1074              		.comm	roll_controller,32,4
  1075              		.comm	global_param_id,4,4
  1076              		.comm	state_fly_id,4,4
- 1077              		.comm	global_data,2684,4
+ 1077              		.comm	global_data,2700,4
  1078              		.comm	mavlink_system,8,4
  1079              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 control_quadrotor_attitude.c
-C:\Users\Srdjan\AppData\Local\Temp/ccOabaaa.s:6      .text:00000000 control_quadrotor_attitude_init
-C:\Users\Srdjan\AppData\Local\Temp/ccOabaaa.s:10     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccOabaaa.s:63     .text:000000c8 $d
-                            *COM*:00000a7c global_data
+C:\Users\Srdjan\AppData\Local\Temp/ccKCbaaa.s:6      .text:00000000 control_quadrotor_attitude_init
+C:\Users\Srdjan\AppData\Local\Temp/ccKCbaaa.s:10     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccKCbaaa.s:63     .text:000000c8 $d
+                            *COM*:00000a8c global_data
                             *COM*:00000020 yaw_pos_controller
                             *COM*:00000020 yaw_speed_controller
                             *COM*:00000020 nick_controller
                             *COM*:00000020 roll_controller
-C:\Users\Srdjan\AppData\Local\Temp/ccOabaaa.s:90     .text:000000dc control_quadrotor_attitude
-C:\Users\Srdjan\AppData\Local\Temp/ccOabaaa.s:94     .text:000000dc $a
-C:\Users\Srdjan\AppData\Local\Temp/ccOabaaa.s:365    .text:000004f8 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccOabaaa.s:1066   .bss:00000000 controller_counter
+C:\Users\Srdjan\AppData\Local\Temp/ccKCbaaa.s:90     .text:000000dc control_quadrotor_attitude
+C:\Users\Srdjan\AppData\Local\Temp/ccKCbaaa.s:94     .text:000000dc $a
+C:\Users\Srdjan\AppData\Local\Temp/ccKCbaaa.s:365    .text:000004f8 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccKCbaaa.s:1066   .bss:00000000 controller_counter
                             *COM*:00000008 mavlink_system
-C:\Users\Srdjan\AppData\Local\Temp/ccOabaaa.s:1069   .bss:00000004 m_mavlink_status.2548
-C:\Users\Srdjan\AppData\Local\Temp/ccOabaaa.s:383    .text:0000053c $a
+C:\Users\Srdjan\AppData\Local\Temp/ccKCbaaa.s:1069   .bss:00000004 m_mavlink_status.2550
+C:\Users\Srdjan\AppData\Local\Temp/ccKCbaaa.s:383    .text:0000053c $a
                              .bss:00000000 $d
                             *COM*:00000004 global_param_id
                             *COM*:00000004 state_fly_id

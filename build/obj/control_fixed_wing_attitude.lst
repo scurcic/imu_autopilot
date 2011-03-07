@@ -136,33 +136,33 @@
  139              		.align	2
  140              	.L14:
  141 01b4 00000000 		.word	global_data
- 142 01b8 04000000 		.word	lp_roll.2586
+ 142 01b8 04000000 		.word	lp_roll.2588
  143 01bc CDCC4CBE 		.word	-1102263091
- 144 01c0 00000000 		.word	lp_pitch.2587
+ 144 01c0 00000000 		.word	lp_pitch.2589
  145 01c4 9A99993E 		.word	1050253722
  147              		.bss
  148              		.align	2
- 149              	lp_pitch.2587:
+ 149              	lp_pitch.2589:
  150 0000 00000000 		.space	4
  151              		.align	2
- 152              	lp_roll.2586:
+ 152              	lp_roll.2588:
  153 0004 00000000 		.space	4
  154              		.comm	fw_yaw_controller,32,4
  155              		.comm	fw_nick_controller,32,4
  156              		.comm	fw_roll_controller,32,4
  157              		.comm	global_param_id,4,4
  158              		.comm	state_fly_id,4,4
- 159              		.comm	global_data,2684,4
+ 159              		.comm	global_data,2700,4
  160              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 control_fixed_wing_attitude.c
-C:\Users\Srdjan\AppData\Local\Temp/ccURaaaa.s:6      .text:00000000 control_fixed_wing_attitude_init
-C:\Users\Srdjan\AppData\Local\Temp/ccURaaaa.s:12     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccURaaaa.s:22     .text:00000004 control_fixed_wing_attitude
-C:\Users\Srdjan\AppData\Local\Temp/ccURaaaa.s:141    .text:000001b4 $d
-                            *COM*:00000a7c global_data
-C:\Users\Srdjan\AppData\Local\Temp/ccURaaaa.s:152    .bss:00000004 lp_roll.2586
-C:\Users\Srdjan\AppData\Local\Temp/ccURaaaa.s:149    .bss:00000000 lp_pitch.2587
+C:\Users\Srdjan\AppData\Local\Temp/ccAFbaaa.s:6      .text:00000000 control_fixed_wing_attitude_init
+C:\Users\Srdjan\AppData\Local\Temp/ccAFbaaa.s:12     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccAFbaaa.s:22     .text:00000004 control_fixed_wing_attitude
+C:\Users\Srdjan\AppData\Local\Temp/ccAFbaaa.s:141    .text:000001b4 $d
+                            *COM*:00000a8c global_data
+C:\Users\Srdjan\AppData\Local\Temp/ccAFbaaa.s:152    .bss:00000004 lp_roll.2588
+C:\Users\Srdjan\AppData\Local\Temp/ccAFbaaa.s:149    .bss:00000000 lp_pitch.2589
                             *COM*:00000020 fw_yaw_controller
                             *COM*:00000020 fw_nick_controller
                             *COM*:00000020 fw_roll_controller

@@ -11,12 +11,14 @@ void comm_init(mavlink_channel_t chan)
 
     if ( chan == MAVLINK_COMM_0 ) {
     	/* initialize uart0 with the values from conf.h*/
-    	uart0_init((int)global_data.param[PARAM_UART0_BAUD], COMM_UART_MODE,UART_FIFO_8);
+//    	uart0_init((int)global_data.param[PARAM_UART0_BAUD], COMM_UART_MODE,UART_FIFO_8);
+    	uart0_init(57600, COMM_UART_MODE,UART_FIFO_8);
         //comm_channel_used[chan] = 1;
     }
     if ( chan == MAVLINK_COMM_1 ) {
     	/* initialize uart1 with the values from conf.h*/
-    	uart1_init((int)global_data.param[PARAM_UART1_BAUD], COMM_UART_MODE,UART_FIFO_8);
+//    	uart1_init((int)global_data.param[PARAM_UART1_BAUD], COMM_UART_MODE,UART_FIFO_8);
+    	uart0_init(57600, COMM_UART_MODE,UART_FIFO_8);
         //comm_channel_used[chan] = 1;
     }
 }

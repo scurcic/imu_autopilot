@@ -335,10 +335,10 @@
  337              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 control_yaw_altitude.c
-C:\Users\Srdjan\AppData\Local\Temp/cc4Uaaaa.s:17     .text:00000000 control_yaw_altitude
-C:\Users\Srdjan\AppData\Local\Temp/cc4Uaaaa.s:21     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc4Uaaaa.s:289    .text:000003f4 $d
-C:\Users\Srdjan\AppData\Local\Temp/cc4Uaaaa.s:318    .text:00000464 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccGmbaaa.s:17     .text:00000000 control_yaw_altitude
+C:\Users\Srdjan\AppData\Local\Temp/ccGmbaaa.s:21     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccGmbaaa.s:289    .text:000003f4 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccGmbaaa.s:318    .text:00000464 $a
 
 UNDEFINED SYMBOLS
 __extendsfdf2

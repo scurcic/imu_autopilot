@@ -536,39 +536,39 @@
  562              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 ms2100.c
-C:\Users\Srdjan\AppData\Local\Temp/cc8saaaa.s:5      .text:00000000 ms2100_reset
-C:\Users\Srdjan\AppData\Local\Temp/cc8saaaa.s:10     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc8saaaa.s:20     .text:00000018 ms2100_set
-C:\Users\Srdjan\AppData\Local\Temp/cc8saaaa.s:35     .text:00000030 ms2100_select_and_reset
-C:\Users\Srdjan\AppData\Local\Temp/cc8saaaa.s:51     .text:00000054 ms2100_select
-C:\Users\Srdjan\AppData\Local\Temp/cc8saaaa.s:66     .text:0000006c ms2100_unselect
-C:\Users\Srdjan\AppData\Local\Temp/cc8saaaa.s:82     .text:00000084 ms2100_init
-C:\Users\Srdjan\AppData\Local\Temp/cc8saaaa.s:169    .text:000001bc $d
+C:\Users\Srdjan\AppData\Local\Temp/ccWKbaaa.s:5      .text:00000000 ms2100_reset
+C:\Users\Srdjan\AppData\Local\Temp/ccWKbaaa.s:10     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccWKbaaa.s:20     .text:00000018 ms2100_set
+C:\Users\Srdjan\AppData\Local\Temp/ccWKbaaa.s:35     .text:00000030 ms2100_select_and_reset
+C:\Users\Srdjan\AppData\Local\Temp/ccWKbaaa.s:51     .text:00000054 ms2100_select
+C:\Users\Srdjan\AppData\Local\Temp/ccWKbaaa.s:66     .text:0000006c ms2100_unselect
+C:\Users\Srdjan\AppData\Local\Temp/ccWKbaaa.s:82     .text:00000084 ms2100_init
+C:\Users\Srdjan\AppData\Local\Temp/ccWKbaaa.s:169    .text:000001bc $d
                             *COM*:00000001 ms2100_status
                             *COM*:0000003c ms2100_values
                             *COM*:00000020 package_read
-C:\Users\Srdjan\AppData\Local\Temp/cc8saaaa.s:465    .text:00000550 ms2100_on_spi_int_read
+C:\Users\Srdjan\AppData\Local\Temp/ccWKbaaa.s:465    .text:00000550 ms2100_on_spi_int_read
                             *COM*:00000020 package_req
-C:\Users\Srdjan\AppData\Local\Temp/cc8saaaa.s:352    .text:0000041c ms2100_on_spi_int_req
-C:\Users\Srdjan\AppData\Local\Temp/cc8saaaa.s:432    .text:000004f8 EXTINT_ISR
-C:\Users\Srdjan\AppData\Local\Temp/cc8saaaa.s:183    .text:000001e4 ms2100_get_status
-C:\Users\Srdjan\AppData\Local\Temp/cc8saaaa.s:188    .text:000001e4 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc8saaaa.s:195    .text:000001f0 $d
-C:\Users\Srdjan\AppData\Local\Temp/cc8saaaa.s:204    .text:000001f4 ms2100_get_value
-C:\Users\Srdjan\AppData\Local\Temp/cc8saaaa.s:208    .text:000001f4 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc8saaaa.s:338    .text:000003f0 $d
-C:\Users\Srdjan\AppData\Local\Temp/cc8saaaa.s:357    .text:0000041c $a
-C:\Users\Srdjan\AppData\Local\Temp/cc8saaaa.s:368    .text:00000438 $d
-C:\Users\Srdjan\AppData\Local\Temp/cc8saaaa.s:373    .text:0000043c ms2100_do_before_spi_transmit
-C:\Users\Srdjan\AppData\Local\Temp/cc8saaaa.s:377    .text:0000043c $a
-C:\Users\Srdjan\AppData\Local\Temp/cc8saaaa.s:460    .text:00000548 $d
-C:\Users\Srdjan\AppData\Local\Temp/cc8saaaa.s:469    .text:00000550 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc8saaaa.s:511    .text:000005e4 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccWKbaaa.s:352    .text:0000041c ms2100_on_spi_int_req
+C:\Users\Srdjan\AppData\Local\Temp/ccWKbaaa.s:432    .text:000004f8 EXTINT_ISR
+C:\Users\Srdjan\AppData\Local\Temp/ccWKbaaa.s:183    .text:000001e4 ms2100_get_status
+C:\Users\Srdjan\AppData\Local\Temp/ccWKbaaa.s:188    .text:000001e4 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccWKbaaa.s:195    .text:000001f0 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccWKbaaa.s:204    .text:000001f4 ms2100_get_value
+C:\Users\Srdjan\AppData\Local\Temp/ccWKbaaa.s:208    .text:000001f4 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccWKbaaa.s:338    .text:000003f0 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccWKbaaa.s:357    .text:0000041c $a
+C:\Users\Srdjan\AppData\Local\Temp/ccWKbaaa.s:368    .text:00000438 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccWKbaaa.s:373    .text:0000043c ms2100_do_before_spi_transmit
+C:\Users\Srdjan\AppData\Local\Temp/ccWKbaaa.s:377    .text:0000043c $a
+C:\Users\Srdjan\AppData\Local\Temp/ccWKbaaa.s:460    .text:00000548 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccWKbaaa.s:469    .text:00000550 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccWKbaaa.s:511    .text:000005e4 $d
                             *COM*:00000001 ms2100_current_axis
                             *COM*:00000001 ms2100_sampling_nr
-C:\Users\Srdjan\AppData\Local\Temp/cc8saaaa.s:520    .text:000005f8 ms2100_send_request
-C:\Users\Srdjan\AppData\Local\Temp/cc8saaaa.s:524    .text:000005f8 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc8saaaa.s:550    .text:00000650 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccWKbaaa.s:520    .text:000005f8 ms2100_send_request
+C:\Users\Srdjan\AppData\Local\Temp/ccWKbaaa.s:524    .text:000005f8 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccWKbaaa.s:550    .text:00000650 $d
                             *COM*:00000008 mavlink_system
 
 UNDEFINED SYMBOLS

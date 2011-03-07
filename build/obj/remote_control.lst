@@ -430,7 +430,7 @@
  404              		.comm	roll_controller,32,4
  405              		.comm	global_param_id,4,4
  406              		.comm	state_fly_id,4,4
- 407              		.comm	global_data,2684,4
+ 407              		.comm	global_data,2700,4
  408              		.comm	mavlink_system,8,4
  409              		.comm	x_axis_controller,32,4
  410              		.comm	y_axis_controller,32,4
@@ -438,10 +438,10 @@
  412              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 remote_control.c
-C:\Users\Srdjan\AppData\Local\Temp/ccEpaaaa.s:40     .text:00000000 remote_control
-C:\Users\Srdjan\AppData\Local\Temp/ccEpaaaa.s:44     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccEpaaaa.s:387    .text:00000504 $d
-                            *COM*:00000a7c global_data
+C:\Users\Srdjan\AppData\Local\Temp/ccKKbaaa.s:40     .text:00000000 remote_control
+C:\Users\Srdjan\AppData\Local\Temp/ccKKbaaa.s:44     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccKKbaaa.s:387    .text:00000504 $d
+                            *COM*:00000a8c global_data
                             *COM*:00000020 yaw_pos_controller
                             *COM*:00000020 yaw_speed_controller
                             *COM*:00000020 nick_controller

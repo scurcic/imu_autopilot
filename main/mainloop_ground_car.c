@@ -5,6 +5,7 @@
  *      Author: mackayl
  */
 
+
 #include "conf.h"
 
 #if PX_VEHICLE_TYPE == PX_GROUND_CAR
@@ -46,6 +47,7 @@
 #include "shutter.h"
 #include "infrared_distance.h"
 #include "gps.h"
+#include "gps_transformations.h"
 
 #include "altitude_speed.h"
 #include "global_pos.h"
@@ -70,10 +72,15 @@
 #include "eeprom.h"
 #include "params.h"
 #include "attitude_observer.h"
+#include "matrix.h"
+#include "float_checks.h"
 
 #include "mmc_spi.h"
 #include "dos.h"
 #include "fat.h"
+
+#include "outdoor_position_kalman.h"
+#include "vision_position_kalman.h"
 
 // Static variables
 // these variables are used during the whole
@@ -118,6 +125,9 @@ void main_loop_ground_car(void)
 			// Kalman Attitude filter, used on all systems
 			gyro_read();
 			sensors_read_acc();
+
+			sensor_1_mouse_read();
+			sensor_2_mouse_read();
 
 			// Read out magnetometer at its default 50 Hz rate
 			static uint8_t mag_count = 0;
@@ -186,17 +196,17 @@ void main_loop_ground_car(void)
 
 			// Toggle status led
 			//led_toggle(LED_YELLOW);
-			led_toggle(LED_RED); // just for green LED on alpha at the moment
+//			led_toggle(LED_RED); // just for green LED on alpha at the moment
 
 			// Toggle active mode led
 			if (global_data.state.mav_mode == MAV_MODE_MANUAL || global_data.state.mav_mode
 					== MAV_MODE_GUIDED || global_data.state.mav_mode == MAV_MODE_AUTO)
 			{
-				led_on(LED_GREEN);
+//				led_on(LED_GREEN);
 			}
 			else
 			{
-				led_off(LED_GREEN);
+//				led_off(LED_GREEN);
 			}
 
 			handle_eeprom_write_request();
@@ -215,11 +225,12 @@ void main_loop_ground_car(void)
 		///////////////////////////////////////////////////////////////////////////
 		else if (us_run_every(50000, COUNTER7, loop_start_time))
 		{
-			led_toggle(LED_YELLOW);
+//			led_toggle(LED_YELLOW);
 			communication_send_attitude_position(loop_start_time);
+			led_on(LED_RED);
+
 		}
 		///////////////////////////////////////////////////////////////////////////
-
 
 
 
@@ -244,6 +255,7 @@ void main_loop_ground_car(void)
 
 		// Read out comm at max rate - takes only a few microseconds in worst case
 		communication_receive();
+
 
 		// MCU load measurement
 		uint64_t loop_stop_time = sys_time_clock_get_time_usec();

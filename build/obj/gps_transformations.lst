@@ -217,7 +217,7 @@
  220 02e8 00000000 		.word	gps_local_origin_init
  221 02ec 00000000 		.word	global_data
  222 02f0 58000000 		.word	gps_local_origin
- 223 02f4 04000000 		.word	m_mavlink_status.3020
+ 223 02f4 04000000 		.word	m_mavlink_status.3022
  224 02f8 00000000 		.word	mavlink_system
  226              		.global	__floatsisf
  227              		.global	__divsf3
@@ -410,7 +410,7 @@
  416              	gps_local_origin_init:
  417 0000 00       		.space	1
  418 0001 000000   		.align	2
- 419              	m_mavlink_status.3020:
+ 419              	m_mavlink_status.3022:
  420 0004 00000000 		.space	80
  420      00000000 
  420      00000000 
@@ -426,32 +426,32 @@
  426      00000000 
  427              		.comm	global_param_id,4,4
  428              		.comm	state_fly_id,4,4
- 429              		.comm	global_data,2684,4
+ 429              		.comm	global_data,2700,4
  430              		.comm	gps_device_mode,1,1
  431              		.comm	mavlink_system,8,4
  432              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 gps_transformations.c
-C:\Users\Srdjan\AppData\Local\Temp/cc2Paaaa.s:10     .text:00000000 gps_get_local_velocity
-C:\Users\Srdjan\AppData\Local\Temp/cc2Paaaa.s:14     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc2Paaaa.s:68     .text:000000cc $d
-C:\Users\Srdjan\AppData\Local\Temp/cc2Paaaa.s:78     .text:000000dc gps_send_local_origin
-C:\Users\Srdjan\AppData\Local\Temp/cc2Paaaa.s:82     .text:000000dc $a
-C:\Users\Srdjan\AppData\Local\Temp/cc2Paaaa.s:220    .text:000002e8 $d
-C:\Users\Srdjan\AppData\Local\Temp/cc2Paaaa.s:416    .bss:00000000 gps_local_origin_init
-                            *COM*:00000a7c global_data
-C:\Users\Srdjan\AppData\Local\Temp/cc2Paaaa.s:425    .bss:00000058 gps_local_origin
-C:\Users\Srdjan\AppData\Local\Temp/cc2Paaaa.s:419    .bss:00000004 m_mavlink_status.3020
+C:\Users\Srdjan\AppData\Local\Temp/ccsHbaaa.s:10     .text:00000000 gps_get_local_velocity
+C:\Users\Srdjan\AppData\Local\Temp/ccsHbaaa.s:14     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccsHbaaa.s:68     .text:000000cc $d
+C:\Users\Srdjan\AppData\Local\Temp/ccsHbaaa.s:78     .text:000000dc gps_send_local_origin
+C:\Users\Srdjan\AppData\Local\Temp/ccsHbaaa.s:82     .text:000000dc $a
+C:\Users\Srdjan\AppData\Local\Temp/ccsHbaaa.s:220    .text:000002e8 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccsHbaaa.s:416    .bss:00000000 gps_local_origin_init
+                            *COM*:00000a8c global_data
+C:\Users\Srdjan\AppData\Local\Temp/ccsHbaaa.s:425    .bss:00000058 gps_local_origin
+C:\Users\Srdjan\AppData\Local\Temp/ccsHbaaa.s:419    .bss:00000004 m_mavlink_status.3022
                             *COM*:00000008 mavlink_system
-C:\Users\Srdjan\AppData\Local\Temp/cc2Paaaa.s:237    .text:000002fc gps_set_local_origin
-C:\Users\Srdjan\AppData\Local\Temp/cc2Paaaa.s:241    .text:000002fc $a
-C:\Users\Srdjan\AppData\Local\Temp/cc2Paaaa.s:291    .text:000003b8 $d
-C:\Users\Srdjan\AppData\Local\Temp/cc2Paaaa.s:422    .bss:00000054 gps_cos_origin_lat
-C:\Users\Srdjan\AppData\Local\Temp/cc2Paaaa.s:306    .text:000003dc gps_get_local_position
-C:\Users\Srdjan\AppData\Local\Temp/cc2Paaaa.s:310    .text:000003dc $a
-C:\Users\Srdjan\AppData\Local\Temp/cc2Paaaa.s:397    .text:00000524 $d
-C:\Users\Srdjan\AppData\Local\Temp/cc2Paaaa.s:413    .rodata:00000000 r_earth
-C:\Users\Srdjan\AppData\Local\Temp/cc2Paaaa.s:414    .rodata:00000000 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccsHbaaa.s:237    .text:000002fc gps_set_local_origin
+C:\Users\Srdjan\AppData\Local\Temp/ccsHbaaa.s:241    .text:000002fc $a
+C:\Users\Srdjan\AppData\Local\Temp/ccsHbaaa.s:291    .text:000003b8 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccsHbaaa.s:422    .bss:00000054 gps_cos_origin_lat
+C:\Users\Srdjan\AppData\Local\Temp/ccsHbaaa.s:306    .text:000003dc gps_get_local_position
+C:\Users\Srdjan\AppData\Local\Temp/ccsHbaaa.s:310    .text:000003dc $a
+C:\Users\Srdjan\AppData\Local\Temp/ccsHbaaa.s:397    .text:00000524 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccsHbaaa.s:413    .rodata:00000000 r_earth
+C:\Users\Srdjan\AppData\Local\Temp/ccsHbaaa.s:414    .rodata:00000000 $d
                             *COM*:00000004 global_param_id
                             *COM*:00000004 state_fly_id
                             *COM*:00000001 gps_device_mode

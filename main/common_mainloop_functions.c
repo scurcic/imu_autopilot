@@ -172,29 +172,58 @@ void communication_send_attitude_position(uint64_t loop_start_time)
 	if (global_data.param[PARAM_SEND_SLOT_ATTITUDE] == 1)
 	{
 		// Send attitude over both UART ports
-		mavlink_msg_attitude_send(global_data.param[PARAM_SEND_DEBUGCHAN],
+		mavlink_msg_attitude_send(MAVLINK_COMM_0,
 				sys_time_clock_get_unix_offset() + loop_start_time,
-				global_data.attitude.x, global_data.attitude.y,
-				global_data.attitude.z, global_data.gyros_si.x,
-				global_data.gyros_si.y, global_data.gyros_si.z);
-
-
-/*			mavlink_msg_attitude_send(MAVLINK_COMM_1,
+				global_data.mouse_raw1.x, global_data.mouse_raw1.y,
+				global_data.mouse_raw2.x, global_data.mouse_raw2.y,//global_data.gyros_si.y, global_data.gyros_si.z);
+				global_data.accel_si.x, global_data.gyros_si.z);//global_data.mouse_raw1.x, global_data.mouse_raw1.y);
+		mavlink_msg_attitude_send(MAVLINK_COMM_1,
 				sys_time_clock_get_unix_offset() + loop_start_time,
-				global_data.attitude.x, global_data.attitude.y,
-				global_data.attitude.z, global_data.gyros_si.x,
-				global_data.gyros_si.y, global_data.gyros_si.z);*/
+				global_data.mouse_raw1.x, global_data.mouse_raw1.y,
+				global_data.mouse_raw2.x, global_data.mouse_raw2.y,
+				global_data.accel_si.x, global_data.gyros_si.z);//global_data.mouse_raw1.x, global_data.mouse_raw1.y);
 	}
 
 	if (global_data.param[PARAM_SEND_SLOT_DEBUG_5] == 1)
 	{
 		// Send current position and speed
-		mavlink_msg_local_position_send(global_data.param[PARAM_SEND_DEBUGCHAN], sys_time_clock_get_unix_offset() + loop_start_time,
+		mavlink_msg_local_position_send(MAVLINK_COMM_0, sys_time_clock_get_unix_offset() + loop_start_time,
 				global_data.position.x, global_data.position.y,
 				global_data.position.z, global_data.velocity.x,
 				global_data.velocity.y, global_data.velocity.z);
 	}
 }
+
+
+//void communication_send_attitude_position(uint64_t loop_start_time)
+//{
+//	// ATTITUDE at 20 Hz
+//	if (global_data.param[PARAM_SEND_SLOT_ATTITUDE] == 1)
+//	{
+//		// Send attitude over both UART ports
+//		mavlink_msg_attitude_send(global_data.param[PARAM_SEND_DEBUGCHAN],
+//				sys_time_clock_get_unix_offset() + loop_start_time,
+//				global_data.attitude.x, global_data.attitude.y,
+//				global_data.attitude.z, global_data.gyros_si.x,
+//				global_data.gyros_si.y, global_data.gyros_si.z);
+//
+//
+///*			mavlink_msg_attitude_send(MAVLINK_COMM_1,
+//				sys_time_clock_get_unix_offset() + loop_start_time,
+//				global_data.attitude.x, global_data.attitude.y,
+//				global_data.attitude.z, global_data.gyros_si.x,
+//				global_data.gyros_si.y, global_data.gyros_si.z);*/
+//	}
+//
+//	if (global_data.param[PARAM_SEND_SLOT_DEBUG_5] == 1)
+//	{
+//		// Send current position and speed
+//		mavlink_msg_local_position_send(global_data.param[PARAM_SEND_DEBUGCHAN], sys_time_clock_get_unix_offset() + loop_start_time,
+//				global_data.position.x, global_data.position.y,
+//				global_data.position.z, global_data.velocity.x,
+//				global_data.velocity.y, global_data.velocity.z);
+//	}
+//}
 
 uint8_t rc_to_255(int chan)
 {

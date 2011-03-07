@@ -455,8 +455,8 @@
  427 0550 3D0AEF3F 		.word	1072630333
  428 0554 0AD7A370 		.word	1889785610
  429 0558 00000000 		.word	global_data
- 430 055c 04000000 		.word	landing_wait_counter.18088
- 431 0560 08000000 		.word	initial_wait_counter.18087
+ 430 055c 04000000 		.word	landing_wait_counter.18090
+ 431 0560 08000000 		.word	initial_wait_counter.18089
  432 0564 00000000 		.word	roll_controller
  433 0568 00000000 		.word	x_axis_controller
  434 056c 00000000 		.word	y_axis_controller
@@ -466,7 +466,7 @@
  438 057c 00000000 		.word	nick_controller
  439 0580 C3F51CC1 		.word	-1055066685
  440 0584 58000000 		.word	.LC2
- 441 0588 00000000 		.word	landing_counter.18089
+ 441 0588 00000000 		.word	landing_counter.18091
  442 058c 9C000000 		.word	.LC5
  443 0590 D4000000 		.word	.LC7
  444 0594 6C000000 		.word	.LC3
@@ -474,17 +474,17 @@
  446 059c 8C000000 		.word	.LC4
  448              		.bss
  449              		.align	2
- 450              	landing_counter.18089:
+ 450              	landing_counter.18091:
  451 0000 00000000 		.space	4
  452              		.align	2
- 453              	landing_wait_counter.18088:
+ 453              	landing_wait_counter.18090:
  454 0004 00000000 		.space	4
  455              		.align	2
- 456              	initial_wait_counter.18087:
+ 456              	initial_wait_counter.18089:
  457 0008 00000000 		.space	4
  458              		.comm	global_param_id,4,4
  459              		.comm	state_fly_id,4,4
- 460              		.comm	global_data,2684,4
+ 460              		.comm	global_data,2700,4
  461              		.comm	yaw_pos_controller,32,4
  462              		.comm	yaw_speed_controller,32,4
  463              		.comm	nick_controller,32,4
@@ -496,15 +496,15 @@
  469              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 control_quadrotor_start_land.c
-C:\Users\Srdjan\AppData\Local\Temp/ccwXaaaa.s:21     .text:00000000 quadrotor_start_land_motor_thrust
-C:\Users\Srdjan\AppData\Local\Temp/ccwXaaaa.s:25     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccwXaaaa.s:107    .text:00000128 $d
-                            *COM*:00000a7c global_data
-C:\Users\Srdjan\AppData\Local\Temp/ccwXaaaa.s:137    .text:00000134 quadrotor_start_land_handler
-C:\Users\Srdjan\AppData\Local\Temp/ccwXaaaa.s:141    .text:00000134 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccwXaaaa.s:421    .text:00000538 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccwXaaaa.s:453    .bss:00000004 landing_wait_counter.18088
-C:\Users\Srdjan\AppData\Local\Temp/ccwXaaaa.s:456    .bss:00000008 initial_wait_counter.18087
+C:\Users\Srdjan\AppData\Local\Temp/ccUDbaaa.s:21     .text:00000000 quadrotor_start_land_motor_thrust
+C:\Users\Srdjan\AppData\Local\Temp/ccUDbaaa.s:25     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccUDbaaa.s:107    .text:00000128 $d
+                            *COM*:00000a8c global_data
+C:\Users\Srdjan\AppData\Local\Temp/ccUDbaaa.s:137    .text:00000134 quadrotor_start_land_handler
+C:\Users\Srdjan\AppData\Local\Temp/ccUDbaaa.s:141    .text:00000134 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccUDbaaa.s:421    .text:00000538 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccUDbaaa.s:453    .bss:00000004 landing_wait_counter.18090
+C:\Users\Srdjan\AppData\Local\Temp/ccUDbaaa.s:456    .bss:00000008 initial_wait_counter.18089
                             *COM*:00000020 roll_controller
                             *COM*:00000020 x_axis_controller
                             *COM*:00000020 y_axis_controller
@@ -512,7 +512,7 @@ C:\Users\Srdjan\AppData\Local\Temp/ccwXaaaa.s:456    .bss:00000008 initial_wait_
                             *COM*:00000020 yaw_pos_controller
                             *COM*:00000020 yaw_speed_controller
                             *COM*:00000020 nick_controller
-C:\Users\Srdjan\AppData\Local\Temp/ccwXaaaa.s:450    .bss:00000000 landing_counter.18089
+C:\Users\Srdjan\AppData\Local\Temp/ccUDbaaa.s:450    .bss:00000000 landing_counter.18091
                             *COM*:00000004 global_param_id
                             *COM*:00000004 state_fly_id
                             *COM*:00000008 mavlink_system

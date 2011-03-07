@@ -271,29 +271,29 @@
  281              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 eeprom.c
-C:\Users\Srdjan\AppData\Local\Temp/cc0Oaaaa.s:5      .text:00000000 eeprom_save_data_after_read
-C:\Users\Srdjan\AppData\Local\Temp/cc0Oaaaa.s:10     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc0Oaaaa.s:31     .text:0000003c $d
+C:\Users\Srdjan\AppData\Local\Temp/ccqAbaaa.s:5      .text:00000000 eeprom_save_data_after_read
+C:\Users\Srdjan\AppData\Local\Temp/ccqAbaaa.s:10     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccqAbaaa.s:31     .text:0000003c $d
                             *COM*:00000020 data_buffer
-C:\Users\Srdjan\AppData\Local\Temp/cc0Oaaaa.s:272    .bss:00000000 data_ready
-C:\Users\Srdjan\AppData\Local\Temp/cc0Oaaaa.s:37     .text:00000044 eeprom_read_data
-C:\Users\Srdjan\AppData\Local\Temp/cc0Oaaaa.s:42     .text:00000044 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc0Oaaaa.s:65     .text:00000088 $d
-C:\Users\Srdjan\AppData\Local\Temp/cc0Oaaaa.s:76     .text:00000090 eeprom_check_ok
-C:\Users\Srdjan\AppData\Local\Temp/cc0Oaaaa.s:80     .text:00000090 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc0Oaaaa.s:99     .text:000000c8 $d
-C:\Users\Srdjan\AppData\Local\Temp/cc0Oaaaa.s:277    .data:00000000 eeprom_available
-C:\Users\Srdjan\AppData\Local\Temp/cc0Oaaaa.s:110    .text:000000d0 eeprom_check_handler
-C:\Users\Srdjan\AppData\Local\Temp/cc0Oaaaa.s:114    .text:000000d0 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc0Oaaaa.s:131    .text:00000108 $d
-C:\Users\Srdjan\AppData\Local\Temp/cc0Oaaaa.s:137    .text:00000110 eeprom_check_start
-C:\Users\Srdjan\AppData\Local\Temp/cc0Oaaaa.s:141    .text:00000110 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc0Oaaaa.s:171    .text:0000017c $d
-C:\Users\Srdjan\AppData\Local\Temp/cc0Oaaaa.s:176    .text:00000180 eeprom_start_read
-C:\Users\Srdjan\AppData\Local\Temp/cc0Oaaaa.s:180    .text:00000180 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc0Oaaaa.s:218    .text:00000208 $d
-C:\Users\Srdjan\AppData\Local\Temp/cc0Oaaaa.s:223    .text:0000020c eeprom_write
-C:\Users\Srdjan\AppData\Local\Temp/cc0Oaaaa.s:227    .text:0000020c $a
+C:\Users\Srdjan\AppData\Local\Temp/ccqAbaaa.s:272    .bss:00000000 data_ready
+C:\Users\Srdjan\AppData\Local\Temp/ccqAbaaa.s:37     .text:00000044 eeprom_read_data
+C:\Users\Srdjan\AppData\Local\Temp/ccqAbaaa.s:42     .text:00000044 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccqAbaaa.s:65     .text:00000088 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccqAbaaa.s:76     .text:00000090 eeprom_check_ok
+C:\Users\Srdjan\AppData\Local\Temp/ccqAbaaa.s:80     .text:00000090 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccqAbaaa.s:99     .text:000000c8 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccqAbaaa.s:277    .data:00000000 eeprom_available
+C:\Users\Srdjan\AppData\Local\Temp/ccqAbaaa.s:110    .text:000000d0 eeprom_check_handler
+C:\Users\Srdjan\AppData\Local\Temp/ccqAbaaa.s:114    .text:000000d0 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccqAbaaa.s:131    .text:00000108 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccqAbaaa.s:137    .text:00000110 eeprom_check_start
+C:\Users\Srdjan\AppData\Local\Temp/ccqAbaaa.s:141    .text:00000110 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccqAbaaa.s:171    .text:0000017c $d
+C:\Users\Srdjan\AppData\Local\Temp/ccqAbaaa.s:176    .text:00000180 eeprom_start_read
+C:\Users\Srdjan\AppData\Local\Temp/ccqAbaaa.s:180    .text:00000180 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccqAbaaa.s:218    .text:00000208 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccqAbaaa.s:223    .text:0000020c eeprom_write
+C:\Users\Srdjan\AppData\Local\Temp/ccqAbaaa.s:227    .text:0000020c $a
                              .bss:00000000 $d
                             *COM*:00000008 mavlink_system
 

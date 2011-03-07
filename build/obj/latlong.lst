@@ -505,18 +505,18 @@
  511              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 latlong.c
-C:\Users\Srdjan\AppData\Local\Temp/ccqwaaaa.s:18     .text:00000000 latlong_utm_of
-C:\Users\Srdjan\AppData\Local\Temp/ccqwaaaa.s:22     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccqwaaaa.s:242    .text:00000360 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccqwaaaa.s:501    .rodata:00000000 serie_coeff_proj_mercator
+C:\Users\Srdjan\AppData\Local\Temp/ccsRaaaa.s:18     .text:00000000 latlong_utm_of
+C:\Users\Srdjan\AppData\Local\Temp/ccsRaaaa.s:22     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccsRaaaa.s:242    .text:00000360 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccsRaaaa.s:501    .rodata:00000000 serie_coeff_proj_mercator
                             *COM*:00000004 latlong_utm_x
                             *COM*:00000004 latlong_utm_y
-C:\Users\Srdjan\AppData\Local\Temp/ccqwaaaa.s:257    .text:00000388 latlong_of_utm
-C:\Users\Srdjan\AppData\Local\Temp/ccqwaaaa.s:261    .text:00000388 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccqwaaaa.s:486    .text:000006f8 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccsRaaaa.s:257    .text:00000388 latlong_of_utm
+C:\Users\Srdjan\AppData\Local\Temp/ccsRaaaa.s:261    .text:00000388 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccsRaaaa.s:486    .text:000006f8 $d
                             *COM*:00000004 latlong_lon
                             *COM*:00000004 latlong_lat
-C:\Users\Srdjan\AppData\Local\Temp/ccqwaaaa.s:502    .rodata:00000000 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccsRaaaa.s:502    .rodata:00000000 $d
 
 UNDEFINED SYMBOLS
 __extendsfdf2

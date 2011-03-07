@@ -106,58 +106,45 @@
  113 0100 FEFFFFEB 		bl	uart1_char_available
  114 0104 FF0000E2 		and	r0, r0, #255
  115 0108 F7FFFFEA 		b	.L34
- 117              		.global	__fixsfsi
- 118              		.align	2
- 119              		.global	comm_init
- 121              	comm_init:
- 122              		@ Function supports interworking.
- 123              		@ args = 0, pretend = 0, frame = 0
- 124              		@ frame_needed = 0, uses_anonymous_args = 0
- 125 010c 000050E3 		cmp	r0, #0
- 126 0110 04E02DE5 		str	lr, [sp, #-4]!
- 127 0114 0300000A 		beq	.L46
- 128 0118 010050E3 		cmp	r0, #1
- 129 011c 0800000A 		beq	.L47
- 130              	.L45:
- 131 0120 04E09DE4 		ldr	lr, [sp], #4
- 132 0124 1EFF2FE1 		bx	lr
- 133              	.L46:
- 134 0128 30309FE5 		ldr	r3, .L48
- 135 012c 680293E5 		ldr	r0, [r3, #616]	@ float
- 136 0130 FEFFFFEB 		bl	__fixsfsi
- 137 0134 0310A0E3 		mov	r1, #3
- 138 0138 8120A0E3 		mov	r2, #129
- 139 013c FEFFFFEB 		bl	uart0_init
- 140 0140 F6FFFFEA 		b	.L45
- 141              	.L47:
- 142 0144 14309FE5 		ldr	r3, .L48
- 143 0148 6C0293E5 		ldr	r0, [r3, #620]	@ float
- 144 014c FEFFFFEB 		bl	__fixsfsi
- 145 0150 0310A0E3 		mov	r1, #3
- 146 0154 8120A0E3 		mov	r2, #129
- 147 0158 FEFFFFEB 		bl	uart1_init
- 148 015c EFFFFFEA 		b	.L45
- 149              	.L49:
- 150              		.align	2
- 151              	.L48:
- 152 0160 00000000 		.word	global_data
- 154              		.comm	mavlink_system,8,4
- 155              		.comm	global_param_id,4,4
- 156              		.comm	state_fly_id,4,4
- 157              		.comm	global_data,2684,4
- 158              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
+ 117              		.align	2
+ 118              		.global	comm_init
+ 120              	comm_init:
+ 121              		@ Function supports interworking.
+ 122              		@ args = 0, pretend = 0, frame = 0
+ 123              		@ frame_needed = 0, uses_anonymous_args = 0
+ 124 010c 003050E2 		subs	r3, r0, #0
+ 125 0110 04E02DE5 		str	lr, [sp, #-4]!
+ 126 0114 0310A0E3 		mov	r1, #3
+ 127 0118 8120A0E3 		mov	r2, #129
+ 128 011c E10CA0E3 		mov	r0, #57600
+ 129 0120 0600000A 		beq	.L46
+ 130 0124 010053E3 		cmp	r3, #1
+ 131 0128 E10CA0E3 		mov	r0, #57600
+ 132 012c 0310A0E3 		mov	r1, #3
+ 133 0130 8120A0E3 		mov	r2, #129
+ 134 0134 0100000A 		beq	.L46
+ 135              	.L45:
+ 136 0138 04E09DE4 		ldr	lr, [sp], #4
+ 137 013c 1EFF2FE1 		bx	lr
+ 138              	.L46:
+ 139 0140 FEFFFFEB 		bl	uart0_init
+ 140 0144 FBFFFFEA 		b	.L45
+ 142              		.comm	mavlink_system,8,4
+ 143              		.comm	global_param_id,4,4
+ 144              		.comm	state_fly_id,4,4
+ 145              		.comm	global_data,2700,4
+ 146              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 comm.c
-C:\Users\Srdjan\AppData\Local\Temp/cc8oaaaa.s:6      .text:00000000 comm_check_free_space
-C:\Users\Srdjan\AppData\Local\Temp/cc8oaaaa.s:10     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc8oaaaa.s:35     .text:00000048 comm_send_ch
-C:\Users\Srdjan\AppData\Local\Temp/cc8oaaaa.s:67     .text:000000a0 $d
-                            *COM*:00000a7c global_data
-C:\Users\Srdjan\AppData\Local\Temp/cc8oaaaa.s:72     .text:000000a4 comm_get_ch
-C:\Users\Srdjan\AppData\Local\Temp/cc8oaaaa.s:76     .text:000000a4 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc8oaaaa.s:95     .text:000000d4 comm_ch_available
-C:\Users\Srdjan\AppData\Local\Temp/cc8oaaaa.s:121    .text:0000010c comm_init
-C:\Users\Srdjan\AppData\Local\Temp/cc8oaaaa.s:152    .text:00000160 $d
+C:\Users\Srdjan\AppData\Local\Temp/cc2tbaaa.s:6      .text:00000000 comm_check_free_space
+C:\Users\Srdjan\AppData\Local\Temp/cc2tbaaa.s:10     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc2tbaaa.s:35     .text:00000048 comm_send_ch
+C:\Users\Srdjan\AppData\Local\Temp/cc2tbaaa.s:67     .text:000000a0 $d
+                            *COM*:00000a8c global_data
+C:\Users\Srdjan\AppData\Local\Temp/cc2tbaaa.s:72     .text:000000a4 comm_get_ch
+C:\Users\Srdjan\AppData\Local\Temp/cc2tbaaa.s:76     .text:000000a4 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc2tbaaa.s:95     .text:000000d4 comm_ch_available
+C:\Users\Srdjan\AppData\Local\Temp/cc2tbaaa.s:120    .text:0000010c comm_init
                             *COM*:00000008 mavlink_system
                             *COM*:00000004 global_param_id
                             *COM*:00000004 state_fly_id
@@ -171,6 +158,4 @@ uart0_get_char
 uart1_get_char
 uart0_char_available
 uart1_char_available
-__fixsfsi
 uart0_init
-uart1_init

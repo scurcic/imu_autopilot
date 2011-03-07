@@ -25,6 +25,7 @@ SRCARM += arm7/i2c.c
 SRCARM += arm7/spi_devices/ads8341.c
 SRCARM += arm7/spi_devices/ms2100.c
 SRCARM += arm7/spi_devices/sca3100.c
+SRCARM += arm7/spi_devices/adns9500.c
 SRCARM += arm7/spi_devices/sca3000.c
 SRCARM += arm7/i2c_devices/bmp085.c
 SRCARM += arm7/i2c_devices/eeprom.c

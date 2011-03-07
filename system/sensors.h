@@ -25,6 +25,7 @@
 #include "hmc5843.h"
 #include <stdio.h>
 #include "math.h"
+#include "adns9500.h"
 
 #include "comm.h"
 #include "led.h"
@@ -143,6 +144,26 @@ static inline void sensors_read_acc(void)
 	global_data.accel_si.x = (float)global_data.accel_raw.x*9.81f/SCA3100_COUNTS_PER_G;
 	global_data.accel_si.y = (float)global_data.accel_raw.y*9.81f/SCA3100_COUNTS_PER_G;
 	global_data.accel_si.z = (float)global_data.accel_raw.z*9.81f/SCA3100_COUNTS_PER_G;
+}
+
+static inline void sensor_1_mouse_read(void)
+{
+	// Sending mouse sensor 1 data readout request
+	adns9500_1_read_sensor(); // -> "adns9500.c"
+	// waiting until data arrives
+	while(spi_running());
+	global_data.mouse_raw1.x = (int)adns9500_1_get_value(ADNS9500_DX);
+	global_data.mouse_raw1.y = (int)adns9500_1_get_value(ADNS9500_DY);
+}
+
+static inline void sensor_2_mouse_read(void)
+{
+	// Sending mouse sensor 1 data readout request
+	adns9500_2_read_sensor(); // -> "adns9500.c"
+	// waiting until data arrives
+	while(spi_running());
+	global_data.mouse_raw2.x = (int)adns9500_2_get_value(ADNS9500_DX);
+	global_data.mouse_raw2.y = (int)adns9500_2_get_value(ADNS9500_DY);
 }
 
 static inline void sensors_read_mag(void)

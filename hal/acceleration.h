@@ -41,6 +41,11 @@ static inline void acc_init(void)
 	sca3100_init();
 }
 
+static inline void mouse_init(void)
+{
+	adns9500_init();
+}
+
 static inline void acc_read(void)
 {
 	// Sending accel readout request

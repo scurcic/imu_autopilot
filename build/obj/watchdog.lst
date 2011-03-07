@@ -38,16 +38,16 @@
   43 0030 FEFFFFEA 		b	.L6
   45              		.comm	global_param_id,4,4
   46              		.comm	state_fly_id,4,4
-  47              		.comm	global_data,2684,4
+  47              		.comm	global_data,2700,4
   48              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 watchdog.c
-C:\Users\Srdjan\AppData\Local\Temp/cc8Kaaaa.s:6      .text:00000000 watchdog_kick
-C:\Users\Srdjan\AppData\Local\Temp/cc8Kaaaa.s:11     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc8Kaaaa.s:22     .text:00000018 watchdog_init
-C:\Users\Srdjan\AppData\Local\Temp/cc8Kaaaa.s:36     .text:00000028 watchdog_wait_reset
+C:\Users\Srdjan\AppData\Local\Temp/ccQPaaaa.s:6      .text:00000000 watchdog_kick
+C:\Users\Srdjan\AppData\Local\Temp/ccQPaaaa.s:11     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccQPaaaa.s:22     .text:00000018 watchdog_init
+C:\Users\Srdjan\AppData\Local\Temp/ccQPaaaa.s:36     .text:00000028 watchdog_wait_reset
                             *COM*:00000004 global_param_id
                             *COM*:00000004 state_fly_id
-                            *COM*:00000a7c global_data
+                            *COM*:00000a8c global_data
 
 NO UNDEFINED SYMBOLS

@@ -153,6 +153,35 @@
 
 /*======================================================================*/
 
+/** @name ADNS9500
+ *  Settings for adns9500 sensor */
+//@{
+
+#define ADNS9500_1_SS_PIN   10
+#define ADNS9500_1_SS_IODIR IO0DIR
+#define ADNS9500_1_SS_IOSET IO0SET
+#define ADNS9500_1_SS_IOCLR IO0CLR
+
+#define ADNS9500_DX 0
+#define ADNS9500_DY 1
+//@}
+
+/*======================================================================*/
+
+/** @name ADNS9500
+ *  Settings for adns9500 sensor */
+//@{
+
+#define ADNS9500_2_SS_PIN   16
+#define ADNS9500_2_SS_IODIR IO0DIR
+#define ADNS9500_2_SS_IOSET IO0SET
+#define ADNS9500_2_SS_IOCLR IO0CLR
+
+#define ADNS9500_DX 0
+#define ADNS9500_DY 1
+//@}
+
+/*======================================================================*/
 /** @name MAGNETOMETER
  *  Settings for magnetometer sensors */
 //@{

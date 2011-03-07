@@ -355,6 +355,8 @@ struct global_struct
 	uint16_t rc_chan_cal_center[9];
 	uint16_t rc_chan_cal_max[9];
 
+	int32_vect2 mouse_raw1;					/// Mouse sensor data
+	int32_vect2 mouse_raw2;
 };
 
 struct global_struct global_data;
