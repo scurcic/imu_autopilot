@@ -90,16 +90,16 @@
  104              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 syscalls.c
-C:\Users\Srdjan\AppData\Local\Temp/ccQfbaaa.s:6      .text:00000000 _read_r
-C:\Users\Srdjan\AppData\Local\Temp/ccQfbaaa.s:11     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccQfbaaa.s:18     .text:00000008 _write_r
-C:\Users\Srdjan\AppData\Local\Temp/ccQfbaaa.s:30     .text:00000010 _close_r
-C:\Users\Srdjan\AppData\Local\Temp/ccQfbaaa.s:42     .text:00000018 _lseek_r
-C:\Users\Srdjan\AppData\Local\Temp/ccQfbaaa.s:54     .text:00000020 _fstat_r
-C:\Users\Srdjan\AppData\Local\Temp/ccQfbaaa.s:68     .text:00000030 isatty
-C:\Users\Srdjan\AppData\Local\Temp/ccQfbaaa.s:80     .text:00000038 _sbrk_r
-C:\Users\Srdjan\AppData\Local\Temp/ccQfbaaa.s:97     .text:00000058 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccQfbaaa.s:102    .bss:00000000 heap_ptr
+C:\Users\scurcic\AppData\Local\Temp/ccOobaaa.s:6      .text:00000000 _read_r
+C:\Users\scurcic\AppData\Local\Temp/ccOobaaa.s:11     .text:00000000 $a
+C:\Users\scurcic\AppData\Local\Temp/ccOobaaa.s:18     .text:00000008 _write_r
+C:\Users\scurcic\AppData\Local\Temp/ccOobaaa.s:30     .text:00000010 _close_r
+C:\Users\scurcic\AppData\Local\Temp/ccOobaaa.s:42     .text:00000018 _lseek_r
+C:\Users\scurcic\AppData\Local\Temp/ccOobaaa.s:54     .text:00000020 _fstat_r
+C:\Users\scurcic\AppData\Local\Temp/ccOobaaa.s:68     .text:00000030 isatty
+C:\Users\scurcic\AppData\Local\Temp/ccOobaaa.s:80     .text:00000038 _sbrk_r
+C:\Users\scurcic\AppData\Local\Temp/ccOobaaa.s:97     .text:00000058 $d
+C:\Users\scurcic\AppData\Local\Temp/ccOobaaa.s:102    .bss:00000000 heap_ptr
 
 UNDEFINED SYMBOLS
 end

@@ -414,10 +414,10 @@
  416              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 control_attitude.c
-C:\Users\Srdjan\AppData\Local\Temp/ccSGbaaa.s:20     .text:00000000 control_attitude
-C:\Users\Srdjan\AppData\Local\Temp/ccSGbaaa.s:24     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccSGbaaa.s:261    .text:00000398 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccSGbaaa.s:300    .text:00000430 $a
+C:\Users\scurcic\AppData\Local\Temp/ccKWaaaa.s:20     .text:00000000 control_attitude
+C:\Users\scurcic\AppData\Local\Temp/ccKWaaaa.s:24     .text:00000000 $a
+C:\Users\scurcic\AppData\Local\Temp/ccKWaaaa.s:261    .text:00000398 $d
+C:\Users\scurcic\AppData\Local\Temp/ccKWaaaa.s:300    .text:00000430 $a
 
 UNDEFINED SYMBOLS
 __extendsfdf2

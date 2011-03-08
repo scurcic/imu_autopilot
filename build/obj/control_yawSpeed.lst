@@ -55,9 +55,9 @@
   57              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 control_yawSpeed.c
-C:\Users\Srdjan\AppData\Local\Temp/ccGibaaa.s:10     .text:00000000 control_yawSpeed
-C:\Users\Srdjan\AppData\Local\Temp/ccGibaaa.s:14     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccGibaaa.s:50     .text:00000084 $d
+C:\Users\scurcic\AppData\Local\Temp/ccwpbaaa.s:10     .text:00000000 control_yawSpeed
+C:\Users\scurcic\AppData\Local\Temp/ccwpbaaa.s:14     .text:00000000 $a
+C:\Users\scurcic\AppData\Local\Temp/ccwpbaaa.s:50     .text:00000084 $d
 
 UNDEFINED SYMBOLS
 __extendsfdf2

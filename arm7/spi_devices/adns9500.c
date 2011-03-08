@@ -39,7 +39,7 @@ This file is part of the PIXHAWK project
 #include "led.h"
 #include "inttypes.h"
 #include <stdio.h>
-#include "mavlink.h"
+#include "..\mavlink\include\pixhawk\mavlink.h"
 #include "adns9500_srom.h"
 
 //#if(FEATURE_ACC==FEATURE_ACC_3100)
@@ -63,7 +63,7 @@ void adns9500_2_unselect(void){					// pull ADNS9500 chip select high
 	ADNS9500_2_SS_IOSET|=1<<ADNS9500_2_SS_PIN;
 }
 
-void adns9500_init(void) {
+void adns9500_init(void){
 
 	for(int i=0; i<2; i++){
 		adns9500_1_values[i]=-1;
@@ -154,10 +154,10 @@ unsigned char rev_id_s2=adns9500_2_get_value(1);
 adns9500_2_read_reg(SROM_ID);
 unsigned char rom_id_s2=adns9500_2_get_value(1);
 
-//if ((prod_id_s1==51) & (prod_id_s2==51) & (rev_id_s1==3) & (rev_id_s2==3) & (rom_id_s1==145) & (rom_id_s2==145))
-//	led_on(LED_GREEN);
-//else
-//	led_off(LED_GREEN);
+if ((prod_id_s1==51) & (prod_id_s2==51) & (rev_id_s1==3) & (rev_id_s2==3) & (rom_id_s1==145) & (rom_id_s2==145))
+	led_on(LED_GREEN);
+else
+	led_off(LED_GREEN);
 }
 
 //void adns9500_1_check_motion(void)
@@ -225,7 +225,7 @@ void adns9500_1_write_reg(unsigned char reg,unsigned char data)
 	package.slave_select = &adns9500_1_select;
 	package.slave_unselect = &adns9500_1_unselect;
 	package.spi_interrupt_handler = &adns9500_on_spi_write_reg;	// sca3100_on_spi_read_reg() is invoked at SPI completion
-	spi_transmit(&package);
+	spi_transmit_adns(&package);
 }
 
 void adns9500_2_write_reg(unsigned char reg,unsigned char data)
@@ -241,14 +241,14 @@ void adns9500_2_write_reg(unsigned char reg,unsigned char data)
 	package.slave_select = &adns9500_2_select;
 	package.slave_unselect = &adns9500_2_unselect;
 	package.spi_interrupt_handler = &adns9500_on_spi_write_reg;	// sca3100_on_spi_read_reg() is invoked at SPI completion
-	spi_transmit(&package);
+	spi_transmit_adns(&package);
 }
 
 void adns9500_1_write_srom(void)
 {
 	unsigned char addr;
 	addr = set_bits(SROM_LOAD_BURST,MASK);
-	SSPCR0 = SPI_8_BIT_MODE |  SSP_FRF | SSP_CPOL | SSP_CPHA | SSP_SCR;
+	SSPCR0 = SPI_8_BIT_MODE |  SSP_FRF | SSP_CPOL_ADNS | SSP_CPHA_ADNS | SSP_SCR;
 
 	adns9500_1_select();
 	SSPDR=addr;
@@ -279,7 +279,7 @@ void adns9500_2_write_srom(void)
 {
 	unsigned char addr;
 	addr = set_bits(SROM_LOAD_BURST,MASK);
-	SSPCR0 = SPI_8_BIT_MODE |  SSP_FRF | SSP_CPOL | SSP_CPHA | SSP_SCR;
+	SSPCR0 = SPI_8_BIT_MODE |  SSP_FRF | SSP_CPOL_ADNS | SSP_CPHA_ADNS | SSP_SCR;
 
 	adns9500_2_select();
 	SSPDR=addr;
@@ -317,7 +317,7 @@ void adns9500_read_motion_burst(void)
 
 	unsigned char addr;
 	addr = set_bits(MOTION_BURST,MASK);
-	SSPCR0 = SPI_8_BIT_MODE |  SSP_FRF | SSP_CPOL | SSP_CPHA | SSP_SCR;
+	SSPCR0 = SPI_8_BIT_MODE |  SSP_FRF | SSP_CPOL_ADNS | SSP_CPHA_ADNS | SSP_SCR;
 
 	adns9500_1_select();
 	SSPDR=addr;

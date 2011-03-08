@@ -1,15 +1,3 @@
-//uint8_t download_srom();
-//uint8_t check_srom_crc();
-//void soft_reset_adns9500(unsigned int timeout);
-//void reset_adns9500();
-//void wait_for_comm();
-//void clear_img();
-//void frame_capture();
-//void frame_capture_work();
-//void motion_burst_adns9500();
-//void configure_adns9500();
-//
-
 void adns9500_1_write_reg(unsigned char reg,unsigned char data);
 void adns9500_2_write_reg(unsigned char reg,unsigned char data);
 

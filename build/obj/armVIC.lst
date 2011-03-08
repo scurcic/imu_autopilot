@@ -81,12 +81,12 @@
   93              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 armVIC.c
-C:\Users\Srdjan\AppData\Local\Temp/cc8ibaaa.s:6      .text:00000000 restoreIRQ
-C:\Users\Srdjan\AppData\Local\Temp/cc8ibaaa.s:12     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc8ibaaa.s:23     .text:0000001c restoreFIQ
-C:\Users\Srdjan\AppData\Local\Temp/cc8ibaaa.s:40     .text:00000038 disableFIQ
-C:\Users\Srdjan\AppData\Local\Temp/cc8ibaaa.s:54     .text:00000048 enableFIQ
-C:\Users\Srdjan\AppData\Local\Temp/cc8ibaaa.s:68     .text:00000058 disableIRQ
-C:\Users\Srdjan\AppData\Local\Temp/cc8ibaaa.s:82     .text:00000068 enableIRQ
+C:\Users\scurcic\AppData\Local\Temp/cc0Saaaa.s:6      .text:00000000 restoreIRQ
+C:\Users\scurcic\AppData\Local\Temp/cc0Saaaa.s:12     .text:00000000 $a
+C:\Users\scurcic\AppData\Local\Temp/cc0Saaaa.s:23     .text:0000001c restoreFIQ
+C:\Users\scurcic\AppData\Local\Temp/cc0Saaaa.s:40     .text:00000038 disableFIQ
+C:\Users\scurcic\AppData\Local\Temp/cc0Saaaa.s:54     .text:00000048 enableFIQ
+C:\Users\scurcic\AppData\Local\Temp/cc0Saaaa.s:68     .text:00000058 disableIRQ
+C:\Users\scurcic\AppData\Local\Temp/cc0Saaaa.s:82     .text:00000068 enableIRQ
 
 NO UNDEFINED SYMBOLS

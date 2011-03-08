@@ -3818,46 +3818,46 @@
  3758              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 communication.c
-C:\Users\Srdjan\AppData\Local\Temp/ccYRaaaa.s:5      .text:00000000 mavlink_parse_state_initialize
-C:\Users\Srdjan\AppData\Local\Temp/ccYRaaaa.s:10     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccYRaaaa.s:31     .text:00000044 mavlink_finalize_message_chan
-C:\Users\Srdjan\AppData\Local\Temp/ccYRaaaa.s:90     .text:0000010c $d
-C:\Users\Srdjan\AppData\Local\Temp/ccYRaaaa.s:3745   .bss:00000454 m_mavlink_status.2036
-C:\Users\Srdjan\AppData\Local\Temp/ccYRaaaa.s:96     .text:00000110 communication_get_uart_drop_rate
-C:\Users\Srdjan\AppData\Local\Temp/ccYRaaaa.s:100    .text:00000110 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccYRaaaa.s:125    .text:00000168 $d
+C:\Users\scurcic\AppData\Local\Temp/ccaqbaaa.s:5      .text:00000000 mavlink_parse_state_initialize
+C:\Users\scurcic\AppData\Local\Temp/ccaqbaaa.s:10     .text:00000000 $a
+C:\Users\scurcic\AppData\Local\Temp/ccaqbaaa.s:31     .text:00000044 mavlink_finalize_message_chan
+C:\Users\scurcic\AppData\Local\Temp/ccaqbaaa.s:90     .text:0000010c $d
+C:\Users\scurcic\AppData\Local\Temp/ccaqbaaa.s:3745   .bss:00000454 m_mavlink_status.2036
+C:\Users\scurcic\AppData\Local\Temp/ccaqbaaa.s:96     .text:00000110 communication_get_uart_drop_rate
+C:\Users\scurcic\AppData\Local\Temp/ccaqbaaa.s:100    .text:00000110 $a
+C:\Users\scurcic\AppData\Local\Temp/ccaqbaaa.s:125    .text:00000168 $d
                             *COM*:00000a8c global_data
-C:\Users\Srdjan\AppData\Local\Temp/ccYRaaaa.s:131    .text:0000016c communication_init
-C:\Users\Srdjan\AppData\Local\Temp/ccYRaaaa.s:135    .text:0000016c $a
-C:\Users\Srdjan\AppData\Local\Temp/ccYRaaaa.s:150    .text:0000019c $d
-C:\Users\Srdjan\AppData\Local\Temp/ccYRaaaa.s:154    .text:000001a0 mavlink_send_uart
-C:\Users\Srdjan\AppData\Local\Temp/ccYRaaaa.s:158    .text:000001a0 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccYRaaaa.s:217    .text:00000248 execute_action
-C:\Users\Srdjan\AppData\Local\Temp/ccYRaaaa.s:230    .text:00000264 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccYRaaaa.s:259    .text:000002d4 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccYRaaaa.s:338    .text:000003d8 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccYRaaaa.s:402    .text:000003f0 handle_mavlink_message
-C:\Users\Srdjan\AppData\Local\Temp/ccYRaaaa.s:406    .text:000003f0 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccYRaaaa.s:825    .text:00000a4c $d
-C:\Users\Srdjan\AppData\Local\Temp/ccYRaaaa.s:835    .text:00000a70 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccYRaaaa.s:1482   .text:0000144c $d
-C:\Users\Srdjan\AppData\Local\Temp/ccYRaaaa.s:3748   .bss:000004a4 m_parameter_i
+C:\Users\scurcic\AppData\Local\Temp/ccaqbaaa.s:131    .text:0000016c communication_init
+C:\Users\scurcic\AppData\Local\Temp/ccaqbaaa.s:135    .text:0000016c $a
+C:\Users\scurcic\AppData\Local\Temp/ccaqbaaa.s:150    .text:0000019c $d
+C:\Users\scurcic\AppData\Local\Temp/ccaqbaaa.s:154    .text:000001a0 mavlink_send_uart
+C:\Users\scurcic\AppData\Local\Temp/ccaqbaaa.s:158    .text:000001a0 $a
+C:\Users\scurcic\AppData\Local\Temp/ccaqbaaa.s:217    .text:00000248 execute_action
+C:\Users\scurcic\AppData\Local\Temp/ccaqbaaa.s:230    .text:00000264 $d
+C:\Users\scurcic\AppData\Local\Temp/ccaqbaaa.s:259    .text:000002d4 $a
+C:\Users\scurcic\AppData\Local\Temp/ccaqbaaa.s:338    .text:000003d8 $d
+C:\Users\scurcic\AppData\Local\Temp/ccaqbaaa.s:402    .text:000003f0 handle_mavlink_message
+C:\Users\scurcic\AppData\Local\Temp/ccaqbaaa.s:406    .text:000003f0 $a
+C:\Users\scurcic\AppData\Local\Temp/ccaqbaaa.s:825    .text:00000a4c $d
+C:\Users\scurcic\AppData\Local\Temp/ccaqbaaa.s:835    .text:00000a70 $a
+C:\Users\scurcic\AppData\Local\Temp/ccaqbaaa.s:1482   .text:0000144c $d
+C:\Users\scurcic\AppData\Local\Temp/ccaqbaaa.s:3748   .bss:000004a4 m_parameter_i
                             *COM*:00000008 mavlink_system
-C:\Users\Srdjan\AppData\Local\Temp/ccYRaaaa.s:1500   .text:00001490 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccYRaaaa.s:2506   .text:00002368 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccYRaaaa.s:2517   .text:00002380 communication_receive
-C:\Users\Srdjan\AppData\Local\Temp/ccYRaaaa.s:2521   .text:00002380 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccYRaaaa.s:2597   .text:0000248c $d
-C:\Users\Srdjan\AppData\Local\Temp/ccYRaaaa.s:2608   .text:000024b4 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccYRaaaa.s:2664   .text:00002580 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccYRaaaa.s:2675   .text:000025a8 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccYRaaaa.s:3484   .text:000031c0 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccYRaaaa.s:3742   .bss:00000034 m_mavlink_message.2151
-C:\Users\Srdjan\AppData\Local\Temp/ccYRaaaa.s:3739   .bss:00000032 gps_i.19433
-C:\Users\Srdjan\AppData\Local\Temp/ccYRaaaa.s:3737   .bss:00000000 gps_chars.19434
-C:\Users\Srdjan\AppData\Local\Temp/ccYRaaaa.s:3502   .text:000031f8 communication_queued_send
-C:\Users\Srdjan\AppData\Local\Temp/ccYRaaaa.s:3506   .text:000031f8 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccYRaaaa.s:3729   .text:00003548 $d
+C:\Users\scurcic\AppData\Local\Temp/ccaqbaaa.s:1500   .text:00001490 $a
+C:\Users\scurcic\AppData\Local\Temp/ccaqbaaa.s:2506   .text:00002368 $d
+C:\Users\scurcic\AppData\Local\Temp/ccaqbaaa.s:2517   .text:00002380 communication_receive
+C:\Users\scurcic\AppData\Local\Temp/ccaqbaaa.s:2521   .text:00002380 $a
+C:\Users\scurcic\AppData\Local\Temp/ccaqbaaa.s:2597   .text:0000248c $d
+C:\Users\scurcic\AppData\Local\Temp/ccaqbaaa.s:2608   .text:000024b4 $a
+C:\Users\scurcic\AppData\Local\Temp/ccaqbaaa.s:2664   .text:00002580 $d
+C:\Users\scurcic\AppData\Local\Temp/ccaqbaaa.s:2675   .text:000025a8 $a
+C:\Users\scurcic\AppData\Local\Temp/ccaqbaaa.s:3484   .text:000031c0 $d
+C:\Users\scurcic\AppData\Local\Temp/ccaqbaaa.s:3742   .bss:00000034 m_mavlink_message.2151
+C:\Users\scurcic\AppData\Local\Temp/ccaqbaaa.s:3739   .bss:00000032 gps_i.19433
+C:\Users\scurcic\AppData\Local\Temp/ccaqbaaa.s:3737   .bss:00000000 gps_chars.19434
+C:\Users\scurcic\AppData\Local\Temp/ccaqbaaa.s:3502   .text:000031f8 communication_queued_send
+C:\Users\scurcic\AppData\Local\Temp/ccaqbaaa.s:3506   .text:000031f8 $a
+C:\Users\scurcic\AppData\Local\Temp/ccaqbaaa.s:3729   .text:00003548 $d
                             *COM*:00000004 global_param_id
                             *COM*:00000004 state_fly_id
                             *COM*:00000001 gps_device_mode

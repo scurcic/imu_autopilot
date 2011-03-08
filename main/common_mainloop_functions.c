@@ -176,12 +176,12 @@ void communication_send_attitude_position(uint64_t loop_start_time)
 				sys_time_clock_get_unix_offset() + loop_start_time,
 				global_data.mouse_raw1.x, global_data.mouse_raw1.y,
 				global_data.mouse_raw2.x, global_data.mouse_raw2.y,//global_data.gyros_si.y, global_data.gyros_si.z);
-				global_data.accel_si.x, global_data.gyros_si.z);//global_data.mouse_raw1.x, global_data.mouse_raw1.y);
+				-global_data.accel_si.x, global_data.gyros_si.z);//global_data.mouse_raw1.x, global_data.mouse_raw1.y);
 		mavlink_msg_attitude_send(MAVLINK_COMM_1,
 				sys_time_clock_get_unix_offset() + loop_start_time,
 				global_data.mouse_raw1.x, global_data.mouse_raw1.y,
 				global_data.mouse_raw2.x, global_data.mouse_raw2.y,
-				global_data.accel_si.x, global_data.gyros_si.z);//global_data.mouse_raw1.x, global_data.mouse_raw1.y);
+				-global_data.accel_si.x, global_data.gyros_si.z);//global_data.mouse_raw1.x, global_data.mouse_raw1.y);
 	}
 
 	if (global_data.param[PARAM_SEND_SLOT_DEBUG_5] == 1)
@@ -194,7 +194,7 @@ void communication_send_attitude_position(uint64_t loop_start_time)
 	}
 }
 
-
+//Original
 //void communication_send_attitude_position(uint64_t loop_start_time)
 //{
 //	// ATTITUDE at 20 Hz

@@ -186,29 +186,29 @@
  198              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 ads8341.c
-C:\Users\Srdjan\AppData\Local\Temp/cc0Ebaaa.s:5      .text:00000000 ads8341_unselect
-C:\Users\Srdjan\AppData\Local\Temp/cc0Ebaaa.s:10     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc0Ebaaa.s:23     .text:00000024 $d
+C:\Users\scurcic\AppData\Local\Temp/ccSobaaa.s:5      .text:00000000 ads8341_unselect
+C:\Users\scurcic\AppData\Local\Temp/ccSobaaa.s:10     .text:00000000 $a
+C:\Users\scurcic\AppData\Local\Temp/ccSobaaa.s:23     .text:00000024 $d
                             *COM*:00000001 ads8341_current_adc_id
-C:\Users\Srdjan\AppData\Local\Temp/cc0Ebaaa.s:28     .text:00000028 ads8341_init
-C:\Users\Srdjan\AppData\Local\Temp/cc0Ebaaa.s:33     .text:00000028 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc0Ebaaa.s:46     .text:0000004c $d
-C:\Users\Srdjan\AppData\Local\Temp/cc0Ebaaa.s:50     .text:00000050 ads8341_select
-C:\Users\Srdjan\AppData\Local\Temp/cc0Ebaaa.s:55     .text:00000050 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc0Ebaaa.s:68     .text:00000074 $d
-C:\Users\Srdjan\AppData\Local\Temp/cc0Ebaaa.s:72     .text:00000078 ads8341_on_spi_int
-C:\Users\Srdjan\AppData\Local\Temp/cc0Ebaaa.s:76     .text:00000078 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc0Ebaaa.s:102    .text:000000d4 $d
+C:\Users\scurcic\AppData\Local\Temp/ccSobaaa.s:28     .text:00000028 ads8341_init
+C:\Users\scurcic\AppData\Local\Temp/ccSobaaa.s:33     .text:00000028 $a
+C:\Users\scurcic\AppData\Local\Temp/ccSobaaa.s:46     .text:0000004c $d
+C:\Users\scurcic\AppData\Local\Temp/ccSobaaa.s:50     .text:00000050 ads8341_select
+C:\Users\scurcic\AppData\Local\Temp/ccSobaaa.s:55     .text:00000050 $a
+C:\Users\scurcic\AppData\Local\Temp/ccSobaaa.s:68     .text:00000074 $d
+C:\Users\scurcic\AppData\Local\Temp/ccSobaaa.s:72     .text:00000078 ads8341_on_spi_int
+C:\Users\scurcic\AppData\Local\Temp/ccSobaaa.s:76     .text:00000078 $a
+C:\Users\scurcic\AppData\Local\Temp/ccSobaaa.s:102    .text:000000d4 $d
                             *COM*:00000001 ads8341_current_channel
                             *COM*:00000018 ads8341_value
-C:\Users\Srdjan\AppData\Local\Temp/cc0Ebaaa.s:109    .text:000000e0 ads8341_get_value
-C:\Users\Srdjan\AppData\Local\Temp/cc0Ebaaa.s:114    .text:000000e0 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc0Ebaaa.s:126    .text:00000100 $d
-C:\Users\Srdjan\AppData\Local\Temp/cc0Ebaaa.s:131    .text:00000104 ads8341_read
-C:\Users\Srdjan\AppData\Local\Temp/cc0Ebaaa.s:135    .text:00000104 $a
-C:\Users\Srdjan\AppData\Local\Temp/cc0Ebaaa.s:147    .text:0000012c $d
-C:\Users\Srdjan\AppData\Local\Temp/cc0Ebaaa.s:152    .text:0000013c $a
-C:\Users\Srdjan\AppData\Local\Temp/cc0Ebaaa.s:189    .text:000001b0 $d
+C:\Users\scurcic\AppData\Local\Temp/ccSobaaa.s:109    .text:000000e0 ads8341_get_value
+C:\Users\scurcic\AppData\Local\Temp/ccSobaaa.s:114    .text:000000e0 $a
+C:\Users\scurcic\AppData\Local\Temp/ccSobaaa.s:126    .text:00000100 $d
+C:\Users\scurcic\AppData\Local\Temp/ccSobaaa.s:131    .text:00000104 ads8341_read
+C:\Users\scurcic\AppData\Local\Temp/ccSobaaa.s:135    .text:00000104 $a
+C:\Users\scurcic\AppData\Local\Temp/ccSobaaa.s:147    .text:0000012c $d
+C:\Users\scurcic\AppData\Local\Temp/ccSobaaa.s:152    .text:0000013c $a
+C:\Users\scurcic\AppData\Local\Temp/ccSobaaa.s:189    .text:000001b0 $d
 
 UNDEFINED SYMBOLS
 spi_transmit

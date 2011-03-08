@@ -318,7 +318,7 @@
  327 041c 00008BE5 		str	r0, [fp, #0]	@ float
  328 0420 1113A0E3 		mov	r1, #1140850688
  329 0424 000096E5 		ldr	r0, [r6, #0]	@ float
- 330 0428 611881E2 		add	r1, r1, #6356992
+ 330 0428 8A1981E2 		add	r1, r1, #2260992
  331 042c FEFFFFEB 		bl	__divsf3
  332 0430 FEFFFFEB 		bl	__extendsfdf2
  333 0434 FEFFFFEB 		bl	asin
@@ -448,24 +448,24 @@
  454              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 attitude_observer.c
-C:\Users\Srdjan\AppData\Local\Temp/ccwzbaaa.s:6      .text:00000000 attitude_observer_init
-C:\Users\Srdjan\AppData\Local\Temp/ccwzbaaa.s:10     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccwzbaaa.s:29     .text:00000040 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccwzbaaa.s:445    .bss:00000000 state_accel
-C:\Users\Srdjan\AppData\Local\Temp/ccwzbaaa.s:448    .bss:0000000c state_magnet
-C:\Users\Srdjan\AppData\Local\Temp/ccwzbaaa.s:38     .text:00000048 attitude_observer_predict
-C:\Users\Srdjan\AppData\Local\Temp/ccwzbaaa.s:42     .text:00000048 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccwzbaaa.s:157    .text:00000208 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccwzbaaa.s:165    .text:00000214 attitude_observer_correct_accel
-C:\Users\Srdjan\AppData\Local\Temp/ccwzbaaa.s:169    .text:00000214 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccwzbaaa.s:228    .text:000002f4 $d
+C:\Users\scurcic\AppData\Local\Temp/cccBaaaa.s:6      .text:00000000 attitude_observer_init
+C:\Users\scurcic\AppData\Local\Temp/cccBaaaa.s:10     .text:00000000 $a
+C:\Users\scurcic\AppData\Local\Temp/cccBaaaa.s:29     .text:00000040 $d
+C:\Users\scurcic\AppData\Local\Temp/cccBaaaa.s:445    .bss:00000000 state_accel
+C:\Users\scurcic\AppData\Local\Temp/cccBaaaa.s:448    .bss:0000000c state_magnet
+C:\Users\scurcic\AppData\Local\Temp/cccBaaaa.s:38     .text:00000048 attitude_observer_predict
+C:\Users\scurcic\AppData\Local\Temp/cccBaaaa.s:42     .text:00000048 $a
+C:\Users\scurcic\AppData\Local\Temp/cccBaaaa.s:157    .text:00000208 $d
+C:\Users\scurcic\AppData\Local\Temp/cccBaaaa.s:165    .text:00000214 attitude_observer_correct_accel
+C:\Users\scurcic\AppData\Local\Temp/cccBaaaa.s:169    .text:00000214 $a
+C:\Users\scurcic\AppData\Local\Temp/cccBaaaa.s:228    .text:000002f4 $d
                             *COM*:00000a8c global_data
-C:\Users\Srdjan\AppData\Local\Temp/ccwzbaaa.s:234    .text:000002fc attitude_observer_correct_magnet
-C:\Users\Srdjan\AppData\Local\Temp/ccwzbaaa.s:238    .text:000002fc $a
-C:\Users\Srdjan\AppData\Local\Temp/ccwzbaaa.s:291    .text:000003c4 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccwzbaaa.s:304    .text:000003d0 attitude_observer_get_angles
-C:\Users\Srdjan\AppData\Local\Temp/ccwzbaaa.s:308    .text:000003d0 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccwzbaaa.s:440    .text:000005d4 $d
+C:\Users\scurcic\AppData\Local\Temp/cccBaaaa.s:234    .text:000002fc attitude_observer_correct_magnet
+C:\Users\scurcic\AppData\Local\Temp/cccBaaaa.s:238    .text:000002fc $a
+C:\Users\scurcic\AppData\Local\Temp/cccBaaaa.s:291    .text:000003c4 $d
+C:\Users\scurcic\AppData\Local\Temp/cccBaaaa.s:304    .text:000003d0 attitude_observer_get_angles
+C:\Users\scurcic\AppData\Local\Temp/cccBaaaa.s:308    .text:000003d0 $a
+C:\Users\scurcic\AppData\Local\Temp/cccBaaaa.s:440    .text:000005d4 $d
                             *COM*:00000004 global_param_id
                             *COM*:00000004 state_fly_id
                             *COM*:00000008 mavlink_system

@@ -191,17 +191,17 @@
  197              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 pwm.c
-C:\Users\Srdjan\AppData\Local\Temp/ccw9aaaa.s:6      .text:00000000 pwm_set_channel
-C:\Users\Srdjan\AppData\Local\Temp/ccw9aaaa.s:11     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccw9aaaa.s:33     .text:00000040 $d
+C:\Users\scurcic\AppData\Local\Temp/ccsTaaaa.s:6      .text:00000000 pwm_set_channel
+C:\Users\scurcic\AppData\Local\Temp/ccsTaaaa.s:11     .text:00000000 $a
+C:\Users\scurcic\AppData\Local\Temp/ccsTaaaa.s:33     .text:00000040 $d
                             *COM*:00000024 pwm_values
-C:\Users\Srdjan\AppData\Local\Temp/ccw9aaaa.s:38     .text:00000044 pwm_init
-C:\Users\Srdjan\AppData\Local\Temp/ccw9aaaa.s:42     .text:00000044 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccw9aaaa.s:96     .text:0000010c $d
+C:\Users\scurcic\AppData\Local\Temp/ccsTaaaa.s:38     .text:00000044 pwm_init
+C:\Users\scurcic\AppData\Local\Temp/ccsTaaaa.s:42     .text:00000044 $a
+C:\Users\scurcic\AppData\Local\Temp/ccsTaaaa.s:96     .text:0000010c $d
                             *COM*:00000004 pause_time
                             *COM*:00000004 counter
-C:\Users\Srdjan\AppData\Local\Temp/ccw9aaaa.s:103    .text:00000118 PWM_ISR
-C:\Users\Srdjan\AppData\Local\Temp/ccw9aaaa.s:107    .text:00000118 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccw9aaaa.s:190    .text:00000248 $d
+C:\Users\scurcic\AppData\Local\Temp/ccsTaaaa.s:103    .text:00000118 PWM_ISR
+C:\Users\scurcic\AppData\Local\Temp/ccsTaaaa.s:107    .text:00000118 $a
+C:\Users\scurcic\AppData\Local\Temp/ccsTaaaa.s:190    .text:00000248 $d
 
 NO UNDEFINED SYMBOLS

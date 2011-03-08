@@ -94,7 +94,7 @@ void main_init_generic(void)
 	hw_init();
 	enableIRQ();
 	led_init();
-//	buzzer_init();
+	buzzer_init();
 	sys_time_init();
 	sys_time_periodic_init();
 	sys_time_clock_init();
@@ -131,6 +131,7 @@ void main_init_generic(void)
 
 	// Do the auto-gyro calibration for 1 second
 	// Get current temperature
+//	led_on(LED_RED);
 	gyro_init();
 
 //	uint8_t timeout = 3;
@@ -152,8 +153,8 @@ void main_init_generic(void)
 //		debug_message_buffer("MMC/SD-Card FAILURE: NOT FOUND");
 //	}
 	//FIXME redo init because of SD driver decreasing speed
-	//spi_init();
-//	led_off(LED_RED);
+//	spi_init();
+	led_off(LED_RED);
 
 	// Stop trying to reach the EEPROM - if it has not been found by now, assume
 	// there is no EEPROM mounted
@@ -177,7 +178,6 @@ void main_init_generic(void)
 	//Magnet sensor
 	hmc5843_init();
 	acc_init();
-	led_on(LED_RED);
 
 	//Mouse sensor init
 	mouse_init();
@@ -206,8 +206,12 @@ void main_init_generic(void)
 	//	led_on(LED_GREEN);
 	//	led_on(LED_RED);
 
+
+
 	// Read out first time battery
 	global_data.battery_voltage = battery_get_value();
+
+
 
 	global_data.state.mav_mode = MAV_MODE_LOCKED;
 	global_data.state.status = MAV_STATE_CALIBRATING;

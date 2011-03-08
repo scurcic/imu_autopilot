@@ -156,13 +156,13 @@
  160              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 control_fixed_wing_attitude.c
-C:\Users\Srdjan\AppData\Local\Temp/ccAFbaaa.s:6      .text:00000000 control_fixed_wing_attitude_init
-C:\Users\Srdjan\AppData\Local\Temp/ccAFbaaa.s:12     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccAFbaaa.s:22     .text:00000004 control_fixed_wing_attitude
-C:\Users\Srdjan\AppData\Local\Temp/ccAFbaaa.s:141    .text:000001b4 $d
+C:\Users\scurcic\AppData\Local\Temp/ccq8aaaa.s:6      .text:00000000 control_fixed_wing_attitude_init
+C:\Users\scurcic\AppData\Local\Temp/ccq8aaaa.s:12     .text:00000000 $a
+C:\Users\scurcic\AppData\Local\Temp/ccq8aaaa.s:22     .text:00000004 control_fixed_wing_attitude
+C:\Users\scurcic\AppData\Local\Temp/ccq8aaaa.s:141    .text:000001b4 $d
                             *COM*:00000a8c global_data
-C:\Users\Srdjan\AppData\Local\Temp/ccAFbaaa.s:152    .bss:00000004 lp_roll.2588
-C:\Users\Srdjan\AppData\Local\Temp/ccAFbaaa.s:149    .bss:00000000 lp_pitch.2589
+C:\Users\scurcic\AppData\Local\Temp/ccq8aaaa.s:152    .bss:00000004 lp_roll.2588
+C:\Users\scurcic\AppData\Local\Temp/ccq8aaaa.s:149    .bss:00000000 lp_pitch.2589
                             *COM*:00000020 fw_yaw_controller
                             *COM*:00000020 fw_nick_controller
                             *COM*:00000020 fw_roll_controller

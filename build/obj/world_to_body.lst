@@ -268,8 +268,8 @@
  270              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 world_to_body.c
-C:\Users\Srdjan\AppData\Local\Temp/cciibaaa.s:12     .text:00000000 world_to_body
-C:\Users\Srdjan\AppData\Local\Temp/cciibaaa.s:16     .text:00000000 $a
+C:\Users\scurcic\AppData\Local\Temp/ccUrbaaa.s:12     .text:00000000 world_to_body
+C:\Users\scurcic\AppData\Local\Temp/ccUrbaaa.s:16     .text:00000000 $a
 
 UNDEFINED SYMBOLS
 __extendsfdf2

@@ -177,8 +177,6 @@
 #define ADNS9500_2_SS_IOSET IO0SET
 #define ADNS9500_2_SS_IOCLR IO0CLR
 
-#define ADNS9500_DX 0
-#define ADNS9500_DY 1
 //@}
 
 /*======================================================================*/
@@ -346,8 +344,8 @@
 /* SSPCR0 settings */
 #define SSP_DDS  0x0F << 0  /* data size         : 16 bits        */
 #define SSP_FRF  0x00 << 4  /* frame format      : SPI           */
-#define SSP_CPOL 0x00 << 6  /* clock polarity    : data captured on first clock transition */
-#define SSP_CPHA 0x00 << 7  /* clock phase       : SCK idles low */
+#define SSP_CPOL 0x01 << 6  /* clock polarity    : data captured on first clock transition */
+#define SSP_CPHA 0x01 << 7  /* clock phase       : SCK idles low */
 #define SSP_SCR  3 << 8  /* serial clock rate : The spi clockrate is PCLK/(CPSDVSR * [SSP_SCR+1]) where CPSDVSR is fixed equal to 2 */
 /* 15 ~500kHz 7~1MHz 3=1.8MHz*/
 

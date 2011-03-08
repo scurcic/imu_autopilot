@@ -5,8 +5,8 @@
 *
 **/
 
-#ifndef IMU_CONF_V210_H_
-#define IMU_CONF_V210_H_
+#ifndef IMU_CONF_V250_H_
+#define IMU_CONF_V250_H_
 
 #define CPU_ARM7
 #include "LPC21xx.h"
@@ -349,6 +349,9 @@
 #define SSP_CPHA 0x00 << 7  /* clock phase       : SCK idles low */
 #define SSP_SCR  3 << 8  /* serial clock rate : The spi clockrate is PCLK/(CPSDVSR * [SSP_SCR+1]) where CPSDVSR is fixed equal to 2 */
 /* 15 ~500kHz 7~1MHz 3=1.8MHz*/
+
+#define SSP_CPOL_ADNS 0x01 << 6  /* clock polarity    : data captured on first clock transition */
+#define SSP_CPHA_ADNS 0x01 << 7
 
 /* SSPCR1 settings */
 #define SSP_LBM  0x00 << 0  /* loopback mode     : disabled                  */

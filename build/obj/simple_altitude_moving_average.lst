@@ -121,14 +121,14 @@
  119              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 simple_altitude_moving_average.c
-C:\Users\Srdjan\AppData\Local\Temp/ccYDbaaa.s:14     .text:00000000 simple_altitude_moving_average
-C:\Users\Srdjan\AppData\Local\Temp/ccYDbaaa.s:18     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccYDbaaa.s:90     .text:00000110 $d
-C:\Users\Srdjan\AppData\Local\Temp/ccYDbaaa.s:114    .bss:000000d4 height_prev.3194
-C:\Users\Srdjan\AppData\Local\Temp/ccYDbaaa.s:102    .bss:00000000 index_lowpass.3198
-C:\Users\Srdjan\AppData\Local\Temp/ccYDbaaa.s:108    .bss:00000008 height_array.3196
-C:\Users\Srdjan\AppData\Local\Temp/ccYDbaaa.s:105    .bss:00000004 lowpass_height.3197
-C:\Users\Srdjan\AppData\Local\Temp/ccYDbaaa.s:111    .bss:000000d0 height_low_prev.3195
+C:\Users\scurcic\AppData\Local\Temp/cc82aaaa.s:14     .text:00000000 simple_altitude_moving_average
+C:\Users\scurcic\AppData\Local\Temp/cc82aaaa.s:18     .text:00000000 $a
+C:\Users\scurcic\AppData\Local\Temp/cc82aaaa.s:90     .text:00000110 $d
+C:\Users\scurcic\AppData\Local\Temp/cc82aaaa.s:114    .bss:000000d4 height_prev.3194
+C:\Users\scurcic\AppData\Local\Temp/cc82aaaa.s:102    .bss:00000000 index_lowpass.3198
+C:\Users\scurcic\AppData\Local\Temp/cc82aaaa.s:108    .bss:00000008 height_array.3196
+C:\Users\scurcic\AppData\Local\Temp/cc82aaaa.s:105    .bss:00000004 lowpass_height.3197
+C:\Users\scurcic\AppData\Local\Temp/cc82aaaa.s:111    .bss:000000d0 height_low_prev.3195
                             *COM*:00000004 global_param_id
                             *COM*:00000004 state_fly_id
                             *COM*:00000a8c global_data

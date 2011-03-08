@@ -48,7 +48,6 @@
 // guarded by the define switch, the C-files can be safely
 // compiled along.
 
-
 #include "mainloop_generic.h"
 #if PX_VEHICLE_TYPE == PX_AIRFRAME_FIXED_WING
 #include "mainloop_fixed_wing.h"

@@ -200,26 +200,26 @@
  210              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 shutter.c
-C:\Users\Srdjan\AppData\Local\Temp/ccmCbaaa.s:6      .text:00000000 shutter_control
-C:\Users\Srdjan\AppData\Local\Temp/ccmCbaaa.s:11     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccmCbaaa.s:22     .text:0000001c $d
-C:\Users\Srdjan\AppData\Local\Temp/ccmCbaaa.s:197    .bss:00000000 m_shutter_active
-C:\Users\Srdjan\AppData\Local\Temp/ccmCbaaa.s:205    .bss:0000000c m_shutter_seq
-C:\Users\Srdjan\AppData\Local\Temp/ccmCbaaa.s:30     .text:00000024 shutter_set
-C:\Users\Srdjan\AppData\Local\Temp/ccmCbaaa.s:34     .text:00000024 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccmCbaaa.s:75     .text:000000ac $d
+C:\Users\scurcic\AppData\Local\Temp/ccO6aaaa.s:6      .text:00000000 shutter_control
+C:\Users\scurcic\AppData\Local\Temp/ccO6aaaa.s:11     .text:00000000 $a
+C:\Users\scurcic\AppData\Local\Temp/ccO6aaaa.s:22     .text:0000001c $d
+C:\Users\scurcic\AppData\Local\Temp/ccO6aaaa.s:197    .bss:00000000 m_shutter_active
+C:\Users\scurcic\AppData\Local\Temp/ccO6aaaa.s:205    .bss:0000000c m_shutter_seq
+C:\Users\scurcic\AppData\Local\Temp/ccO6aaaa.s:30     .text:00000024 shutter_set
+C:\Users\scurcic\AppData\Local\Temp/ccO6aaaa.s:34     .text:00000024 $a
+C:\Users\scurcic\AppData\Local\Temp/ccO6aaaa.s:75     .text:000000ac $d
                             *COM*:00000a8c global_data
-C:\Users\Srdjan\AppData\Local\Temp/ccmCbaaa.s:80     .text:000000b0 shutter_get_seq
-C:\Users\Srdjan\AppData\Local\Temp/ccmCbaaa.s:85     .text:000000b0 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccmCbaaa.s:92     .text:000000bc $d
-C:\Users\Srdjan\AppData\Local\Temp/ccmCbaaa.s:98     .text:000000c0 shutter_loop
-C:\Users\Srdjan\AppData\Local\Temp/ccmCbaaa.s:102    .text:000000c0 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccmCbaaa.s:160    .text:0000018c $d
-C:\Users\Srdjan\AppData\Local\Temp/ccmCbaaa.s:200    .bss:00000004 m_last_shut
-C:\Users\Srdjan\AppData\Local\Temp/ccmCbaaa.s:202    .bss:00000008 m_shutter_was_low
-C:\Users\Srdjan\AppData\Local\Temp/ccmCbaaa.s:169    .text:000001a0 shutter_init
-C:\Users\Srdjan\AppData\Local\Temp/ccmCbaaa.s:173    .text:000001a0 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccmCbaaa.s:193    .text:000001e4 $d
+C:\Users\scurcic\AppData\Local\Temp/ccO6aaaa.s:80     .text:000000b0 shutter_get_seq
+C:\Users\scurcic\AppData\Local\Temp/ccO6aaaa.s:85     .text:000000b0 $a
+C:\Users\scurcic\AppData\Local\Temp/ccO6aaaa.s:92     .text:000000bc $d
+C:\Users\scurcic\AppData\Local\Temp/ccO6aaaa.s:98     .text:000000c0 shutter_loop
+C:\Users\scurcic\AppData\Local\Temp/ccO6aaaa.s:102    .text:000000c0 $a
+C:\Users\scurcic\AppData\Local\Temp/ccO6aaaa.s:160    .text:0000018c $d
+C:\Users\scurcic\AppData\Local\Temp/ccO6aaaa.s:200    .bss:00000004 m_last_shut
+C:\Users\scurcic\AppData\Local\Temp/ccO6aaaa.s:202    .bss:00000008 m_shutter_was_low
+C:\Users\scurcic\AppData\Local\Temp/ccO6aaaa.s:169    .text:000001a0 shutter_init
+C:\Users\scurcic\AppData\Local\Temp/ccO6aaaa.s:173    .text:000001a0 $a
+C:\Users\scurcic\AppData\Local\Temp/ccO6aaaa.s:193    .text:000001e4 $d
                             *COM*:00000004 global_param_id
                             *COM*:00000004 state_fly_id
 

@@ -121,6 +121,7 @@ void spi_init(void);
  * is also the spi_interrupt_handler and the slave select and unselect functions.
  * @see spi_package
  */
+
 void spi_transmit( spi_package* package );
 
 /** Transmit function for the ADNS-9500 sensor **/

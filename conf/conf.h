@@ -14,7 +14,7 @@
 #include "stdbool.h"
 #include "features.h"
 
-#define IMU_PIXHAWK_V210 // IMU_PIXHAWK_AMIRANDIIMU_PIXHAWK_V250//
+#define IMU_PIXHAWK_V250 // IMU_PIXHAWK_AMIRANDIIMU_PIXHAWK_V250//
 
 
 //############### GENERAL SETUP #####################

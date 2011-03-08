@@ -91,153 +91,115 @@
   98 00dc 3040BDE8 		ldmfd	sp!, {r4, r5, lr}
   99 00e0 1EFF2FE1 		bx	lr
  101              		.align	2
- 102              		.global	spi_adns9500_read_reg_transmit
- 104              	spi_adns9500_read_reg_transmit:
+ 102              		.global	spi_transmit_adns
+ 104              	spi_transmit_adns:
  105              		@ Function supports interworking.
  106              		@ args = 0, pretend = 0, frame = 0
  107              		@ frame_needed = 0, uses_anonymous_args = 0
  108 00e4 30402DE9 		stmfd	sp!, {r4, r5, lr}
- 109 00e8 B020D0E1 		ldrh	r2, [r0, #0]
- 110 00ec 0E42A0E3 		mov	r4, #-536870912
- 111 00f0 1A4984E2 		add	r4, r4, #425984
- 112 00f4 B820C4E1 		strh	r2, [r4, #8]	@ movhi
- 113 00f8 1130D0E5 		ldrb	r3, [r0, #17]	@ zero_extendqisi2
- 114 00fc 033C83E3 		orr	r3, r3, #768
- 115 0100 B030C4E1 		strh	r3, [r4, #0]	@ movhi
- 116 0104 0050A0E1 		mov	r5, r0
- 117 0108 14C090E5 		ldr	ip, [r0, #20]
- 118 010c 0FE0A0E1 		mov	lr, pc
- 119 0110 1CFF2FE1 		bx	ip
- 120 0114 0430D4E5 		ldrb	r3, [r4, #4]	@ zero_extendqisi2
- 121 0118 023083E3 		orr	r3, r3, #2
- 122 011c 0430C4E5 		strb	r3, [r4, #4]
+ 109 00e8 10C0D0E5 		ldrb	ip, [r0, #16]	@ zero_extendqisi2
+ 110 00ec 00005CE3 		cmp	ip, #0
+ 111 00f0 0050A0E1 		mov	r5, r0
+ 112 00f4 080000DA 		ble	.L19
+ 113 00f8 0E02A0E3 		mov	r0, #-536870912
+ 114 00fc 1A0980E2 		add	r0, r0, #425984
+ 115 0100 0010A0E3 		mov	r1, #0
+ 116              	.L21:
+ 117 0104 8130A0E1 		mov	r3, r1, asl #1
+ 118 0108 B52093E1 		ldrh	r2, [r3, r5]
+ 119 010c 011081E2 		add	r1, r1, #1
+ 120 0110 0C0051E1 		cmp	r1, ip
+ 121 0114 B820C0E1 		strh	r2, [r0, #8]	@ movhi
+ 122 0118 F9FFFF1A 		bne	.L21
  123              	.L19:
- 124 0120 0C30D4E5 		ldrb	r3, [r4, #12]	@ zero_extendqisi2
- 125 0124 100013E3 		tst	r3, #16
- 126 0128 FCFFFF1A 		bne	.L19
- 127 012c 0430D4E5 		ldrb	r3, [r4, #4]	@ zero_extendqisi2
- 128 0130 FD3003E2 		and	r3, r3, #253
- 129 0134 0430C4E5 		strb	r3, [r4, #4]
- 130 0138 7800A0E3 		mov	r0, #120
- 131 013c FEFFFFEB 		bl	delay_us
- 132 0140 B220D5E1 		ldrh	r2, [r5, #2]
- 133 0144 B820C4E1 		strh	r2, [r4, #8]	@ movhi
- 134 0148 0430D4E5 		ldrb	r3, [r4, #4]	@ zero_extendqisi2
- 135 014c 023083E3 		orr	r3, r3, #2
- 136 0150 0E22A0E3 		mov	r2, #-536870912
- 137 0154 0430C4E5 		strb	r3, [r4, #4]
- 138 0158 1A2982E2 		add	r2, r2, #425984
- 139              	.L21:
- 140 015c 0C30D2E5 		ldrb	r3, [r2, #12]	@ zero_extendqisi2
- 141 0160 100013E3 		tst	r3, #16
- 142 0164 FCFFFF1A 		bne	.L21
- 143 0168 0430D2E5 		ldrb	r3, [r2, #4]	@ zero_extendqisi2
- 144 016c FD3003E2 		and	r3, r3, #253
- 145 0170 0430C2E5 		strb	r3, [r2, #4]
- 146 0174 18C095E5 		ldr	ip, [r5, #24]
- 147 0178 0FE0A0E1 		mov	lr, pc
- 148 017c 1CFF2FE1 		bx	ip
- 149 0180 1CC095E5 		ldr	ip, [r5, #28]
- 150 0184 0FE0A0E1 		mov	lr, pc
- 151 0188 1CFF2FE1 		bx	ip
- 152 018c 3040BDE8 		ldmfd	sp!, {r4, r5, lr}
- 153 0190 1EFF2FE1 		bx	lr
- 155              		.align	2
- 156              		.global	spi_transmit_srom
- 158              	spi_transmit_srom:
- 159              		@ Function supports interworking.
- 160              		@ args = 0, pretend = 0, frame = 0
- 161              		@ frame_needed = 0, uses_anonymous_args = 0
- 162 0194 70402DE9 		stmfd	sp!, {r4, r5, r6, lr}
- 163 0198 B030D0E1 		ldrh	r3, [r0, #0]
- 164 019c 0E42A0E3 		mov	r4, #-536870912
- 165 01a0 1A4984E2 		add	r4, r4, #425984
- 166 01a4 B830C4E1 		strh	r3, [r4, #8]	@ movhi
- 167 01a8 062BA0E3 		mov	r2, #6144
- 168 01ac 0230D0E7 		ldrb	r3, [r0, r2]	@ zero_extendqisi2
- 169 01b0 033C83E3 		orr	r3, r3, #768
- 170 01b4 B030C4E1 		strh	r3, [r4, #0]	@ movhi
- 171 01b8 042082E2 		add	r2, r2, #4
- 172 01bc 0050A0E1 		mov	r5, r0
- 173 01c0 02C090E7 		ldr	ip, [r0, r2]
- 174 01c4 0FE0A0E1 		mov	lr, pc
- 175 01c8 1CFF2FE1 		bx	ip
- 176 01cc 0430D4E5 		ldrb	r3, [r4, #4]	@ zero_extendqisi2
- 177 01d0 023083E3 		orr	r3, r3, #2
- 178 01d4 0430C4E5 		strb	r3, [r4, #4]
- 179              	.L29:
- 180 01d8 0C30D4E5 		ldrb	r3, [r4, #12]	@ zero_extendqisi2
- 181 01dc 100013E3 		tst	r3, #16
- 182 01e0 FCFFFF1A 		bne	.L29
- 183 01e4 0430D4E5 		ldrb	r3, [r4, #4]	@ zero_extendqisi2
- 184 01e8 FD3003E2 		and	r3, r3, #253
- 185 01ec 0430C4E5 		strb	r3, [r4, #4]
- 186 01f0 0F00A0E3 		mov	r0, #15
- 187 01f4 FEFFFFEB 		bl	delay_us
- 188 01f8 5F3DA0E3 		mov	r3, #6080
- 189 01fc 3E3083E2 		add	r3, r3, #62
- 190 0200 B32095E1 		ldrh	r2, [r5, r3]
- 191 0204 010052E3 		cmp	r2, #1
- 192 0208 1B0000DA 		ble	.L31
- 193 020c 0E42A0E3 		mov	r4, #-536870912
- 194 0210 1A4984E2 		add	r4, r4, #425984
- 195 0214 0160A0E3 		mov	r6, #1
- 196              	.L33:
- 197 0218 8630A0E1 		mov	r3, r6, asl #1
- 198 021c B52093E1 		ldrh	r2, [r3, r5]
- 199 0220 B820C4E1 		strh	r2, [r4, #8]	@ movhi
- 200 0224 0430D4E5 		ldrb	r3, [r4, #4]	@ zero_extendqisi2
- 201 0228 023083E3 		orr	r3, r3, #2
- 202 022c 0430C4E5 		strb	r3, [r4, #4]
- 203              	.L34:
- 204 0230 0C30D4E5 		ldrb	r3, [r4, #12]	@ zero_extendqisi2
- 205 0234 100013E3 		tst	r3, #16
- 206 0238 FCFFFF1A 		bne	.L34
- 207 023c 0430D4E5 		ldrb	r3, [r4, #4]	@ zero_extendqisi2
- 208 0240 FD3003E2 		and	r3, r3, #253
- 209 0244 0430C4E5 		strb	r3, [r4, #4]
- 210 0248 0F00A0E3 		mov	r0, #15
- 211 024c FEFFFFEB 		bl	delay_us
- 212 0250 5F3DA0E3 		mov	r3, #6080
- 213 0254 3C3083E2 		add	r3, r3, #60
- 214 0258 B32095E1 		ldrh	r2, [r5, r3]
- 215 025c BB0052E3 		cmp	r2, #187
- 216 0260 1100000A 		beq	.L44
- 217              	.L36:
- 218 0264 5F3DA0E3 		mov	r3, #6080
- 219 0268 3E3083E2 		add	r3, r3, #62
- 220 026c B32095E1 		ldrh	r2, [r5, r3]
- 221 0270 016086E2 		add	r6, r6, #1
- 222 0274 060052E1 		cmp	r2, r6
- 223 0278 E6FFFFCA 		bgt	.L33
- 224              	.L31:
- 225 027c 063BA0E3 		mov	r3, #6144
- 226 0280 083083E2 		add	r3, r3, #8
- 227 0284 03C095E7 		ldr	ip, [r5, r3]
- 228 0288 0FE0A0E1 		mov	lr, pc
- 229 028c 1CFF2FE1 		bx	ip
- 230 0290 062BA0E3 		mov	r2, #6144
- 231 0294 0C2082E2 		add	r2, r2, #12
- 232 0298 02C095E7 		ldr	ip, [r5, r2]
- 233 029c 0FE0A0E1 		mov	lr, pc
- 234 02a0 1CFF2FE1 		bx	ip
- 235 02a4 7040BDE8 		ldmfd	sp!, {r4, r5, r6, lr}
- 236 02a8 1EFF2FE1 		bx	lr
- 237              	.L44:
- 238 02ac 1000A0E3 		mov	r0, #16
- 239 02b0 FEFFFFEB 		bl	led_on
- 240 02b4 EAFFFFEA 		b	.L36
- 242              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
+ 124 011c 1130D5E5 		ldrb	r3, [r5, #17]	@ zero_extendqisi2
+ 125 0120 0E42A0E3 		mov	r4, #-536870912
+ 126 0124 1A4984E2 		add	r4, r4, #425984
+ 127 0128 0F3D83E3 		orr	r3, r3, #960
+ 128 012c B030C4E1 		strh	r3, [r4, #0]	@ movhi
+ 129 0130 14C095E5 		ldr	ip, [r5, #20]
+ 130 0134 0FE0A0E1 		mov	lr, pc
+ 131 0138 1CFF2FE1 		bx	ip
+ 132 013c 0430D4E5 		ldrb	r3, [r4, #4]	@ zero_extendqisi2
+ 133 0140 023083E3 		orr	r3, r3, #2
+ 134 0144 0430C4E5 		strb	r3, [r4, #4]
+ 135              	.L22:
+ 136 0148 0C30D4E5 		ldrb	r3, [r4, #12]	@ zero_extendqisi2
+ 137 014c 100013E3 		tst	r3, #16
+ 138 0150 FCFFFF1A 		bne	.L22
+ 139 0154 18C095E5 		ldr	ip, [r5, #24]
+ 140 0158 0FE0A0E1 		mov	lr, pc
+ 141 015c 1CFF2FE1 		bx	ip
+ 142 0160 0430D4E5 		ldrb	r3, [r4, #4]	@ zero_extendqisi2
+ 143 0164 FD3003E2 		and	r3, r3, #253
+ 144 0168 0430C4E5 		strb	r3, [r4, #4]
+ 145 016c 1CC095E5 		ldr	ip, [r5, #28]
+ 146 0170 0FE0A0E1 		mov	lr, pc
+ 147 0174 1CFF2FE1 		bx	ip
+ 148 0178 3040BDE8 		ldmfd	sp!, {r4, r5, lr}
+ 149 017c 1EFF2FE1 		bx	lr
+ 151              		.align	2
+ 152              		.global	spi_adns9500_read_reg_transmit
+ 154              	spi_adns9500_read_reg_transmit:
+ 155              		@ Function supports interworking.
+ 156              		@ args = 0, pretend = 0, frame = 0
+ 157              		@ frame_needed = 0, uses_anonymous_args = 0
+ 158 0180 30402DE9 		stmfd	sp!, {r4, r5, lr}
+ 159 0184 B020D0E1 		ldrh	r2, [r0, #0]
+ 160 0188 0E42A0E3 		mov	r4, #-536870912
+ 161 018c 1A4984E2 		add	r4, r4, #425984
+ 162 0190 B820C4E1 		strh	r2, [r4, #8]	@ movhi
+ 163 0194 1130D0E5 		ldrb	r3, [r0, #17]	@ zero_extendqisi2
+ 164 0198 0F3D83E3 		orr	r3, r3, #960
+ 165 019c B030C4E1 		strh	r3, [r4, #0]	@ movhi
+ 166 01a0 0050A0E1 		mov	r5, r0
+ 167 01a4 14C090E5 		ldr	ip, [r0, #20]
+ 168 01a8 0FE0A0E1 		mov	lr, pc
+ 169 01ac 1CFF2FE1 		bx	ip
+ 170 01b0 0430D4E5 		ldrb	r3, [r4, #4]	@ zero_extendqisi2
+ 171 01b4 023083E3 		orr	r3, r3, #2
+ 172 01b8 0430C4E5 		strb	r3, [r4, #4]
+ 173              	.L29:
+ 174 01bc 0C30D4E5 		ldrb	r3, [r4, #12]	@ zero_extendqisi2
+ 175 01c0 100013E3 		tst	r3, #16
+ 176 01c4 FCFFFF1A 		bne	.L29
+ 177 01c8 0430D4E5 		ldrb	r3, [r4, #4]	@ zero_extendqisi2
+ 178 01cc FD3003E2 		and	r3, r3, #253
+ 179 01d0 0430C4E5 		strb	r3, [r4, #4]
+ 180 01d4 7800A0E3 		mov	r0, #120
+ 181 01d8 FEFFFFEB 		bl	delay_us
+ 182 01dc B220D5E1 		ldrh	r2, [r5, #2]
+ 183 01e0 B820C4E1 		strh	r2, [r4, #8]	@ movhi
+ 184 01e4 0430D4E5 		ldrb	r3, [r4, #4]	@ zero_extendqisi2
+ 185 01e8 023083E3 		orr	r3, r3, #2
+ 186 01ec 0E22A0E3 		mov	r2, #-536870912
+ 187 01f0 0430C4E5 		strb	r3, [r4, #4]
+ 188 01f4 1A2982E2 		add	r2, r2, #425984
+ 189              	.L31:
+ 190 01f8 0C30D2E5 		ldrb	r3, [r2, #12]	@ zero_extendqisi2
+ 191 01fc 100013E3 		tst	r3, #16
+ 192 0200 FCFFFF1A 		bne	.L31
+ 193 0204 0430D2E5 		ldrb	r3, [r2, #4]	@ zero_extendqisi2
+ 194 0208 FD3003E2 		and	r3, r3, #253
+ 195 020c 0430C2E5 		strb	r3, [r2, #4]
+ 196 0210 18C095E5 		ldr	ip, [r5, #24]
+ 197 0214 0FE0A0E1 		mov	lr, pc
+ 198 0218 1CFF2FE1 		bx	ip
+ 199 021c 1CC095E5 		ldr	ip, [r5, #28]
+ 200 0220 0FE0A0E1 		mov	lr, pc
+ 201 0224 1CFF2FE1 		bx	ip
+ 202 0228 3040BDE8 		ldmfd	sp!, {r4, r5, lr}
+ 203 022c 1EFF2FE1 		bx	lr
+ 205              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 spi.c
-C:\Users\Srdjan\AppData\Local\Temp/ccw7aaaa.s:6      .text:00000000 spi_init
-C:\Users\Srdjan\AppData\Local\Temp/ccw7aaaa.s:11     .text:00000000 $a
-C:\Users\Srdjan\AppData\Local\Temp/ccw7aaaa.s:30     .text:00000038 spi_running
-C:\Users\Srdjan\AppData\Local\Temp/ccw7aaaa.s:42     .text:00000040 spi_number_of_packages_in_buffer
-C:\Users\Srdjan\AppData\Local\Temp/ccw7aaaa.s:54     .text:00000048 spi_transmit
-C:\Users\Srdjan\AppData\Local\Temp/ccw7aaaa.s:104    .text:000000e4 spi_adns9500_read_reg_transmit
-C:\Users\Srdjan\AppData\Local\Temp/ccw7aaaa.s:158    .text:00000194 spi_transmit_srom
+C:\Users\scurcic\AppData\Local\Temp/cc04aaaa.s:6      .text:00000000 spi_init
+C:\Users\scurcic\AppData\Local\Temp/cc04aaaa.s:11     .text:00000000 $a
+C:\Users\scurcic\AppData\Local\Temp/cc04aaaa.s:30     .text:00000038 spi_running
+C:\Users\scurcic\AppData\Local\Temp/cc04aaaa.s:42     .text:00000040 spi_number_of_packages_in_buffer
+C:\Users\scurcic\AppData\Local\Temp/cc04aaaa.s:54     .text:00000048 spi_transmit
+C:\Users\scurcic\AppData\Local\Temp/cc04aaaa.s:104    .text:000000e4 spi_transmit_adns
+C:\Users\scurcic\AppData\Local\Temp/cc04aaaa.s:154    .text:00000180 spi_adns9500_read_reg_transmit
 
 UNDEFINED SYMBOLS
 delay_us
-led_on

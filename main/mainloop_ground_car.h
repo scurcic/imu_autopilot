@@ -12,9 +12,10 @@
 
 /** @brief Run the system */
 void main_loop_ground_car(void);
-
 void main_init_ground_car(void);
 
+void update_controller_setpoints(void);
+void update_controller_parameters(void);
 
 
 #endif /* MAINLOOP_H_ */
