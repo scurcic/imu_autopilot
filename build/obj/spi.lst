@@ -193,13 +193,13 @@
  205              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 spi.c
-C:\Users\scurcic\AppData\Local\Temp/cc04aaaa.s:6      .text:00000000 spi_init
-C:\Users\scurcic\AppData\Local\Temp/cc04aaaa.s:11     .text:00000000 $a
-C:\Users\scurcic\AppData\Local\Temp/cc04aaaa.s:30     .text:00000038 spi_running
-C:\Users\scurcic\AppData\Local\Temp/cc04aaaa.s:42     .text:00000040 spi_number_of_packages_in_buffer
-C:\Users\scurcic\AppData\Local\Temp/cc04aaaa.s:54     .text:00000048 spi_transmit
-C:\Users\scurcic\AppData\Local\Temp/cc04aaaa.s:104    .text:000000e4 spi_transmit_adns
-C:\Users\scurcic\AppData\Local\Temp/cc04aaaa.s:154    .text:00000180 spi_adns9500_read_reg_transmit
+C:\Users\Srdjan\AppData\Local\Temp/cc4yaaaa.s:6      .text:00000000 spi_init
+C:\Users\Srdjan\AppData\Local\Temp/cc4yaaaa.s:11     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc4yaaaa.s:30     .text:00000038 spi_running
+C:\Users\Srdjan\AppData\Local\Temp/cc4yaaaa.s:42     .text:00000040 spi_number_of_packages_in_buffer
+C:\Users\Srdjan\AppData\Local\Temp/cc4yaaaa.s:54     .text:00000048 spi_transmit
+C:\Users\Srdjan\AppData\Local\Temp/cc4yaaaa.s:104    .text:000000e4 spi_transmit_adns
+C:\Users\Srdjan\AppData\Local\Temp/cc4yaaaa.s:154    .text:00000180 spi_adns9500_read_reg_transmit
 
 UNDEFINED SYMBOLS
 delay_us

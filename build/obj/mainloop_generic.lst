@@ -3410,28 +3410,28 @@
  3106              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 mainloop_generic.c
-C:\Users\scurcic\AppData\Local\Temp/ccwfbaaa.s:41     .text:00000000 main_loop_generic
-C:\Users\scurcic\AppData\Local\Temp/ccwfbaaa.s:45     .text:00000000 $a
-C:\Users\scurcic\AppData\Local\Temp/ccwfbaaa.s:388    .text:0000050c $d
+C:\Users\Srdjan\AppData\Local\Temp/ccY1aaaa.s:41     .text:00000000 main_loop_generic
+C:\Users\Srdjan\AppData\Local\Temp/ccY1aaaa.s:45     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccY1aaaa.s:388    .text:0000050c $d
                             *COM*:00000a8c global_data
-C:\Users\scurcic\AppData\Local\Temp/ccwfbaaa.s:3087   .bss:00000008 mag_count.20958
-C:\Users\scurcic\AppData\Local\Temp/ccwfbaaa.s:3093   .data:00000000 pressure_lowpass.19389
+C:\Users\Srdjan\AppData\Local\Temp/ccY1aaaa.s:3087   .bss:00000008 mag_count.20958
+C:\Users\Srdjan\AppData\Local\Temp/ccY1aaaa.s:3093   .data:00000000 pressure_lowpass.19389
                             *COM*:00000001 bmp085_measurement_mode
-C:\Users\scurcic\AppData\Local\Temp/ccwfbaaa.s:3085   .bss:00000000 last_mainloop_idle
-C:\Users\scurcic\AppData\Local\Temp/ccwfbaaa.s:418    .text:00000580 $a
-C:\Users\scurcic\AppData\Local\Temp/ccwfbaaa.s:925    .text:0000085c global_data_reset_param_defaults
-C:\Users\scurcic\AppData\Local\Temp/ccwfbaaa.s:1639   .text:00001368 $d
-C:\Users\scurcic\AppData\Local\Temp/ccwfbaaa.s:1751   .text:0000151c mavlink_send_uart
-C:\Users\scurcic\AppData\Local\Temp/ccwfbaaa.s:1755   .text:0000151c $a
-C:\Users\scurcic\AppData\Local\Temp/ccwfbaaa.s:1834   .text:000015c4 main_init_generic
-C:\Users\scurcic\AppData\Local\Temp/ccwfbaaa.s:2341   .text:00001d58 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccY1aaaa.s:3085   .bss:00000000 last_mainloop_idle
+C:\Users\Srdjan\AppData\Local\Temp/ccY1aaaa.s:418    .text:00000580 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccY1aaaa.s:925    .text:0000085c global_data_reset_param_defaults
+C:\Users\Srdjan\AppData\Local\Temp/ccY1aaaa.s:1639   .text:00001368 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccY1aaaa.s:1751   .text:0000151c mavlink_send_uart
+C:\Users\Srdjan\AppData\Local\Temp/ccY1aaaa.s:1755   .text:0000151c $a
+C:\Users\Srdjan\AppData\Local\Temp/ccY1aaaa.s:1834   .text:000015c4 main_init_generic
+C:\Users\Srdjan\AppData\Local\Temp/ccY1aaaa.s:2341   .text:00001d58 $d
                             *COM*:00000001 mag_axis
                             *COM*:00000001 gps_device_mode
-C:\Users\scurcic\AppData\Local\Temp/ccwfbaaa.s:3097   .bss:0000000c m_mavlink_status.2147
+C:\Users\Srdjan\AppData\Local\Temp/ccY1aaaa.s:3097   .bss:0000000c m_mavlink_status.2147
                             *COM*:00000008 mavlink_system
-C:\Users\scurcic\AppData\Local\Temp/ccwfbaaa.s:2363   .text:00001da8 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccY1aaaa.s:2363   .text:00001da8 $a
                              .bss:00000000 $d
-C:\Users\scurcic\AppData\Local\Temp/ccwfbaaa.s:3094   .data:00000000 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccY1aaaa.s:3094   .data:00000000 $d
                             *COM*:00000004 global_param_id
                             *COM*:00000004 state_fly_id
 

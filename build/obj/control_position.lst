@@ -621,10 +621,10 @@
  623              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 control_position.c
-C:\Users\scurcic\AppData\Local\Temp/ccuOaaaa.s:13     .text:00000000 control_position
-C:\Users\scurcic\AppData\Local\Temp/ccuOaaaa.s:17     .text:00000000 $a
-C:\Users\scurcic\AppData\Local\Temp/ccuOaaaa.s:302    .text:00000468 $d
-C:\Users\scurcic\AppData\Local\Temp/ccuOaaaa.s:371    .text:00000578 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccoRaaaa.s:13     .text:00000000 control_position
+C:\Users\Srdjan\AppData\Local\Temp/ccoRaaaa.s:17     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccoRaaaa.s:302    .text:00000468 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccoRaaaa.s:371    .text:00000578 $a
                             *COM*:00000004 global_param_id
                             *COM*:00000004 state_fly_id
                             *COM*:00000a8c global_data

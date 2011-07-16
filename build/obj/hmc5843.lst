@@ -268,27 +268,27 @@
  288              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 hmc5843.c
-C:\Users\scurcic\AppData\Local\Temp/ccEtbaaa.s:6      .text:00000000 hmc5843_get_data
-C:\Users\scurcic\AppData\Local\Temp/ccEtbaaa.s:11     .text:00000000 $a
-C:\Users\scurcic\AppData\Local\Temp/ccEtbaaa.s:23     .text:00000020 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccg1aaaa.s:6      .text:00000000 hmc5843_get_data
+C:\Users\Srdjan\AppData\Local\Temp/ccg1aaaa.s:11     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccg1aaaa.s:23     .text:00000020 $d
                             *COM*:00000008 hmc5843_result
-C:\Users\scurcic\AppData\Local\Temp/ccEtbaaa.s:28     .text:00000024 hmc5843_data_ok
-C:\Users\scurcic\AppData\Local\Temp/ccEtbaaa.s:33     .text:00000024 $a
-C:\Users\scurcic\AppData\Local\Temp/ccEtbaaa.s:40     .text:00000030 $d
-C:\Users\scurcic\AppData\Local\Temp/ccEtbaaa.s:281    .bss:00000000 hmc5843_data_valid
-C:\Users\scurcic\AppData\Local\Temp/ccEtbaaa.s:45     .text:00000034 twos_complement_decode16
-C:\Users\scurcic\AppData\Local\Temp/ccEtbaaa.s:50     .text:00000034 $a
-C:\Users\scurcic\AppData\Local\Temp/ccEtbaaa.s:64     .text:00000058 hmc5843_read_handler
-C:\Users\scurcic\AppData\Local\Temp/ccEtbaaa.s:120    .text:00000114 $d
-C:\Users\scurcic\AppData\Local\Temp/ccEtbaaa.s:126    .text:0000011c hmc5843_start_read
-C:\Users\scurcic\AppData\Local\Temp/ccEtbaaa.s:130    .text:0000011c $a
-C:\Users\scurcic\AppData\Local\Temp/ccEtbaaa.s:164    .text:00000198 $d
-C:\Users\scurcic\AppData\Local\Temp/ccEtbaaa.s:270    .data:00000000 hmc5843_address
-C:\Users\scurcic\AppData\Local\Temp/ccEtbaaa.s:275    .data:00000001 hmc5843_bus
-C:\Users\scurcic\AppData\Local\Temp/ccEtbaaa.s:170    .text:000001a4 EXTINT_ISR
-C:\Users\scurcic\AppData\Local\Temp/ccEtbaaa.s:175    .text:000001a4 $a
-C:\Users\scurcic\AppData\Local\Temp/ccEtbaaa.s:195    .text:000001e4 hmc5843_init
-C:\Users\scurcic\AppData\Local\Temp/ccEtbaaa.s:262    .text:000002d4 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccg1aaaa.s:28     .text:00000024 hmc5843_data_ok
+C:\Users\Srdjan\AppData\Local\Temp/ccg1aaaa.s:33     .text:00000024 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccg1aaaa.s:40     .text:00000030 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccg1aaaa.s:281    .bss:00000000 hmc5843_data_valid
+C:\Users\Srdjan\AppData\Local\Temp/ccg1aaaa.s:45     .text:00000034 twos_complement_decode16
+C:\Users\Srdjan\AppData\Local\Temp/ccg1aaaa.s:50     .text:00000034 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccg1aaaa.s:64     .text:00000058 hmc5843_read_handler
+C:\Users\Srdjan\AppData\Local\Temp/ccg1aaaa.s:120    .text:00000114 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccg1aaaa.s:126    .text:0000011c hmc5843_start_read
+C:\Users\Srdjan\AppData\Local\Temp/ccg1aaaa.s:130    .text:0000011c $a
+C:\Users\Srdjan\AppData\Local\Temp/ccg1aaaa.s:164    .text:00000198 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccg1aaaa.s:270    .data:00000000 hmc5843_address
+C:\Users\Srdjan\AppData\Local\Temp/ccg1aaaa.s:275    .data:00000001 hmc5843_bus
+C:\Users\Srdjan\AppData\Local\Temp/ccg1aaaa.s:170    .text:000001a4 EXTINT_ISR
+C:\Users\Srdjan\AppData\Local\Temp/ccg1aaaa.s:175    .text:000001a4 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccg1aaaa.s:195    .text:000001e4 hmc5843_init
+C:\Users\Srdjan\AppData\Local\Temp/ccg1aaaa.s:262    .text:000002d4 $d
                              .bss:00000000 $d
                             *COM*:00000004 global_param_id
                             *COM*:00000004 state_fly_id

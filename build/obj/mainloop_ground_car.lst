@@ -779,8 +779,8 @@
  749 09b8 0030C6E5 		strb	r3, [r6, #0]
  750 09bc 8FFEFFEA 		b	.L85
  751              	.L99:
- 752 09c0 C30CA0E3 		mov	r0, #49920
- 753 09c4 500080E2 		add	r0, r0, #80
+ 752 09c0 270CA0E3 		mov	r0, #9984
+ 753 09c4 100080E2 		add	r0, r0, #16
  754 09c8 0610A0E3 		mov	r1, #6
  755 09cc 0420A0E1 		mov	r2, r4
  756 09d0 FEFFFFEB 		bl	us_run_every
@@ -1187,13 +1187,13 @@
  1159              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 mainloop_ground_car.c
-C:\Users\scurcic\AppData\Local\Temp/ccmgbaaa.s:10     .text:00000000 update_controller_setpoints
-C:\Users\scurcic\AppData\Local\Temp/ccmgbaaa.s:14     .text:00000000 $a
-C:\Users\scurcic\AppData\Local\Temp/ccmgbaaa.s:137    .text:000001b0 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccqKaaaa.s:10     .text:00000000 update_controller_setpoints
+C:\Users\Srdjan\AppData\Local\Temp/ccqKaaaa.s:14     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccqKaaaa.s:137    .text:000001b0 $d
                             *COM*:00000a8c global_data
-C:\Users\scurcic\AppData\Local\Temp/ccmgbaaa.s:143    .text:000001b8 update_controller_parameters
-C:\Users\scurcic\AppData\Local\Temp/ccmgbaaa.s:147    .text:000001b8 $a
-C:\Users\scurcic\AppData\Local\Temp/ccmgbaaa.s:215    .text:000002b8 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccqKaaaa.s:143    .text:000001b8 update_controller_parameters
+C:\Users\Srdjan\AppData\Local\Temp/ccqKaaaa.s:147    .text:000001b8 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccqKaaaa.s:215    .text:000002b8 $d
                             *COM*:00000020 nick_controller
                             *COM*:00000020 roll_controller
                             *COM*:00000020 yaw_pos_controller
@@ -1201,21 +1201,21 @@ C:\Users\scurcic\AppData\Local\Temp/ccmgbaaa.s:215    .text:000002b8 $d
                             *COM*:00000020 x_axis_controller
                             *COM*:00000020 y_axis_controller
                             *COM*:00000020 z_axis_controller
-C:\Users\scurcic\AppData\Local\Temp/ccmgbaaa.s:227    .text:000002d8 main_init_ground_car
-C:\Users\scurcic\AppData\Local\Temp/ccmgbaaa.s:231    .text:000002d8 $a
-C:\Users\scurcic\AppData\Local\Temp/ccmgbaaa.s:287    .text:000002e8 main_loop_ground_car
-C:\Users\scurcic\AppData\Local\Temp/ccmgbaaa.s:766    .text:000009ec $d
+C:\Users\Srdjan\AppData\Local\Temp/ccqKaaaa.s:227    .text:000002d8 main_init_ground_car
+C:\Users\Srdjan\AppData\Local\Temp/ccqKaaaa.s:231    .text:000002d8 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccqKaaaa.s:287    .text:000002e8 main_loop_ground_car
+C:\Users\Srdjan\AppData\Local\Temp/ccqKaaaa.s:766    .text:000009ec $d
                             *COM*:0000000c time_debug
-C:\Users\scurcic\AppData\Local\Temp/ccmgbaaa.s:1133   .bss:00000014 mag_count.21004
-C:\Users\scurcic\AppData\Local\Temp/ccmgbaaa.s:1131   .bss:00000008 att.21005
-C:\Users\scurcic\AppData\Local\Temp/ccmgbaaa.s:1139   .data:00000004 pressure_lowpass.19397
+C:\Users\Srdjan\AppData\Local\Temp/ccqKaaaa.s:1133   .bss:00000014 mag_count.21004
+C:\Users\Srdjan\AppData\Local\Temp/ccqKaaaa.s:1131   .bss:00000008 att.21005
+C:\Users\Srdjan\AppData\Local\Temp/ccqKaaaa.s:1139   .data:00000004 pressure_lowpass.19397
                             *COM*:00000001 bmp085_measurement_mode
-C:\Users\scurcic\AppData\Local\Temp/ccmgbaaa.s:1127   .data:00000000 uart_unconfigured.21009
-C:\Users\scurcic\AppData\Local\Temp/ccmgbaaa.s:1122   .bss:00000000 last_mainloop_idle
-C:\Users\scurcic\AppData\Local\Temp/ccmgbaaa.s:808    .text:00000a90 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccqKaaaa.s:1127   .data:00000000 uart_unconfigured.21009
+C:\Users\Srdjan\AppData\Local\Temp/ccqKaaaa.s:1122   .bss:00000000 last_mainloop_idle
+C:\Users\Srdjan\AppData\Local\Temp/ccqKaaaa.s:808    .text:00000a90 $a
                              .bss:00000000 $d
-C:\Users\scurcic\AppData\Local\Temp/ccmgbaaa.s:1124   .bss:00000008 $d
-C:\Users\scurcic\AppData\Local\Temp/ccmgbaaa.s:1140   .data:00000004 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccqKaaaa.s:1124   .bss:00000008 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccqKaaaa.s:1140   .data:00000004 $d
                             *COM*:00000008 mavlink_system
                             *COM*:00000004 global_param_id
                             *COM*:00000004 state_fly_id

@@ -417,12 +417,12 @@
  427              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 transformation.c
-C:\Users\scurcic\AppData\Local\Temp/cc0ibaaa.s:6      .text:00000000 navi2body
-C:\Users\scurcic\AppData\Local\Temp/cc0ibaaa.s:12     .text:00000000 $a
-C:\Users\scurcic\AppData\Local\Temp/cc0ibaaa.s:22     .text:00000004 body2navi
-C:\Users\scurcic\AppData\Local\Temp/cc0ibaaa.s:334    .text:000004c4 turn_xy_plane
-C:\Users\scurcic\AppData\Local\Temp/cc0ibaaa.s:407    .text:000005c8 body2navi_xy_plane
-C:\Users\scurcic\AppData\Local\Temp/cc0ibaaa.s:419    .text:000005d0 navi2body_xy_plane
+C:\Users\Srdjan\AppData\Local\Temp/cc61aaaa.s:6      .text:00000000 navi2body
+C:\Users\Srdjan\AppData\Local\Temp/cc61aaaa.s:12     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc61aaaa.s:22     .text:00000004 body2navi
+C:\Users\Srdjan\AppData\Local\Temp/cc61aaaa.s:334    .text:000004c4 turn_xy_plane
+C:\Users\Srdjan\AppData\Local\Temp/cc61aaaa.s:407    .text:000005c8 body2navi_xy_plane
+C:\Users\Srdjan\AppData\Local\Temp/cc61aaaa.s:419    .text:000005d0 navi2body_xy_plane
 
 UNDEFINED SYMBOLS
 __extendsfdf2

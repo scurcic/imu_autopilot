@@ -1403,55 +1403,55 @@
  1411              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 position_kalman.c
-C:\Users\scurcic\AppData\Local\Temp/ccuibaaa.s:6      .text:00000000 position_kalman_init
-C:\Users\scurcic\AppData\Local\Temp/ccuibaaa.s:11     .text:00000000 $a
-C:\Users\scurcic\AppData\Local\Temp/ccuibaaa.s:29     .text:00000038 $d
+C:\Users\Srdjan\AppData\Local\Temp/cc4Oaaaa.s:6      .text:00000000 position_kalman_init
+C:\Users\Srdjan\AppData\Local\Temp/cc4Oaaaa.s:11     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc4Oaaaa.s:29     .text:00000038 $d
                             *COM*:0000000c state
                             *COM*:0000000c state_dot
                             *COM*:0000000c state_ddot
-C:\Users\scurcic\AppData\Local\Temp/ccuibaaa.s:43     .text:00000044 x_position_kalman
-C:\Users\scurcic\AppData\Local\Temp/ccuibaaa.s:47     .text:00000044 $a
-C:\Users\scurcic\AppData\Local\Temp/ccuibaaa.s:982    .text:00000eb8 $d
-C:\Users\scurcic\AppData\Local\Temp/ccuibaaa.s:1371   .bss:0000004c p11.2931
-C:\Users\scurcic\AppData\Local\Temp/ccuibaaa.s:1359   .bss:0000003c p22.2935
-C:\Users\scurcic\AppData\Local\Temp/ccuibaaa.s:1347   .bss:0000002c p33.2939
-C:\Users\scurcic\AppData\Local\Temp/ccuibaaa.s:1320   .bss:00000008 x_prior.2962
-C:\Users\scurcic\AppData\Local\Temp/ccuibaaa.s:1317   .bss:00000004 xd_prior.2963
-C:\Users\scurcic\AppData\Local\Temp/ccuibaaa.s:1314   .bss:00000000 xdd_prior.2964
-C:\Users\scurcic\AppData\Local\Temp/ccuibaaa.s:1350   .bss:00000030 p32.2938
-C:\Users\scurcic\AppData\Local\Temp/ccuibaaa.s:1368   .bss:00000048 p12.2932
-C:\Users\scurcic\AppData\Local\Temp/ccuibaaa.s:1356   .bss:00000038 p23.2936
-C:\Users\scurcic\AppData\Local\Temp/ccuibaaa.s:1365   .bss:00000044 p13.2933
-C:\Users\scurcic\AppData\Local\Temp/ccuibaaa.s:1362   .bss:00000040 p21.2934
-C:\Users\scurcic\AppData\Local\Temp/ccuibaaa.s:1353   .bss:00000034 p31.2937
-C:\Users\scurcic\AppData\Local\Temp/ccuibaaa.s:1344   .bss:00000028 q11.2940
-C:\Users\scurcic\AppData\Local\Temp/ccuibaaa.s:1398   .bss:00000070 a11.2922
-C:\Users\scurcic\AppData\Local\Temp/ccuibaaa.s:1395   .bss:0000006c a12.2923
-C:\Users\scurcic\AppData\Local\Temp/ccuibaaa.s:1392   .bss:00000068 a13.2924
-C:\Users\scurcic\AppData\Local\Temp/ccuibaaa.s:1389   .bss:00000064 a21.2925
-C:\Users\scurcic\AppData\Local\Temp/ccuibaaa.s:1341   .bss:00000024 q22.2941
-C:\Users\scurcic\AppData\Local\Temp/ccuibaaa.s:1386   .bss:00000060 a22.2926
-C:\Users\scurcic\AppData\Local\Temp/ccuibaaa.s:1383   .bss:0000005c a23.2927
-C:\Users\scurcic\AppData\Local\Temp/ccuibaaa.s:1380   .bss:00000058 a31.2928
-C:\Users\scurcic\AppData\Local\Temp/ccuibaaa.s:1377   .bss:00000054 a32.2929
-C:\Users\scurcic\AppData\Local\Temp/ccuibaaa.s:1338   .bss:00000020 q33.2942
-C:\Users\scurcic\AppData\Local\Temp/ccuibaaa.s:1374   .bss:00000050 a33.2930
-C:\Users\scurcic\AppData\Local\Temp/ccuibaaa.s:1332   .bss:00000018 r22.2944
-C:\Users\scurcic\AppData\Local\Temp/ccuibaaa.s:1329   .bss:00000014 x_est.2959
-C:\Users\scurcic\AppData\Local\Temp/ccuibaaa.s:1326   .bss:00000010 xd_est.2960
-C:\Users\scurcic\AppData\Local\Temp/ccuibaaa.s:1323   .bss:0000000c xdd_est.2961
-C:\Users\scurcic\AppData\Local\Temp/ccuibaaa.s:1335   .bss:0000001c r11.2943
+C:\Users\Srdjan\AppData\Local\Temp/cc4Oaaaa.s:43     .text:00000044 x_position_kalman
+C:\Users\Srdjan\AppData\Local\Temp/cc4Oaaaa.s:47     .text:00000044 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc4Oaaaa.s:982    .text:00000eb8 $d
+C:\Users\Srdjan\AppData\Local\Temp/cc4Oaaaa.s:1371   .bss:0000004c p11.2931
+C:\Users\Srdjan\AppData\Local\Temp/cc4Oaaaa.s:1359   .bss:0000003c p22.2935
+C:\Users\Srdjan\AppData\Local\Temp/cc4Oaaaa.s:1347   .bss:0000002c p33.2939
+C:\Users\Srdjan\AppData\Local\Temp/cc4Oaaaa.s:1320   .bss:00000008 x_prior.2962
+C:\Users\Srdjan\AppData\Local\Temp/cc4Oaaaa.s:1317   .bss:00000004 xd_prior.2963
+C:\Users\Srdjan\AppData\Local\Temp/cc4Oaaaa.s:1314   .bss:00000000 xdd_prior.2964
+C:\Users\Srdjan\AppData\Local\Temp/cc4Oaaaa.s:1350   .bss:00000030 p32.2938
+C:\Users\Srdjan\AppData\Local\Temp/cc4Oaaaa.s:1368   .bss:00000048 p12.2932
+C:\Users\Srdjan\AppData\Local\Temp/cc4Oaaaa.s:1356   .bss:00000038 p23.2936
+C:\Users\Srdjan\AppData\Local\Temp/cc4Oaaaa.s:1365   .bss:00000044 p13.2933
+C:\Users\Srdjan\AppData\Local\Temp/cc4Oaaaa.s:1362   .bss:00000040 p21.2934
+C:\Users\Srdjan\AppData\Local\Temp/cc4Oaaaa.s:1353   .bss:00000034 p31.2937
+C:\Users\Srdjan\AppData\Local\Temp/cc4Oaaaa.s:1344   .bss:00000028 q11.2940
+C:\Users\Srdjan\AppData\Local\Temp/cc4Oaaaa.s:1398   .bss:00000070 a11.2922
+C:\Users\Srdjan\AppData\Local\Temp/cc4Oaaaa.s:1395   .bss:0000006c a12.2923
+C:\Users\Srdjan\AppData\Local\Temp/cc4Oaaaa.s:1392   .bss:00000068 a13.2924
+C:\Users\Srdjan\AppData\Local\Temp/cc4Oaaaa.s:1389   .bss:00000064 a21.2925
+C:\Users\Srdjan\AppData\Local\Temp/cc4Oaaaa.s:1341   .bss:00000024 q22.2941
+C:\Users\Srdjan\AppData\Local\Temp/cc4Oaaaa.s:1386   .bss:00000060 a22.2926
+C:\Users\Srdjan\AppData\Local\Temp/cc4Oaaaa.s:1383   .bss:0000005c a23.2927
+C:\Users\Srdjan\AppData\Local\Temp/cc4Oaaaa.s:1380   .bss:00000058 a31.2928
+C:\Users\Srdjan\AppData\Local\Temp/cc4Oaaaa.s:1377   .bss:00000054 a32.2929
+C:\Users\Srdjan\AppData\Local\Temp/cc4Oaaaa.s:1338   .bss:00000020 q33.2942
+C:\Users\Srdjan\AppData\Local\Temp/cc4Oaaaa.s:1374   .bss:00000050 a33.2930
+C:\Users\Srdjan\AppData\Local\Temp/cc4Oaaaa.s:1332   .bss:00000018 r22.2944
+C:\Users\Srdjan\AppData\Local\Temp/cc4Oaaaa.s:1329   .bss:00000014 x_est.2959
+C:\Users\Srdjan\AppData\Local\Temp/cc4Oaaaa.s:1326   .bss:00000010 xd_est.2960
+C:\Users\Srdjan\AppData\Local\Temp/cc4Oaaaa.s:1323   .bss:0000000c xdd_est.2961
+C:\Users\Srdjan\AppData\Local\Temp/cc4Oaaaa.s:1335   .bss:0000001c r11.2943
                             *COM*:00000004 tprev
-C:\Users\scurcic\AppData\Local\Temp/ccuibaaa.s:1024   .text:00000f4c position_kalman
-C:\Users\scurcic\AppData\Local\Temp/ccuibaaa.s:1028   .text:00000f4c $a
-C:\Users\scurcic\AppData\Local\Temp/ccuibaaa.s:1293   .text:0000133c $d
+C:\Users\Srdjan\AppData\Local\Temp/cc4Oaaaa.s:1024   .text:00000f4c position_kalman
+C:\Users\Srdjan\AppData\Local\Temp/cc4Oaaaa.s:1028   .text:00000f4c $a
+C:\Users\Srdjan\AppData\Local\Temp/cc4Oaaaa.s:1293   .text:0000133c $d
                             *COM*:00000a8c global_data
-C:\Users\scurcic\AppData\Local\Temp/ccuibaaa.s:1310   .data:00000000 xN
+C:\Users\Srdjan\AppData\Local\Temp/cc4Oaaaa.s:1310   .data:00000000 xN
                             *COM*:00000004 yprev
                             *COM*:00000004 zprev
                             *COM*:00000004 xprev
                             *COM*:00000004 Delta_T
-C:\Users\scurcic\AppData\Local\Temp/ccuibaaa.s:1311   .data:00000000 $d
+C:\Users\Srdjan\AppData\Local\Temp/cc4Oaaaa.s:1311   .data:00000000 $d
                             *COM*:00000004 global_param_id
                             *COM*:00000004 state_fly_id
 

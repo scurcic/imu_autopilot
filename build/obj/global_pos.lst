@@ -72,11 +72,11 @@
   76              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 global_pos.c
-C:\Users\scurcic\AppData\Local\Temp/ccGCaaaa.s:7      .text:00000000 global_pos
-C:\Users\scurcic\AppData\Local\Temp/ccGCaaaa.s:11     .text:00000000 $a
-C:\Users\scurcic\AppData\Local\Temp/ccGCaaaa.s:42     .text:00000070 $d
-C:\Users\scurcic\AppData\Local\Temp/ccGCaaaa.s:48     .rodata:00000000 MarkerPos.3194
-C:\Users\scurcic\AppData\Local\Temp/ccGCaaaa.s:49     .rodata:00000000 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccq2aaaa.s:7      .text:00000000 global_pos
+C:\Users\Srdjan\AppData\Local\Temp/ccq2aaaa.s:11     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccq2aaaa.s:42     .text:00000070 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccq2aaaa.s:48     .rodata:00000000 MarkerPos.3194
+C:\Users\Srdjan\AppData\Local\Temp/ccq2aaaa.s:49     .rodata:00000000 $d
                             *COM*:00000004 global_param_id
                             *COM*:00000004 state_fly_id
                             *COM*:00000a8c global_data

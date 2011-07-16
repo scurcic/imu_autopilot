@@ -363,7 +363,7 @@ LOAD c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/inte
 END GROUP
                 0x00004000                STACK_SIZE = 0x4000
 
-.text           0x00004000    0x309c4
+.text           0x00004000    0x30984
  *(.init)
  .init          0x00004000      0x13c build/obj/arm7/include/crt0.o
                 0x00004114                reset
@@ -386,13 +386,13 @@ END GROUP
                 0x000069d8                update_controller_setpoints
                 0x00006cb0                main_init_ground_car
                 0x00006cc0                main_loop_ground_car
- .text          0x000078e0     0x3c1c build/obj/main/common_mainloop_functions.o
+ .text          0x000078e0     0x3bdc build/obj/main/common_mainloop_functions.o
                 0x000079ac                us_run_every
                 0x00008d20                control_camera_angle
                 0x000078e0                sync_state_parameters
                 0x00008dc4                rc_to_255
                 0x00008cfc                position_integrate
-                0x0000aad0                send_system_state
+                0x0000aa90                send_system_state
                 0x00008b80                communication_send_controller_feedback
                 0x0000797c                measure_peak_cpu_load
                 0x00007ba8                adc_read
@@ -408,963 +408,963 @@ END GROUP
                 0x0000798c                us_run_init
                 0x00008acc                handle_reset_request
                 0x000094d4                handle_controller_timeouts
- .text          0x0000b4fc      0x204 build/obj/math/lookup_sin_cos.o
-                0x0000b6d8                lookup_cos
-                0x0000b4fc                lookup_sin
- .text          0x0000b700      0x144 build/obj/arm7/adc.o
-                0x0000b770                adc_get_value
-                0x0000b700                adc_init
- .text          0x0000b844       0x78 build/obj/arm7/armVIC.o
-                0x0000b844                restoreIRQ
-                0x0000b88c                enableFIQ
-                0x0000b87c                disableFIQ
-                0x0000b8ac                enableIRQ
-                0x0000b860                restoreFIQ
-                0x0000b89c                disableIRQ
- .text          0x0000b8bc        0x4 build/obj/arm7/cam_trigger.o
-                0x0000b8bc                cam_trigger_init
- .text          0x0000b8c0        0x0 build/obj/arm7/dac.o
- .text          0x0000b8c0      0x14c build/obj/arm7/led.o
-                0x0000b8c0                led_on
-                0x0000b9ac                led_toggle
-                0x0000b908                led_off
-                0x0000b950                led_init
- .text          0x0000ba0c      0x230 build/obj/arm7/spi.o
-                0x0000ba4c                spi_number_of_packages_in_buffer
-                0x0000ba0c                spi_init
-                0x0000ba44                spi_running
-                0x0000bb8c                spi_adns9500_read_reg_transmit
-                0x0000baf0                spi_transmit_adns
-                0x0000ba54                spi_transmit
- .text          0x0000bc3c     0x121c build/obj/arm7/i2c.o
-                0x0000bf6c                i2c_write_read
-                0x0000be44                i2c1_op
-                0x0000bd38                i2c0_op
-                0x0000bc3c                i2c_init
-                0x0000bf50                i2c_op
- .text          0x0000ce58      0x1c4 build/obj/arm7/spi_devices/ads8341.o
-                0x0000ce80                ads8341_init
-                0x0000cf38                ads8341_get_value
-                0x0000cf5c                ads8341_read
- .text          0x0000d01c      0x660 build/obj/arm7/spi_devices/ms2100.o
-                0x0000d200                ms2100_get_status
-                0x0000d210                ms2100_get_value
-                0x0000d0a0                ms2100_init
-                0x0000d458                ms2100_do_before_spi_transmit
-                0x0000d614                ms2100_send_request
- .text          0x0000d67c      0x47c build/obj/arm7/spi_devices/sca3100.o
-                0x0000d6d0                sca3100_read_int_status
-                0x0000d78c                sca3100_init
-                0x0000d7cc                sca3100_read_res
-                0x0000d6ac                sca3100_get_value
-                0x0000d730                sca3100_reset_porst_bit
- .text          0x0000daf8      0xb80 build/obj/arm7/spi_devices/adns9500.o
-                0x0000e358                adns9500_1_srom_download
-                0x0000e004                adns9500_1_read_sensor
-                0x0000e0c4                check_connection
-                0x0000de84                adns9500_2_read_reg
-                0x0000dbb0                my_delay
-                0x0000dfa4                adns9500_1_read_reg
-                0x0000e3a0                adns9500_1_power_up_sequence
-                0x0000dcd0                us_delay
-                0x0000ddc0                adns9500_1_write_srom
-                0x0000db6c                adns9500_on_spi_write_srom
-                0x0000db10                adns9500_1_unselect
-                0x0000e2ec                adns9500_1_write_reg
-                0x0000e220                adns9500_2_srom_download
-                0x0000e1b4                adns9500_2_write_reg
-                0x0000e4a8                adns9500_read_motion_burst
-                0x0000dba4                set_bits
-                0x0000dbf0                adns9500_1_on_spi_read_reg
-                0x0000dee4                adns9500_2_read_sensor
-                0x0000db40                adns9500_2_unselect
-                0x0000dbe4                delay_us
-                0x0000dcc0                adns9500_2_get_value
-                0x0000e424                adns9500_init
-                0x0000db58                adns9500_on_spi_write_reg
-                0x0000dcb0                adns9500_1_get_value
-                0x0000dc50                adns9500_2_on_spi_read_reg
-                0x0000db94                clear_bits
-                0x0000e268                adns9500_2_power_up_sequence
-                0x0000db28                adns9500_2_select
-                0x0000daf8                adns9500_1_select
-                0x0000dcfc                adns9500_2_write_srom
- .text          0x0000e678        0x0 build/obj/arm7/spi_devices/sca3000.o
- .text          0x0000e678      0x614 build/obj/arm7/i2c_devices/bmp085.o
-                0x0000ea00                bmp085_read_chip_id_on_init
-                0x0000ebf8                bmp085_start_temp_measurement
-                0x0000e678                bmp085_store_cal_param_on_init
-                0x0000e8e4                bmp085_start_measurement_read
-                0x0000eb1c                bmp085_start_pressure_measurement
-                0x0000e960                bmp085_get_cal_param
-                0x0000e794                bmp085_get_temperature
-                0x0000e7e8                bmp085_get_pressure
-                0x0000ea90                bmp085_init
-                0x0000e734                bmp085_save_measurement
-                0x0000e9dc                bmp085_read_version_on_init
- .text          0x0000ec8c      0x2a0 build/obj/arm7/i2c_devices/eeprom.o
-                0x0000ee98                eeprom_write
-                0x0000ed5c                eeprom_check_handler
-                0x0000ecd0                eeprom_read_data
-                0x0000ed9c                eeprom_check_start
-                0x0000ed1c                eeprom_check_ok
-                0x0000ee0c                eeprom_start_read
- .text          0x0000ef2c        0x0 build/obj/arm7/i2c_devices/i2c_motor_controller.o
- .text          0x0000ef2c       0x40 build/obj/arm7/i2c_devices/i2c_motor_mikrokopter.o
-                0x0000ef2c                motor_i2c_set_pwm
- .text          0x0000ef6c      0x2e0 build/obj/arm7/i2c_devices/hmc5843.o
-                0x0000f150                hmc5843_init
-                0x0000efc4                hmc5843_read_handler
-                0x0000ef6c                hmc5843_get_data
-                0x0000efa0                twos_complement_decode16
-                0x0000ef90                hmc5843_data_ok
-                0x0000f088                hmc5843_start_read
- .text          0x0000f24c      0x1a0 build/obj/arm7/ppm.o
-                0x0000f330                PPM_ISR
-                0x0000f25c                ppm_get_channel
-                0x0000f2cc                ppm_init
-                0x0000f24c                ppm_is_valid
- .text          0x0000f3ec      0x254 build/obj/arm7/pwm.o
-                0x0000f504                PWM_ISR
-                0x0000f430                pwm_init
-                0x0000f3ec                pwm_set_channel
- .text          0x0000f640      0x32c build/obj/arm7/sys_time.o
-                0x0000f8a0                TIMER0_ISR
-                0x0000f83c                sys_time_clock_set_unix_offset
-                0x0000f880                sys_time_clock_to_local_time
-                0x0000f6d4                SYS_TIME_PERIODIC_ISR
-                0x0000f84c                sys_time_clock_get_unix_offset
-                0x0000f704                sys_time_periodic
-                0x0000f780                sys_time_clock_get_time_usec
-                0x0000f740                sys_time_clock_init
-                0x0000f640                timer0_init
-                0x0000f85c                sys_time_clock_get_unix_time
-                0x0000f6a0                sys_time_periodic_init
-                0x0000f69c                sys_time_init
-                0x0000f728                SYS_TIME_CLOCK_ISR
- .text          0x0000f96c      0x928 build/obj/arm7/uart.o
-                0x0000fd20                uart0_get_char
-                0x0000f9a8                uart1_char_available
-                0x0001012c                uart0_transmit
-                0x0000fa14                uart1_init
-                0x0000fe84                uart0_ISR
-                0x0000f96c                uart1_check_free_space
-                0x0000fb30                uart1_ISR
-                0x0000fd68                uart0_init
-                0x0001009c                uart1_get_received_bytes
-                0x0001000c                uart0_get_received_bytes
-                0x0000fcc0                uart0_check_free_space
-                0x0000fcfc                uart0_char_available
-                0x000101e0                uart1_transmit
-                0x0000f9cc                uart1_get_char
- .text          0x00010294      0x148 build/obj/comm/comm.o
-                0x000102dc                comm_send_ch
-                0x000103a0                comm_init
-                0x00010368                comm_ch_available
-                0x00010294                comm_check_free_space
-                0x00010338                comm_get_ch
- .text          0x000103dc       0x34 build/obj/system/watchdog.o
-                0x00010404                watchdog_wait_reset
-                0x000103dc                watchdog_kick
-                0x000103f4                watchdog_init
- .text          0x00010410      0x1a4 build/obj/system/pid.o
-                0x00010474                pid_calculate
-                0x00010410                pid_init
-                0x0001045c                pid_set_parameters
- .text          0x000105b4      0x1ec build/obj/hal/shutter.o
-                0x00010754                shutter_init
-                0x00010664                shutter_get_seq
-                0x000105b4                shutter_control
-                0x00010674                shutter_loop
-                0x000105d8                shutter_set
- .text          0x000107a0     0x3560 build/obj/system/communication.o
-                0x0001090c                communication_init
-                0x00012b20                communication_receive
-                0x00013998                communication_queued_send
-                0x000108b0                communication_get_uart_drop_rate
-                0x00010b90                handle_mavlink_message
-                0x000109e8                execute_action
- .text          0x00013d00      0x938 build/obj/controllers/coaxial/control_position.o
-                0x00013d00                control_position
- .text          0x00014638      0x5f0 build/obj/controllers/coaxial/control_attitude.o
-                0x00014638                control_attitude
- .text          0x00014c28       0x9c build/obj/controllers/coaxial/control_yawSpeed.o
-                0x00014c28                control_yawSpeed
- .text          0x00014cc4      0x4a8 build/obj/controllers/coaxial/control_yaw_altitude.o
-                0x00014cc4                control_yaw_altitude
- .text          0x0001516c      0xf48 build/obj/controllers/quadrotor/control_quadrotor_attitude.o
-                0x00015248                control_quadrotor_attitude
-                0x0001516c                control_quadrotor_attitude_init
- .text          0x000160b4      0x1c8 build/obj/controllers/fixed_wing/control_fixed_wing_attitude.o
-                0x000160b8                control_fixed_wing_attitude
-                0x000160b4                control_fixed_wing_attitude_init
- .text          0x0001627c      0x308 build/obj/controllers/quadrotor/control_quadrotor_position.o
-                0x000164b8                control_quadrotor_position_init
-                0x0001627c                control_quadrotor_position
- .text          0x00016584      0x5a0 build/obj/controllers/quadrotor/control_quadrotor_start_land.o
-                0x000166b8                quadrotor_start_land_handler
-                0x00016584                quadrotor_start_land_motor_thrust
- .text          0x00016b24      0x538 build/obj/system/remote_control.o
-                0x00016b24                remote_control
- .text          0x0001705c      0x88c build/obj/system/debug.o
-                0x00017060                debug_message_buffer
-                0x0001705c                debug_message_init
-                0x000172d0                debug_vect
-                0x00017120                debug_message_send_immediate
-                0x000175e8                debug_message_send_one
-                0x000170ec                debug_message_buffer_sprintf
- .text          0x000178e8      0x394 build/obj/system/params.o
-                0x00017ae0                param_handler
-                0x00017a4c                param_write
-                0x00017968                param_read_update
-                0x00017a30                param_start_read
-                0x00017930                param_write_all
-                0x000178f8                param_read_all
-                0x000178e8                param_size_check
- .text          0x00017c7c      0xb80 build/obj/fusion/altitude_kalman.o
-                0x00017c7c                altitude_kalman
- .text          0x000187fc      0x5dc build/obj/fusion/attitude_observer.o
-                0x000187fc                attitude_observer_init
-                0x00018af8                attitude_observer_correct_magnet
-                0x00018844                attitude_observer_predict
-                0x00018bcc                attitude_observer_get_angles
-                0x00018a10                attitude_observer_correct_accel
- .text          0x00018dd8     0x1368 build/obj/fusion/position_kalman.o
-                0x00018e1c                x_position_kalman
-                0x00019d24                position_kalman
-                0x00018dd8                position_kalman_init
- .text          0x0001a140      0x660 build/obj/fusion/vision_buffer.o
-                0x0001a238                vision_buffer_handle_data
-                0x0001a16c                vision_buffer_buffer_camera_triggered
-                0x0001a140                vision_buffer_buffer_init
- .text          0x0001a7a0      0x3f0 build/obj/fusion/kalman.o
-                0x0001a8e8                kalman_correct
-                0x0001a7b4                kalman_init
-                0x0001a8a4                kalman_predict
-                0x0001a7a0                kalman_get_state
- .text          0x0001ab90      0x5a0 build/obj/fusion/outdoor_position_kalman.o
-                0x0001ad5c                outdoor_position_kalman
-                0x0001ab90                outdoor_position_kalman_init
-                0x0001acbc                altitude_set_local_origin
- .text          0x0001b130      0x4b0 build/obj/fusion/vision_position_kalman.o
-                0x0001b130                vision_position_kalman_init
-                0x0001b25c                vision_position_kalman
- .text          0x0001b5e0        0x0 build/obj/fusion/attitude_compl_euler.o
- .text          0x0001b5e0      0x134 build/obj/fusion/simple_altitude_moving_average.o
-                0x0001b5e0                simple_altitude_moving_average
- .text          0x0001b714      0x258 build/obj/fusion/least_square.o
-                0x0001b714                least_square
- .text          0x0001b96c       0x74 build/obj/fusion/global_pos.o
-                0x0001b96c                global_pos
- .text          0x0001b9e0      0x3f4 build/obj/fusion/world_to_body.o
-                0x0001b9e0                world_to_body
- .text          0x0001bdd4     0x4e10 build/obj/fusion/position_kalman2.o
-                0x0001bdd4                kalman2_init
-                0x0001d71c                y_position_kalman2
-                0x0001be18                x_position_kalman2
-                0x0001f030                z_position_kalman2
- .text          0x00020be4      0xd70 build/obj/fusion/position_kalman3.o
-                0x000214ec                z_position_kalman3
-                0x00020c14                x_position_kalman3
-                0x00020be4                position_kalman3_init
-                0x00021084                y_position_kalman3
- .text          0x00021954      0x5d4 build/obj/math/transformation.o
-                0x00021954                navi2body
-                0x00021e18                turn_xy_plane
-                0x00021f1c                body2navi_xy_plane
-                0x00021f24                navi2body_xy_plane
-                0x00021958                body2navi
- .text          0x00021f28      0x550 build/obj/math/matrix.o
-                0x00021f30                matrix_mult_element
-                0x0002236c                matrix_add
-                0x00021f28                matrix_create
-                0x0002203c                matrix_mult_scalar
-                0x00022260                matrix_sub
-                0x0002210c                matrix_mult
- .text          0x00022478      0x720 build/obj/math/geodetic/latlong.o
-                0x00022478                latlong_utm_of
-                0x00022800                latlong_of_utm
- .text          0x00022b98       0x60 build/obj/arm7/sdfat/syscalls.o
-                0x00022bb0                _lseek_r
-                0x00022bb8                _fstat_r
-                0x00022bc8                isatty
-                0x00022bd0                _sbrk_r
-                0x00022b98                _read_r
-                0x00022ba8                _close_r
-                0x00022ba0                _write_r
- .text          0x00022bf8      0x54c build/obj/math/geodetic/gps_transformations.o
-                0x00022cd4                gps_send_local_origin
-                0x00022ef4                gps_set_local_origin
-                0x00022fd4                gps_get_local_position
-                0x00022bf8                gps_get_local_velocity
- .text          0x00023144      0x988 build/obj/hal/gps/gps_nmea.o
-                0x00023884                parse_nmea_GPGSA
-                0x00023144                ubxsend_cfg_rst
-                0x00023940                parse_gps_msg
-                0x00023158                parse_nmea
-                0x00023148                GpsFixValid
-                0x00023224                parse_nmea_GPRMC
-                0x000233c4                parse_nmea_GPGGA
- .text          0x00023acc      0x1ac build/obj/system/sys_state.o
-                0x00023b00                sys_get_state
-                0x00023af0                sys_get_mode
-                0x00023b20                sys_set_nav_mode
-                0x00023bc4                sys_set_mode
-                0x00023b30                sys_set_state
-                0x00023b10                sys_set_type
-                0x00023acc                sys_state_is_flying
- .text          0x00023c78      0x6e4 build/obj/system/calibration.o
-                0x00024260                start_rc_calibration
-                0x00023c78                start_mag_calibration
-                0x00023c7c                calibration_exit
-                0x00024138                start_gyro_calibration
-                0x00024240                start_pressure_calibration
-                0x00023d00                calibration_enter
- .text          0x0002435c       0x18 build/obj/main.o
-                0x0002435c                main
- .text          0x00024374       0x30 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(atoi.o)
-                0x00024374                _atoi_r
-                0x0002438c                atoi
- .text          0x000243a4       0x20 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(memcpy.o)
-                0x000243a4                memcpy
- .text          0x000243c4       0x1c c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(memset.o)
-                0x000243c4                memset
- .text          0x000243e0      0x178 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(s_modf.o)
-                0x000243e0                modf
- .text          0x00024558       0x50 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(strncmp.o)
-                0x00024558                strncmp
- .text          0x000245a8       0x4c c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(strncpy.o)
-                0x000245a8                strncpy
- .text          0x000245f4      0xf60 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(strtod.o)
-                0x000245f4                _strtod_r
-                0x00025538                strtod
-                0x000254e4                strtof
- .text          0x00025554      0x1c4 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(strtol.o)
-                0x000256ec                strtol
-                0x00025554                _strtol_r
- .text          0x00025718        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(ctype_.o)
- .text          0x00025718        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(impure.o)
- .text          0x00025718      0xb50 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(mprec.o)
-                0x00025a0c                _mprec_log10
-                0x00025734                _hi0bits
-                0x00025a78                _Balloc
-                0x00025b0c                _d2b
-                0x00025e24                _multiply
-                0x00025990                _ratio
-                0x00026184                _s2b
-                0x00025fbc                _i2b
-                0x0002578c                _lo0bits
-                0x0002581c                __mcmp
-                0x000260a8                _pow5mult
-                0x0002587c                _ulp
-                0x000258dc                _b2d
-                0x00025fe0                _multadd
-                0x00025c20                __mdiff
-                0x00025d44                _lshift
-                0x00025718                _Bfree
- .text          0x00026268       0x20 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(s_isnan.o)
-                0x00026268                isnan
- .text          0x00026288       0x10 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(s_nan.o)
-                0x00026288                nan
- .text          0x00026298        0xc c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(sf_nan.o)
-                0x00026298                nanf
- .text          0x000262a4       0x9c c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(callocr.o)
-                0x000262a4                _calloc_r
- .text          0x00026340      0x688 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(mallocr.o)
-                0x00026340                _malloc_r
- .text          0x000269c8        0x8 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(mlock.o)
-                0x000269cc                __malloc_unlock
-                0x000269c8                __malloc_lock
- .text          0x000269d0      0x35c c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(freer.o)
-                0x00026acc                _free_r
-                0x000269d0                _malloc_trim_r
- .text          0x00026d2c      0x4dc c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_atan.o)
-                0x00026d2c                atan
- .text          0x00027208       0xd8 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_cos.o)
-                0x00027208                cos
- .text          0x000272e0       0x1c c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_fabs.o)
-                0x000272e0                fabs
- .text          0x000272fc       0xe0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_sin.o)
-                0x000272fc                sin
- .text          0x000273dc       0x88 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_tan.o)
-                0x000273dc                tan
- .text          0x00027464       0xf8 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_acos.o)
-                0x00027464                acos
- .text          0x0002755c       0xf8 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_asin.o)
-                0x0002755c                asin
- .text          0x00027654      0x128 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_atan2.o)
-                0x00027654                atan2
- .text          0x0002777c      0x11c c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_cosh.o)
-                0x0002777c                cosh
- .text          0x00027898      0x174 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_exp.o)
-                0x00027898                exp
- .text          0x00027a0c      0x13c c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_log.o)
-                0x00027a0c                log
- .text          0x00027b48      0x48c c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_pow.o)
-                0x00027b48                pow
- .text          0x00027fd4      0x144 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_sinh.o)
-                0x00027fd4                sinh
- .text          0x00028118      0x6b4 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_acos.o)
-                0x00028118                __ieee754_acos
- .text          0x000287cc      0x610 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_asin.o)
-                0x000287cc                __ieee754_asin
- .text          0x00028ddc      0x274 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_atan2.o)
-                0x00028ddc                __ieee754_atan2
- .text          0x00029050      0x1d4 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_cosh.o)
-                0x00029050                __ieee754_cosh
- .text          0x00029224      0x45c c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_exp.o)
-                0x00029224                __ieee754_exp
- .text          0x00029680      0x5e0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_log.o)
-                0x00029680                __ieee754_log
- .text          0x00029c60     0x1008 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_pow.o)
-                0x00029c60                __ieee754_pow
- .text          0x0002ac68      0x648 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_rem_pio2.o)
-                0x0002ac68                __ieee754_rem_pio2
- .text          0x0002b2b0      0x254 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_sinh.o)
-                0x0002b2b0                __ieee754_sinh
- .text          0x0002b504      0x234 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_sqrt.o)
-                0x0002b504                __ieee754_sqrt
- .text          0x0002b738      0x388 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(k_cos.o)
-                0x0002b738                __kernel_cos
- .text          0x0002bac0      0xafc c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(k_rem_pio2.o)
-                0x0002bac0                __kernel_rem_pio2
- .text          0x0002c5bc      0x230 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(k_sin.o)
-                0x0002c5bc                __kernel_sin
- .text          0x0002c7ec      0x5e8 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(k_tan.o)
-                0x0002c7ec                __kernel_tan
- .text          0x0002cdd4      0x6b0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_expm1.o)
-                0x0002cdd4                expm1
- .text          0x0002d484       0x14 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_finite.o)
-                0x0002d484                finite
- .text          0x0002d498      0x190 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_floor.o)
-                0x0002d498                floor
- .text          0x0002d628        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_lib_ver.o)
- .text          0x0002d628        0x8 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_matherr.o)
-                0x0002d628                matherr
- .text          0x0002d630      0x1b4 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_rint.o)
-                0x0002d630                rint
- .text          0x0002d7e4      0x190 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_scalbn.o)
-                0x0002d7e4                scalbn
- .text          0x0002d974       0x1c c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_copysign.o)
-                0x0002d974                copysign
- .text          0x0002d990       0x10 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(errno.o)
-                0x0002d990                __errno
- .text          0x0002d9a0      0x114 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_udivsi3.o)
-                0x0002d9a0                __udivsi3
-                0x0002d9a0                __aeabi_uidiv
-                0x0002da9c                __aeabi_uidivmod
- .text          0x0002dab4      0x144 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_divsi3.o)
-                0x0002dab4                __aeabi_idiv
-                0x0002dab4                __divsi3
-                0x0002dbe0                __aeabi_idivmod
- .text          0x0002dbf8       0xd0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_umodsi3.o)
-                0x0002dbf8                __umodsi3
- .text          0x0002dcc8        0x4 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_dvmd_tls.o)
-                0x0002dcc8                __aeabi_ldiv0
-                0x0002dcc8                __div0
-                0x0002dcc8                __aeabi_idiv0
- .text          0x0002dccc      0x430 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_addsubdf3.o)
-                0x0002e090                __floatdidf
-                0x0002e010                __floatsidf
-                0x0002dfe8                __aeabi_ui2d
-                0x0002dccc                __aeabi_drsub
-                0x0002e03c                __extendsfdf2
-                0x0002dcd8                __adddf3
-                0x0002dfe8                __floatunsidf
-                0x0002dcd8                __aeabi_dadd
-                0x0002e07c                __aeabi_ul2d
-                0x0002dcd4                __aeabi_dsub
-                0x0002e07c                __floatundidf
-                0x0002e010                __aeabi_i2d
-                0x0002e090                __aeabi_l2d
-                0x0002e03c                __aeabi_f2d
-                0x0002dcd4                __subdf3
- .text          0x0002e0fc      0x49c c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_muldivdf3.o)
-                0x0002e38c                __aeabi_ddiv
-                0x0002e0fc                __aeabi_dmul
-                0x0002e38c                __divdf3
-                0x0002e0fc                __muldf3
- .text          0x0002e598      0x140 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_cmpdf2.o)
-                0x0002e690                __aeabi_dcmple
-                0x0002e5a8                __cmpdf2
-                0x0002e5a8                __eqdf2
-                0x0002e598                __gtdf2
-                0x0002e648                __aeabi_cdcmple
-                0x0002e62c                __aeabi_cdrcmple
-                0x0002e5a0                __ltdf2
-                0x0002e678                __aeabi_dcmplt
-                0x0002e5a0                __ledf2
-                0x0002e6c0                __aeabi_dcmpgt
-                0x0002e6a8                __aeabi_dcmpge
-                0x0002e5a8                __nedf2
-                0x0002e660                __aeabi_dcmpeq
-                0x0002e648                __aeabi_cdcmpeq
-                0x0002e598                __gedf2
- .text          0x0002e6d8       0x5c c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_fixdfsi.o)
-                0x0002e6d8                __fixdfsi
-                0x0002e6d8                __aeabi_d2iz
- .text          0x0002e734       0x54 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_fixunsdfsi.o)
-                0x0002e734                __fixunsdfsi
-                0x0002e734                __aeabi_d2uiz
- .text          0x0002e788       0xa0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_truncdfsf2.o)
-                0x0002e788                __aeabi_d2f
-                0x0002e788                __truncdfsf2
- .text          0x0002e828      0x2ac c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_addsubsf3.o)
-                0x0002e834                __aeabi_fadd
-                0x0002e830                __subsf3
-                0x0002e9f8                __aeabi_i2f
-                0x0002e830                __aeabi_fsub
-                0x0002ea28                __floatdisf
-                0x0002e9f8                __floatsisf
-                0x0002ea18                __floatundisf
-                0x0002e9f0                __aeabi_ui2f
-                0x0002ea28                __aeabi_l2f
-                0x0002ea18                __aeabi_ul2f
-                0x0002e828                __aeabi_frsub
-                0x0002e9f0                __floatunsisf
-                0x0002e834                __addsf3
- .text          0x0002ead4      0x2f8 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_muldivsf3.o)
-                0x0002ec6c                __divsf3
-                0x0002ec6c                __aeabi_fdiv
-                0x0002ead4                __mulsf3
-                0x0002ead4                __aeabi_fmul
- .text          0x0002edcc      0x110 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_cmpsf2.o)
-                0x0002eec4                __aeabi_fcmpgt
-                0x0002edd4                __lesf2
-                0x0002eddc                __nesf2
-                0x0002eeac                __aeabi_fcmpge
-                0x0002edcc                __gtsf2
-                0x0002ee94                __aeabi_fcmple
-                0x0002eddc                __eqsf2
-                0x0002eddc                __cmpsf2
-                0x0002edd4                __ltsf2
-                0x0002ee4c                __aeabi_cfcmple
-                0x0002edcc                __gesf2
-                0x0002ee64                __aeabi_fcmpeq
-                0x0002ee3c                __aeabi_cfrcmple
-                0x0002ee7c                __aeabi_fcmplt
-                0x0002ee4c                __aeabi_cfcmpeq
- .text          0x0002eedc       0x5c c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_fixsfsi.o)
-                0x0002eedc                __fixsfsi
-                0x0002eedc                __aeabi_f2iz
- .text          0x0002ef38       0x54 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_fixunssfsi.o)
-                0x0002ef38                __aeabi_f2uiz
-                0x0002ef38                __fixunssfsi
- .text          0x0002ef8c       0x2c c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_cmpdi2.o)
-                0x0002ef8c                __cmpdi2
+ .text          0x0000b4bc      0x204 build/obj/math/lookup_sin_cos.o
+                0x0000b698                lookup_cos
+                0x0000b4bc                lookup_sin
+ .text          0x0000b6c0      0x144 build/obj/arm7/adc.o
+                0x0000b730                adc_get_value
+                0x0000b6c0                adc_init
+ .text          0x0000b804       0x78 build/obj/arm7/armVIC.o
+                0x0000b804                restoreIRQ
+                0x0000b84c                enableFIQ
+                0x0000b83c                disableFIQ
+                0x0000b86c                enableIRQ
+                0x0000b820                restoreFIQ
+                0x0000b85c                disableIRQ
+ .text          0x0000b87c        0x4 build/obj/arm7/cam_trigger.o
+                0x0000b87c                cam_trigger_init
+ .text          0x0000b880        0x0 build/obj/arm7/dac.o
+ .text          0x0000b880      0x14c build/obj/arm7/led.o
+                0x0000b880                led_on
+                0x0000b96c                led_toggle
+                0x0000b8c8                led_off
+                0x0000b910                led_init
+ .text          0x0000b9cc      0x230 build/obj/arm7/spi.o
+                0x0000ba0c                spi_number_of_packages_in_buffer
+                0x0000b9cc                spi_init
+                0x0000ba04                spi_running
+                0x0000bb4c                spi_adns9500_read_reg_transmit
+                0x0000bab0                spi_transmit_adns
+                0x0000ba14                spi_transmit
+ .text          0x0000bbfc     0x121c build/obj/arm7/i2c.o
+                0x0000bf2c                i2c_write_read
+                0x0000be04                i2c1_op
+                0x0000bcf8                i2c0_op
+                0x0000bbfc                i2c_init
+                0x0000bf10                i2c_op
+ .text          0x0000ce18      0x1c4 build/obj/arm7/spi_devices/ads8341.o
+                0x0000ce40                ads8341_init
+                0x0000cef8                ads8341_get_value
+                0x0000cf1c                ads8341_read
+ .text          0x0000cfdc      0x660 build/obj/arm7/spi_devices/ms2100.o
+                0x0000d1c0                ms2100_get_status
+                0x0000d1d0                ms2100_get_value
+                0x0000d060                ms2100_init
+                0x0000d418                ms2100_do_before_spi_transmit
+                0x0000d5d4                ms2100_send_request
+ .text          0x0000d63c      0x47c build/obj/arm7/spi_devices/sca3100.o
+                0x0000d690                sca3100_read_int_status
+                0x0000d74c                sca3100_init
+                0x0000d78c                sca3100_read_res
+                0x0000d66c                sca3100_get_value
+                0x0000d6f0                sca3100_reset_porst_bit
+ .text          0x0000dab8      0xb80 build/obj/arm7/spi_devices/adns9500.o
+                0x0000e318                adns9500_1_srom_download
+                0x0000dfc4                adns9500_1_read_sensor
+                0x0000e084                check_connection
+                0x0000de44                adns9500_2_read_reg
+                0x0000db70                my_delay
+                0x0000df64                adns9500_1_read_reg
+                0x0000e360                adns9500_1_power_up_sequence
+                0x0000dc90                us_delay
+                0x0000dd80                adns9500_1_write_srom
+                0x0000db2c                adns9500_on_spi_write_srom
+                0x0000dad0                adns9500_1_unselect
+                0x0000e2ac                adns9500_1_write_reg
+                0x0000e1e0                adns9500_2_srom_download
+                0x0000e174                adns9500_2_write_reg
+                0x0000e468                adns9500_read_motion_burst
+                0x0000db64                set_bits
+                0x0000dbb0                adns9500_1_on_spi_read_reg
+                0x0000dea4                adns9500_2_read_sensor
+                0x0000db00                adns9500_2_unselect
+                0x0000dba4                delay_us
+                0x0000dc80                adns9500_2_get_value
+                0x0000e3e4                adns9500_init
+                0x0000db18                adns9500_on_spi_write_reg
+                0x0000dc70                adns9500_1_get_value
+                0x0000dc10                adns9500_2_on_spi_read_reg
+                0x0000db54                clear_bits
+                0x0000e228                adns9500_2_power_up_sequence
+                0x0000dae8                adns9500_2_select
+                0x0000dab8                adns9500_1_select
+                0x0000dcbc                adns9500_2_write_srom
+ .text          0x0000e638        0x0 build/obj/arm7/spi_devices/sca3000.o
+ .text          0x0000e638      0x614 build/obj/arm7/i2c_devices/bmp085.o
+                0x0000e9c0                bmp085_read_chip_id_on_init
+                0x0000ebb8                bmp085_start_temp_measurement
+                0x0000e638                bmp085_store_cal_param_on_init
+                0x0000e8a4                bmp085_start_measurement_read
+                0x0000eadc                bmp085_start_pressure_measurement
+                0x0000e920                bmp085_get_cal_param
+                0x0000e754                bmp085_get_temperature
+                0x0000e7a8                bmp085_get_pressure
+                0x0000ea50                bmp085_init
+                0x0000e6f4                bmp085_save_measurement
+                0x0000e99c                bmp085_read_version_on_init
+ .text          0x0000ec4c      0x2a0 build/obj/arm7/i2c_devices/eeprom.o
+                0x0000ee58                eeprom_write
+                0x0000ed1c                eeprom_check_handler
+                0x0000ec90                eeprom_read_data
+                0x0000ed5c                eeprom_check_start
+                0x0000ecdc                eeprom_check_ok
+                0x0000edcc                eeprom_start_read
+ .text          0x0000eeec        0x0 build/obj/arm7/i2c_devices/i2c_motor_controller.o
+ .text          0x0000eeec       0x40 build/obj/arm7/i2c_devices/i2c_motor_mikrokopter.o
+                0x0000eeec                motor_i2c_set_pwm
+ .text          0x0000ef2c      0x2e0 build/obj/arm7/i2c_devices/hmc5843.o
+                0x0000f110                hmc5843_init
+                0x0000ef84                hmc5843_read_handler
+                0x0000ef2c                hmc5843_get_data
+                0x0000ef60                twos_complement_decode16
+                0x0000ef50                hmc5843_data_ok
+                0x0000f048                hmc5843_start_read
+ .text          0x0000f20c      0x1a0 build/obj/arm7/ppm.o
+                0x0000f2f0                PPM_ISR
+                0x0000f21c                ppm_get_channel
+                0x0000f28c                ppm_init
+                0x0000f20c                ppm_is_valid
+ .text          0x0000f3ac      0x254 build/obj/arm7/pwm.o
+                0x0000f4c4                PWM_ISR
+                0x0000f3f0                pwm_init
+                0x0000f3ac                pwm_set_channel
+ .text          0x0000f600      0x32c build/obj/arm7/sys_time.o
+                0x0000f860                TIMER0_ISR
+                0x0000f7fc                sys_time_clock_set_unix_offset
+                0x0000f840                sys_time_clock_to_local_time
+                0x0000f694                SYS_TIME_PERIODIC_ISR
+                0x0000f80c                sys_time_clock_get_unix_offset
+                0x0000f6c4                sys_time_periodic
+                0x0000f740                sys_time_clock_get_time_usec
+                0x0000f700                sys_time_clock_init
+                0x0000f600                timer0_init
+                0x0000f81c                sys_time_clock_get_unix_time
+                0x0000f660                sys_time_periodic_init
+                0x0000f65c                sys_time_init
+                0x0000f6e8                SYS_TIME_CLOCK_ISR
+ .text          0x0000f92c      0x928 build/obj/arm7/uart.o
+                0x0000fce0                uart0_get_char
+                0x0000f968                uart1_char_available
+                0x000100ec                uart0_transmit
+                0x0000f9d4                uart1_init
+                0x0000fe44                uart0_ISR
+                0x0000f92c                uart1_check_free_space
+                0x0000faf0                uart1_ISR
+                0x0000fd28                uart0_init
+                0x0001005c                uart1_get_received_bytes
+                0x0000ffcc                uart0_get_received_bytes
+                0x0000fc80                uart0_check_free_space
+                0x0000fcbc                uart0_char_available
+                0x000101a0                uart1_transmit
+                0x0000f98c                uart1_get_char
+ .text          0x00010254      0x148 build/obj/comm/comm.o
+                0x0001029c                comm_send_ch
+                0x00010360                comm_init
+                0x00010328                comm_ch_available
+                0x00010254                comm_check_free_space
+                0x000102f8                comm_get_ch
+ .text          0x0001039c       0x34 build/obj/system/watchdog.o
+                0x000103c4                watchdog_wait_reset
+                0x0001039c                watchdog_kick
+                0x000103b4                watchdog_init
+ .text          0x000103d0      0x1a4 build/obj/system/pid.o
+                0x00010434                pid_calculate
+                0x000103d0                pid_init
+                0x0001041c                pid_set_parameters
+ .text          0x00010574      0x1ec build/obj/hal/shutter.o
+                0x00010714                shutter_init
+                0x00010624                shutter_get_seq
+                0x00010574                shutter_control
+                0x00010634                shutter_loop
+                0x00010598                shutter_set
+ .text          0x00010760     0x3560 build/obj/system/communication.o
+                0x000108cc                communication_init
+                0x00012ae0                communication_receive
+                0x00013958                communication_queued_send
+                0x00010870                communication_get_uart_drop_rate
+                0x00010b50                handle_mavlink_message
+                0x000109a8                execute_action
+ .text          0x00013cc0      0x938 build/obj/controllers/coaxial/control_position.o
+                0x00013cc0                control_position
+ .text          0x000145f8      0x5f0 build/obj/controllers/coaxial/control_attitude.o
+                0x000145f8                control_attitude
+ .text          0x00014be8       0x9c build/obj/controllers/coaxial/control_yawSpeed.o
+                0x00014be8                control_yawSpeed
+ .text          0x00014c84      0x4a8 build/obj/controllers/coaxial/control_yaw_altitude.o
+                0x00014c84                control_yaw_altitude
+ .text          0x0001512c      0xf48 build/obj/controllers/quadrotor/control_quadrotor_attitude.o
+                0x00015208                control_quadrotor_attitude
+                0x0001512c                control_quadrotor_attitude_init
+ .text          0x00016074      0x1c8 build/obj/controllers/fixed_wing/control_fixed_wing_attitude.o
+                0x00016078                control_fixed_wing_attitude
+                0x00016074                control_fixed_wing_attitude_init
+ .text          0x0001623c      0x308 build/obj/controllers/quadrotor/control_quadrotor_position.o
+                0x00016478                control_quadrotor_position_init
+                0x0001623c                control_quadrotor_position
+ .text          0x00016544      0x5a0 build/obj/controllers/quadrotor/control_quadrotor_start_land.o
+                0x00016678                quadrotor_start_land_handler
+                0x00016544                quadrotor_start_land_motor_thrust
+ .text          0x00016ae4      0x538 build/obj/system/remote_control.o
+                0x00016ae4                remote_control
+ .text          0x0001701c      0x88c build/obj/system/debug.o
+                0x00017020                debug_message_buffer
+                0x0001701c                debug_message_init
+                0x00017290                debug_vect
+                0x000170e0                debug_message_send_immediate
+                0x000175a8                debug_message_send_one
+                0x000170ac                debug_message_buffer_sprintf
+ .text          0x000178a8      0x394 build/obj/system/params.o
+                0x00017aa0                param_handler
+                0x00017a0c                param_write
+                0x00017928                param_read_update
+                0x000179f0                param_start_read
+                0x000178f0                param_write_all
+                0x000178b8                param_read_all
+                0x000178a8                param_size_check
+ .text          0x00017c3c      0xb80 build/obj/fusion/altitude_kalman.o
+                0x00017c3c                altitude_kalman
+ .text          0x000187bc      0x5dc build/obj/fusion/attitude_observer.o
+                0x000187bc                attitude_observer_init
+                0x00018ab8                attitude_observer_correct_magnet
+                0x00018804                attitude_observer_predict
+                0x00018b8c                attitude_observer_get_angles
+                0x000189d0                attitude_observer_correct_accel
+ .text          0x00018d98     0x1368 build/obj/fusion/position_kalman.o
+                0x00018ddc                x_position_kalman
+                0x00019ce4                position_kalman
+                0x00018d98                position_kalman_init
+ .text          0x0001a100      0x660 build/obj/fusion/vision_buffer.o
+                0x0001a1f8                vision_buffer_handle_data
+                0x0001a12c                vision_buffer_buffer_camera_triggered
+                0x0001a100                vision_buffer_buffer_init
+ .text          0x0001a760      0x3f0 build/obj/fusion/kalman.o
+                0x0001a8a8                kalman_correct
+                0x0001a774                kalman_init
+                0x0001a864                kalman_predict
+                0x0001a760                kalman_get_state
+ .text          0x0001ab50      0x5a0 build/obj/fusion/outdoor_position_kalman.o
+                0x0001ad1c                outdoor_position_kalman
+                0x0001ab50                outdoor_position_kalman_init
+                0x0001ac7c                altitude_set_local_origin
+ .text          0x0001b0f0      0x4b0 build/obj/fusion/vision_position_kalman.o
+                0x0001b0f0                vision_position_kalman_init
+                0x0001b21c                vision_position_kalman
+ .text          0x0001b5a0        0x0 build/obj/fusion/attitude_compl_euler.o
+ .text          0x0001b5a0      0x134 build/obj/fusion/simple_altitude_moving_average.o
+                0x0001b5a0                simple_altitude_moving_average
+ .text          0x0001b6d4      0x258 build/obj/fusion/least_square.o
+                0x0001b6d4                least_square
+ .text          0x0001b92c       0x74 build/obj/fusion/global_pos.o
+                0x0001b92c                global_pos
+ .text          0x0001b9a0      0x3f4 build/obj/fusion/world_to_body.o
+                0x0001b9a0                world_to_body
+ .text          0x0001bd94     0x4e10 build/obj/fusion/position_kalman2.o
+                0x0001bd94                kalman2_init
+                0x0001d6dc                y_position_kalman2
+                0x0001bdd8                x_position_kalman2
+                0x0001eff0                z_position_kalman2
+ .text          0x00020ba4      0xd70 build/obj/fusion/position_kalman3.o
+                0x000214ac                z_position_kalman3
+                0x00020bd4                x_position_kalman3
+                0x00020ba4                position_kalman3_init
+                0x00021044                y_position_kalman3
+ .text          0x00021914      0x5d4 build/obj/math/transformation.o
+                0x00021914                navi2body
+                0x00021dd8                turn_xy_plane
+                0x00021edc                body2navi_xy_plane
+                0x00021ee4                navi2body_xy_plane
+                0x00021918                body2navi
+ .text          0x00021ee8      0x550 build/obj/math/matrix.o
+                0x00021ef0                matrix_mult_element
+                0x0002232c                matrix_add
+                0x00021ee8                matrix_create
+                0x00021ffc                matrix_mult_scalar
+                0x00022220                matrix_sub
+                0x000220cc                matrix_mult
+ .text          0x00022438      0x720 build/obj/math/geodetic/latlong.o
+                0x00022438                latlong_utm_of
+                0x000227c0                latlong_of_utm
+ .text          0x00022b58       0x60 build/obj/arm7/sdfat/syscalls.o
+                0x00022b70                _lseek_r
+                0x00022b78                _fstat_r
+                0x00022b88                isatty
+                0x00022b90                _sbrk_r
+                0x00022b58                _read_r
+                0x00022b68                _close_r
+                0x00022b60                _write_r
+ .text          0x00022bb8      0x54c build/obj/math/geodetic/gps_transformations.o
+                0x00022c94                gps_send_local_origin
+                0x00022eb4                gps_set_local_origin
+                0x00022f94                gps_get_local_position
+                0x00022bb8                gps_get_local_velocity
+ .text          0x00023104      0x988 build/obj/hal/gps/gps_nmea.o
+                0x00023844                parse_nmea_GPGSA
+                0x00023104                ubxsend_cfg_rst
+                0x00023900                parse_gps_msg
+                0x00023118                parse_nmea
+                0x00023108                GpsFixValid
+                0x000231e4                parse_nmea_GPRMC
+                0x00023384                parse_nmea_GPGGA
+ .text          0x00023a8c      0x1ac build/obj/system/sys_state.o
+                0x00023ac0                sys_get_state
+                0x00023ab0                sys_get_mode
+                0x00023ae0                sys_set_nav_mode
+                0x00023b84                sys_set_mode
+                0x00023af0                sys_set_state
+                0x00023ad0                sys_set_type
+                0x00023a8c                sys_state_is_flying
+ .text          0x00023c38      0x6e4 build/obj/system/calibration.o
+                0x00024220                start_rc_calibration
+                0x00023c38                start_mag_calibration
+                0x00023c3c                calibration_exit
+                0x000240f8                start_gyro_calibration
+                0x00024200                start_pressure_calibration
+                0x00023cc0                calibration_enter
+ .text          0x0002431c       0x18 build/obj/main.o
+                0x0002431c                main
+ .text          0x00024334       0x30 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(atoi.o)
+                0x00024334                _atoi_r
+                0x0002434c                atoi
+ .text          0x00024364       0x20 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(memcpy.o)
+                0x00024364                memcpy
+ .text          0x00024384       0x1c c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(memset.o)
+                0x00024384                memset
+ .text          0x000243a0      0x178 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(s_modf.o)
+                0x000243a0                modf
+ .text          0x00024518       0x50 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(strncmp.o)
+                0x00024518                strncmp
+ .text          0x00024568       0x4c c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(strncpy.o)
+                0x00024568                strncpy
+ .text          0x000245b4      0xf60 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(strtod.o)
+                0x000245b4                _strtod_r
+                0x000254f8                strtod
+                0x000254a4                strtof
+ .text          0x00025514      0x1c4 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(strtol.o)
+                0x000256ac                strtol
+                0x00025514                _strtol_r
+ .text          0x000256d8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(ctype_.o)
+ .text          0x000256d8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(impure.o)
+ .text          0x000256d8      0xb50 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(mprec.o)
+                0x000259cc                _mprec_log10
+                0x000256f4                _hi0bits
+                0x00025a38                _Balloc
+                0x00025acc                _d2b
+                0x00025de4                _multiply
+                0x00025950                _ratio
+                0x00026144                _s2b
+                0x00025f7c                _i2b
+                0x0002574c                _lo0bits
+                0x000257dc                __mcmp
+                0x00026068                _pow5mult
+                0x0002583c                _ulp
+                0x0002589c                _b2d
+                0x00025fa0                _multadd
+                0x00025be0                __mdiff
+                0x00025d04                _lshift
+                0x000256d8                _Bfree
+ .text          0x00026228       0x20 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(s_isnan.o)
+                0x00026228                isnan
+ .text          0x00026248       0x10 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(s_nan.o)
+                0x00026248                nan
+ .text          0x00026258        0xc c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(sf_nan.o)
+                0x00026258                nanf
+ .text          0x00026264       0x9c c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(callocr.o)
+                0x00026264                _calloc_r
+ .text          0x00026300      0x688 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(mallocr.o)
+                0x00026300                _malloc_r
+ .text          0x00026988        0x8 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(mlock.o)
+                0x0002698c                __malloc_unlock
+                0x00026988                __malloc_lock
+ .text          0x00026990      0x35c c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(freer.o)
+                0x00026a8c                _free_r
+                0x00026990                _malloc_trim_r
+ .text          0x00026cec      0x4dc c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_atan.o)
+                0x00026cec                atan
+ .text          0x000271c8       0xd8 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_cos.o)
+                0x000271c8                cos
+ .text          0x000272a0       0x1c c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_fabs.o)
+                0x000272a0                fabs
+ .text          0x000272bc       0xe0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_sin.o)
+                0x000272bc                sin
+ .text          0x0002739c       0x88 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_tan.o)
+                0x0002739c                tan
+ .text          0x00027424       0xf8 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_acos.o)
+                0x00027424                acos
+ .text          0x0002751c       0xf8 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_asin.o)
+                0x0002751c                asin
+ .text          0x00027614      0x128 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_atan2.o)
+                0x00027614                atan2
+ .text          0x0002773c      0x11c c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_cosh.o)
+                0x0002773c                cosh
+ .text          0x00027858      0x174 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_exp.o)
+                0x00027858                exp
+ .text          0x000279cc      0x13c c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_log.o)
+                0x000279cc                log
+ .text          0x00027b08      0x48c c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_pow.o)
+                0x00027b08                pow
+ .text          0x00027f94      0x144 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_sinh.o)
+                0x00027f94                sinh
+ .text          0x000280d8      0x6b4 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_acos.o)
+                0x000280d8                __ieee754_acos
+ .text          0x0002878c      0x610 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_asin.o)
+                0x0002878c                __ieee754_asin
+ .text          0x00028d9c      0x274 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_atan2.o)
+                0x00028d9c                __ieee754_atan2
+ .text          0x00029010      0x1d4 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_cosh.o)
+                0x00029010                __ieee754_cosh
+ .text          0x000291e4      0x45c c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_exp.o)
+                0x000291e4                __ieee754_exp
+ .text          0x00029640      0x5e0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_log.o)
+                0x00029640                __ieee754_log
+ .text          0x00029c20     0x1008 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_pow.o)
+                0x00029c20                __ieee754_pow
+ .text          0x0002ac28      0x648 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_rem_pio2.o)
+                0x0002ac28                __ieee754_rem_pio2
+ .text          0x0002b270      0x254 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_sinh.o)
+                0x0002b270                __ieee754_sinh
+ .text          0x0002b4c4      0x234 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_sqrt.o)
+                0x0002b4c4                __ieee754_sqrt
+ .text          0x0002b6f8      0x388 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(k_cos.o)
+                0x0002b6f8                __kernel_cos
+ .text          0x0002ba80      0xafc c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(k_rem_pio2.o)
+                0x0002ba80                __kernel_rem_pio2
+ .text          0x0002c57c      0x230 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(k_sin.o)
+                0x0002c57c                __kernel_sin
+ .text          0x0002c7ac      0x5e8 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(k_tan.o)
+                0x0002c7ac                __kernel_tan
+ .text          0x0002cd94      0x6b0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_expm1.o)
+                0x0002cd94                expm1
+ .text          0x0002d444       0x14 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_finite.o)
+                0x0002d444                finite
+ .text          0x0002d458      0x190 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_floor.o)
+                0x0002d458                floor
+ .text          0x0002d5e8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_lib_ver.o)
+ .text          0x0002d5e8        0x8 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_matherr.o)
+                0x0002d5e8                matherr
+ .text          0x0002d5f0      0x1b4 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_rint.o)
+                0x0002d5f0                rint
+ .text          0x0002d7a4      0x190 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_scalbn.o)
+                0x0002d7a4                scalbn
+ .text          0x0002d934       0x1c c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_copysign.o)
+                0x0002d934                copysign
+ .text          0x0002d950       0x10 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(errno.o)
+                0x0002d950                __errno
+ .text          0x0002d960      0x114 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_udivsi3.o)
+                0x0002d960                __udivsi3
+                0x0002d960                __aeabi_uidiv
+                0x0002da5c                __aeabi_uidivmod
+ .text          0x0002da74      0x144 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_divsi3.o)
+                0x0002da74                __aeabi_idiv
+                0x0002da74                __divsi3
+                0x0002dba0                __aeabi_idivmod
+ .text          0x0002dbb8       0xd0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_umodsi3.o)
+                0x0002dbb8                __umodsi3
+ .text          0x0002dc88        0x4 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_dvmd_tls.o)
+                0x0002dc88                __aeabi_ldiv0
+                0x0002dc88                __div0
+                0x0002dc88                __aeabi_idiv0
+ .text          0x0002dc8c      0x430 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_addsubdf3.o)
+                0x0002e050                __floatdidf
+                0x0002dfd0                __floatsidf
+                0x0002dfa8                __aeabi_ui2d
+                0x0002dc8c                __aeabi_drsub
+                0x0002dffc                __extendsfdf2
+                0x0002dc98                __adddf3
+                0x0002dfa8                __floatunsidf
+                0x0002dc98                __aeabi_dadd
+                0x0002e03c                __aeabi_ul2d
+                0x0002dc94                __aeabi_dsub
+                0x0002e03c                __floatundidf
+                0x0002dfd0                __aeabi_i2d
+                0x0002e050                __aeabi_l2d
+                0x0002dffc                __aeabi_f2d
+                0x0002dc94                __subdf3
+ .text          0x0002e0bc      0x49c c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_muldivdf3.o)
+                0x0002e34c                __aeabi_ddiv
+                0x0002e0bc                __aeabi_dmul
+                0x0002e34c                __divdf3
+                0x0002e0bc                __muldf3
+ .text          0x0002e558      0x140 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_cmpdf2.o)
+                0x0002e650                __aeabi_dcmple
+                0x0002e568                __cmpdf2
+                0x0002e568                __eqdf2
+                0x0002e558                __gtdf2
+                0x0002e608                __aeabi_cdcmple
+                0x0002e5ec                __aeabi_cdrcmple
+                0x0002e560                __ltdf2
+                0x0002e638                __aeabi_dcmplt
+                0x0002e560                __ledf2
+                0x0002e680                __aeabi_dcmpgt
+                0x0002e668                __aeabi_dcmpge
+                0x0002e568                __nedf2
+                0x0002e620                __aeabi_dcmpeq
+                0x0002e608                __aeabi_cdcmpeq
+                0x0002e558                __gedf2
+ .text          0x0002e698       0x5c c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_fixdfsi.o)
+                0x0002e698                __fixdfsi
+                0x0002e698                __aeabi_d2iz
+ .text          0x0002e6f4       0x54 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_fixunsdfsi.o)
+                0x0002e6f4                __fixunsdfsi
+                0x0002e6f4                __aeabi_d2uiz
+ .text          0x0002e748       0xa0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_truncdfsf2.o)
+                0x0002e748                __aeabi_d2f
+                0x0002e748                __truncdfsf2
+ .text          0x0002e7e8      0x2ac c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_addsubsf3.o)
+                0x0002e7f4                __aeabi_fadd
+                0x0002e7f0                __subsf3
+                0x0002e9b8                __aeabi_i2f
+                0x0002e7f0                __aeabi_fsub
+                0x0002e9e8                __floatdisf
+                0x0002e9b8                __floatsisf
+                0x0002e9d8                __floatundisf
+                0x0002e9b0                __aeabi_ui2f
+                0x0002e9e8                __aeabi_l2f
+                0x0002e9d8                __aeabi_ul2f
+                0x0002e7e8                __aeabi_frsub
+                0x0002e9b0                __floatunsisf
+                0x0002e7f4                __addsf3
+ .text          0x0002ea94      0x2f8 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_muldivsf3.o)
+                0x0002ec2c                __divsf3
+                0x0002ec2c                __aeabi_fdiv
+                0x0002ea94                __mulsf3
+                0x0002ea94                __aeabi_fmul
+ .text          0x0002ed8c      0x110 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_cmpsf2.o)
+                0x0002ee84                __aeabi_fcmpgt
+                0x0002ed94                __lesf2
+                0x0002ed9c                __nesf2
+                0x0002ee6c                __aeabi_fcmpge
+                0x0002ed8c                __gtsf2
+                0x0002ee54                __aeabi_fcmple
+                0x0002ed9c                __eqsf2
+                0x0002ed9c                __cmpsf2
+                0x0002ed94                __ltsf2
+                0x0002ee0c                __aeabi_cfcmple
+                0x0002ed8c                __gesf2
+                0x0002ee24                __aeabi_fcmpeq
+                0x0002edfc                __aeabi_cfrcmple
+                0x0002ee3c                __aeabi_fcmplt
+                0x0002ee0c                __aeabi_cfcmpeq
+ .text          0x0002ee9c       0x5c c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_fixsfsi.o)
+                0x0002ee9c                __fixsfsi
+                0x0002ee9c                __aeabi_f2iz
+ .text          0x0002eef8       0x54 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_fixunssfsi.o)
+                0x0002eef8                __aeabi_f2uiz
+                0x0002eef8                __fixunssfsi
+ .text          0x0002ef4c       0x2c c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_cmpdi2.o)
+                0x0002ef4c                __cmpdi2
  *(.gnu.linkonce.t.*)
  *(.glue_7)
- .glue_7        0x0002efb8        0x0 build/obj/arm7/include/crt0.o
- .glue_7        0x0002efb8        0x0 build/obj/main/mainloop_generic.o
- .glue_7        0x0002efb8        0x0 build/obj/main/mainloop_fixed_wing.o
- .glue_7        0x0002efb8        0x0 build/obj/main/mainloop_quadrotor.o
- .glue_7        0x0002efb8        0x0 build/obj/main/mainloop_ground_car.o
- .glue_7        0x0002efb8        0x0 build/obj/main/common_mainloop_functions.o
- .glue_7        0x0002efb8        0x0 build/obj/math/lookup_sin_cos.o
- .glue_7        0x0002efb8        0x0 build/obj/arm7/adc.o
- .glue_7        0x0002efb8        0x0 build/obj/arm7/armVIC.o
- .glue_7        0x0002efb8        0x0 build/obj/arm7/cam_trigger.o
- .glue_7        0x0002efb8        0x0 build/obj/arm7/dac.o
- .glue_7        0x0002efb8        0x0 build/obj/arm7/led.o
- .glue_7        0x0002efb8        0x0 build/obj/arm7/spi.o
- .glue_7        0x0002efb8        0x0 build/obj/arm7/i2c.o
- .glue_7        0x0002efb8        0x0 build/obj/arm7/spi_devices/ads8341.o
- .glue_7        0x0002efb8        0x0 build/obj/arm7/spi_devices/ms2100.o
- .glue_7        0x0002efb8        0x0 build/obj/arm7/spi_devices/sca3100.o
- .glue_7        0x0002efb8        0x0 build/obj/arm7/spi_devices/adns9500.o
- .glue_7        0x0002efb8        0x0 build/obj/arm7/spi_devices/sca3000.o
- .glue_7        0x0002efb8        0x0 build/obj/arm7/i2c_devices/bmp085.o
- .glue_7        0x0002efb8        0x0 build/obj/arm7/i2c_devices/eeprom.o
- .glue_7        0x0002efb8        0x0 build/obj/arm7/i2c_devices/i2c_motor_controller.o
- .glue_7        0x0002efb8        0x0 build/obj/arm7/i2c_devices/i2c_motor_mikrokopter.o
- .glue_7        0x0002efb8        0x0 build/obj/arm7/i2c_devices/hmc5843.o
- .glue_7        0x0002efb8        0x0 build/obj/arm7/ppm.o
- .glue_7        0x0002efb8        0x0 build/obj/arm7/pwm.o
- .glue_7        0x0002efb8        0x0 build/obj/arm7/sys_time.o
- .glue_7        0x0002efb8        0x0 build/obj/arm7/uart.o
- .glue_7        0x0002efb8        0x0 build/obj/comm/comm.o
- .glue_7        0x0002efb8        0x0 build/obj/system/watchdog.o
- .glue_7        0x0002efb8        0x0 build/obj/system/pid.o
- .glue_7        0x0002efb8        0x0 build/obj/hal/shutter.o
- .glue_7        0x0002efb8        0x0 build/obj/system/communication.o
- .glue_7        0x0002efb8        0x0 build/obj/controllers/coaxial/control_position.o
- .glue_7        0x0002efb8        0x0 build/obj/controllers/coaxial/control_attitude.o
- .glue_7        0x0002efb8        0x0 build/obj/controllers/coaxial/control_yawSpeed.o
- .glue_7        0x0002efb8        0x0 build/obj/controllers/coaxial/control_yaw_altitude.o
- .glue_7        0x0002efb8        0x0 build/obj/controllers/quadrotor/control_quadrotor_attitude.o
- .glue_7        0x0002efb8        0x0 build/obj/controllers/fixed_wing/control_fixed_wing_attitude.o
- .glue_7        0x0002efb8        0x0 build/obj/controllers/quadrotor/control_quadrotor_position.o
- .glue_7        0x0002efb8        0x0 build/obj/controllers/quadrotor/control_quadrotor_start_land.o
- .glue_7        0x0002efb8        0x0 build/obj/system/remote_control.o
- .glue_7        0x0002efb8        0x0 build/obj/system/debug.o
- .glue_7        0x0002efb8        0x0 build/obj/system/params.o
- .glue_7        0x0002efb8        0x0 build/obj/fusion/altitude_kalman.o
- .glue_7        0x0002efb8        0x0 build/obj/fusion/attitude_observer.o
- .glue_7        0x0002efb8        0x0 build/obj/fusion/position_kalman.o
- .glue_7        0x0002efb8        0x0 build/obj/fusion/vision_buffer.o
- .glue_7        0x0002efb8        0x0 build/obj/fusion/kalman.o
- .glue_7        0x0002efb8        0x0 build/obj/fusion/outdoor_position_kalman.o
- .glue_7        0x0002efb8        0x0 build/obj/fusion/vision_position_kalman.o
- .glue_7        0x0002efb8        0x0 build/obj/fusion/attitude_compl_euler.o
- .glue_7        0x0002efb8        0x0 build/obj/fusion/simple_altitude_moving_average.o
- .glue_7        0x0002efb8        0x0 build/obj/fusion/least_square.o
- .glue_7        0x0002efb8        0x0 build/obj/fusion/global_pos.o
- .glue_7        0x0002efb8        0x0 build/obj/fusion/world_to_body.o
- .glue_7        0x0002efb8        0x0 build/obj/fusion/position_kalman2.o
- .glue_7        0x0002efb8        0x0 build/obj/fusion/position_kalman3.o
- .glue_7        0x0002efb8        0x0 build/obj/math/transformation.o
- .glue_7        0x0002efb8        0x0 build/obj/math/matrix.o
- .glue_7        0x0002efb8        0x0 build/obj/math/geodetic/latlong.o
- .glue_7        0x0002efb8        0x0 build/obj/arm7/sdfat/syscalls.o
- .glue_7        0x0002efb8        0x0 build/obj/math/geodetic/gps_transformations.o
- .glue_7        0x0002efb8        0x0 build/obj/hal/gps/gps_nmea.o
- .glue_7        0x0002efb8        0x0 build/obj/system/sys_state.o
- .glue_7        0x0002efb8        0x0 build/obj/system/calibration.o
- .glue_7        0x0002efb8        0x0 build/obj/main.o
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(atoi.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(memcpy.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(memset.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(s_modf.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(strncmp.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(strncpy.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(strtod.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(strtol.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(ctype_.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(impure.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(mprec.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(s_isnan.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(s_nan.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(sf_nan.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(callocr.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(mallocr.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(mlock.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(freer.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_atan.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_cos.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_fabs.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_sin.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_tan.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_acos.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_asin.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_atan2.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_cosh.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_exp.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_log.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_pow.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_sinh.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_acos.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_asin.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_atan2.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_cosh.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_exp.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_log.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_pow.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_rem_pio2.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_sinh.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_sqrt.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(k_cos.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(k_rem_pio2.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(k_sin.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(k_tan.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_expm1.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_finite.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_floor.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_lib_ver.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_matherr.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_rint.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_scalbn.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_copysign.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(errno.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_udivsi3.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_divsi3.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_umodsi3.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_dvmd_tls.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_addsubdf3.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_muldivdf3.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_cmpdf2.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_fixdfsi.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_fixunsdfsi.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_truncdfsf2.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_addsubsf3.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_muldivsf3.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_cmpsf2.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_fixsfsi.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_fixunssfsi.o)
- .glue_7        0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_cmpdi2.o)
+ .glue_7        0x0002ef78        0x0 build/obj/arm7/include/crt0.o
+ .glue_7        0x0002ef78        0x0 build/obj/main/mainloop_generic.o
+ .glue_7        0x0002ef78        0x0 build/obj/main/mainloop_fixed_wing.o
+ .glue_7        0x0002ef78        0x0 build/obj/main/mainloop_quadrotor.o
+ .glue_7        0x0002ef78        0x0 build/obj/main/mainloop_ground_car.o
+ .glue_7        0x0002ef78        0x0 build/obj/main/common_mainloop_functions.o
+ .glue_7        0x0002ef78        0x0 build/obj/math/lookup_sin_cos.o
+ .glue_7        0x0002ef78        0x0 build/obj/arm7/adc.o
+ .glue_7        0x0002ef78        0x0 build/obj/arm7/armVIC.o
+ .glue_7        0x0002ef78        0x0 build/obj/arm7/cam_trigger.o
+ .glue_7        0x0002ef78        0x0 build/obj/arm7/dac.o
+ .glue_7        0x0002ef78        0x0 build/obj/arm7/led.o
+ .glue_7        0x0002ef78        0x0 build/obj/arm7/spi.o
+ .glue_7        0x0002ef78        0x0 build/obj/arm7/i2c.o
+ .glue_7        0x0002ef78        0x0 build/obj/arm7/spi_devices/ads8341.o
+ .glue_7        0x0002ef78        0x0 build/obj/arm7/spi_devices/ms2100.o
+ .glue_7        0x0002ef78        0x0 build/obj/arm7/spi_devices/sca3100.o
+ .glue_7        0x0002ef78        0x0 build/obj/arm7/spi_devices/adns9500.o
+ .glue_7        0x0002ef78        0x0 build/obj/arm7/spi_devices/sca3000.o
+ .glue_7        0x0002ef78        0x0 build/obj/arm7/i2c_devices/bmp085.o
+ .glue_7        0x0002ef78        0x0 build/obj/arm7/i2c_devices/eeprom.o
+ .glue_7        0x0002ef78        0x0 build/obj/arm7/i2c_devices/i2c_motor_controller.o
+ .glue_7        0x0002ef78        0x0 build/obj/arm7/i2c_devices/i2c_motor_mikrokopter.o
+ .glue_7        0x0002ef78        0x0 build/obj/arm7/i2c_devices/hmc5843.o
+ .glue_7        0x0002ef78        0x0 build/obj/arm7/ppm.o
+ .glue_7        0x0002ef78        0x0 build/obj/arm7/pwm.o
+ .glue_7        0x0002ef78        0x0 build/obj/arm7/sys_time.o
+ .glue_7        0x0002ef78        0x0 build/obj/arm7/uart.o
+ .glue_7        0x0002ef78        0x0 build/obj/comm/comm.o
+ .glue_7        0x0002ef78        0x0 build/obj/system/watchdog.o
+ .glue_7        0x0002ef78        0x0 build/obj/system/pid.o
+ .glue_7        0x0002ef78        0x0 build/obj/hal/shutter.o
+ .glue_7        0x0002ef78        0x0 build/obj/system/communication.o
+ .glue_7        0x0002ef78        0x0 build/obj/controllers/coaxial/control_position.o
+ .glue_7        0x0002ef78        0x0 build/obj/controllers/coaxial/control_attitude.o
+ .glue_7        0x0002ef78        0x0 build/obj/controllers/coaxial/control_yawSpeed.o
+ .glue_7        0x0002ef78        0x0 build/obj/controllers/coaxial/control_yaw_altitude.o
+ .glue_7        0x0002ef78        0x0 build/obj/controllers/quadrotor/control_quadrotor_attitude.o
+ .glue_7        0x0002ef78        0x0 build/obj/controllers/fixed_wing/control_fixed_wing_attitude.o
+ .glue_7        0x0002ef78        0x0 build/obj/controllers/quadrotor/control_quadrotor_position.o
+ .glue_7        0x0002ef78        0x0 build/obj/controllers/quadrotor/control_quadrotor_start_land.o
+ .glue_7        0x0002ef78        0x0 build/obj/system/remote_control.o
+ .glue_7        0x0002ef78        0x0 build/obj/system/debug.o
+ .glue_7        0x0002ef78        0x0 build/obj/system/params.o
+ .glue_7        0x0002ef78        0x0 build/obj/fusion/altitude_kalman.o
+ .glue_7        0x0002ef78        0x0 build/obj/fusion/attitude_observer.o
+ .glue_7        0x0002ef78        0x0 build/obj/fusion/position_kalman.o
+ .glue_7        0x0002ef78        0x0 build/obj/fusion/vision_buffer.o
+ .glue_7        0x0002ef78        0x0 build/obj/fusion/kalman.o
+ .glue_7        0x0002ef78        0x0 build/obj/fusion/outdoor_position_kalman.o
+ .glue_7        0x0002ef78        0x0 build/obj/fusion/vision_position_kalman.o
+ .glue_7        0x0002ef78        0x0 build/obj/fusion/attitude_compl_euler.o
+ .glue_7        0x0002ef78        0x0 build/obj/fusion/simple_altitude_moving_average.o
+ .glue_7        0x0002ef78        0x0 build/obj/fusion/least_square.o
+ .glue_7        0x0002ef78        0x0 build/obj/fusion/global_pos.o
+ .glue_7        0x0002ef78        0x0 build/obj/fusion/world_to_body.o
+ .glue_7        0x0002ef78        0x0 build/obj/fusion/position_kalman2.o
+ .glue_7        0x0002ef78        0x0 build/obj/fusion/position_kalman3.o
+ .glue_7        0x0002ef78        0x0 build/obj/math/transformation.o
+ .glue_7        0x0002ef78        0x0 build/obj/math/matrix.o
+ .glue_7        0x0002ef78        0x0 build/obj/math/geodetic/latlong.o
+ .glue_7        0x0002ef78        0x0 build/obj/arm7/sdfat/syscalls.o
+ .glue_7        0x0002ef78        0x0 build/obj/math/geodetic/gps_transformations.o
+ .glue_7        0x0002ef78        0x0 build/obj/hal/gps/gps_nmea.o
+ .glue_7        0x0002ef78        0x0 build/obj/system/sys_state.o
+ .glue_7        0x0002ef78        0x0 build/obj/system/calibration.o
+ .glue_7        0x0002ef78        0x0 build/obj/main.o
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(atoi.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(memcpy.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(memset.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(s_modf.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(strncmp.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(strncpy.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(strtod.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(strtol.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(ctype_.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(impure.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(mprec.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(s_isnan.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(s_nan.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(sf_nan.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(callocr.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(mallocr.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(mlock.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(freer.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_atan.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_cos.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_fabs.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_sin.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_tan.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_acos.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_asin.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_atan2.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_cosh.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_exp.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_log.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_pow.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_sinh.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_acos.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_asin.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_atan2.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_cosh.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_exp.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_log.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_pow.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_rem_pio2.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_sinh.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_sqrt.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(k_cos.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(k_rem_pio2.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(k_sin.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(k_tan.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_expm1.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_finite.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_floor.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_lib_ver.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_matherr.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_rint.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_scalbn.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_copysign.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(errno.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_udivsi3.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_divsi3.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_umodsi3.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_dvmd_tls.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_addsubdf3.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_muldivdf3.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_cmpdf2.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_fixdfsi.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_fixunsdfsi.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_truncdfsf2.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_addsubsf3.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_muldivsf3.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_cmpsf2.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_fixsfsi.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_fixunssfsi.o)
+ .glue_7        0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_cmpdi2.o)
  *(.glue_7t)
- .glue_7t       0x0002efb8        0x0 build/obj/arm7/include/crt0.o
- .glue_7t       0x0002efb8        0x0 build/obj/main/mainloop_generic.o
- .glue_7t       0x0002efb8        0x0 build/obj/main/mainloop_fixed_wing.o
- .glue_7t       0x0002efb8        0x0 build/obj/main/mainloop_quadrotor.o
- .glue_7t       0x0002efb8        0x0 build/obj/main/mainloop_ground_car.o
- .glue_7t       0x0002efb8        0x0 build/obj/main/common_mainloop_functions.o
- .glue_7t       0x0002efb8        0x0 build/obj/math/lookup_sin_cos.o
- .glue_7t       0x0002efb8        0x0 build/obj/arm7/adc.o
- .glue_7t       0x0002efb8        0x0 build/obj/arm7/armVIC.o
- .glue_7t       0x0002efb8        0x0 build/obj/arm7/cam_trigger.o
- .glue_7t       0x0002efb8        0x0 build/obj/arm7/dac.o
- .glue_7t       0x0002efb8        0x0 build/obj/arm7/led.o
- .glue_7t       0x0002efb8        0x0 build/obj/arm7/spi.o
- .glue_7t       0x0002efb8        0x0 build/obj/arm7/i2c.o
- .glue_7t       0x0002efb8        0x0 build/obj/arm7/spi_devices/ads8341.o
- .glue_7t       0x0002efb8        0x0 build/obj/arm7/spi_devices/ms2100.o
- .glue_7t       0x0002efb8        0x0 build/obj/arm7/spi_devices/sca3100.o
- .glue_7t       0x0002efb8        0x0 build/obj/arm7/spi_devices/adns9500.o
- .glue_7t       0x0002efb8        0x0 build/obj/arm7/spi_devices/sca3000.o
- .glue_7t       0x0002efb8        0x0 build/obj/arm7/i2c_devices/bmp085.o
- .glue_7t       0x0002efb8        0x0 build/obj/arm7/i2c_devices/eeprom.o
- .glue_7t       0x0002efb8        0x0 build/obj/arm7/i2c_devices/i2c_motor_controller.o
- .glue_7t       0x0002efb8        0x0 build/obj/arm7/i2c_devices/i2c_motor_mikrokopter.o
- .glue_7t       0x0002efb8        0x0 build/obj/arm7/i2c_devices/hmc5843.o
- .glue_7t       0x0002efb8        0x0 build/obj/arm7/ppm.o
- .glue_7t       0x0002efb8        0x0 build/obj/arm7/pwm.o
- .glue_7t       0x0002efb8        0x0 build/obj/arm7/sys_time.o
- .glue_7t       0x0002efb8        0x0 build/obj/arm7/uart.o
- .glue_7t       0x0002efb8        0x0 build/obj/comm/comm.o
- .glue_7t       0x0002efb8        0x0 build/obj/system/watchdog.o
- .glue_7t       0x0002efb8        0x0 build/obj/system/pid.o
- .glue_7t       0x0002efb8        0x0 build/obj/hal/shutter.o
- .glue_7t       0x0002efb8        0x0 build/obj/system/communication.o
- .glue_7t       0x0002efb8        0x0 build/obj/controllers/coaxial/control_position.o
- .glue_7t       0x0002efb8        0x0 build/obj/controllers/coaxial/control_attitude.o
- .glue_7t       0x0002efb8        0x0 build/obj/controllers/coaxial/control_yawSpeed.o
- .glue_7t       0x0002efb8        0x0 build/obj/controllers/coaxial/control_yaw_altitude.o
- .glue_7t       0x0002efb8        0x0 build/obj/controllers/quadrotor/control_quadrotor_attitude.o
- .glue_7t       0x0002efb8        0x0 build/obj/controllers/fixed_wing/control_fixed_wing_attitude.o
- .glue_7t       0x0002efb8        0x0 build/obj/controllers/quadrotor/control_quadrotor_position.o
- .glue_7t       0x0002efb8        0x0 build/obj/controllers/quadrotor/control_quadrotor_start_land.o
- .glue_7t       0x0002efb8        0x0 build/obj/system/remote_control.o
- .glue_7t       0x0002efb8        0x0 build/obj/system/debug.o
- .glue_7t       0x0002efb8        0x0 build/obj/system/params.o
- .glue_7t       0x0002efb8        0x0 build/obj/fusion/altitude_kalman.o
- .glue_7t       0x0002efb8        0x0 build/obj/fusion/attitude_observer.o
- .glue_7t       0x0002efb8        0x0 build/obj/fusion/position_kalman.o
- .glue_7t       0x0002efb8        0x0 build/obj/fusion/vision_buffer.o
- .glue_7t       0x0002efb8        0x0 build/obj/fusion/kalman.o
- .glue_7t       0x0002efb8        0x0 build/obj/fusion/outdoor_position_kalman.o
- .glue_7t       0x0002efb8        0x0 build/obj/fusion/vision_position_kalman.o
- .glue_7t       0x0002efb8        0x0 build/obj/fusion/attitude_compl_euler.o
- .glue_7t       0x0002efb8        0x0 build/obj/fusion/simple_altitude_moving_average.o
- .glue_7t       0x0002efb8        0x0 build/obj/fusion/least_square.o
- .glue_7t       0x0002efb8        0x0 build/obj/fusion/global_pos.o
- .glue_7t       0x0002efb8        0x0 build/obj/fusion/world_to_body.o
- .glue_7t       0x0002efb8        0x0 build/obj/fusion/position_kalman2.o
- .glue_7t       0x0002efb8        0x0 build/obj/fusion/position_kalman3.o
- .glue_7t       0x0002efb8        0x0 build/obj/math/transformation.o
- .glue_7t       0x0002efb8        0x0 build/obj/math/matrix.o
- .glue_7t       0x0002efb8        0x0 build/obj/math/geodetic/latlong.o
- .glue_7t       0x0002efb8        0x0 build/obj/arm7/sdfat/syscalls.o
- .glue_7t       0x0002efb8        0x0 build/obj/math/geodetic/gps_transformations.o
- .glue_7t       0x0002efb8        0x0 build/obj/hal/gps/gps_nmea.o
- .glue_7t       0x0002efb8        0x0 build/obj/system/sys_state.o
- .glue_7t       0x0002efb8        0x0 build/obj/system/calibration.o
- .glue_7t       0x0002efb8        0x0 build/obj/main.o
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(atoi.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(memcpy.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(memset.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(s_modf.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(strncmp.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(strncpy.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(strtod.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(strtol.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(ctype_.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(impure.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(mprec.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(s_isnan.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(s_nan.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(sf_nan.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(callocr.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(mallocr.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(mlock.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(freer.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_atan.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_cos.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_fabs.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_sin.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_tan.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_acos.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_asin.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_atan2.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_cosh.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_exp.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_log.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_pow.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_sinh.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_acos.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_asin.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_atan2.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_cosh.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_exp.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_log.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_pow.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_rem_pio2.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_sinh.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_sqrt.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(k_cos.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(k_rem_pio2.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(k_sin.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(k_tan.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_expm1.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_finite.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_floor.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_lib_ver.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_matherr.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_rint.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_scalbn.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_copysign.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(errno.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_udivsi3.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_divsi3.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_umodsi3.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_dvmd_tls.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_addsubdf3.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_muldivdf3.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_cmpdf2.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_fixdfsi.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_fixunsdfsi.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_truncdfsf2.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_addsubsf3.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_muldivsf3.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_cmpsf2.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_fixsfsi.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_fixunssfsi.o)
- .glue_7t       0x0002efb8        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_cmpdi2.o)
+ .glue_7t       0x0002ef78        0x0 build/obj/arm7/include/crt0.o
+ .glue_7t       0x0002ef78        0x0 build/obj/main/mainloop_generic.o
+ .glue_7t       0x0002ef78        0x0 build/obj/main/mainloop_fixed_wing.o
+ .glue_7t       0x0002ef78        0x0 build/obj/main/mainloop_quadrotor.o
+ .glue_7t       0x0002ef78        0x0 build/obj/main/mainloop_ground_car.o
+ .glue_7t       0x0002ef78        0x0 build/obj/main/common_mainloop_functions.o
+ .glue_7t       0x0002ef78        0x0 build/obj/math/lookup_sin_cos.o
+ .glue_7t       0x0002ef78        0x0 build/obj/arm7/adc.o
+ .glue_7t       0x0002ef78        0x0 build/obj/arm7/armVIC.o
+ .glue_7t       0x0002ef78        0x0 build/obj/arm7/cam_trigger.o
+ .glue_7t       0x0002ef78        0x0 build/obj/arm7/dac.o
+ .glue_7t       0x0002ef78        0x0 build/obj/arm7/led.o
+ .glue_7t       0x0002ef78        0x0 build/obj/arm7/spi.o
+ .glue_7t       0x0002ef78        0x0 build/obj/arm7/i2c.o
+ .glue_7t       0x0002ef78        0x0 build/obj/arm7/spi_devices/ads8341.o
+ .glue_7t       0x0002ef78        0x0 build/obj/arm7/spi_devices/ms2100.o
+ .glue_7t       0x0002ef78        0x0 build/obj/arm7/spi_devices/sca3100.o
+ .glue_7t       0x0002ef78        0x0 build/obj/arm7/spi_devices/adns9500.o
+ .glue_7t       0x0002ef78        0x0 build/obj/arm7/spi_devices/sca3000.o
+ .glue_7t       0x0002ef78        0x0 build/obj/arm7/i2c_devices/bmp085.o
+ .glue_7t       0x0002ef78        0x0 build/obj/arm7/i2c_devices/eeprom.o
+ .glue_7t       0x0002ef78        0x0 build/obj/arm7/i2c_devices/i2c_motor_controller.o
+ .glue_7t       0x0002ef78        0x0 build/obj/arm7/i2c_devices/i2c_motor_mikrokopter.o
+ .glue_7t       0x0002ef78        0x0 build/obj/arm7/i2c_devices/hmc5843.o
+ .glue_7t       0x0002ef78        0x0 build/obj/arm7/ppm.o
+ .glue_7t       0x0002ef78        0x0 build/obj/arm7/pwm.o
+ .glue_7t       0x0002ef78        0x0 build/obj/arm7/sys_time.o
+ .glue_7t       0x0002ef78        0x0 build/obj/arm7/uart.o
+ .glue_7t       0x0002ef78        0x0 build/obj/comm/comm.o
+ .glue_7t       0x0002ef78        0x0 build/obj/system/watchdog.o
+ .glue_7t       0x0002ef78        0x0 build/obj/system/pid.o
+ .glue_7t       0x0002ef78        0x0 build/obj/hal/shutter.o
+ .glue_7t       0x0002ef78        0x0 build/obj/system/communication.o
+ .glue_7t       0x0002ef78        0x0 build/obj/controllers/coaxial/control_position.o
+ .glue_7t       0x0002ef78        0x0 build/obj/controllers/coaxial/control_attitude.o
+ .glue_7t       0x0002ef78        0x0 build/obj/controllers/coaxial/control_yawSpeed.o
+ .glue_7t       0x0002ef78        0x0 build/obj/controllers/coaxial/control_yaw_altitude.o
+ .glue_7t       0x0002ef78        0x0 build/obj/controllers/quadrotor/control_quadrotor_attitude.o
+ .glue_7t       0x0002ef78        0x0 build/obj/controllers/fixed_wing/control_fixed_wing_attitude.o
+ .glue_7t       0x0002ef78        0x0 build/obj/controllers/quadrotor/control_quadrotor_position.o
+ .glue_7t       0x0002ef78        0x0 build/obj/controllers/quadrotor/control_quadrotor_start_land.o
+ .glue_7t       0x0002ef78        0x0 build/obj/system/remote_control.o
+ .glue_7t       0x0002ef78        0x0 build/obj/system/debug.o
+ .glue_7t       0x0002ef78        0x0 build/obj/system/params.o
+ .glue_7t       0x0002ef78        0x0 build/obj/fusion/altitude_kalman.o
+ .glue_7t       0x0002ef78        0x0 build/obj/fusion/attitude_observer.o
+ .glue_7t       0x0002ef78        0x0 build/obj/fusion/position_kalman.o
+ .glue_7t       0x0002ef78        0x0 build/obj/fusion/vision_buffer.o
+ .glue_7t       0x0002ef78        0x0 build/obj/fusion/kalman.o
+ .glue_7t       0x0002ef78        0x0 build/obj/fusion/outdoor_position_kalman.o
+ .glue_7t       0x0002ef78        0x0 build/obj/fusion/vision_position_kalman.o
+ .glue_7t       0x0002ef78        0x0 build/obj/fusion/attitude_compl_euler.o
+ .glue_7t       0x0002ef78        0x0 build/obj/fusion/simple_altitude_moving_average.o
+ .glue_7t       0x0002ef78        0x0 build/obj/fusion/least_square.o
+ .glue_7t       0x0002ef78        0x0 build/obj/fusion/global_pos.o
+ .glue_7t       0x0002ef78        0x0 build/obj/fusion/world_to_body.o
+ .glue_7t       0x0002ef78        0x0 build/obj/fusion/position_kalman2.o
+ .glue_7t       0x0002ef78        0x0 build/obj/fusion/position_kalman3.o
+ .glue_7t       0x0002ef78        0x0 build/obj/math/transformation.o
+ .glue_7t       0x0002ef78        0x0 build/obj/math/matrix.o
+ .glue_7t       0x0002ef78        0x0 build/obj/math/geodetic/latlong.o
+ .glue_7t       0x0002ef78        0x0 build/obj/arm7/sdfat/syscalls.o
+ .glue_7t       0x0002ef78        0x0 build/obj/math/geodetic/gps_transformations.o
+ .glue_7t       0x0002ef78        0x0 build/obj/hal/gps/gps_nmea.o
+ .glue_7t       0x0002ef78        0x0 build/obj/system/sys_state.o
+ .glue_7t       0x0002ef78        0x0 build/obj/system/calibration.o
+ .glue_7t       0x0002ef78        0x0 build/obj/main.o
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(atoi.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(memcpy.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(memset.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(s_modf.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(strncmp.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(strncpy.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(strtod.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(strtol.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(ctype_.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(impure.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(mprec.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(s_isnan.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(s_nan.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(sf_nan.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(callocr.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(mallocr.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(mlock.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(freer.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_atan.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_cos.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_fabs.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_sin.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_tan.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_acos.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_asin.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_atan2.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_cosh.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_exp.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_log.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_pow.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_sinh.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_acos.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_asin.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_atan2.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_cosh.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_exp.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_log.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_pow.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_rem_pio2.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_sinh.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_sqrt.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(k_cos.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(k_rem_pio2.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(k_sin.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(k_tan.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_expm1.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_finite.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_floor.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_lib_ver.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_matherr.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_rint.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_scalbn.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_copysign.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(errno.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_udivsi3.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_divsi3.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_umodsi3.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_dvmd_tls.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_addsubdf3.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_muldivdf3.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_cmpdf2.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_fixdfsi.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_fixunsdfsi.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_truncdfsf2.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_addsubsf3.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_muldivsf3.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_cmpsf2.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_fixsfsi.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_fixunssfsi.o)
+ .glue_7t       0x0002ef78        0x0 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/interwork\libgcc.a(_cmpdi2.o)
  *(.gcc_except_table)
  *(.rodata)
- .rodata        0x0002efb8     0x3244 build/obj/math/lookup_sin_cos.o
- .rodata        0x000321fc      0xbfe build/obj/arm7/spi_devices/adns9500.o
-                0x000321fc                srom_file
- *fill*         0x00032dfa        0x2 00
- .rodata        0x00032dfc       0x20 build/obj/fusion/outdoor_position_kalman.o
- .rodata        0x00032e1c       0x20 build/obj/fusion/vision_position_kalman.o
- .rodata        0x00032e3c       0x60 build/obj/fusion/global_pos.o
- .rodata        0x00032e9c       0x14 build/obj/math/geodetic/latlong.o
- .rodata        0x00032eb0        0x4 build/obj/math/geodetic/gps_transformations.o
-                0x00032eb0                r_earth
- .rodata        0x00032eb4      0x101 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(ctype_.o)
-                0x00032eb4                _ctype_
- *fill*         0x00032fb5        0x3 00
- .rodata        0x00032fb8        0x4 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(impure.o)
-                0x00032fb8                _global_impure_ptr
- .rodata        0x00032fbc      0x124 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(mprec.o)
-                0x000330ac                __mprec_tinytens
-                0x00032fbc                __mprec_tens
-                0x00033084                __mprec_bigtens
- .rodata        0x000330e0       0x40 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_atan.o)
- .rodata        0x00033120       0x30 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_exp.o)
- .rodata        0x00033150       0x30 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_pow.o)
- .rodata        0x00033180      0x188 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_rem_pio2.o)
- .rodata        0x00033308       0x50 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(k_rem_pio2.o)
- .rodata        0x00033358        0x4 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_lib_ver.o)
-                0x00033358                __fdlib_version
- .rodata        0x0003335c       0x10 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_rint.o)
+ .rodata        0x0002ef78     0x3244 build/obj/math/lookup_sin_cos.o
+ .rodata        0x000321bc      0xbfe build/obj/arm7/spi_devices/adns9500.o
+                0x000321bc                srom_file
+ *fill*         0x00032dba        0x2 00
+ .rodata        0x00032dbc       0x20 build/obj/fusion/outdoor_position_kalman.o
+ .rodata        0x00032ddc       0x20 build/obj/fusion/vision_position_kalman.o
+ .rodata        0x00032dfc       0x60 build/obj/fusion/global_pos.o
+ .rodata        0x00032e5c       0x14 build/obj/math/geodetic/latlong.o
+ .rodata        0x00032e70        0x4 build/obj/math/geodetic/gps_transformations.o
+                0x00032e70                r_earth
+ .rodata        0x00032e74      0x101 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(ctype_.o)
+                0x00032e74                _ctype_
+ *fill*         0x00032f75        0x3 00
+ .rodata        0x00032f78        0x4 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(impure.o)
+                0x00032f78                _global_impure_ptr
+ .rodata        0x00032f7c      0x124 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(mprec.o)
+                0x0003306c                __mprec_tinytens
+                0x00032f7c                __mprec_tens
+                0x00033044                __mprec_bigtens
+ .rodata        0x000330a0       0x40 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_atan.o)
+ .rodata        0x000330e0       0x30 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_exp.o)
+ .rodata        0x00033110       0x30 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_pow.o)
+ .rodata        0x00033140      0x188 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(e_rem_pio2.o)
+ .rodata        0x000332c8       0x50 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(k_rem_pio2.o)
+ .rodata        0x00033318        0x4 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_lib_ver.o)
+                0x00033318                __fdlib_version
+ .rodata        0x0003331c       0x10 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(s_rint.o)
  *(.rodata*)
  .rodata.str1.4
-                0x0003336c      0x784 build/obj/main/mainloop_generic.o
+                0x0003332c      0x784 build/obj/main/mainloop_generic.o
  .rodata.str1.4
-                0x00033af0       0x31 build/obj/main/mainloop_ground_car.o
+                0x00033ab0       0x31 build/obj/main/mainloop_ground_car.o
                                 0x10c (size before relaxing)
- *fill*         0x00033b21        0x3 00
+ *fill*         0x00033ae1        0x3 00
  .rodata.str1.4
-                0x00033b24      0x155 build/obj/main/common_mainloop_functions.o
+                0x00033ae4      0x155 build/obj/main/common_mainloop_functions.o
                                 0x6c0 (size before relaxing)
- *fill*         0x00033c79        0x3 00
+ *fill*         0x00033c39        0x3 00
  .rodata.str1.4
-                0x00033c7c      0x34c build/obj/arm7/i2c.o
+                0x00033c3c      0x34c build/obj/arm7/i2c.o
  .rodata.str1.4
-                0x00033fc8       0x4c build/obj/arm7/i2c_devices/eeprom.o
+                0x00033f88       0x4c build/obj/arm7/i2c_devices/eeprom.o
  .rodata.str1.4
-                0x00034014      0x25b build/obj/system/communication.o
+                0x00033fd4      0x25b build/obj/system/communication.o
                                 0x25c (size before relaxing)
- *fill*         0x0003426f        0x1 00
+ *fill*         0x0003422f        0x1 00
  .rodata.str1.4
-                0x00034270        0xb build/obj/controllers/quadrotor/control_quadrotor_position.o
+                0x00034230        0xb build/obj/controllers/quadrotor/control_quadrotor_position.o
                                   0xc (size before relaxing)
- *fill*         0x0003427b        0x1 00
+ *fill*         0x0003423b        0x1 00
  .rodata.str1.4
-                0x0003427c       0xe6 build/obj/controllers/quadrotor/control_quadrotor_start_land.o
+                0x0003423c       0xe6 build/obj/controllers/quadrotor/control_quadrotor_start_land.o
                                  0xe8 (size before relaxing)
- *fill*         0x00034362        0x2 00
+ *fill*         0x00034322        0x2 00
  .rodata.str1.4
-                0x00034364       0xfc build/obj/system/remote_control.o
+                0x00034324       0xfc build/obj/system/remote_control.o
  .rodata.str1.4
-                0x00034460      0x1c8 build/obj/system/params.o
+                0x00034420      0x1c8 build/obj/system/params.o
  .rodata.str1.4
-                0x00034628      0x13e build/obj/fusion/vision_buffer.o
+                0x000345e8      0x13e build/obj/fusion/vision_buffer.o
                                 0x140 (size before relaxing)
  .rodata.str1.4
                 0x00000000       0x20 build/obj/fusion/outdoor_position_kalman.o
- *fill*         0x00034766        0x2 00
+ *fill*         0x00034726        0x2 00
  .rodata.str1.4
-                0x00034768        0xa build/obj/fusion/vision_position_kalman.o
+                0x00034728        0xa build/obj/fusion/vision_position_kalman.o
                                   0xc (size before relaxing)
- *fill*         0x00034772        0x2 00
+ *fill*         0x00034732        0x2 00
  .rodata.str1.4
-                0x00034774       0xaf build/obj/math/matrix.o
+                0x00034734       0xaf build/obj/math/matrix.o
                                  0xb0 (size before relaxing)
- *fill*         0x00034823        0x1 00
+ *fill*         0x000347e3        0x1 00
  .rodata.str1.4
-                0x00034824       0x17 build/obj/math/geodetic/gps_transformations.o
+                0x000347e4       0x17 build/obj/math/geodetic/gps_transformations.o
                                  0x18 (size before relaxing)
- *fill*         0x0003483b        0x1 00
+ *fill*         0x000347fb        0x1 00
  .rodata.str1.4
-                0x0003483c       0x5e build/obj/hal/gps/gps_nmea.o
+                0x000347fc       0x5e build/obj/hal/gps/gps_nmea.o
                                  0x60 (size before relaxing)
- *fill*         0x0003489a        0x2 00
+ *fill*         0x0003485a        0x2 00
  .rodata.str1.4
-                0x0003489c       0x8b build/obj/system/sys_state.o
+                0x0003485c       0x8b build/obj/system/sys_state.o
                                  0x8c (size before relaxing)
- *fill*         0x00034927        0x1 00
+ *fill*         0x000348e7        0x1 00
  .rodata.str1.4
-                0x00034928       0x65 build/obj/system/calibration.o
+                0x000348e8       0x65 build/obj/system/calibration.o
                                  0x68 (size before relaxing)
  .rodata.str1.4
                 0x00000000       0x65 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libc.a(impure.o)
                                   0x4 (size before relaxing)
- *fill*         0x0003498d        0x3 00
+ *fill*         0x0003494d        0x3 00
  .rodata.str1.4
-                0x00034990        0x5 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_acos.o)
+                0x00034950        0x5 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_acos.o)
                                   0x8 (size before relaxing)
- *fill*         0x00034995        0x3 00
+ *fill*         0x00034955        0x3 00
  .rodata.str1.4
-                0x00034998        0x5 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_asin.o)
+                0x00034958        0x5 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_asin.o)
                                   0x8 (size before relaxing)
- *fill*         0x0003499d        0x3 00
+ *fill*         0x0003495d        0x3 00
  .rodata.str1.4
-                0x000349a0        0x6 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_atan2.o)
+                0x00034960        0x6 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_atan2.o)
                                   0x8 (size before relaxing)
- *fill*         0x000349a6        0x2 00
+ *fill*         0x00034966        0x2 00
  .rodata.str1.4
-                0x000349a8        0x5 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_cosh.o)
+                0x00034968        0x5 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_cosh.o)
                                   0x8 (size before relaxing)
- *fill*         0x000349ad        0x3 00
+ *fill*         0x0003496d        0x3 00
  .rodata.str1.4
-                0x000349b0        0x4 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_exp.o)
+                0x00034970        0x4 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_exp.o)
  .rodata.str1.4
-                0x000349b4        0x4 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_log.o)
+                0x00034974        0x4 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_log.o)
  .rodata.str1.4
-                0x000349b8        0x4 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_pow.o)
+                0x00034978        0x4 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_pow.o)
  .rodata.str1.4
-                0x000349bc        0x8 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_sinh.o)
+                0x0003497c        0x8 c:/pixhawk/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork\libm.a(w_sinh.o)
  *(.gnu.linkonce.r.*)
-                0x000349c4                . = ALIGN (0x4)
+                0x00034984                . = ALIGN (0x4)
 
-.ctors          0x000349c4        0x0
-                0x000349c4                PROVIDE (__ctors_start__, .)
+.ctors          0x00034984        0x0
+                0x00034984                PROVIDE (__ctors_start__, .)
  *(SORT(.ctors.*))
  *(.ctors)
-                0x000349c4                PROVIDE (__ctors_end__, .)
+                0x00034984                PROVIDE (__ctors_end__, .)
 
-.dtors          0x000349c4        0x0
-                0x000349c4                PROVIDE (__dtors_start__, .)
+.dtors          0x00034984        0x0
+                0x00034984                PROVIDE (__dtors_start__, .)
  *(SORT(.dtors.*))
  *(.dtors)
-                0x000349c4                PROVIDE (__dtors_end__, .)
-                0x000349c4                . = ALIGN (0x4)
-                0x000349c4                _etext = .
-                0x000349c4                PROVIDE (etext, .)
+                0x00034984                PROVIDE (__dtors_end__, .)
+                0x00034984                . = ALIGN (0x4)
+                0x00034984                _etext = .
+                0x00034984                PROVIDE (etext, .)
 
-.data           0x40000000      0xc54 load address 0x000349c4
+.data           0x40000000      0xc54 load address 0x00034984
                 0x40000000                _data = .
  *(.data)
  .data          0x40000000        0x0 build/obj/arm7/include/crt0.o

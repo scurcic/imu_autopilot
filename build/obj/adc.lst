@@ -106,10 +106,10 @@
  110              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 adc.c
-C:\Users\scurcic\AppData\Local\Temp/ccOqbaaa.s:6      .text:00000000 adc_init
-C:\Users\scurcic\AppData\Local\Temp/ccOqbaaa.s:10     .text:00000000 $a
-C:\Users\scurcic\AppData\Local\Temp/ccOqbaaa.s:42     .text:00000070 adc_get_value
-C:\Users\scurcic\AppData\Local\Temp/ccOqbaaa.s:55     .text:00000084 $d
-C:\Users\scurcic\AppData\Local\Temp/ccOqbaaa.s:62     .text:0000009c $a
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:6      .text:00000000 adc_init
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:10     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:42     .text:00000070 adc_get_value
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:55     .text:00000084 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccw1aaaa.s:62     .text:0000009c $a
 
 NO UNDEFINED SYMBOLS

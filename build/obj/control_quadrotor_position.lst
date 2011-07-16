@@ -244,17 +244,17 @@
  248              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 control_quadrotor_position.c
-C:\Users\scurcic\AppData\Local\Temp/ccCmbaaa.s:17     .text:00000000 control_quadrotor_position
-C:\Users\scurcic\AppData\Local\Temp/ccCmbaaa.s:21     .text:00000000 $a
-C:\Users\scurcic\AppData\Local\Temp/ccCmbaaa.s:162    .text:00000214 $d
+C:\Users\Srdjan\AppData\Local\Temp/cc4yaaaa.s:17     .text:00000000 control_quadrotor_position
+C:\Users\Srdjan\AppData\Local\Temp/cc4yaaaa.s:21     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/cc4yaaaa.s:162    .text:00000214 $d
                             *COM*:00000a8c global_data
                             *COM*:00000020 x_axis_controller
                             *COM*:00000020 y_axis_controller
                             *COM*:00000020 z_axis_controller
-C:\Users\scurcic\AppData\Local\Temp/ccCmbaaa.s:239    .bss:00000000 pos_controller_counter
-C:\Users\scurcic\AppData\Local\Temp/ccCmbaaa.s:176    .text:0000023c control_quadrotor_position_init
-C:\Users\scurcic\AppData\Local\Temp/ccCmbaaa.s:180    .text:0000023c $a
-C:\Users\scurcic\AppData\Local\Temp/ccCmbaaa.s:230    .text:000002f8 $d
+C:\Users\Srdjan\AppData\Local\Temp/cc4yaaaa.s:239    .bss:00000000 pos_controller_counter
+C:\Users\Srdjan\AppData\Local\Temp/cc4yaaaa.s:176    .text:0000023c control_quadrotor_position_init
+C:\Users\Srdjan\AppData\Local\Temp/cc4yaaaa.s:180    .text:0000023c $a
+C:\Users\Srdjan\AppData\Local\Temp/cc4yaaaa.s:230    .text:000002f8 $d
                             *COM*:00000004 global_param_id
                             *COM*:00000004 state_fly_id
                             *COM*:00000008 mavlink_system

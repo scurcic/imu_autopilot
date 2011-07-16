@@ -15,8 +15,8 @@
   17              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\scurcic\AppData\Local\Temp/cccjbaaa.s:6      .text:00000000 main
-C:\Users\scurcic\AppData\Local\Temp/cccjbaaa.s:10     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccCgaaaa.s:6      .text:00000000 main
+C:\Users\Srdjan\AppData\Local\Temp/ccCgaaaa.s:10     .text:00000000 $a
 
 UNDEFINED SYMBOLS
 main_init_ground_car

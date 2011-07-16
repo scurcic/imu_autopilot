@@ -432,26 +432,26 @@
  432              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 gps_transformations.c
-C:\Users\scurcic\AppData\Local\Temp/cckNaaaa.s:10     .text:00000000 gps_get_local_velocity
-C:\Users\scurcic\AppData\Local\Temp/cckNaaaa.s:14     .text:00000000 $a
-C:\Users\scurcic\AppData\Local\Temp/cckNaaaa.s:68     .text:000000cc $d
-C:\Users\scurcic\AppData\Local\Temp/cckNaaaa.s:78     .text:000000dc gps_send_local_origin
-C:\Users\scurcic\AppData\Local\Temp/cckNaaaa.s:82     .text:000000dc $a
-C:\Users\scurcic\AppData\Local\Temp/cckNaaaa.s:220    .text:000002e8 $d
-C:\Users\scurcic\AppData\Local\Temp/cckNaaaa.s:416    .bss:00000000 gps_local_origin_init
+C:\Users\Srdjan\AppData\Local\Temp/ccoRaaaa.s:10     .text:00000000 gps_get_local_velocity
+C:\Users\Srdjan\AppData\Local\Temp/ccoRaaaa.s:14     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccoRaaaa.s:68     .text:000000cc $d
+C:\Users\Srdjan\AppData\Local\Temp/ccoRaaaa.s:78     .text:000000dc gps_send_local_origin
+C:\Users\Srdjan\AppData\Local\Temp/ccoRaaaa.s:82     .text:000000dc $a
+C:\Users\Srdjan\AppData\Local\Temp/ccoRaaaa.s:220    .text:000002e8 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccoRaaaa.s:416    .bss:00000000 gps_local_origin_init
                             *COM*:00000a8c global_data
-C:\Users\scurcic\AppData\Local\Temp/cckNaaaa.s:425    .bss:00000058 gps_local_origin
-C:\Users\scurcic\AppData\Local\Temp/cckNaaaa.s:419    .bss:00000004 m_mavlink_status.3022
+C:\Users\Srdjan\AppData\Local\Temp/ccoRaaaa.s:425    .bss:00000058 gps_local_origin
+C:\Users\Srdjan\AppData\Local\Temp/ccoRaaaa.s:419    .bss:00000004 m_mavlink_status.3022
                             *COM*:00000008 mavlink_system
-C:\Users\scurcic\AppData\Local\Temp/cckNaaaa.s:237    .text:000002fc gps_set_local_origin
-C:\Users\scurcic\AppData\Local\Temp/cckNaaaa.s:241    .text:000002fc $a
-C:\Users\scurcic\AppData\Local\Temp/cckNaaaa.s:291    .text:000003b8 $d
-C:\Users\scurcic\AppData\Local\Temp/cckNaaaa.s:422    .bss:00000054 gps_cos_origin_lat
-C:\Users\scurcic\AppData\Local\Temp/cckNaaaa.s:306    .text:000003dc gps_get_local_position
-C:\Users\scurcic\AppData\Local\Temp/cckNaaaa.s:310    .text:000003dc $a
-C:\Users\scurcic\AppData\Local\Temp/cckNaaaa.s:397    .text:00000524 $d
-C:\Users\scurcic\AppData\Local\Temp/cckNaaaa.s:413    .rodata:00000000 r_earth
-C:\Users\scurcic\AppData\Local\Temp/cckNaaaa.s:414    .rodata:00000000 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccoRaaaa.s:237    .text:000002fc gps_set_local_origin
+C:\Users\Srdjan\AppData\Local\Temp/ccoRaaaa.s:241    .text:000002fc $a
+C:\Users\Srdjan\AppData\Local\Temp/ccoRaaaa.s:291    .text:000003b8 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccoRaaaa.s:422    .bss:00000054 gps_cos_origin_lat
+C:\Users\Srdjan\AppData\Local\Temp/ccoRaaaa.s:306    .text:000003dc gps_get_local_position
+C:\Users\Srdjan\AppData\Local\Temp/ccoRaaaa.s:310    .text:000003dc $a
+C:\Users\Srdjan\AppData\Local\Temp/ccoRaaaa.s:397    .text:00000524 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccoRaaaa.s:413    .rodata:00000000 r_earth
+C:\Users\Srdjan\AppData\Local\Temp/ccoRaaaa.s:414    .rodata:00000000 $d
                             *COM*:00000004 global_param_id
                             *COM*:00000004 state_fly_id
                             *COM*:00000001 gps_device_mode

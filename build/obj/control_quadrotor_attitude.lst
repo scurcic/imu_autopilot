@@ -1077,21 +1077,21 @@
  1079              		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 control_quadrotor_attitude.c
-C:\Users\scurcic\AppData\Local\Temp/ccWqbaaa.s:6      .text:00000000 control_quadrotor_attitude_init
-C:\Users\scurcic\AppData\Local\Temp/ccWqbaaa.s:10     .text:00000000 $a
-C:\Users\scurcic\AppData\Local\Temp/ccWqbaaa.s:63     .text:000000c8 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccmYaaaa.s:6      .text:00000000 control_quadrotor_attitude_init
+C:\Users\Srdjan\AppData\Local\Temp/ccmYaaaa.s:10     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccmYaaaa.s:63     .text:000000c8 $d
                             *COM*:00000a8c global_data
                             *COM*:00000020 yaw_pos_controller
                             *COM*:00000020 yaw_speed_controller
                             *COM*:00000020 nick_controller
                             *COM*:00000020 roll_controller
-C:\Users\scurcic\AppData\Local\Temp/ccWqbaaa.s:90     .text:000000dc control_quadrotor_attitude
-C:\Users\scurcic\AppData\Local\Temp/ccWqbaaa.s:94     .text:000000dc $a
-C:\Users\scurcic\AppData\Local\Temp/ccWqbaaa.s:365    .text:000004f8 $d
-C:\Users\scurcic\AppData\Local\Temp/ccWqbaaa.s:1066   .bss:00000000 controller_counter
+C:\Users\Srdjan\AppData\Local\Temp/ccmYaaaa.s:90     .text:000000dc control_quadrotor_attitude
+C:\Users\Srdjan\AppData\Local\Temp/ccmYaaaa.s:94     .text:000000dc $a
+C:\Users\Srdjan\AppData\Local\Temp/ccmYaaaa.s:365    .text:000004f8 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccmYaaaa.s:1066   .bss:00000000 controller_counter
                             *COM*:00000008 mavlink_system
-C:\Users\scurcic\AppData\Local\Temp/ccWqbaaa.s:1069   .bss:00000004 m_mavlink_status.2550
-C:\Users\scurcic\AppData\Local\Temp/ccWqbaaa.s:383    .text:0000053c $a
+C:\Users\Srdjan\AppData\Local\Temp/ccmYaaaa.s:1069   .bss:00000004 m_mavlink_status.2550
+C:\Users\Srdjan\AppData\Local\Temp/ccmYaaaa.s:383    .text:0000053c $a
                              .bss:00000000 $d
                             *COM*:00000004 global_param_id
                             *COM*:00000004 state_fly_id

@@ -398,7 +398,7 @@ void main_loop_ground_car(void)
 		///////////////////////////////////////////////////////////////////////////
 		/// NON-CRITICAL SLOW 20 Hz functions
 		///////////////////////////////////////////////////////////////////////////
-		else if (us_run_every(50000, COUNTER7, loop_start_time))
+		else if (us_run_every(10000, COUNTER7, loop_start_time))
 		{
 			//led_toggle(LED_YELLOW);
 			communication_send_attitude_position(loop_start_time);

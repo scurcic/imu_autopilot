@@ -562,25 +562,25 @@
  558 0052 0000     		.ident	"GCC: (GNU) 4.1.1 (WinARM)"
 DEFINED SYMBOLS
                             *ABS*:00000000 calibration.c
-C:\Users\scurcic\AppData\Local\Temp/cc6vaaaa.s:6      .text:00000000 start_mag_calibration
-C:\Users\scurcic\AppData\Local\Temp/cc6vaaaa.s:12     .text:00000000 $a
-C:\Users\scurcic\AppData\Local\Temp/cc6vaaaa.s:22     .text:00000004 calibration_exit
-C:\Users\scurcic\AppData\Local\Temp/cc6vaaaa.s:64     .text:0000007c $d
-C:\Users\scurcic\AppData\Local\Temp/cc6vaaaa.s:552    .bss:00000051 calibration_prev_mode
-C:\Users\scurcic\AppData\Local\Temp/cc6vaaaa.s:550    .bss:00000050 calibration_prev_state
-C:\Users\scurcic\AppData\Local\Temp/cc6vaaaa.s:79     .text:00000088 calibration_enter
-C:\Users\scurcic\AppData\Local\Temp/cc6vaaaa.s:83     .text:00000088 $a
-C:\Users\scurcic\AppData\Local\Temp/cc6vaaaa.s:356    .text:000004a0 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccu4aaaa.s:6      .text:00000000 start_mag_calibration
+C:\Users\Srdjan\AppData\Local\Temp/ccu4aaaa.s:12     .text:00000000 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccu4aaaa.s:22     .text:00000004 calibration_exit
+C:\Users\Srdjan\AppData\Local\Temp/ccu4aaaa.s:64     .text:0000007c $d
+C:\Users\Srdjan\AppData\Local\Temp/ccu4aaaa.s:552    .bss:00000051 calibration_prev_mode
+C:\Users\Srdjan\AppData\Local\Temp/ccu4aaaa.s:550    .bss:00000050 calibration_prev_state
+C:\Users\Srdjan\AppData\Local\Temp/ccu4aaaa.s:79     .text:00000088 calibration_enter
+C:\Users\Srdjan\AppData\Local\Temp/ccu4aaaa.s:83     .text:00000088 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccu4aaaa.s:356    .text:000004a0 $d
                             *COM*:00000a8c global_data
-C:\Users\scurcic\AppData\Local\Temp/cc6vaaaa.s:548    .bss:00000000 m_mavlink_status.2040
+C:\Users\Srdjan\AppData\Local\Temp/ccu4aaaa.s:548    .bss:00000000 m_mavlink_status.2040
                             *COM*:00000008 mavlink_system
-C:\Users\scurcic\AppData\Local\Temp/cc6vaaaa.s:370    .text:000004c0 start_gyro_calibration
-C:\Users\scurcic\AppData\Local\Temp/cc6vaaaa.s:374    .text:000004c0 $a
-C:\Users\scurcic\AppData\Local\Temp/cc6vaaaa.s:446    .text:000005c0 $d
-C:\Users\scurcic\AppData\Local\Temp/cc6vaaaa.s:452    .text:000005c8 start_pressure_calibration
-C:\Users\scurcic\AppData\Local\Temp/cc6vaaaa.s:456    .text:000005c8 $a
-C:\Users\scurcic\AppData\Local\Temp/cc6vaaaa.s:470    .text:000005e8 start_rc_calibration
-C:\Users\scurcic\AppData\Local\Temp/cc6vaaaa.s:544    .text:000006e0 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccu4aaaa.s:370    .text:000004c0 start_gyro_calibration
+C:\Users\Srdjan\AppData\Local\Temp/ccu4aaaa.s:374    .text:000004c0 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccu4aaaa.s:446    .text:000005c0 $d
+C:\Users\Srdjan\AppData\Local\Temp/ccu4aaaa.s:452    .text:000005c8 start_pressure_calibration
+C:\Users\Srdjan\AppData\Local\Temp/ccu4aaaa.s:456    .text:000005c8 $a
+C:\Users\Srdjan\AppData\Local\Temp/ccu4aaaa.s:470    .text:000005e8 start_rc_calibration
+C:\Users\Srdjan\AppData\Local\Temp/ccu4aaaa.s:544    .text:000006e0 $d
                             *COM*:00000004 global_param_id
                             *COM*:00000004 state_fly_id
 
